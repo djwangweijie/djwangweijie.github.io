@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "a5ab5263"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据持久化,orm,半自动,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="文殊_w" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="mybatis是一个优秀的开源框架,半自动ORM映射,能够适配各种业务需求 mybatis的路线图(上) mybatis简介 mybatis框架执行原理 mybatis初次的入门案例 mybatis配置文件详解 mybatis 方法多参数的处理 mybatis返回主键值 sql代码段 自定义结果类型ResultMap   mybatis简介mybatis本身是一个轻量级的持久化层框架(1.何为持久">
+<meta name="keywords" content="数据持久化,orm,半自动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis1">
+<meta property="og:url" content="http://djwwj.top/2019/09/10/2019-09-10-Mybatis(缘)/index.html">
+<meta property="og:site_name" content="文殊_w">
+<meta property="og:description" content="mybatis是一个优秀的开源框架,半自动ORM映射,能够适配各种业务需求 mybatis的路线图(上) mybatis简介 mybatis框架执行原理 mybatis初次的入门案例 mybatis配置文件详解 mybatis 方法多参数的处理 mybatis返回主键值 sql代码段 自定义结果类型ResultMap   mybatis简介mybatis本身是一个轻量级的持久化层框架(1.何为持久">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://djwwj.top/images/resources/7A7648307DEDBBE8133B158F2BA0AE99.jpg">
+<meta property="og:image" content="http://djwwj.top/images/resources/9811E4C49FDA9BE87152DC3AEFEC5B03.jpg">
+<meta property="og:image" content="http://djwwj.top/images/resources/CD9453D5EA517471A33213C84F600088.jpg">
+<meta property="og:image" content="http://djwwj.top/images/resources/22CE8444C2704500434DEB997985252E.jpg">
+<meta property="og:updated_time" content="2019-10-09T09:12:22.774Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mybatis1">
+<meta name="twitter:description" content="mybatis是一个优秀的开源框架,半自动ORM映射,能够适配各种业务需求 mybatis的路线图(上) mybatis简介 mybatis框架执行原理 mybatis初次的入门案例 mybatis配置文件详解 mybatis 方法多参数的处理 mybatis返回主键值 sql代码段 自定义结果类型ResultMap   mybatis简介mybatis本身是一个轻量级的持久化层框架(1.何为持久">
+<meta name="twitter:image" content="http://djwwj.top/images/resources/7A7648307DEDBBE8133B158F2BA0AE99.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://djwwj.top/2019/09/10/2019-09-10-Mybatis(缘)/">
+
+
+
+
+
+  <title>Mybatis1 | 文殊_w</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/djwangweijie" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">文殊_w</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">JavaAndKafka_Streams</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://djwwj.top/2019/09/10/2019-09-10-Mybatis(缘)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="文殊_w">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Mybatis1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-10T13:04:20+08:00">
+                2019-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mybatis/" itemprop="url" rel="index">
+                    <span itemprop="name">Mybatis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/09/10/2019-09-10-Mybatis(缘)/" class="leancloud_visitors" data-flag-title="Mybatis1">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>mybatis是一个优秀的开源框架,半自动ORM映射,能够适配各种业务需求</p>
+<h1 id="mybatis的路线图-上"><a href="#mybatis的路线图-上" class="headerlink" title="mybatis的路线图(上)"></a>mybatis的路线图(上)</h1><ol>
+<li>mybatis简介</li>
+<li>mybatis框架执行原理</li>
+<li>mybatis初次的入门案例</li>
+<li>mybatis配置文件详解</li>
+<li>mybatis 方法多参数的处理</li>
+<li>mybatis返回主键值</li>
+<li>sql代码段</li>
+<li>自定义结果类型ResultMap</li>
+</ol>
+<hr>
+<h2 id="mybatis简介"><a href="#mybatis简介" class="headerlink" title="mybatis简介"></a>mybatis简介</h2><p><strong>mybatis本身是一个轻量级的持久化层框架(1.何为持久化。2.何为序列化操作),本身也是基于JDBC的封装(JDBC的链接步骤).开发者本身更多的关注SQL语句的执行效率,除此之外mybatis也是一个半自动的ORM映射框架(支持一对一,一对多的实现,多对多采用两个一对多进行实现)</strong></p>
+<p><strong>注意:实际的开发过程中,因为大量的关系相互映射的存在,在查询数据这一块不便于后期项目本身的项目维护扩展。所以更多的方向是思考数据库中的设计和利用本身mybatis提供的数据自定义封装和其它的类似缓存机制的特点,解决开发中的数据设计结构</strong></p>
+<blockquote>
+<p>mybatis的优势</p>
+</blockquote>
+<ol>
+<li><p>比起jdbc的操作,减少了一些重复的代码量工作，也方便能够集成到后期的管理框架中</p>
+</li>
+<li><p>mybatis提供在XML中编写sql语句,不直接入侵在代码中(方便分类修改）</p>
+</li>
+<li><p>分别提供的xml标签和mapper标签(xml标签可实现动态SQL语句,也就是嵌入条件判断和循环,比较类似存储函数),mapper标签支持对象正确的解析至数据库中</p>
+</li>
+</ol>
+<hr>
+<h2 id="mybatis框架执行原理"><a href="#mybatis框架执行原理" class="headerlink" title="mybatis框架执行原理"></a>mybatis框架执行原理</h2><blockquote>
+<p>sqlConfigXMl配置文件(一个全局的配置文件)(可配置映射文件和连接数据源和事务等)</p>
+</blockquote>
+<blockquote>
+<p>通过配置文件构建出可构建操作数据会话的会话工厂,也就是我们常说的sqlSessionFactory(涉及工厂模式代码设计)</p>
+</blockquote>
+<blockquote>
+<p>通过sqlSessionFactory生产出相互独立的sqlsession,为什么是独立的会话，既然是独立的会话，那也有全局的会话(简单提及缓存)进行数据库层面上面的操作</p>
+</blockquote>
+<blockquote>
+<p>sqlsession之所以能够操作,依赖一个叫Executor的执行器,通过该执行器进行数据库的CRUD操作</p>
+</blockquote>
+<blockquote>
+<p>Executor的执行器需要操作CRUD的动作由谁而来，就是由mapperstatement对象读取mapper映射文件</p>
+</blockquote>
+<p><strong>我们可以看到在配置xml文件的时候,可以支持多种对象级数据参数</strong></p>
+<hr>
+<h2 id="mybatis初次的入门案例"><a href="#mybatis初次的入门案例" class="headerlink" title="mybatis初次的入门案例"></a>mybatis初次的入门案例</h2><ol>
+<li>配置一个log4j.properties(可选)方便我们监听到mybatis进行的动作</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\# set level</span><br><span class="line">log4j.rootLogger=DEBUG, stdout</span><br><span class="line"></span><br><span class="line">\# Console output...</span><br><span class="line">log4j.appender.stdout=org.apache.log4j.ConsoleAppender</span><br><span class="line">log4j.appender.stdout.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>构建一个普通的web项目,jar包结构如下:</li>
+</ol>
+<p><img src="/images/resources/7A7648307DEDBBE8133B158F2BA0AE99.jpg" alt="IMAGE"></p>
+<ol start="3">
+<li>src目录下构建mybatis的全局配置文件mybatisCfg.xml,配置文件如下:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration</span><br><span class="line">  PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span><br><span class="line">  &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">	&lt;!-- 数据库连接环境配置 --&gt;</span><br><span class="line">	&lt;environments default=&quot;development&quot;&gt;</span><br><span class="line">		&lt;!-- 标明mybaitis环境 id唯一 --&gt;</span><br><span class="line">		&lt;environment id=&quot;development&quot;&gt;</span><br><span class="line">			&lt;!-- JDBC – 这个配置直接简单使用了 JDBC 的提交和回滚设置。 它依赖于从数据源得 到的连接来管理事务范围。JDBC默认是自动提交 --&gt;</span><br><span class="line">			&lt;transactionManager type=&quot;JDBC&quot; /&gt;</span><br><span class="line">			&lt;!-- 采用数据库连接池 --&gt;</span><br><span class="line">			&lt;dataSource type=&quot;POOLED&quot;&gt;</span><br><span class="line">				&lt;property name=&quot;driver&quot; value=&quot;com.mysql.jdbc.Driver&quot; /&gt;</span><br><span class="line">				&lt;!-- 避免环境的不统一，造成数据操作乱码 --&gt;</span><br><span class="line">				&lt;property name=&quot;url&quot;</span><br><span class="line">					value=&quot;jdbc:mysql://localhost:3306/mybatis?characterEncoding=utf-8&quot; /&gt;</span><br><span class="line">				&lt;property name=&quot;username&quot; value=&quot;root&quot; /&gt;</span><br><span class="line">				&lt;property name=&quot;password&quot; value=&quot;123456&quot; /&gt;</span><br><span class="line">			&lt;/dataSource&gt;</span><br><span class="line">		&lt;/environment&gt;</span><br><span class="line">	&lt;/environments&gt;</span><br><span class="line">	&lt;!-- 添加需要被映射的文件 --&gt;</span><br><span class="line">	&lt;mappers&gt;</span><br><span class="line">		&lt;mapper resource=&quot;com/wwj/dao/PersonMapper.xml&quot; /&gt;</span><br><span class="line">	&lt;/mappers&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>构建模型类 com.wwj.model 和 数据库表</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import java.io.Serializable;</span><br><span class="line">import java.util.Date;</span><br><span class="line">/**</span><br><span class="line"> * 基本的模型类</span><br><span class="line"> * @author wwj</span><br><span class="line"> *对象序列化是一个用于将对象状态转换为字节流的过程，可以将其保存到磁盘文件中或通过网络发送到任何其他程序；从字节流创建对象的相反的过程称为反序列化。而创建的字节流是与平台无关的，在一个平台上序列化的对象可以在不同的平台上反序列化。</span><br><span class="line"> *无需序列化的变量使用transient</span><br><span class="line"> */</span><br><span class="line">public class Person implements Serializable &#123;</span><br><span class="line">	//Java的序列化机制是通过在运行时判断类的serialVersionUID来验证版本一致性的</span><br><span class="line">	//这里是用来表明版本的一致性</span><br><span class="line">	private static final long serialVersionUID = 2680875170108959939L;</span><br><span class="line">	</span><br><span class="line">	private  Integer   id;</span><br><span class="line">	private  String name;</span><br><span class="line">	private  Date bir;</span><br><span class="line">	private  String address;</span><br><span class="line">	//自行get和set</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/resources/9811E4C49FDA9BE87152DC3AEFEC5B03.jpg" alt="IMAGE"></p>
+<ol start="4">
+<li>创建数据层的操作也就是mapper的操作接口</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * person层的操作</span><br><span class="line"> * </span><br><span class="line"> * @author Yun</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public interface PersonDao &#123;</span><br><span class="line">	/**</span><br><span class="line">	 * 新增用户</span><br><span class="line">	 * </span><br><span class="line">	 * @param p</span><br><span class="line">	 *            传入需要新增的对象</span><br><span class="line">	 * @return 0,1代表结果</span><br><span class="line">	 */</span><br><span class="line">	int savePerson(Person p);</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 更新用户对象</span><br><span class="line">	 * @param p 需要被更新的对象</span><br><span class="line">	 * @return 0,1代表结果</span><br><span class="line">	 */</span><br><span class="line">	int updatePerson(Person p);</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 根据用户id进行删除</span><br><span class="line">	 * @param id  唯一用户id</span><br><span class="line">	 * @return  0，1代表结果</span><br><span class="line">	 */</span><br><span class="line">	int  deletePersonById(int  id);</span><br><span class="line">	</span><br><span class="line">	/**</span><br><span class="line">	 * 获取所有的信息</span><br><span class="line">	 * @return  所有的人员信息</span><br><span class="line">	 */</span><br><span class="line">	List&lt;Person&gt;  getPersonInfos();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>构建对应的mapper映射文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper</span><br><span class="line">PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span><br><span class="line">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;mapper namespace=&quot;com.wwj.dao.PersonDao&quot;&gt;</span><br><span class="line">	&lt;insert id=&quot;savePerson&quot; parameterType=&quot;com.wwj.model.Person&quot;&gt;</span><br><span class="line">		insert into</span><br><span class="line">		person(name,address,bir) values(#&#123;name&#125;,#&#123;address&#125;,#&#123;bir&#125;);</span><br><span class="line">	&lt;/insert&gt;</span><br><span class="line"></span><br><span class="line">	&lt;update id=&quot;updatePerson&quot; parameterType=&quot;com.wwj.model.Person&quot;&gt;</span><br><span class="line">		update person set</span><br><span class="line">		name=#&#123;p.name&#125;,address=#&#123;address&#125;,bir=#&#123;bir&#125;</span><br><span class="line">		where id=#&#123;id&#125;</span><br><span class="line">	&lt;/update&gt;</span><br><span class="line"></span><br><span class="line">	&lt;delete id=&quot;deletePersonById&quot; parameterType=&quot;int&quot;&gt;</span><br><span class="line">		delete from person</span><br><span class="line">		where id=#&#123;id&#125;</span><br><span class="line">	&lt;/delete&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&lt;select id=&quot;getPersonInfos&quot; resultType=&quot;com.wwj.model.Person&quot;&gt;</span><br><span class="line">		select * from person</span><br><span class="line">	&lt;/select&gt;</span><br><span class="line"></span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>编码测试</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 测试mybatis的CRUD操作</span><br><span class="line"> * </span><br><span class="line"> * @author wwj</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class TestMybatis &#123;</span><br><span class="line">	public static void main(String[] args) throws IOException, ParseException &#123;</span><br><span class="line">		/*</span><br><span class="line">		 * 日期上面的处理</span><br><span class="line">		 */</span><br><span class="line">		SimpleDateFormat sf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">		String format = sf.format(new Date());</span><br><span class="line">		Date parse = sf.parse(format);</span><br><span class="line"></span><br><span class="line">		InputStream is = Resources.getResourceAsStream(&quot;mybatisCfg.xml&quot;);</span><br><span class="line">		SqlSessionFactory build = new SqlSessionFactoryBuilder().build(is);</span><br><span class="line">		// 生成 session</span><br><span class="line">		SqlSession session = build.openSession();</span><br><span class="line">		Person per = new Person();</span><br><span class="line">		per.setName(&quot; 小王 &quot;);</span><br><span class="line">		per.setAddress(&quot; 重庆 &quot;);</span><br><span class="line">		per.setBir(parse);</span><br><span class="line">		// 操作数据</span><br><span class="line">		int insert = session.insert(&quot;savePerson&quot;,per);</span><br><span class="line">		// 提交事务</span><br><span class="line">		session.commit();</span><br><span class="line">		// 关闭 session</span><br><span class="line">		session.close();</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意:mysql中设置为date支持的格式为yyyy-mm-dd,java中的date是格林威治时间</strong></p>
+<p><strong>结果图示</strong></p>
+<p><img src="/images/resources/CD9453D5EA517471A33213C84F600088.jpg" alt="IMAGE"></p>
+<p><strong>同理依次测试更新和删除,以及查询</strong></p>
+<p><strong><em>更新的调用操作</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Person per = new Person();</span><br><span class="line">per.setId(1);</span><br><span class="line">per.setName(&quot; 小张 &quot;);</span><br><span class="line">per.setAddress(&quot; 重庆 &quot;);</span><br><span class="line">per.setBir(parse);</span><br><span class="line">// 操作数据</span><br><span class="line">int update = session.update(&quot;updatePerson&quot;, per);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/resources/22CE8444C2704500434DEB997985252E.jpg" alt="IMAGE"></p>
+<p><strong><em>查询的调用操作</em></strong></p>
+<p><code>List&lt;Person&gt; pers  = session.selectList(&quot;getPersonInfos&quot;);</code></p>
+<p><strong><em>删除的调用操作</em></strong></p>
+<p><code>int de  = session.delete(&quot;deletePersonById&quot;, 1);</code></p>
+<hr>
+<h2 id="mybatis配置文件详解"><a href="#mybatis配置文件详解" class="headerlink" title="mybatis配置文件详解"></a>mybatis配置文件详解</h2><h3 id="全局配置文件详解"><a href="#全局配置文件详解" class="headerlink" title="全局配置文件详解"></a>全局配置文件详解</h3><ul>
+<li>environments环境配置,可以配置多种环境 default指定使用某种环境.</li>
+<li>transactionManager事务管理器有两种取值JDBC,managed.我们选择jdbc即可</li>
+<li>dataSource配置数据源,采用默认的连接池选择项POOLED</li>
+<li>mappers里面填入需要进行数据操作xml标签用于执行的动作</li>
+<li>映射的数据操作文件需要和接口保持同个路径(可以把mapper当成接口的实现类)</li>
+</ul>
+<h3 id="映射文件详解"><a href="#映射文件详解" class="headerlink" title="映射文件详解"></a>映射文件详解</h3><ul>
+<li>namespace表明需要对应动作的空间即是接口所在的全路径名称</li>
+<li>id与接口中的方法保持一致</li>
+<li>parameterType填写自定义对象的全路径名称</li>
+<li>接收参数采用 #{objAttrName}</li>
+</ul>
+<hr>
+<h2 id="mybatis方法多参数接收-代码示例）"><a href="#mybatis方法多参数接收-代码示例）" class="headerlink" title="mybatis方法多参数接收(代码示例）"></a>mybatis方法多参数接收(代码示例）</h2><h4 id="索引接收-了解即可"><a href="#索引接收-了解即可" class="headerlink" title="索引接收(了解即可)"></a>索引接收(了解即可)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> List&lt;Person&gt;  getPersonInfosByNameAndID(String name ,int id);</span><br><span class="line">&lt;select id=&quot;getPersonInfosByNameAndID&quot; &gt;</span><br><span class="line">	select * from person where name = #&#123;0&#125; and id = #&#123;1&#125; </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="map接收-重点"><a href="#map接收-重点" class="headerlink" title="map接收(重点)"></a>map接收(重点)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">   /**</span><br><span class="line">    *  根据map进行查询</span><br><span class="line">    * @param attrs</span><br><span class="line">    * key1 id  key2 name</span><br><span class="line">    * @return</span><br><span class="line">    */</span><br><span class="line">   List&lt;Person&gt;  getPersonInfosByMap(Map attrs);</span><br><span class="line">   //------------------动作实现</span><br><span class="line"> &lt;select id=&quot;getPersonInfosByMap&quot;  parameterType=&quot;java.util.Map&quot; resultType=&quot;com.wwj.model.Person&quot;&gt;</span><br><span class="line">	select * from person where id =</span><br><span class="line">	#&#123;id&#125; and name = #&#123;name&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">  //----------------调用测试</span><br><span class="line">  Map&lt;String,Object&gt;  attrs = new HashMap&lt;&gt;();</span><br><span class="line">	attrs.put(&quot;id&quot;, 2);</span><br><span class="line">	attrs.put(&quot;name&quot;, &quot;小王&quot;);</span><br><span class="line">	session.selectList(&quot;getPersonInfosByMap&quot;, attrs);</span><br></pre></td></tr></table></figure>
+
+<h4 id="注解-Param接收-重点"><a href="#注解-Param接收-重点" class="headerlink" title="注解@Param接收(重点)"></a>注解@Param接收(重点)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">   /**</span><br><span class="line">    * 根据用户唯一id查询信息</span><br><span class="line">    * @param id</span><br><span class="line">    * @return</span><br><span class="line">    */</span><br><span class="line">   Person  getPersonInfo(@Param(&quot;pid&quot;) int id);</span><br><span class="line">   //---------------动作实现</span><br><span class="line">&lt;select id=&quot;getPersonInfo&quot; </span><br><span class="line">	resultType=&quot;com.wwj.model.Person&quot;&gt;</span><br><span class="line">	select * from person where id =</span><br><span class="line">	#&#123;pid&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">//---------调用测试</span><br><span class="line">session.selectOne(&quot;getPersonInfo&quot;, 2);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="mybatis立即返回主键值"><a href="#mybatis立即返回主键值" class="headerlink" title="mybatis立即返回主键值"></a>mybatis立即返回主键值</h2><p><strong><em>应用场景:当我们需要在当前事务插入数据后立即获取数据的主键id，做下一步额外操作，并且不因为并发高的情况下取错值而考虑</em></strong></p>
+<p><strong>修改代码如下</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> &lt;insert id=&quot;savePerson&quot; parameterType=&quot;com.wwj.model.Person&quot;&gt;</span><br><span class="line">	&lt;selectKey keyProperty=&quot;id&quot; resultType=&quot;int&quot; order=&quot;AFTER&quot;&gt;</span><br><span class="line">		select last_insert_id()</span><br><span class="line">	&lt;/selectKey&gt;</span><br><span class="line">	insert into</span><br><span class="line">	person(name,address,bir) values(#&#123;name&#125;,#&#123;address&#125;,#&#123;bir&#125;);</span><br><span class="line">&lt;/insert&gt;</span><br><span class="line">//------------------------------------------------------------</span><br><span class="line">	// 操作数据</span><br><span class="line">	Person p = new Person();</span><br><span class="line">	p.setName(&quot;小小王&quot;);</span><br><span class="line">	p.setBir(parse);</span><br><span class="line">	int result = session.insert(&quot;savePerson&quot;, p);</span><br><span class="line">	System.out.println(result);</span><br><span class="line">	System.out.println(p.getId());</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>keyProperty=”返回主键的id的属性名”</li>
+<li>resultType=”主键类型”</li>
+<li>order=””什么时候执行，在SQL执行前还是执行后执行，两个取值：BEFORE和AFTER</li>
+<li>select last_insert_id()取到最后生成的主键，只在当前事务中取</li>
+</ul>
+<h2 id="sql代码段"><a href="#sql代码段" class="headerlink" title="sql代码段"></a>sql代码段</h2><p><strong>如果场景中有大量的重复的公共sql语句,那么可以考虑使用<code>&lt;sql&gt;</code>声明公共的部分</strong></p>
+<p><strong>示例如下:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">   /**</span><br><span class="line">    * sql片段</span><br><span class="line">    * @param id  根据用户的id查询姓名</span><br><span class="line">    * @return</span><br><span class="line">    */</span><br><span class="line"> String  getPersonName(@Param(&quot;pid&quot;) int id);</span><br><span class="line">   //--------动作实现</span><br><span class="line"> &lt;sql id=&quot;nameCol&quot;&gt; name&lt;/sql&gt;</span><br><span class="line">&lt;select id=&quot;getPersonName&quot;   resultType=&quot;java.lang.String&quot;&gt;</span><br><span class="line">	select </span><br><span class="line">	&lt;include refid=&quot;nameCol&quot;&gt;&lt;/include&gt;</span><br><span class="line">	from person where</span><br><span class="line">	id =</span><br><span class="line">	#&#123;pid&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">//--------测试调用</span><br><span class="line">	String name  = session.selectOne(&quot;getPersonName&quot;,2);</span><br><span class="line">	System.out.println(name);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="自定义结果类型ResultMap-开发中长期使用"><a href="#自定义结果类型ResultMap-开发中长期使用" class="headerlink" title="自定义结果类型ResultMap(开发中长期使用)"></a>自定义结果类型ResultMap(开发中长期使用)</h2><p><strong>应用场景:假设我们的实际开发过程中,数据表组合字段多,又不想关心配置映射关系,只想关心sql语句,以及结果,并且也关心sql语句的效率</strong></p>
+<ol>
+<li>假设2张表 person和card 1:m关系</li>
+<li>连接查询需要person中的人名和card表中的卡号名字</li>
+</ol>
+<blockquote>
+<p>操作步骤如下:</p>
+</blockquote>
+<ol>
+<li>在任意自定对象上添加属性</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">//----- 实体类</span><br><span class="line">public class Card &#123;</span><br><span class="line">		private String cname;</span><br><span class="line">		&#125;</span><br><span class="line">public class Person implements Serializable &#123;</span><br><span class="line">	private  Integer   id;</span><br><span class="line">	private  String name;</span><br><span class="line">	private  Date bir;</span><br><span class="line">	private  String address;</span><br><span class="line">	private  List&lt;Card&gt;  cards;</span><br><span class="line">	&#125;</span><br><span class="line">//----构建自定义的resultmap封装 注意   collection(集合)association(联系)</span><br><span class="line">	&lt;resultMap type=&quot;com.wwj.model.Person&quot; id=&quot;personRS&quot;&gt;</span><br><span class="line">		&lt;!--column指向数据库列名 property指向pojo对象中字段名 --&gt;</span><br><span class="line">		&lt;result column=&quot;name&quot; property=&quot;name&quot; /&gt;</span><br><span class="line">		&lt;!-- property指的是在bean中字段名 ofType类的全定向名 --&gt;</span><br><span class="line">		&lt;collection property=&quot;cards&quot; ofType=&quot;com.wwj.model.Card&quot;&gt;</span><br><span class="line">			&lt;result column=&quot;cname&quot; property=&quot;cname&quot; /&gt;</span><br><span class="line">		&lt;/collection&gt;</span><br><span class="line">	&lt;/resultMap&gt;</span><br><span class="line">//--------映射的动作实现</span><br><span class="line">    &lt;select id=&quot;getPersonsOfCard&quot; resultMap=&quot;personRS&quot;&gt;</span><br><span class="line">        select</span><br><span class="line">        person.name,card.cname</span><br><span class="line">        from person</span><br><span class="line">        INNER JOIN card</span><br><span class="line">        on person.id = card.pid</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">//--------代码操作</span><br><span class="line">		List&lt;Person&gt; persons = session.selectList(&quot;getPersonsOfCard&quot;);</span><br><span class="line">		for (Person person : persons) &#123;</span><br><span class="line">			System.out.println(person.getCards().get(0).getCname());</span><br><span class="line">			System.out.println(person.getCards().get(1).getCname());</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>注意1:po代表和数据库一一对照的数据模型.vo代表业务逻辑和表现层之间需要的数据</em></strong></p>
+<p><strong><em>注意2:如果需要暴露一部分数据出去的,可能还是会单独做接口和设计VO</em></strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据持久化/" rel="tag"># 数据持久化</a>
+          
+            <a href="/tags/orm/" rel="tag"># orm</a>
+          
+            <a href="/tags/半自动/" rel="tag"># 半自动</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/23/2019-09-10-Nginx/" rel="next" title="Nginx使用">
+                <i class="fa fa-chevron-left"></i> Nginx使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/16/2019-09-16-SpringAli准备/" rel="prev" title="SpringAli准备工作">
+                SpringAli准备工作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NzAwMC8yMzUwMA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Michael">
+            
+              <p class="site-author-name" itemprop="name">Michael</p>
+              <p class="site-description motion-element" itemprop="description">技术源于生活</p>
+          </div>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="310" height="110" src="//music.163.com/outchain/player?type=0&id=619679589&auto=1&height=90"></iframe>
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/djwangweijie" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:22590570@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mybatis的路线图-上"><span class="nav-number">1.</span> <span class="nav-text">mybatis的路线图(上)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mybatis简介"><span class="nav-number">1.1.</span> <span class="nav-text">mybatis简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mybatis框架执行原理"><span class="nav-number">1.2.</span> <span class="nav-text">mybatis框架执行原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mybatis初次的入门案例"><span class="nav-number">1.3.</span> <span class="nav-text">mybatis初次的入门案例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mybatis配置文件详解"><span class="nav-number">1.4.</span> <span class="nav-text">mybatis配置文件详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局配置文件详解"><span class="nav-number">1.4.1.</span> <span class="nav-text">全局配置文件详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#映射文件详解"><span class="nav-number">1.4.2.</span> <span class="nav-text">映射文件详解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mybatis方法多参数接收-代码示例）"><span class="nav-number">1.5.</span> <span class="nav-text">mybatis方法多参数接收(代码示例）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#索引接收-了解即可"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">索引接收(了解即可)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#map接收-重点"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">map接收(重点)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注解-Param接收-重点"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">注解@Param接收(重点)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mybatis立即返回主键值"><span class="nav-number">1.6.</span> <span class="nav-text">mybatis立即返回主键值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sql代码段"><span class="nav-number">1.7.</span> <span class="nav-text">sql代码段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义结果类型ResultMap-开发中长期使用"><span class="nav-number">1.8.</span> <span class="nav-text">自定义结果类型ResultMap(开发中长期使用)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael</span>
+
+
+</div>
+
+
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共43.5k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("GsmDOg5Ui5ABCP3LHpLkvdKW-gzGzoHsz", "wsLkgtjeqMlw9Dhldh4JdXyA");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+</html>
