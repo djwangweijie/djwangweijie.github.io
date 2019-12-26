@@ -5,9 +5,9 @@
   <subtitle>JavaAndKafka_Streams</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://djwwj.top/"/>
+  <link href="https://wangweijie.vip/"/>
   <updated>2019-12-26T07:29:19.782Z</updated>
-  <id>http://djwwj.top/</id>
+  <id>https://wangweijie.vip/</id>
   
   <author>
     <name>Michael</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>开发Kafka_Streams晋阶之路(数据状态)</title>
-    <link href="http://djwwj.top/2019/12/26/2019-12-26-kafkaStream%E6%99%8B%E9%98%B6%E4%B9%8B%E8%B7%AF(%E7%8A%B6%E6%80%81)/"/>
-    <id>http://djwwj.top/2019/12/26/2019-12-26-kafkaStream晋阶之路(状态)/</id>
+    <link href="https://wangweijie.vip/2019/12/26/2019-12-26-kafkaStream%E6%99%8B%E9%98%B6%E4%B9%8B%E8%B7%AF(%E7%8A%B6%E6%80%81)/"/>
+    <id>https://wangweijie.vip/2019/12/26/2019-12-26-kafkaStream晋阶之路(状态)/</id>
     <published>2019-12-26T07:23:52.884Z</published>
     <updated>2019-12-26T07:29:19.782Z</updated>
     
@@ -38,29 +38,29 @@
     </summary>
     
     
-      <category term="KafkaStreams" scheme="http://djwwj.top/categories/KafkaStreams/"/>
+      <category term="KafkaStreams" scheme="https://wangweijie.vip/categories/KafkaStreams/"/>
     
     
-      <category term="kafkaStreams" scheme="http://djwwj.top/tags/kafkaStreams/"/>
+      <category term="kafkaStreams" scheme="https://wangweijie.vip/tags/kafkaStreams/"/>
     
-      <category term="流式计算" scheme="http://djwwj.top/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
+      <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="大数据分析" scheme="http://djwwj.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="解决方案" scheme="http://djwwj.top/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
-      <category term="数据状态" scheme="http://djwwj.top/tags/%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81/"/>
+      <category term="数据状态" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81/"/>
     
-      <category term="主观意识形态" scheme="http://djwwj.top/tags/%E4%B8%BB%E8%A7%82%E6%84%8F%E8%AF%86%E5%BD%A2%E6%80%81/"/>
+      <category term="主观意识形态" scheme="https://wangweijie.vip/tags/%E4%B8%BB%E8%A7%82%E6%84%8F%E8%AF%86%E5%BD%A2%E6%80%81/"/>
     
-      <category term="数据形态" scheme="http://djwwj.top/tags/%E6%95%B0%E6%8D%AE%E5%BD%A2%E6%80%81/"/>
+      <category term="数据形态" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%BD%A2%E6%80%81/"/>
     
   </entry>
   
   <entry>
     <title>开发Kafka_Streams(3-4)</title>
-    <link href="http://djwwj.top/2019/12/16/2019-12-16-%E5%BC%80%E5%8F%91kafka_Stream(3-4)/"/>
-    <id>http://djwwj.top/2019/12/16/2019-12-16-开发kafka_Stream(3-4)/</id>
+    <link href="https://wangweijie.vip/2019/12/16/2019-12-16-%E5%BC%80%E5%8F%91kafka_Stream(3-4)/"/>
+    <id>https://wangweijie.vip/2019/12/16/2019-12-16-开发kafka_Stream(3-4)/</id>
     <published>2019-12-16T08:37:49.250Z</published>
     <updated>2019-12-16T08:40:30.853Z</updated>
     
@@ -77,29 +77,29 @@
     </summary>
     
     
-      <category term="KafkaStreams" scheme="http://djwwj.top/categories/KafkaStreams/"/>
+      <category term="KafkaStreams" scheme="https://wangweijie.vip/categories/KafkaStreams/"/>
     
     
-      <category term="kafkaStreams" scheme="http://djwwj.top/tags/kafkaStreams/"/>
+      <category term="kafkaStreams" scheme="https://wangweijie.vip/tags/kafkaStreams/"/>
     
-      <category term="流式计算" scheme="http://djwwj.top/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
+      <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="大数据分析" scheme="http://djwwj.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="解决方案" scheme="http://djwwj.top/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
-      <category term="webscoket推送" scheme="http://djwwj.top/tags/webscoket%E6%8E%A8%E9%80%81/"/>
+      <category term="webscoket推送" scheme="https://wangweijie.vip/tags/webscoket%E6%8E%A8%E9%80%81/"/>
     
-      <category term="群发消息" scheme="http://djwwj.top/tags/%E7%BE%A4%E5%8F%91%E6%B6%88%E6%81%AF/"/>
+      <category term="群发消息" scheme="https://wangweijie.vip/tags/%E7%BE%A4%E5%8F%91%E6%B6%88%E6%81%AF/"/>
     
-      <category term="图形实时展示" scheme="http://djwwj.top/tags/%E5%9B%BE%E5%BD%A2%E5%AE%9E%E6%97%B6%E5%B1%95%E7%A4%BA/"/>
+      <category term="图形实时展示" scheme="https://wangweijie.vip/tags/%E5%9B%BE%E5%BD%A2%E5%AE%9E%E6%97%B6%E5%B1%95%E7%A4%BA/"/>
     
   </entry>
   
   <entry>
     <title>开发Kafka_Streams(3-3)</title>
-    <link href="http://djwwj.top/2019/12/06/2019-12-06-%E5%BC%80%E5%8F%91kafka_Stream(3-3)/"/>
-    <id>http://djwwj.top/2019/12/06/2019-12-06-开发kafka_Stream(3-3)/</id>
+    <link href="https://wangweijie.vip/2019/12/06/2019-12-06-%E5%BC%80%E5%8F%91kafka_Stream(3-3)/"/>
+    <id>https://wangweijie.vip/2019/12/06/2019-12-06-开发kafka_Stream(3-3)/</id>
     <published>2019-12-06T06:10:58.650Z</published>
     <updated>2019-12-06T06:15:49.848Z</updated>
     
@@ -116,27 +116,27 @@
     </summary>
     
     
-      <category term="KafkaStreams" scheme="http://djwwj.top/categories/KafkaStreams/"/>
+      <category term="KafkaStreams" scheme="https://wangweijie.vip/categories/KafkaStreams/"/>
     
     
-      <category term="kafkaStreams" scheme="http://djwwj.top/tags/kafkaStreams/"/>
+      <category term="kafkaStreams" scheme="https://wangweijie.vip/tags/kafkaStreams/"/>
     
-      <category term="流式计算" scheme="http://djwwj.top/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
+      <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="大数据分析" scheme="http://djwwj.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="解决方案" scheme="http://djwwj.top/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
-      <category term="webscoket推送" scheme="http://djwwj.top/tags/webscoket%E6%8E%A8%E9%80%81/"/>
+      <category term="webscoket推送" scheme="https://wangweijie.vip/tags/webscoket%E6%8E%A8%E9%80%81/"/>
     
-      <category term="群发消息" scheme="http://djwwj.top/tags/%E7%BE%A4%E5%8F%91%E6%B6%88%E6%81%AF/"/>
+      <category term="群发消息" scheme="https://wangweijie.vip/tags/%E7%BE%A4%E5%8F%91%E6%B6%88%E6%81%AF/"/>
     
   </entry>
   
   <entry>
     <title>开发Kafka_Streams(3-2)</title>
-    <link href="http://djwwj.top/2019/12/05/2019-12-05-%E5%BC%80%E5%8F%91kafka_Stream(3-2)/"/>
-    <id>http://djwwj.top/2019/12/05/2019-12-05-开发kafka_Stream(3-2)/</id>
+    <link href="https://wangweijie.vip/2019/12/05/2019-12-05-%E5%BC%80%E5%8F%91kafka_Stream(3-2)/"/>
+    <id>https://wangweijie.vip/2019/12/05/2019-12-05-开发kafka_Stream(3-2)/</id>
     <published>2019-12-05T07:32:25.674Z</published>
     <updated>2019-12-05T07:36:04.667Z</updated>
     
@@ -153,25 +153,25 @@
     </summary>
     
     
-      <category term="KafkaStreams" scheme="http://djwwj.top/categories/KafkaStreams/"/>
+      <category term="KafkaStreams" scheme="https://wangweijie.vip/categories/KafkaStreams/"/>
     
     
-      <category term="kafkaStreams" scheme="http://djwwj.top/tags/kafkaStreams/"/>
+      <category term="kafkaStreams" scheme="https://wangweijie.vip/tags/kafkaStreams/"/>
     
-      <category term="流式计算" scheme="http://djwwj.top/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
+      <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="大数据分析" scheme="http://djwwj.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="解决方案" scheme="http://djwwj.top/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
-      <category term="自定义数据序列化传输" scheme="http://djwwj.top/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97%E5%8C%96%E4%BC%A0%E8%BE%93/"/>
+      <category term="自定义数据序列化传输" scheme="https://wangweijie.vip/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97%E5%8C%96%E4%BC%A0%E8%BE%93/"/>
     
   </entry>
   
   <entry>
     <title>开发Kafka_Streams(3-1)</title>
-    <link href="http://djwwj.top/2019/12/04/2019-12-04-%E5%BC%80%E5%8F%91Kafka_Stream(3-1)/"/>
-    <id>http://djwwj.top/2019/12/04/2019-12-04-开发Kafka_Stream(3-1)/</id>
+    <link href="https://wangweijie.vip/2019/12/04/2019-12-04-%E5%BC%80%E5%8F%91Kafka_Stream(3-1)/"/>
+    <id>https://wangweijie.vip/2019/12/04/2019-12-04-开发Kafka_Stream(3-1)/</id>
     <published>2019-12-04T07:39:30.057Z</published>
     <updated>2019-12-04T09:40:49.539Z</updated>
     
@@ -188,25 +188,25 @@
     </summary>
     
     
-      <category term="KafkaStreams" scheme="http://djwwj.top/categories/KafkaStreams/"/>
+      <category term="KafkaStreams" scheme="https://wangweijie.vip/categories/KafkaStreams/"/>
     
     
-      <category term="kafkaStreams" scheme="http://djwwj.top/tags/kafkaStreams/"/>
+      <category term="kafkaStreams" scheme="https://wangweijie.vip/tags/kafkaStreams/"/>
     
-      <category term="流式计算" scheme="http://djwwj.top/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
+      <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="大数据分析" scheme="http://djwwj.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="解决方案" scheme="http://djwwj.top/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
-      <category term="springboot分模块整合" scheme="http://djwwj.top/tags/springboot%E5%88%86%E6%A8%A1%E5%9D%97%E6%95%B4%E5%90%88/"/>
+      <category term="springboot分模块整合" scheme="https://wangweijie.vip/tags/springboot%E5%88%86%E6%A8%A1%E5%9D%97%E6%95%B4%E5%90%88/"/>
     
   </entry>
   
   <entry>
     <title>开发Kafka_Streams2</title>
-    <link href="http://djwwj.top/2019/12/02/2019-12-02-%E5%BC%80%E5%8F%91kafka_Streams2/"/>
-    <id>http://djwwj.top/2019/12/02/2019-12-02-开发kafka_Streams2/</id>
+    <link href="https://wangweijie.vip/2019/12/02/2019-12-02-%E5%BC%80%E5%8F%91kafka_Streams2/"/>
+    <id>https://wangweijie.vip/2019/12/02/2019-12-02-开发kafka_Streams2/</id>
     <published>2019-12-02T09:55:55.315Z</published>
     <updated>2019-12-02T09:58:40.618Z</updated>
     
@@ -223,27 +223,27 @@
     </summary>
     
     
-      <category term="KafkaStreams" scheme="http://djwwj.top/categories/KafkaStreams/"/>
+      <category term="KafkaStreams" scheme="https://wangweijie.vip/categories/KafkaStreams/"/>
     
     
-      <category term="kafkaStreams" scheme="http://djwwj.top/tags/kafkaStreams/"/>
+      <category term="kafkaStreams" scheme="https://wangweijie.vip/tags/kafkaStreams/"/>
     
-      <category term="流式计算" scheme="http://djwwj.top/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
+      <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="大数据分析" scheme="http://djwwj.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="解决方案" scheme="http://djwwj.top/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
-      <category term="自定义序列器" scheme="http://djwwj.top/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BA%8F%E5%88%97%E5%99%A8/"/>
+      <category term="自定义序列器" scheme="https://wangweijie.vip/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BA%8F%E5%88%97%E5%99%A8/"/>
     
-      <category term="必要的算子" scheme="http://djwwj.top/tags/%E5%BF%85%E8%A6%81%E7%9A%84%E7%AE%97%E5%AD%90/"/>
+      <category term="必要的算子" scheme="https://wangweijie.vip/tags/%E5%BF%85%E8%A6%81%E7%9A%84%E7%AE%97%E5%AD%90/"/>
     
   </entry>
   
   <entry>
     <title>开发Kafka_Streams1</title>
-    <link href="http://djwwj.top/2019/11/14/2019-11-14-%E5%BC%80%E5%8F%91kafka_Streams1/"/>
-    <id>http://djwwj.top/2019/11/14/2019-11-14-开发kafka_Streams1/</id>
+    <link href="https://wangweijie.vip/2019/11/14/2019-11-14-%E5%BC%80%E5%8F%91kafka_Streams1/"/>
+    <id>https://wangweijie.vip/2019/11/14/2019-11-14-开发kafka_Streams1/</id>
     <published>2019-11-14T09:35:55.100Z</published>
     <updated>2019-11-14T09:41:15.627Z</updated>
     
@@ -260,27 +260,27 @@
     </summary>
     
     
-      <category term="KafkaStreams" scheme="http://djwwj.top/categories/KafkaStreams/"/>
+      <category term="KafkaStreams" scheme="https://wangweijie.vip/categories/KafkaStreams/"/>
     
     
-      <category term="kafkaStreams" scheme="http://djwwj.top/tags/kafkaStreams/"/>
+      <category term="kafkaStreams" scheme="https://wangweijie.vip/tags/kafkaStreams/"/>
     
-      <category term="流式计算" scheme="http://djwwj.top/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
+      <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="大数据分析" scheme="http://djwwj.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="解决方案" scheme="http://djwwj.top/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
-      <category term="自定义序列器" scheme="http://djwwj.top/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BA%8F%E5%88%97%E5%99%A8/"/>
+      <category term="自定义序列器" scheme="https://wangweijie.vip/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BA%8F%E5%88%97%E5%99%A8/"/>
     
-      <category term="构建生产和消费对象" scheme="http://djwwj.top/tags/%E6%9E%84%E5%BB%BA%E7%94%9F%E4%BA%A7%E5%92%8C%E6%B6%88%E8%B4%B9%E5%AF%B9%E8%B1%A1/"/>
+      <category term="构建生产和消费对象" scheme="https://wangweijie.vip/tags/%E6%9E%84%E5%BB%BA%E7%94%9F%E4%BA%A7%E5%92%8C%E6%B6%88%E8%B4%B9%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
   <entry>
     <title>kafka快速上手</title>
-    <link href="http://djwwj.top/2019/11/06/2019-11-06-Kafka%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/"/>
-    <id>http://djwwj.top/2019/11/06/2019-11-06-Kafka快速上手/</id>
+    <link href="https://wangweijie.vip/2019/11/06/2019-11-06-Kafka%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/"/>
+    <id>https://wangweijie.vip/2019/11/06/2019-11-06-Kafka快速上手/</id>
     <published>2019-11-06T08:04:33.932Z</published>
     <updated>2019-11-06T08:09:23.658Z</updated>
     
@@ -297,29 +297,29 @@
     </summary>
     
     
-      <category term="KafkaStreams" scheme="http://djwwj.top/categories/KafkaStreams/"/>
+      <category term="KafkaStreams" scheme="https://wangweijie.vip/categories/KafkaStreams/"/>
     
     
-      <category term="kafkaStreams" scheme="http://djwwj.top/tags/kafkaStreams/"/>
+      <category term="kafkaStreams" scheme="https://wangweijie.vip/tags/kafkaStreams/"/>
     
-      <category term="流式计算" scheme="http://djwwj.top/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
+      <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="应用场景" scheme="http://djwwj.top/tags/%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
+      <category term="应用场景" scheme="https://wangweijie.vip/tags/%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
     
-      <category term="大数据分析" scheme="http://djwwj.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="消息队列" scheme="http://djwwj.top/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+      <category term="消息队列" scheme="https://wangweijie.vip/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
     
-      <category term="生产者和消费者" scheme="http://djwwj.top/tags/%E7%94%9F%E4%BA%A7%E8%80%85%E5%92%8C%E6%B6%88%E8%B4%B9%E8%80%85/"/>
+      <category term="生产者和消费者" scheme="https://wangweijie.vip/tags/%E7%94%9F%E4%BA%A7%E8%80%85%E5%92%8C%E6%B6%88%E8%B4%B9%E8%80%85/"/>
     
-      <category term="日志" scheme="http://djwwj.top/tags/%E6%97%A5%E5%BF%97/"/>
+      <category term="日志" scheme="https://wangweijie.vip/tags/%E6%97%A5%E5%BF%97/"/>
     
   </entry>
   
   <entry>
     <title>kafkaStreams初识</title>
-    <link href="http://djwwj.top/2019/11/04/2019-11-04-KafkaStreams%E5%88%9D%E8%AF%86/"/>
-    <id>http://djwwj.top/2019/11/04/2019-11-04-KafkaStreams初识/</id>
+    <link href="https://wangweijie.vip/2019/11/04/2019-11-04-KafkaStreams%E5%88%9D%E8%AF%86/"/>
+    <id>https://wangweijie.vip/2019/11/04/2019-11-04-KafkaStreams初识/</id>
     <published>2019-11-04T07:24:51.956Z</published>
     <updated>2019-11-04T07:29:27.645Z</updated>
     
@@ -336,23 +336,23 @@
     </summary>
     
     
-      <category term="KafkaStreams" scheme="http://djwwj.top/categories/KafkaStreams/"/>
+      <category term="KafkaStreams" scheme="https://wangweijie.vip/categories/KafkaStreams/"/>
     
     
-      <category term="kafkaStreams" scheme="http://djwwj.top/tags/kafkaStreams/"/>
+      <category term="kafkaStreams" scheme="https://wangweijie.vip/tags/kafkaStreams/"/>
     
-      <category term="流式计算" scheme="http://djwwj.top/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
+      <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="应用场景" scheme="http://djwwj.top/tags/%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
+      <category term="应用场景" scheme="https://wangweijie.vip/tags/%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
     
-      <category term="大数据分析" scheme="http://djwwj.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
   <entry>
     <title>SpringAli链路管理</title>
-    <link href="http://djwwj.top/2019/10/11/2019-10-11-SpringAli%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA/"/>
-    <id>http://djwwj.top/2019/10/11/2019-10-11-SpringAli链路追踪/</id>
+    <link href="https://wangweijie.vip/2019/10/11/2019-10-11-SpringAli%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA/"/>
+    <id>https://wangweijie.vip/2019/10/11/2019-10-11-SpringAli链路追踪/</id>
     <published>2019-10-11T11:41:42.291Z</published>
     <updated>2019-10-11T11:48:40.638Z</updated>
     
@@ -369,25 +369,25 @@
     </summary>
     
     
-      <category term="Spring微服务" scheme="http://djwwj.top/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="Spring微服务" scheme="https://wangweijie.vip/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
     
-      <category term="Spring全家桶" scheme="http://djwwj.top/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
+      <category term="Spring全家桶" scheme="https://wangweijie.vip/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
     
-      <category term="微服务" scheme="http://djwwj.top/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="微服务" scheme="https://wangweijie.vip/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
-      <category term="高效开发" scheme="http://djwwj.top/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
+      <category term="高效开发" scheme="https://wangweijie.vip/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
     
-      <category term="链路追踪" scheme="http://djwwj.top/tags/%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA/"/>
+      <category term="链路追踪" scheme="https://wangweijie.vip/tags/%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA/"/>
     
-      <category term="应用性能管理" scheme="http://djwwj.top/tags/%E5%BA%94%E7%94%A8%E6%80%A7%E8%83%BD%E7%AE%A1%E7%90%86/"/>
+      <category term="应用性能管理" scheme="https://wangweijie.vip/tags/%E5%BA%94%E7%94%A8%E6%80%A7%E8%83%BD%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>SpringAli统一资源管理</title>
-    <link href="http://djwwj.top/2019/10/10/2019-10-10-SpringAli%E8%B5%84%E6%BA%90%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE/"/>
-    <id>http://djwwj.top/2019/10/10/2019-10-10-SpringAli资源统一配置/</id>
+    <link href="https://wangweijie.vip/2019/10/10/2019-10-10-SpringAli%E8%B5%84%E6%BA%90%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE/"/>
+    <id>https://wangweijie.vip/2019/10/10/2019-10-10-SpringAli资源统一配置/</id>
     <published>2019-10-10T08:13:11.891Z</published>
     <updated>2019-10-10T08:20:02.597Z</updated>
     
@@ -404,23 +404,23 @@
     </summary>
     
     
-      <category term="Spring微服务" scheme="http://djwwj.top/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="Spring微服务" scheme="https://wangweijie.vip/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
     
-      <category term="Spring全家桶" scheme="http://djwwj.top/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
+      <category term="Spring全家桶" scheme="https://wangweijie.vip/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
     
-      <category term="微服务" scheme="http://djwwj.top/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="微服务" scheme="https://wangweijie.vip/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
-      <category term="高效开发" scheme="http://djwwj.top/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
+      <category term="高效开发" scheme="https://wangweijie.vip/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
     
-      <category term="统一注册配置" scheme="http://djwwj.top/tags/%E7%BB%9F%E4%B8%80%E6%B3%A8%E5%86%8C%E9%85%8D%E7%BD%AE/"/>
+      <category term="统一注册配置" scheme="https://wangweijie.vip/tags/%E7%BB%9F%E4%B8%80%E6%B3%A8%E5%86%8C%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
     <title>SpringAli统一网关</title>
-    <link href="http://djwwj.top/2019/10/09/2019-10-09-SpringAli%E7%BB%9F%E4%B8%80%E7%BD%91%E5%85%B3/"/>
-    <id>http://djwwj.top/2019/10/09/2019-10-09-SpringAli统一网关/</id>
+    <link href="https://wangweijie.vip/2019/10/09/2019-10-09-SpringAli%E7%BB%9F%E4%B8%80%E7%BD%91%E5%85%B3/"/>
+    <id>https://wangweijie.vip/2019/10/09/2019-10-09-SpringAli统一网关/</id>
     <published>2019-10-09T00:24:51.541Z</published>
     <updated>2019-10-09T09:06:02.019Z</updated>
     
@@ -437,25 +437,25 @@
     </summary>
     
     
-      <category term="Spring微服务" scheme="http://djwwj.top/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="Spring微服务" scheme="https://wangweijie.vip/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
     
-      <category term="Spring全家桶" scheme="http://djwwj.top/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
+      <category term="Spring全家桶" scheme="https://wangweijie.vip/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
     
-      <category term="微服务" scheme="http://djwwj.top/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="微服务" scheme="https://wangweijie.vip/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
-      <category term="高效开发" scheme="http://djwwj.top/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
+      <category term="高效开发" scheme="https://wangweijie.vip/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
     
-      <category term="统一认证" scheme="http://djwwj.top/tags/%E7%BB%9F%E4%B8%80%E8%AE%A4%E8%AF%81/"/>
+      <category term="统一认证" scheme="https://wangweijie.vip/tags/%E7%BB%9F%E4%B8%80%E8%AE%A4%E8%AF%81/"/>
     
-      <category term="统一网关" scheme="http://djwwj.top/tags/%E7%BB%9F%E4%B8%80%E7%BD%91%E5%85%B3/"/>
+      <category term="统一网关" scheme="https://wangweijie.vip/tags/%E7%BB%9F%E4%B8%80%E7%BD%91%E5%85%B3/"/>
     
   </entry>
   
   <entry>
     <title>SpringAli服务容灾</title>
-    <link href="http://djwwj.top/2019/09/24/2019-09-24-SpringAli%E6%9C%8D%E5%8A%A1%E5%AE%B9%E7%81%BE/"/>
-    <id>http://djwwj.top/2019/09/24/2019-09-24-SpringAli服务容灾/</id>
+    <link href="https://wangweijie.vip/2019/09/24/2019-09-24-SpringAli%E6%9C%8D%E5%8A%A1%E5%AE%B9%E7%81%BE/"/>
+    <id>https://wangweijie.vip/2019/09/24/2019-09-24-SpringAli服务容灾/</id>
     <published>2019-09-24T14:07:51.520Z</published>
     <updated>2019-10-09T09:05:57.122Z</updated>
     
@@ -472,25 +472,25 @@
     </summary>
     
     
-      <category term="Spring微服务" scheme="http://djwwj.top/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="Spring微服务" scheme="https://wangweijie.vip/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
     
-      <category term="Spring全家桶" scheme="http://djwwj.top/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
+      <category term="Spring全家桶" scheme="https://wangweijie.vip/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
     
-      <category term="微服务" scheme="http://djwwj.top/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="微服务" scheme="https://wangweijie.vip/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
-      <category term="高效开发" scheme="http://djwwj.top/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
+      <category term="高效开发" scheme="https://wangweijie.vip/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
     
-      <category term="哨兵" scheme="http://djwwj.top/tags/%E5%93%A8%E5%85%B5/"/>
+      <category term="哨兵" scheme="https://wangweijie.vip/tags/%E5%93%A8%E5%85%B5/"/>
     
-      <category term="服务容灾" scheme="http://djwwj.top/tags/%E6%9C%8D%E5%8A%A1%E5%AE%B9%E7%81%BE/"/>
+      <category term="服务容灾" scheme="https://wangweijie.vip/tags/%E6%9C%8D%E5%8A%A1%E5%AE%B9%E7%81%BE/"/>
     
   </entry>
   
   <entry>
     <title>SpringAli服务消费</title>
-    <link href="http://djwwj.top/2019/09/18/2019-09-18-SpringAli%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9/"/>
-    <id>http://djwwj.top/2019/09/18/2019-09-18-SpringAli服务消费/</id>
+    <link href="https://wangweijie.vip/2019/09/18/2019-09-18-SpringAli%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9/"/>
+    <id>https://wangweijie.vip/2019/09/18/2019-09-18-SpringAli服务消费/</id>
     <published>2019-09-18T11:58:09.696Z</published>
     <updated>2019-10-09T09:05:52.857Z</updated>
     
@@ -507,21 +507,21 @@
     </summary>
     
     
-      <category term="Spring微服务" scheme="http://djwwj.top/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="Spring微服务" scheme="https://wangweijie.vip/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
     
-      <category term="Spring全家桶" scheme="http://djwwj.top/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
+      <category term="Spring全家桶" scheme="https://wangweijie.vip/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
     
-      <category term="微服务" scheme="http://djwwj.top/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="微服务" scheme="https://wangweijie.vip/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
-      <category term="高效开发" scheme="http://djwwj.top/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
+      <category term="高效开发" scheme="https://wangweijie.vip/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>SpringAli服务注册</title>
-    <link href="http://djwwj.top/2019/09/16/2019-09-16-SpringAli%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/"/>
-    <id>http://djwwj.top/2019/09/16/2019-09-16-SpringAli服务注册/</id>
+    <link href="https://wangweijie.vip/2019/09/16/2019-09-16-SpringAli%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C/"/>
+    <id>https://wangweijie.vip/2019/09/16/2019-09-16-SpringAli服务注册/</id>
     <published>2019-09-16T11:06:20.791Z</published>
     <updated>2019-10-09T09:05:43.045Z</updated>
     
@@ -538,21 +538,21 @@
     </summary>
     
     
-      <category term="Spring微服务" scheme="http://djwwj.top/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="Spring微服务" scheme="https://wangweijie.vip/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
     
-      <category term="Spring全家桶" scheme="http://djwwj.top/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
+      <category term="Spring全家桶" scheme="https://wangweijie.vip/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
     
-      <category term="微服务" scheme="http://djwwj.top/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="微服务" scheme="https://wangweijie.vip/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
-      <category term="高效开发" scheme="http://djwwj.top/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
+      <category term="高效开发" scheme="https://wangweijie.vip/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>SpringAli准备工作</title>
-    <link href="http://djwwj.top/2019/09/16/2019-09-16-SpringAli%E5%87%86%E5%A4%87/"/>
-    <id>http://djwwj.top/2019/09/16/2019-09-16-SpringAli准备/</id>
+    <link href="https://wangweijie.vip/2019/09/16/2019-09-16-SpringAli%E5%87%86%E5%A4%87/"/>
+    <id>https://wangweijie.vip/2019/09/16/2019-09-16-SpringAli准备/</id>
     <published>2019-09-16T11:06:20.782Z</published>
     <updated>2019-10-09T09:05:47.376Z</updated>
     
@@ -569,21 +569,21 @@
     </summary>
     
     
-      <category term="Spring微服务" scheme="http://djwwj.top/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="Spring微服务" scheme="https://wangweijie.vip/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
     
-      <category term="Spring全家桶" scheme="http://djwwj.top/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
+      <category term="Spring全家桶" scheme="https://wangweijie.vip/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
     
-      <category term="微服务" scheme="http://djwwj.top/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <category term="微服务" scheme="https://wangweijie.vip/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
-      <category term="高效开发" scheme="http://djwwj.top/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
+      <category term="高效开发" scheme="https://wangweijie.vip/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>Mybatis1</title>
-    <link href="http://djwwj.top/2019/09/10/2019-09-10-Mybatis(%E7%BC%98)/"/>
-    <id>http://djwwj.top/2019/09/10/2019-09-10-Mybatis(缘)/</id>
+    <link href="https://wangweijie.vip/2019/09/10/2019-09-10-Mybatis(%E7%BC%98)/"/>
+    <id>https://wangweijie.vip/2019/09/10/2019-09-10-Mybatis(缘)/</id>
     <published>2019-09-10T05:04:20.160Z</published>
     <updated>2019-10-09T09:12:22.774Z</updated>
     
@@ -600,21 +600,21 @@
     </summary>
     
     
-      <category term="Mybatis" scheme="http://djwwj.top/categories/Mybatis/"/>
+      <category term="Mybatis" scheme="https://wangweijie.vip/categories/Mybatis/"/>
     
     
-      <category term="数据持久化" scheme="http://djwwj.top/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+      <category term="数据持久化" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
     
-      <category term="orm" scheme="http://djwwj.top/tags/orm/"/>
+      <category term="orm" scheme="https://wangweijie.vip/tags/orm/"/>
     
-      <category term="半自动" scheme="http://djwwj.top/tags/%E5%8D%8A%E8%87%AA%E5%8A%A8/"/>
+      <category term="半自动" scheme="https://wangweijie.vip/tags/%E5%8D%8A%E8%87%AA%E5%8A%A8/"/>
     
   </entry>
   
   <entry>
     <title>Nginx使用</title>
-    <link href="http://djwwj.top/2019/08/23/2019-09-10-Nginx/"/>
-    <id>http://djwwj.top/2019/08/23/2019-09-10-Nginx/</id>
+    <link href="https://wangweijie.vip/2019/08/23/2019-09-10-Nginx/"/>
+    <id>https://wangweijie.vip/2019/08/23/2019-09-10-Nginx/</id>
     <published>2019-08-23T06:10:39.412Z</published>
     <updated>2019-10-09T09:05:21.344Z</updated>
     
@@ -632,21 +632,21 @@
     </summary>
     
     
-      <category term="服务器" scheme="http://djwwj.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="服务器" scheme="https://wangweijie.vip/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     
-      <category term="容器" scheme="http://djwwj.top/tags/%E5%AE%B9%E5%99%A8/"/>
+      <category term="容器" scheme="https://wangweijie.vip/tags/%E5%AE%B9%E5%99%A8/"/>
     
-      <category term="服务器" scheme="http://djwwj.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="服务器" scheme="https://wangweijie.vip/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="负载均衡" scheme="http://djwwj.top/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/"/>
+      <category term="负载均衡" scheme="https://wangweijie.vip/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/"/>
     
   </entry>
   
   <entry>
     <title>Redis2</title>
-    <link href="http://djwwj.top/2019/08/20/2019-09-10-Redis(%E4%BB%BD)/"/>
-    <id>http://djwwj.top/2019/08/20/2019-09-10-Redis(份)/</id>
+    <link href="https://wangweijie.vip/2019/08/20/2019-09-10-Redis(%E4%BB%BD)/"/>
+    <id>https://wangweijie.vip/2019/08/20/2019-09-10-Redis(份)/</id>
     <published>2019-08-20T07:57:46.122Z</published>
     <updated>2019-10-09T09:04:44.292Z</updated>
     
@@ -663,23 +663,23 @@
     </summary>
     
     
-      <category term="数据库" scheme="http://djwwj.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://wangweijie.vip/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="数据持久化" scheme="http://djwwj.top/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+      <category term="数据持久化" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
     
-      <category term="分关系型数据库" scheme="http://djwwj.top/tags/%E5%88%86%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="分关系型数据库" scheme="https://wangweijie.vip/tags/%E5%88%86%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="内存型数据库" scheme="http://djwwj.top/tags/%E5%86%85%E5%AD%98%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="内存型数据库" scheme="https://wangweijie.vip/tags/%E5%86%85%E5%AD%98%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="缓存" scheme="http://djwwj.top/tags/%E7%BC%93%E5%AD%98/"/>
+      <category term="缓存" scheme="https://wangweijie.vip/tags/%E7%BC%93%E5%AD%98/"/>
     
   </entry>
   
   <entry>
     <title>Redis1</title>
-    <link href="http://djwwj.top/2019/08/17/2019-09-10-Redis(%E7%BC%98)/"/>
-    <id>http://djwwj.top/2019/08/17/2019-09-10-Redis(缘)/</id>
+    <link href="https://wangweijie.vip/2019/08/17/2019-09-10-Redis(%E7%BC%98)/"/>
+    <id>https://wangweijie.vip/2019/08/17/2019-09-10-Redis(缘)/</id>
     <published>2019-08-17T14:34:10.955Z</published>
     <updated>2019-10-09T09:04:50.348Z</updated>
     
@@ -697,16 +697,16 @@
     </summary>
     
     
-      <category term="数据库" scheme="http://djwwj.top/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://wangweijie.vip/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="数据持久化" scheme="http://djwwj.top/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+      <category term="数据持久化" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
     
-      <category term="分关系型数据库" scheme="http://djwwj.top/tags/%E5%88%86%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="分关系型数据库" scheme="https://wangweijie.vip/tags/%E5%88%86%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="内存型数据库" scheme="http://djwwj.top/tags/%E5%86%85%E5%AD%98%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="内存型数据库" scheme="https://wangweijie.vip/tags/%E5%86%85%E5%AD%98%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="缓存" scheme="http://djwwj.top/tags/%E7%BC%93%E5%AD%98/"/>
+      <category term="缓存" scheme="https://wangweijie.vip/tags/%E7%BC%93%E5%AD%98/"/>
     
   </entry>
   
