@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[开发Kafka_Streams晋阶之路(归约和聚合)]]></title>
+    <url>%2F2020%2F01%2F08%2F2020-01-08-kafkaStream%E6%99%8B%E9%98%B6%E4%B9%8B%E8%B7%AF(%E5%BD%92%E7%BA%A6%E5%92%8C%E8%81%9A%E5%90%88)%2F</url>
+    <content type="text"><![CDATA[归约比聚合相对容易,但是聚合可以做更多的事情 知识点 归约和聚合概念 解决实际需求 如何归约 如何聚合 归约和聚合概念1.归约即是reduce,代表着累加求和，无论是在现在的python已经jdk新特性中都有体现 2.聚合即是aggregate,代表着聚集合并在一起的操作,一般来说归约和聚合在一起是一种完美的搭配 相对参考的文章 解决实际需求 比如股票在不断的交易。累计计算从开始成交的总和 总和有的情况下,获取交易量前5.(按照成交量决定) 如何归约(代码示例)reduce构建一个普通的用户交易记录123456789101112131415161718public class StockTransaction &#123; //股票标记 private String symbol; //股票领域 private String sector; //股票分类 private String industry; //成交量 private int shares; //成交价格 private double sharePrice; //用户编号 private String customerId; //交易时间 private Date transactionTimestamp; //是否成交 private boolean purchase;&#125; 构建一个提取交易量的记录类1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950public class ShareVolume &#123; //股票标记 private String symbol; //成交量 private int shares; //股票领域 private String industry; public String getSymbol() &#123; return symbol; &#125; public void setSymbol(String symbol) &#123; this.symbol = symbol; &#125; public int getShares() &#123; return shares; &#125; public void setShares(int shares) &#123; this.shares = shares; &#125; public String getIndustry() &#123; return industry; &#125; public void setIndustry(String industry) &#123; this.industry = industry; &#125; public ShareVolume() &#123; // TODO Auto-generated constructor stub &#125; public ShareVolume(String symbol, int shares, String industry) &#123; super(); this.symbol = symbol; this.shares = shares; this.industry = industry; &#125; //构建一个shareVolume对象 public static ShareVolume buildInstance(StockTransaction st) &#123; ShareVolume sv = new ShareVolume(st.getSymbol(), st.getShares(), st.getIndustry()); return sv; &#125; //构建一个统计总和对象 public static ShareVolume sum(ShareVolume s1,ShareVolume s2) &#123; ShareVolume sv = new ShareVolume(); sv.setIndustry(s2.getIndustry()); sv.setSymbol(s1.getSymbol()); sv.setShares(s1.getShares()+s2.getShares()); return sv; &#125;&#125; 分别构建对应的序列化器12345678910111213public class ShareVolumeSerde extends WrapperSerde&lt;ShareVolume&gt; &#123; public ShareVolumeSerde() &#123; super(new JsonSerializer&lt;&gt;(), new JsonDeserializer&lt;&gt;(ShareVolume.class)); &#125;&#125;-------------------public class StockTransactionSerde extends WrapperSerde&lt;StockTransaction&gt; &#123; public StockTransactionSerde() &#123; super(new JsonSerializer&lt;&gt;(), new JsonDeserializer&lt;&gt;(StockTransaction.class)); &#125;&#125; 构建流程序 先看下reduce接口 123456789101112public interface Reducer&lt;V&gt; &#123; /** * 合二为一 * Aggregate the two given values into a single one. * * @param value1 the first value for the aggregation * @param value2 the second value for the aggregation * @return the aggregated value */ V apply(final V value1, final V value2);&#125; 流程序代码示例 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859public class RG_Stream &#123; public static void main(String[] args) &#123; Properties props = new Properties(); props.put(StreamsConfig.APPLICATION_ID_CONFIG, &quot;KTable-aggregations&quot;); props.put(ConsumerConfig.GROUP_ID_CONFIG, &quot;KTable-aggregations-id&quot;); props.put(ConsumerConfig.CLIENT_ID_CONFIG, &quot;KTable-aggregations-client&quot;); props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, &quot;earliest&quot;); props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, &quot;30000&quot;); props.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, &quot;10000&quot;); props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, &quot;localhost:9092&quot;); props.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, &quot;1&quot;); props.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, &quot;10000&quot;); props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName()); props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, new StockTransactionSerde().getClass().getName()); props.put(StreamsConfig.REPLICATION_FACTOR_CONFIG, 1); props.put(StreamsConfig.DEFAULT_TIMESTAMP_EXTRACTOR_CLASS_CONFIG, WallclockTimestampExtractor.class); /** * 构建流 */ StreamsConfig streamsConfig = new StreamsConfig(props); // 创建流的构造器 StreamsBuilder streamsBuilder = new StreamsBuilder(); KeyValueMapper&lt;String, ShareVolume, String&gt; classKey1 = (key, sharevolume) -&gt; sharevolume.getSymbol(); KStream&lt;String, ShareVolume&gt; shareStream = streamsBuilder.stream(&quot;STTOPIC&quot;,Consumed.with(Serdes.String(),new StockTransactionSerde())) .mapValues(st -&gt;ShareVolume.buildInstance(st)); shareStream.print(Printed.&lt;String, ShareVolume&gt;toSysOut().withLabel(&quot;股票信息&quot;)); KTable&lt;String, ShareVolume&gt; shareKTable = shareStream .selectKey(classKey1) .groupByKey(Serialized.with(Serdes.String(), new ShareVolumeSerde())) .reduce(ShareVolume::sum); shareKTable.toStream().print(Printed.&lt;String, ShareVolume&gt;toSysOut().withLabel(&quot;股票成交量总量变更&quot;)); // 开启流 final KafkaStreams streams = new KafkaStreams(streamsBuilder.build(), streamsConfig); final CountDownLatch latch = new CountDownLatch(1); Runtime.getRuntime().addShutdownHook(new Thread(&quot;streams-jvm-shutdown-hook&quot;) &#123; @Override public void run() &#123; streams.close(); latch.countDown(); &#125; &#125;); try &#123; streams.start(); latch.await(); &#125; catch (Exception e) &#123; System.exit(1); &#125; System.exit(0); &#125; &#125; 注意:在流内部设置从最先开始消费,这个配置大于初始配置。 代码测试 开起zookeeper 开起kafka 创建主题”STTOPIC” 启动流程序 模拟数据发送 123456789101112131415161718192021222324public class TestProducer2 &#123; public static void main(String[] args) &#123; //模拟数据 StockTransaction record = new StockTransaction(); record.setSymbol(&quot;好当家&quot;); record.setSector(&quot;食品&quot;); record.setIndustry(&quot;生产类&quot;); record.setShares(1000); record.setSharePrice(5.00); record.setCustomerId(&quot;001&quot;); record.setTransactionTimestamp(new Date()); record.setPurchase(true); //配置生产者 Properties properties = new Properties(); properties.put(&quot;bootstrap.servers&quot;, &quot;localhost:9092&quot;); properties.put(&quot;acks&quot;, &quot;1&quot;); properties.put(&quot;retries&quot;, &quot;3&quot;); properties.put(&quot;compression.type&quot;, &quot;snappy&quot;); KafkaProducer&lt;String, StockTransaction&gt; kp = new KafkaProducer&lt;String,StockTransaction&gt;(properties,new StringSerializer(),new JsonSerializer&lt;StockTransaction&gt;()); kp.send(new ProducerRecord&lt;String, StockTransaction&gt;(&quot;STTOPIC&quot;, record)); kp.close(); &#125;&#125; 结论如下: 即使是断掉程序，在重启程序后，计算依然保持从头开始 如何聚合(代码示例)aggregate在聚合之前,归约是聚合的一种形式。归约操作是将产生相同类型的对象,聚合也是对结果求和。但是可以返回不同的类型 现在有一个需求,获取股票交易量前5的，降序产生 构建一个降序的优先级队列并构建序列化器 12345678910111213141516171819202122232425262728293031public class FixedSizePriorityQueue&lt;T&gt; &#123; private TreeSet&lt;T&gt; inner; private int maxSize; public FixedSizePriorityQueue(Comparator&lt;T&gt; comparator, int maxSize) &#123; this.inner = new TreeSet&lt;&gt;(comparator); this.maxSize = maxSize; &#125; public FixedSizePriorityQueue&lt;T&gt; add(T element) &#123; inner.add(element); if (inner.size() &gt; maxSize) &#123; inner.pollLast(); &#125; return this; &#125; public FixedSizePriorityQueue&lt;T&gt; remove(T element) &#123; if (inner.contains(element)) &#123; inner.remove(element); &#125; return this; &#125; public Iterator&lt;T&gt; iterator() &#123; return inner.iterator(); &#125;&#125; 改进流式程序 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798public class RG_Stream &#123; public static void main(String[] args) &#123; Properties props = new Properties(); props.put(StreamsConfig.APPLICATION_ID_CONFIG, &quot;KTable-aggregation&quot;); props.put(ConsumerConfig.GROUP_ID_CONFIG, &quot;KTable-aggregations-i&quot;); props.put(ConsumerConfig.CLIENT_ID_CONFIG, &quot;KTable-aggregations-clien&quot;); props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, &quot;earliest&quot;); props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, &quot;30000&quot;); props.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, &quot;10000&quot;); props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, &quot;localhost:9092&quot;); props.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, &quot;1&quot;); props.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, &quot;10000&quot;); props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName()); props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, new StockTransactionSerde().getClass().getName()); props.put(StreamsConfig.REPLICATION_FACTOR_CONFIG, 1); props.put(StreamsConfig.DEFAULT_TIMESTAMP_EXTRACTOR_CLASS_CONFIG, WallclockTimestampExtractor.class); /** * 构建流 */ StreamsConfig streamsConfig = new StreamsConfig(props); // 创建流的构造器 StreamsBuilder streamsBuilder = new StreamsBuilder(); /** * 使用reduce */ KeyValueMapper&lt;String, ShareVolume, String&gt; classKey1 = (key, sharevolume) -&gt; sharevolume.getSymbol(); KStream&lt;String, ShareVolume&gt; shareStream = streamsBuilder.stream(&quot;ST2&quot;,Consumed.with(Serdes.String(),new StockTransactionSerde())) .mapValues(st -&gt;ShareVolume.buildInstance(st)); shareStream.print(Printed.&lt;String, ShareVolume&gt;toSysOut().withLabel(&quot;股票信息&quot;)); KTable&lt;String, ShareVolume&gt; shareKTable = shareStream .selectKey(classKey1) .groupByKey(Serialized.with(Serdes.String(), new ShareVolumeSerde())) .reduce(ShareVolume::sum); shareKTable.toStream().print(Printed.&lt;String, ShareVolume&gt;toSysOut().withLabel(&quot;股票成交量总量变更&quot;)); /** * 使用aggreate */ Comparator&lt;ShareVolume&gt; comparator = (s1,s2) -&gt; s2.getShares()-s1.getShares(); FixedSizePriorityQueue&lt;ShareVolume&gt; fixedQueue = new FixedSizePriorityQueue&lt;&gt;(comparator, 5); ValueMapper&lt;FixedSizePriorityQueue, String&gt; valueMapper = fpq -&gt;&#123; StringBuilder builder = new StringBuilder(); Iterator&lt;ShareVolume&gt; iterator = fpq.iterator(); int counter= 1; while (iterator.hasNext()) &#123; ShareVolume stockVolume = iterator.next(); if (stockVolume != null) &#123; builder.append(counter++).append(&quot;)&quot;).append(stockVolume.getSymbol()) .append(&quot;:&quot;).append(NumberFormat.getInstance().format(stockVolume.getShares())).append(&quot; &quot;); &#125; &#125; return builder.toString(); &#125;; //pair重新生成 new key-value pair KTable&lt;String, String&gt; fixKTable = shareKTable.groupBy((k, v) -&gt; KeyValue.pair(v.getIndustry(), v), Serialized.with(Serdes.String(), new ShareVolumeSerde())) .aggregate(() -&gt; fixedQueue, (k, v, agg) -&gt; agg.add(v), (k, v, agg) -&gt; agg.remove(v), Materialized.with(Serdes.String(), new FixedSizePriorityQueueSerde())) .mapValues(valueMapper); //peek可用于作日志记录 .peek((k,v) -&gt; System.out.println(&quot;key值&quot;+k+&quot;------value&quot;+v)); fixKTable.toStream() .print(Printed.&lt;String, String&gt;toSysOut().withLabel(&quot;股票信息&quot;)); // 开启流 final KafkaStreams streams = new KafkaStreams(streamsBuilder.build(), streamsConfig); final CountDownLatch latch = new CountDownLatch(1); Runtime.getRuntime().addShutdownHook(new Thread(&quot;streams-jvm-shutdown-hook&quot;) &#123; @Override public void run() &#123; streams.close(); latch.countDown(); &#125; &#125;); try &#123; streams.start(); latch.await(); &#125; catch (Exception e) &#123; System.exit(1); &#125; System.exit(0); &#125; &#125; 额外附属的操作(添加对复杂对象的序列化适配器) 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253public class FixedSizePriorityQueueAdapter extends TypeAdapter&lt;FixedSizePriorityQueue&lt;ShareVolume&gt;&gt; &#123; private Gson gson = new Gson(); /** * 需要被序列化的对象 */ @Override public void write(JsonWriter writer, FixedSizePriorityQueue&lt;ShareVolume&gt; value) throws IOException &#123; if (value == null) &#123; writer.nullValue(); return; &#125; Iterator&lt;ShareVolume&gt; iterator = value.iterator(); List&lt;ShareVolume&gt; list = new ArrayList&lt;&gt;(); while (iterator.hasNext()) &#123; ShareVolume stockTransaction = iterator.next(); if (stockTransaction != null) &#123; list.add(stockTransaction); &#125; &#125; writer.beginArray(); for (ShareVolume transaction : list) &#123; writer.value(gson.toJson(transaction)); &#125; writer.endArray(); &#125; /** * 反序列化实例 */ @Override public FixedSizePriorityQueue&lt;ShareVolume&gt; read(JsonReader reader) throws IOException &#123; List&lt;ShareVolume&gt; list = new ArrayList&lt;&gt;(); reader.beginArray(); while (reader.hasNext()) &#123; list.add(gson.fromJson(reader.nextString(), ShareVolume.class)); &#125; reader.endArray(); Comparator&lt;ShareVolume&gt; c = (c1, c2) -&gt; c2.getShares() - c1.getShares(); FixedSizePriorityQueue&lt;ShareVolume&gt; fixedSizePriorityQueue = new FixedSizePriorityQueue&lt;&gt;(c, 5); for (ShareVolume transaction : list) &#123; fixedSizePriorityQueue.add(transaction); &#125; return fixedSizePriorityQueue; &#125;&#125; 注册到反序列化器中(修订) 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152public class JsonDeserializer&lt;T&gt; implements Deserializer&lt;T&gt; &#123; private Gson gson; private Class&lt;T&gt; deserializedClass; private Type reflectionTypeToken; public JsonDeserializer(Class&lt;T&gt; deserializedClass) &#123; this.deserializedClass = deserializedClass; init(); &#125; public JsonDeserializer(Type reflectionTypeToken) &#123; this.reflectionTypeToken = reflectionTypeToken; init(); &#125; private void init () &#123; GsonBuilder builder = new GsonBuilder(); builder.registerTypeAdapter(FixedSizePriorityQueue.class, new FixedSizePriorityQueueAdapter().nullSafe()); gson = builder.create(); &#125; public JsonDeserializer() &#123; &#125; @Override @SuppressWarnings(&quot;unchecked&quot;) public void configure(Map&lt;String, ?&gt; map, boolean b) &#123; if(deserializedClass == null) &#123; deserializedClass = (Class&lt;T&gt;) map.get(&quot;serializedClass&quot;); &#125; &#125; @Override public T deserialize(String s, byte[] bytes) &#123; if(bytes == null)&#123; return null; &#125; Type deserializeFrom = deserializedClass != null ? deserializedClass : reflectionTypeToken; return gson.fromJson(new String(bytes),deserializeFrom); &#125; @Override public void close() &#123; &#125; &#125;&#125; FixedSizePriorityQueueSerde修订 123456public class FixedSizePriorityQueueSerde extends WrapperSerde&lt;FixedSizePriorityQueue&gt;&#123; public FixedSizePriorityQueueSerde() &#123; super(new JsonSerializer&lt;&gt;(), new JsonDeserializer&lt;&gt;(new TypeToken&lt;FixedSizePriorityQueue&lt;ShareVolume&gt;&gt;() &#123;&#125;.getType())); &#125;&#125; 注意: ShareVolume同时实现compareble 后续代码改进:可以考虑修订comparetor 测试代码通过 关机重启 数据计算保持一致]]></content>
+      <categories>
+        <category>KafkaStreams</category>
+      </categories>
+      <tags>
+        <tag>kafkaStreams</tag>
+        <tag>流式计算</tag>
+        <tag>解决方案</tag>
+        <tag>大数据分析</tag>
+        <tag>数据状态</tag>
+        <tag>聚合</tag>
+        <tag>归约</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[开发Kafka_Streams晋阶之路(KTable)]]></title>
     <url>%2F2020%2F01%2F03%2F2020-01-03-kafkaStream%E6%99%8B%E9%98%B6%E4%B9%8B%E8%B7%AF(KTable)%2F</url>
     <content type="text"><![CDATA[只有清晰的明白流和表，你才有可能明白聚合以及开窗 知识要点 流与表的关系 记录流概念 更新记录和日志 2者之间的对比 工作原理 流与表的关系在生活中,我们无时无刻都在产生一些事件,每个事件上面都可以看成在历史的记录中不断的添加一笔新的操作.而这些记录与其他的记录无关，都是独立的。 记录流的概念流被定义为无限的事件序列 例如股票市场中,每只股票的报价都是一个离散时间,它们彼此之间没有任何关联。即使一家公司股票有多次报价。在某个时候我们称作为记录流,如图: 每个时间就是一个插入项，为表中每个插入项建立一个地增量为1的key 更定记录和变更日志如果讲事件流看成是一个日志,更新流可以看成是一个不断在变更的日志。 如上图所示，如果以股票名字作为主键。那么动作发生将是更新操作。 注意:日志和变更日志都是讲记录追加到文件末尾,在日志中可以看到所有的记录.但是在变更日志中,对任何一个给定键只保留最新记录。 对于变更日志和更新流来说,我们用KTable进行抽象的表现与描述 2者之间的对比通过代码我们来进行呈现说明 构建股票信息类StockMsg 123456public class StockMsg &#123; //股票价格 private double stockPrice; //股票名字 private String stockName; &#125; 改进通用化序列器 123456789101112131415161718192021222324252627282930313233343536373839404142public class WrapperSerde&lt;T&gt; implements Serde&lt;T&gt;&#123; private JsonSerializer&lt;T&gt; serializer; private JsonDeserializer&lt;T&gt; deserializer; public WrapperSerde() &#123; super(); // TODO Auto-generated constructor stub &#125; public WrapperSerde(JsonSerializer&lt;T&gt; serializer, JsonDeserializer&lt;T&gt; deserializer) &#123; this.serializer = serializer; this.deserializer = deserializer; &#125; @Override public void configure(Map&lt;String, ?&gt; configs, boolean isKey) &#123; // TODO Auto-generated method stub &#125; @Override public void close() &#123; // TODO Auto-generated method stub &#125; @Override public Serializer&lt;T&gt; serializer() &#123; // TODO Auto-generated method stub return serializer; &#125; @Override public Deserializer&lt;T&gt; deserializer() &#123; // TODO Auto-generated method stub return deserializer; &#125;&#125; 类序列器的构建 123456public class StockSerde extends WrapperSerde&lt;StockMsg&gt;&#123; public StockSerde() &#123; super(new JsonSerializer&lt;&gt;(), new JsonDeserializer&lt;&gt;(StockMsg.class)); &#125;&#125; 构建流式程序1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465public class KTVSKS_Stream &#123; public static void main(String[] args) &#123; Properties props = new Properties(); // stream流的名字 props.put(StreamsConfig.APPLICATION_ID_CONFIG, &quot;KStreamVSKTable_app&quot;); // 消费者组名字 props.put(ConsumerConfig.GROUP_ID_CONFIG, &quot;KStreamVSKTable_group&quot;); // 消费者名字 props.put(ConsumerConfig.CLIENT_ID_CONFIG, &quot;KStreamVSKTable_client&quot;); // 每次消费最新的数据 props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, &quot;latest&quot;); // 自动提交偏移 props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, &quot;30000&quot;); props.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, &quot;15000&quot;); // 服务器地址 props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, &quot;localhost:9092&quot;); // 并行的线程数 props.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, &quot;1&quot;); props.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, &quot;10000&quot;); props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName()); props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, new StockSerde().getClass().getName()); props.put(StreamsConfig.REPLICATION_FACTOR_CONFIG, 1); props.put(StreamsConfig.DEFAULT_TIMESTAMP_EXTRACTOR_CLASS_CONFIG, WallclockTimestampExtractor.class); /** * 构建流 */ StreamsConfig streamsConfig = new StreamsConfig(props); // 创建流的构造器 StreamsBuilder streamsBuilder = new StreamsBuilder(); // 分别创建KStream和KTable实例并打印 KeyValueMapper&lt;String, StockMsg, String&gt; classKey1 = (key, stock) -&gt; stock.getStockName(); KStream&lt;String, StockMsg&gt; stockStream = streamsBuilder.stream(&quot;STOCKTOPIC&quot;); KStream&lt;String, StockMsg&gt; ssKStream = stockStream.selectKey(classKey1); ssKStream.to(&quot;STOCKTOPICTABLE&quot;); ssKStream.print(Printed.&lt;String, StockMsg&gt;toSysOut().withLabel(&quot;股市交易流&quot;)); KTable&lt;String, StockMsg&gt; stocKTable = streamsBuilder.table(&quot;STOCKTOPICTABLE&quot;); stocKTable.toStream().print(Printed.&lt;String, StockMsg&gt;toSysOut().withLabel(&quot;股市交易表&quot;)); // 开启流 final KafkaStreams streams = new KafkaStreams(streamsBuilder.build(), streamsConfig); final CountDownLatch latch = new CountDownLatch(1); Runtime.getRuntime().addShutdownHook(new Thread(&quot;streams-jvm-shutdown-hook&quot;) &#123; @Override public void run() &#123; streams.close(); latch.countDown(); &#125; &#125;); try &#123; streams.start(); latch.await(); &#125; catch (Exception e) &#123; System.exit(1); &#125; System.exit(0); &#125;&#125; 模拟生产者 12345678910111213141516public static void main(String[] args) &#123; //模拟数据 StockMsg record = new StockMsg(); record.setStockName(&quot;好当家&quot;); record.setStockPrice(3.09); //配置生产者 Properties properties = new Properties(); properties.put(&quot;bootstrap.servers&quot;, &quot;localhost:9092&quot;); properties.put(&quot;acks&quot;, &quot;1&quot;); properties.put(&quot;retries&quot;, &quot;3&quot;); properties.put(&quot;compression.type&quot;, &quot;snappy&quot;); KafkaProducer&lt;String, StockMsg&gt; kp = new KafkaProducer&lt;String,StockMsg&gt;(properties,new StringSerializer(),new JsonSerializer&lt;StockMsg&gt;()); kp.send(new ProducerRecord&lt;String, StockMsg&gt;(&quot;STOCKTOPIC&quot;, record)); kp.send(new ProducerRecord&lt;String, StockMsg&gt;(&quot;STOCKTOPICTABLE&quot;, record)); kp.close(); &#125; 测试 启动zookeeper 启动kafka 创建主题–STOCKTOPIC 和 STOCKTOPICTABLE 启动流程序 (需要指定key值) 模拟数据发送 注意:表始终在更新以最新的标准被基准，当然前提是流有进行过选择对应的key值 工作原理1.在创建KTable的时候,同时在后台创建了一个追踪流状态的状态存储,从而创建了一个更新流。创建后会有一个内容名称，但是 不能显式的进行交互式访问。但是KTable通过使用Materialized(计量)可以进行显式的查询 2.KTable何时进行更新,并发往下游处理器. 因素 较高的数据流入速率将增加发送更新记录的频率 不同键越多 通过配置cache.max.bytes.buffering以及commit.intrval.ms达到更新的设置 cache.max.bytes.buffering设置缓存缓冲大小 设置该缓存用于删除具有相同键重复的更新记录。使用持久化存储时就可以显著提升性能 commit.intrval.ms设置提交时间间隔 提交间隔参数用来指定保存数据的频率，它会强制刷新，将最新的记录更新，并发送到下游 注意:默认的提交时间是30秒以及默认10M缓存，当然在上线之前，肯定要平衡大小和时间以及处理的线程数。这个是需要进行考量的。]]></content>
@@ -10,8 +27,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>数据状态</tag>
         <tag>数据表</tag>
         <tag>遇见未来聚合和开窗</tag>
@@ -27,8 +44,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>数据状态</tag>
         <tag>连接形态</tag>
         <tag>洞察力</tag>
@@ -44,8 +61,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>数据状态</tag>
         <tag>主观意识形态</tag>
         <tag>数据形态</tag>
@@ -61,8 +78,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>webscoket推送</tag>
         <tag>群发消息</tag>
         <tag>图形实时展示</tag>
@@ -78,8 +95,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>webscoket推送</tag>
         <tag>群发消息</tag>
       </tags>
@@ -94,8 +111,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>自定义数据序列化传输</tag>
       </tags>
   </entry>
@@ -109,8 +126,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>springboot分模块整合</tag>
       </tags>
   </entry>
@@ -124,8 +141,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>自定义序列器</tag>
         <tag>必要的算子</tag>
       </tags>
@@ -140,8 +157,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>自定义序列器</tag>
         <tag>构建生产和消费对象</tag>
       </tags>
@@ -156,8 +173,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>应用场景</tag>
         <tag>大数据分析</tag>
+        <tag>应用场景</tag>
         <tag>消息队列</tag>
         <tag>生产者和消费者</tag>
         <tag>日志</tag>
@@ -173,8 +190,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>应用场景</tag>
         <tag>大数据分析</tag>
+        <tag>应用场景</tag>
       </tags>
   </entry>
   <entry>
