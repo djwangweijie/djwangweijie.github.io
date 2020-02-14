@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangweijie.vip/"/>
-  <updated>2020-01-08T03:02:12.113Z</updated>
+  <updated>2020-02-14T08:41:15.725Z</updated>
   <id>https://wangweijie.vip/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据分析前的准备工作</title>
+    <link href="https://wangweijie.vip/2020/02/14/2020-02-14-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/"/>
+    <id>https://wangweijie.vip/2020/02/14/2020-02-14-数据分析前的准备工作/</id>
+    <published>2020-02-14T08:37:39.234Z</published>
+    <updated>2020-02-14T08:41:15.725Z</updated>
+    
+    <content type="html"><![CDATA[<p>做好数据分析,先好好理解数据和工具</p><h1 id="数据分析前的准备工作"><a href="#数据分析前的准备工作" class="headerlink" title="数据分析前的准备工作"></a>数据分析前的准备工作</h1><ol><li>数据与python</li><li>python处理数据问题上面重要的库</li><li>环境安装以及常用的学习工具与开发工具</li></ol><h1 id="数据与python"><a href="#数据与python" class="headerlink" title="数据与python"></a>数据与python</h1><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><p>**  数据这个词是抽象的,我们如何认识数据,有2个点我们需要我们作为前提 **</p><ol><li>数据有可能代表是世界,人等一切事物,及时杂乱无序,但是也在当中存在规律</li><li>从数据中找到合适的规律和特点,那么我们需要结构化数据。那么结构化的数据有哪些？比如:表格类型的数据,多维数组,通过关键列构建的表格类型数据等</li></ol><p><strong>* 注意:大部分数据集都能转换成结构化的数据,结构化只是一种形式,更多的还是人自主的思维能力.比如:一组新闻文章里面的内容可以提取出词频表,而这个表就可以对于以后的情感进行分析 *</strong></p><h2 id="为什么选择用python"><a href="#为什么选择用python" class="headerlink" title="为什么选择用python"></a>为什么选择用python</h2><ol><li>python作为胶水语言可以随时沾和随时撕掉</li><li>python语言在设计的过程中就是构建以数据为中心的应用型数据</li><li>python适用于构建分析应用和一些常见的通用系统(日常的管理系统)</li></ol><p>** 注:python作为一种解释性语言没有编译性语言的运行时间效率要高.这也是python的不足之处 **</p><h1 id="python重要的库"><a href="#python重要的库" class="headerlink" title="python重要的库"></a>python重要的库</h1><blockquote><p>Numpy (数值处理)</p></blockquote><ol><li>可以构建快速高效的多维数组对象(ndarray)</li><li>可以用于对数组执行数学运算和计算.提供了大量的函数</li><li>可以用于读写硬盘中基于数组的数据集的工具</li><li>常见的线性代数等包含随机数的生成</li></ol><blockquote><p>pandas (面板数据)</p></blockquote><ol><li>能够处理大量结构化数据</li><li>常用的2个对象一个是DataFrame和Series,分别是面向列的二维表结构以及一个一维的标签化数组对象</li><li>提供复杂精细的索引功能,能够快速的完成重塑,切片,切块,聚合以及选取数据子集等操作</li></ol><blockquote><p>matplotlib</p></blockquote><ol><li>绘制图表以及其他二维数据可视化的工具</li></ol><blockquote><p>ipython与jupyter</p></blockquote><ol><li>2个都是良好的交互工具</li><li>ipython用于运行，调试，测试等操作</li><li>jupyter良好的学习笔记工具</li></ol><blockquote><p>Scipy与scikit-learn与statsmodels</p></blockquote><ol><li>Scipy解决计算中各种标准问题域</li><li>scikit-learn机器学习的工具包,偏重于预测</li><li>statsmodels统计分析包,偏重于统计与推断</li></ol><h1 id="环境安装以及常用的学习工具"><a href="#环境安装以及常用的学习工具" class="headerlink" title="环境安装以及常用的学习工具"></a>环境安装以及常用的学习工具</h1><h2 id="python环境的安装"><a href="#python环境的安装" class="headerlink" title="python环境的安装"></a>python环境的安装</h2><p><strong>* python环境的安装不在进行说明,只是需要注意的是检查不同系统的变量设置,macos系统比较特殊,需要检查.bash_prifile中是否添加*</strong></p><blockquote><p>ipython</p></blockquote><p><img src="/images/resources/0F0228205486739552A6EC6780BA2B68.jpg" alt="IMAGE"></p><blockquote><p>jupyter</p></blockquote><p>1.更新pip<br>python -m pip install -U pip setuptools</p><p>2.安装,使用国内源满速安装<br>pip install jupyter -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a></p><p>3.在命令中直接jupyter notebook</p><p><img src="/images/resources/2A5E8FE12AE7421DA99315DFC30983A7.jpg" alt="IMAGE"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;做好数据分析,先好好理解数据和工具&lt;/p&gt;
+&lt;h1 id=&quot;数据分析前的准备工作&quot;&gt;&lt;a href=&quot;#数据分析前的准备工作&quot; class=&quot;headerlink&quot; title=&quot;数据分析前的准备工作&quot;&gt;&lt;/a&gt;数据分析前的准备工作&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;数据与pyth
+      
+    
+    </summary>
+    
+    
+      <category term="KafkaStreams" scheme="https://wangweijie.vip/categories/KafkaStreams/"/>
+    
+    
+      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+    
+      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="数据的禅意" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E7%A6%85%E6%84%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>开发Kafka_Streams晋阶之路(归约和聚合)</title>
@@ -46,9 +78,9 @@
     
       <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
       <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
       <category term="数据状态" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81/"/>
     
@@ -87,9 +119,9 @@
     
       <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
       <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
       <category term="数据状态" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81/"/>
     
@@ -128,9 +160,9 @@
     
       <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
       <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
       <category term="数据状态" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81/"/>
     
@@ -169,9 +201,9 @@
     
       <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
       <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
       <category term="数据状态" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E7%8A%B6%E6%80%81/"/>
     
@@ -208,9 +240,9 @@
     
       <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
       <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
       <category term="webscoket推送" scheme="https://wangweijie.vip/tags/webscoket%E6%8E%A8%E9%80%81/"/>
     
@@ -247,9 +279,9 @@
     
       <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
       <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
       <category term="webscoket推送" scheme="https://wangweijie.vip/tags/webscoket%E6%8E%A8%E9%80%81/"/>
     
@@ -284,9 +316,9 @@
     
       <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
       <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
       <category term="自定义数据序列化传输" scheme="https://wangweijie.vip/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97%E5%8C%96%E4%BC%A0%E8%BE%93/"/>
     
@@ -319,9 +351,9 @@
     
       <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
       <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
       <category term="springboot分模块整合" scheme="https://wangweijie.vip/tags/springboot%E5%88%86%E6%A8%A1%E5%9D%97%E6%95%B4%E5%90%88/"/>
     
@@ -354,9 +386,9 @@
     
       <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
       <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
       <category term="自定义序列器" scheme="https://wangweijie.vip/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BA%8F%E5%88%97%E5%99%A8/"/>
     
@@ -391,9 +423,9 @@
     
       <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    
       <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="解决方案" scheme="https://wangweijie.vip/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
       <category term="自定义序列器" scheme="https://wangweijie.vip/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BA%8F%E5%88%97%E5%99%A8/"/>
     
@@ -428,9 +460,9 @@
     
       <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
       <category term="应用场景" scheme="https://wangweijie.vip/tags/%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
+    
+      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
       <category term="消息队列" scheme="https://wangweijie.vip/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
     
@@ -467,9 +499,9 @@
     
       <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
       <category term="应用场景" scheme="https://wangweijie.vip/tags/%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
+    
+      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
@@ -701,37 +733,6 @@
       <category term="微服务" scheme="https://wangweijie.vip/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
     
       <category term="高效开发" scheme="https://wangweijie.vip/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mybatis1</title>
-    <link href="https://wangweijie.vip/2019/09/10/2019-09-10-Mybatis(%E7%BC%98)/"/>
-    <id>https://wangweijie.vip/2019/09/10/2019-09-10-Mybatis(缘)/</id>
-    <published>2019-09-10T05:04:20.160Z</published>
-    <updated>2019-10-09T09:12:22.774Z</updated>
-    
-    <content type="html"><![CDATA[<p>mybatis是一个优秀的开源框架,半自动ORM映射,能够适配各种业务需求</p><h1 id="mybatis的路线图-上"><a href="#mybatis的路线图-上" class="headerlink" title="mybatis的路线图(上)"></a>mybatis的路线图(上)</h1><ol><li>mybatis简介</li><li>mybatis框架执行原理</li><li>mybatis初次的入门案例</li><li>mybatis配置文件详解</li><li>mybatis 方法多参数的处理</li><li>mybatis返回主键值</li><li>sql代码段</li><li>自定义结果类型ResultMap</li></ol><hr><h2 id="mybatis简介"><a href="#mybatis简介" class="headerlink" title="mybatis简介"></a>mybatis简介</h2><p><strong>mybatis本身是一个轻量级的持久化层框架(1.何为持久化。2.何为序列化操作),本身也是基于JDBC的封装(JDBC的链接步骤).开发者本身更多的关注SQL语句的执行效率,除此之外mybatis也是一个半自动的ORM映射框架(支持一对一,一对多的实现,多对多采用两个一对多进行实现)</strong></p><p><strong>注意:实际的开发过程中,因为大量的关系相互映射的存在,在查询数据这一块不便于后期项目本身的项目维护扩展。所以更多的方向是思考数据库中的设计和利用本身mybatis提供的数据自定义封装和其它的类似缓存机制的特点,解决开发中的数据设计结构</strong></p><blockquote><p>mybatis的优势</p></blockquote><ol><li><p>比起jdbc的操作,减少了一些重复的代码量工作，也方便能够集成到后期的管理框架中</p></li><li><p>mybatis提供在XML中编写sql语句,不直接入侵在代码中(方便分类修改）</p></li><li><p>分别提供的xml标签和mapper标签(xml标签可实现动态SQL语句,也就是嵌入条件判断和循环,比较类似存储函数),mapper标签支持对象正确的解析至数据库中</p></li></ol><hr><h2 id="mybatis框架执行原理"><a href="#mybatis框架执行原理" class="headerlink" title="mybatis框架执行原理"></a>mybatis框架执行原理</h2><blockquote><p>sqlConfigXMl配置文件(一个全局的配置文件)(可配置映射文件和连接数据源和事务等)</p></blockquote><blockquote><p>通过配置文件构建出可构建操作数据会话的会话工厂,也就是我们常说的sqlSessionFactory(涉及工厂模式代码设计)</p></blockquote><blockquote><p>通过sqlSessionFactory生产出相互独立的sqlsession,为什么是独立的会话，既然是独立的会话，那也有全局的会话(简单提及缓存)进行数据库层面上面的操作</p></blockquote><blockquote><p>sqlsession之所以能够操作,依赖一个叫Executor的执行器,通过该执行器进行数据库的CRUD操作</p></blockquote><blockquote><p>Executor的执行器需要操作CRUD的动作由谁而来，就是由mapperstatement对象读取mapper映射文件</p></blockquote><p><strong>我们可以看到在配置xml文件的时候,可以支持多种对象级数据参数</strong></p><hr><h2 id="mybatis初次的入门案例"><a href="#mybatis初次的入门案例" class="headerlink" title="mybatis初次的入门案例"></a>mybatis初次的入门案例</h2><ol><li>配置一个log4j.properties(可选)方便我们监听到mybatis进行的动作</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\# set level</span><br><span class="line">log4j.rootLogger=DEBUG, stdout</span><br><span class="line"></span><br><span class="line">\# Console output...</span><br><span class="line">log4j.appender.stdout=org.apache.log4j.ConsoleAppender</span><br><span class="line">log4j.appender.stdout.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n</span><br></pre></td></tr></table></figure><ol start="2"><li>构建一个普通的web项目,jar包结构如下:</li></ol><p><img src="/images/resources/7A7648307DEDBBE8133B158F2BA0AE99.jpg" alt="IMAGE"></p><ol start="3"><li>src目录下构建mybatis的全局配置文件mybatisCfg.xml,配置文件如下:</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration</span><br><span class="line">  PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span><br><span class="line">  &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;!-- 数据库连接环境配置 --&gt;</span><br><span class="line">&lt;environments default=&quot;development&quot;&gt;</span><br><span class="line">&lt;!-- 标明mybaitis环境 id唯一 --&gt;</span><br><span class="line">&lt;environment id=&quot;development&quot;&gt;</span><br><span class="line">&lt;!-- JDBC – 这个配置直接简单使用了 JDBC 的提交和回滚设置。 它依赖于从数据源得 到的连接来管理事务范围。JDBC默认是自动提交 --&gt;</span><br><span class="line">&lt;transactionManager type=&quot;JDBC&quot; /&gt;</span><br><span class="line">&lt;!-- 采用数据库连接池 --&gt;</span><br><span class="line">&lt;dataSource type=&quot;POOLED&quot;&gt;</span><br><span class="line">&lt;property name=&quot;driver&quot; value=&quot;com.mysql.jdbc.Driver&quot; /&gt;</span><br><span class="line">&lt;!-- 避免环境的不统一，造成数据操作乱码 --&gt;</span><br><span class="line">&lt;property name=&quot;url&quot;</span><br><span class="line">value=&quot;jdbc:mysql://localhost:3306/mybatis?characterEncoding=utf-8&quot; /&gt;</span><br><span class="line">&lt;property name=&quot;username&quot; value=&quot;root&quot; /&gt;</span><br><span class="line">&lt;property name=&quot;password&quot; value=&quot;123456&quot; /&gt;</span><br><span class="line">&lt;/dataSource&gt;</span><br><span class="line">&lt;/environment&gt;</span><br><span class="line">&lt;/environments&gt;</span><br><span class="line">&lt;!-- 添加需要被映射的文件 --&gt;</span><br><span class="line">&lt;mappers&gt;</span><br><span class="line">&lt;mapper resource=&quot;com/wwj/dao/PersonMapper.xml&quot; /&gt;</span><br><span class="line">&lt;/mappers&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure><ol start="3"><li>构建模型类 com.wwj.model 和 数据库表</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import java.io.Serializable;</span><br><span class="line">import java.util.Date;</span><br><span class="line">/**</span><br><span class="line"> * 基本的模型类</span><br><span class="line"> * @author wwj</span><br><span class="line"> *对象序列化是一个用于将对象状态转换为字节流的过程，可以将其保存到磁盘文件中或通过网络发送到任何其他程序；从字节流创建对象的相反的过程称为反序列化。而创建的字节流是与平台无关的，在一个平台上序列化的对象可以在不同的平台上反序列化。</span><br><span class="line"> *无需序列化的变量使用transient</span><br><span class="line"> */</span><br><span class="line">public class Person implements Serializable &#123;</span><br><span class="line">//Java的序列化机制是通过在运行时判断类的serialVersionUID来验证版本一致性的</span><br><span class="line">//这里是用来表明版本的一致性</span><br><span class="line">private static final long serialVersionUID = 2680875170108959939L;</span><br><span class="line"></span><br><span class="line">private  Integer   id;</span><br><span class="line">private  String name;</span><br><span class="line">private  Date bir;</span><br><span class="line">private  String address;</span><br><span class="line">//自行get和set</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="/images/resources/9811E4C49FDA9BE87152DC3AEFEC5B03.jpg" alt="IMAGE"></p><ol start="4"><li>创建数据层的操作也就是mapper的操作接口</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * person层的操作</span><br><span class="line"> * </span><br><span class="line"> * @author Yun</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public interface PersonDao &#123;</span><br><span class="line">/**</span><br><span class="line"> * 新增用户</span><br><span class="line"> * </span><br><span class="line"> * @param p</span><br><span class="line"> *            传入需要新增的对象</span><br><span class="line"> * @return 0,1代表结果</span><br><span class="line"> */</span><br><span class="line">int savePerson(Person p);</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 更新用户对象</span><br><span class="line"> * @param p 需要被更新的对象</span><br><span class="line"> * @return 0,1代表结果</span><br><span class="line"> */</span><br><span class="line">int updatePerson(Person p);</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 根据用户id进行删除</span><br><span class="line"> * @param id  唯一用户id</span><br><span class="line"> * @return  0，1代表结果</span><br><span class="line"> */</span><br><span class="line">int  deletePersonById(int  id);</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 获取所有的信息</span><br><span class="line"> * @return  所有的人员信息</span><br><span class="line"> */</span><br><span class="line">List&lt;Person&gt;  getPersonInfos();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="5"><li>构建对应的mapper映射文件</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper</span><br><span class="line">PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span><br><span class="line">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;mapper namespace=&quot;com.wwj.dao.PersonDao&quot;&gt;</span><br><span class="line">&lt;insert id=&quot;savePerson&quot; parameterType=&quot;com.wwj.model.Person&quot;&gt;</span><br><span class="line">insert into</span><br><span class="line">person(name,address,bir) values(#&#123;name&#125;,#&#123;address&#125;,#&#123;bir&#125;);</span><br><span class="line">&lt;/insert&gt;</span><br><span class="line"></span><br><span class="line">&lt;update id=&quot;updatePerson&quot; parameterType=&quot;com.wwj.model.Person&quot;&gt;</span><br><span class="line">update person set</span><br><span class="line">name=#&#123;p.name&#125;,address=#&#123;address&#125;,bir=#&#123;bir&#125;</span><br><span class="line">where id=#&#123;id&#125;</span><br><span class="line">&lt;/update&gt;</span><br><span class="line"></span><br><span class="line">&lt;delete id=&quot;deletePersonById&quot; parameterType=&quot;int&quot;&gt;</span><br><span class="line">delete from person</span><br><span class="line">where id=#&#123;id&#125;</span><br><span class="line">&lt;/delete&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;select id=&quot;getPersonInfos&quot; resultType=&quot;com.wwj.model.Person&quot;&gt;</span><br><span class="line">select * from person</span><br><span class="line">&lt;/select&gt;</span><br><span class="line"></span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure><ol start="6"><li>编码测试</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 测试mybatis的CRUD操作</span><br><span class="line"> * </span><br><span class="line"> * @author wwj</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class TestMybatis &#123;</span><br><span class="line">public static void main(String[] args) throws IOException, ParseException &#123;</span><br><span class="line">/*</span><br><span class="line"> * 日期上面的处理</span><br><span class="line"> */</span><br><span class="line">SimpleDateFormat sf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">String format = sf.format(new Date());</span><br><span class="line">Date parse = sf.parse(format);</span><br><span class="line"></span><br><span class="line">InputStream is = Resources.getResourceAsStream(&quot;mybatisCfg.xml&quot;);</span><br><span class="line">SqlSessionFactory build = new SqlSessionFactoryBuilder().build(is);</span><br><span class="line">// 生成 session</span><br><span class="line">SqlSession session = build.openSession();</span><br><span class="line">Person per = new Person();</span><br><span class="line">per.setName(&quot; 小王 &quot;);</span><br><span class="line">per.setAddress(&quot; 重庆 &quot;);</span><br><span class="line">per.setBir(parse);</span><br><span class="line">// 操作数据</span><br><span class="line">int insert = session.insert(&quot;savePerson&quot;,per);</span><br><span class="line">// 提交事务</span><br><span class="line">session.commit();</span><br><span class="line">// 关闭 session</span><br><span class="line">session.close();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>注意:mysql中设置为date支持的格式为yyyy-mm-dd,java中的date是格林威治时间</strong></p><p><strong>结果图示</strong></p><p><img src="/images/resources/CD9453D5EA517471A33213C84F600088.jpg" alt="IMAGE"></p><p><strong>同理依次测试更新和删除,以及查询</strong></p><p><strong><em>更新的调用操作</em></strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Person per = new Person();</span><br><span class="line">per.setId(1);</span><br><span class="line">per.setName(&quot; 小张 &quot;);</span><br><span class="line">per.setAddress(&quot; 重庆 &quot;);</span><br><span class="line">per.setBir(parse);</span><br><span class="line">// 操作数据</span><br><span class="line">int update = session.update(&quot;updatePerson&quot;, per);</span><br></pre></td></tr></table></figure><p><img src="/images/resources/22CE8444C2704500434DEB997985252E.jpg" alt="IMAGE"></p><p><strong><em>查询的调用操作</em></strong></p><p><code>List&lt;Person&gt; pers  = session.selectList(&quot;getPersonInfos&quot;);</code></p><p><strong><em>删除的调用操作</em></strong></p><p><code>int de  = session.delete(&quot;deletePersonById&quot;, 1);</code></p><hr><h2 id="mybatis配置文件详解"><a href="#mybatis配置文件详解" class="headerlink" title="mybatis配置文件详解"></a>mybatis配置文件详解</h2><h3 id="全局配置文件详解"><a href="#全局配置文件详解" class="headerlink" title="全局配置文件详解"></a>全局配置文件详解</h3><ul><li>environments环境配置,可以配置多种环境 default指定使用某种环境.</li><li>transactionManager事务管理器有两种取值JDBC,managed.我们选择jdbc即可</li><li>dataSource配置数据源,采用默认的连接池选择项POOLED</li><li>mappers里面填入需要进行数据操作xml标签用于执行的动作</li><li>映射的数据操作文件需要和接口保持同个路径(可以把mapper当成接口的实现类)</li></ul><h3 id="映射文件详解"><a href="#映射文件详解" class="headerlink" title="映射文件详解"></a>映射文件详解</h3><ul><li>namespace表明需要对应动作的空间即是接口所在的全路径名称</li><li>id与接口中的方法保持一致</li><li>parameterType填写自定义对象的全路径名称</li><li>接收参数采用 #{objAttrName}</li></ul><hr><h2 id="mybatis方法多参数接收-代码示例）"><a href="#mybatis方法多参数接收-代码示例）" class="headerlink" title="mybatis方法多参数接收(代码示例）"></a>mybatis方法多参数接收(代码示例）</h2><h4 id="索引接收-了解即可"><a href="#索引接收-了解即可" class="headerlink" title="索引接收(了解即可)"></a>索引接收(了解即可)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> List&lt;Person&gt;  getPersonInfosByNameAndID(String name ,int id);</span><br><span class="line">&lt;select id=&quot;getPersonInfosByNameAndID&quot; &gt;</span><br><span class="line">select * from person where name = #&#123;0&#125; and id = #&#123;1&#125; </span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure><h4 id="map接收-重点"><a href="#map接收-重点" class="headerlink" title="map接收(重点)"></a>map接收(重点)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">   /**</span><br><span class="line">    *  根据map进行查询</span><br><span class="line">    * @param attrs</span><br><span class="line">    * key1 id  key2 name</span><br><span class="line">    * @return</span><br><span class="line">    */</span><br><span class="line">   List&lt;Person&gt;  getPersonInfosByMap(Map attrs);</span><br><span class="line">   //------------------动作实现</span><br><span class="line"> &lt;select id=&quot;getPersonInfosByMap&quot;  parameterType=&quot;java.util.Map&quot; resultType=&quot;com.wwj.model.Person&quot;&gt;</span><br><span class="line">select * from person where id =</span><br><span class="line">#&#123;id&#125; and name = #&#123;name&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">  //----------------调用测试</span><br><span class="line">  Map&lt;String,Object&gt;  attrs = new HashMap&lt;&gt;();</span><br><span class="line">attrs.put(&quot;id&quot;, 2);</span><br><span class="line">attrs.put(&quot;name&quot;, &quot;小王&quot;);</span><br><span class="line">session.selectList(&quot;getPersonInfosByMap&quot;, attrs);</span><br></pre></td></tr></table></figure><h4 id="注解-Param接收-重点"><a href="#注解-Param接收-重点" class="headerlink" title="注解@Param接收(重点)"></a>注解@Param接收(重点)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">   /**</span><br><span class="line">    * 根据用户唯一id查询信息</span><br><span class="line">    * @param id</span><br><span class="line">    * @return</span><br><span class="line">    */</span><br><span class="line">   Person  getPersonInfo(@Param(&quot;pid&quot;) int id);</span><br><span class="line">   //---------------动作实现</span><br><span class="line">&lt;select id=&quot;getPersonInfo&quot; </span><br><span class="line">resultType=&quot;com.wwj.model.Person&quot;&gt;</span><br><span class="line">select * from person where id =</span><br><span class="line">#&#123;pid&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">//---------调用测试</span><br><span class="line">session.selectOne(&quot;getPersonInfo&quot;, 2);</span><br></pre></td></tr></table></figure><hr><h2 id="mybatis立即返回主键值"><a href="#mybatis立即返回主键值" class="headerlink" title="mybatis立即返回主键值"></a>mybatis立即返回主键值</h2><p><strong><em>应用场景:当我们需要在当前事务插入数据后立即获取数据的主键id，做下一步额外操作，并且不因为并发高的情况下取错值而考虑</em></strong></p><p><strong>修改代码如下</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> &lt;insert id=&quot;savePerson&quot; parameterType=&quot;com.wwj.model.Person&quot;&gt;</span><br><span class="line">&lt;selectKey keyProperty=&quot;id&quot; resultType=&quot;int&quot; order=&quot;AFTER&quot;&gt;</span><br><span class="line">select last_insert_id()</span><br><span class="line">&lt;/selectKey&gt;</span><br><span class="line">insert into</span><br><span class="line">person(name,address,bir) values(#&#123;name&#125;,#&#123;address&#125;,#&#123;bir&#125;);</span><br><span class="line">&lt;/insert&gt;</span><br><span class="line">//------------------------------------------------------------</span><br><span class="line">// 操作数据</span><br><span class="line">Person p = new Person();</span><br><span class="line">p.setName(&quot;小小王&quot;);</span><br><span class="line">p.setBir(parse);</span><br><span class="line">int result = session.insert(&quot;savePerson&quot;, p);</span><br><span class="line">System.out.println(result);</span><br><span class="line">System.out.println(p.getId());</span><br></pre></td></tr></table></figure><ul><li>keyProperty=”返回主键的id的属性名”</li><li>resultType=”主键类型”</li><li>order=””什么时候执行，在SQL执行前还是执行后执行，两个取值：BEFORE和AFTER</li><li>select last_insert_id()取到最后生成的主键，只在当前事务中取</li></ul><h2 id="sql代码段"><a href="#sql代码段" class="headerlink" title="sql代码段"></a>sql代码段</h2><p><strong>如果场景中有大量的重复的公共sql语句,那么可以考虑使用<code>&lt;sql&gt;</code>声明公共的部分</strong></p><p><strong>示例如下:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">   /**</span><br><span class="line">    * sql片段</span><br><span class="line">    * @param id  根据用户的id查询姓名</span><br><span class="line">    * @return</span><br><span class="line">    */</span><br><span class="line"> String  getPersonName(@Param(&quot;pid&quot;) int id);</span><br><span class="line">   //--------动作实现</span><br><span class="line"> &lt;sql id=&quot;nameCol&quot;&gt; name&lt;/sql&gt;</span><br><span class="line">&lt;select id=&quot;getPersonName&quot;   resultType=&quot;java.lang.String&quot;&gt;</span><br><span class="line">select </span><br><span class="line">&lt;include refid=&quot;nameCol&quot;&gt;&lt;/include&gt;</span><br><span class="line">from person where</span><br><span class="line">id =</span><br><span class="line">#&#123;pid&#125;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">//--------测试调用</span><br><span class="line">String name  = session.selectOne(&quot;getPersonName&quot;,2);</span><br><span class="line">System.out.println(name);</span><br></pre></td></tr></table></figure><hr><h2 id="自定义结果类型ResultMap-开发中长期使用"><a href="#自定义结果类型ResultMap-开发中长期使用" class="headerlink" title="自定义结果类型ResultMap(开发中长期使用)"></a>自定义结果类型ResultMap(开发中长期使用)</h2><p><strong>应用场景:假设我们的实际开发过程中,数据表组合字段多,又不想关心配置映射关系,只想关心sql语句,以及结果,并且也关心sql语句的效率</strong></p><ol><li>假设2张表 person和card 1:m关系</li><li>连接查询需要person中的人名和card表中的卡号名字</li></ol><blockquote><p>操作步骤如下:</p></blockquote><ol><li>在任意自定对象上添加属性</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">//----- 实体类</span><br><span class="line">public class Card &#123;</span><br><span class="line">private String cname;</span><br><span class="line">&#125;</span><br><span class="line">public class Person implements Serializable &#123;</span><br><span class="line">private  Integer   id;</span><br><span class="line">private  String name;</span><br><span class="line">private  Date bir;</span><br><span class="line">private  String address;</span><br><span class="line">private  List&lt;Card&gt;  cards;</span><br><span class="line">&#125;</span><br><span class="line">//----构建自定义的resultmap封装 注意   collection(集合)association(联系)</span><br><span class="line">&lt;resultMap type=&quot;com.wwj.model.Person&quot; id=&quot;personRS&quot;&gt;</span><br><span class="line">&lt;!--column指向数据库列名 property指向pojo对象中字段名 --&gt;</span><br><span class="line">&lt;result column=&quot;name&quot; property=&quot;name&quot; /&gt;</span><br><span class="line">&lt;!-- property指的是在bean中字段名 ofType类的全定向名 --&gt;</span><br><span class="line">&lt;collection property=&quot;cards&quot; ofType=&quot;com.wwj.model.Card&quot;&gt;</span><br><span class="line">&lt;result column=&quot;cname&quot; property=&quot;cname&quot; /&gt;</span><br><span class="line">&lt;/collection&gt;</span><br><span class="line">&lt;/resultMap&gt;</span><br><span class="line">//--------映射的动作实现</span><br><span class="line">    &lt;select id=&quot;getPersonsOfCard&quot; resultMap=&quot;personRS&quot;&gt;</span><br><span class="line">        select</span><br><span class="line">        person.name,card.cname</span><br><span class="line">        from person</span><br><span class="line">        INNER JOIN card</span><br><span class="line">        on person.id = card.pid</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">//--------代码操作</span><br><span class="line">List&lt;Person&gt; persons = session.selectList(&quot;getPersonsOfCard&quot;);</span><br><span class="line">for (Person person : persons) &#123;</span><br><span class="line">System.out.println(person.getCards().get(0).getCname());</span><br><span class="line">System.out.println(person.getCards().get(1).getCname());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong><em>注意1:po代表和数据库一一对照的数据模型.vo代表业务逻辑和表现层之间需要的数据</em></strong></p><p><strong><em>注意2:如果需要暴露一部分数据出去的,可能还是会单独做接口和设计VO</em></strong></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;mybatis是一个优秀的开源框架,半自动ORM映射,能够适配各种业务需求&lt;/p&gt;
-&lt;h1 id=&quot;mybatis的路线图-上&quot;&gt;&lt;a href=&quot;#mybatis的路线图-上&quot; class=&quot;headerlink&quot; title=&quot;mybatis的路线图(上)&quot;&gt;&lt;/a&gt;m
-      
-    
-    </summary>
-    
-    
-      <category term="Mybatis" scheme="https://wangweijie.vip/categories/Mybatis/"/>
-    
-    
-      <category term="数据持久化" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
-    
-      <category term="orm" scheme="https://wangweijie.vip/tags/orm/"/>
-    
-      <category term="半自动" scheme="https://wangweijie.vip/tags/%E5%8D%8A%E8%87%AA%E5%8A%A8/"/>
     
   </entry>
   
