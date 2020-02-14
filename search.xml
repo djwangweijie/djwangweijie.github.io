@@ -2,10 +2,25 @@
 <search>
   <entry>
     <title><![CDATA[数据分析前的准备工作]]></title>
+    <url>%2F2020%2F02%2F14%2F2020-02-15-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[熟知一些基本操作,能够加快你的学习效率。 python日常操作 python交互工具jupyter_notebook日常使用 notebook的使用命令窗口中输入jupyter notebook可以在切换到自己要写笔记的目录中 在notenook中第一次操作 注意:我们在使用的时候可以输入关键字的用Tab键进行补全操作 Tab补全说明1.Tab补全不是万能的,会尽可能的补全你的代码.按下Tab会搜索已输入的变量(对象,函数等等) 2.同样的tab也适应于模块 3.同样适用与函数 自省操作通过自省可以关注对象的类型 针对自定义函数 其余额外的命令 %run命令可以用来执行某一个位置上的py文件 %load命令可以将代码导入到某一个位置中 使用Ctrl+C可以随时终端执行中的程序 魔术命令魔术命令是指在指令面前加上%,可以是普通任务更快捷,更方便 注意:没下载numpy的话可以执行 pip3 install numpy 常用的魔术命令%quickref 显示IPython的快速参考 %magic 显示所有魔术命令的详细文档 %debug 从最新的异常跟踪的底部进入交互式调试器 %hist 打开命令的输入（可选输出）历史 %pdb 在异常发生后自动进入调试器 %paste 执行剪贴板中的Python代码 %cpaste 打开一个特殊的提示符以便于手工粘贴待执行的Python代码 %reset 删除interactive命名空间中的全部变量、名称 %page OBJECT 通过分页器打印出OBJECT %run script.py 执行Python脚本文件 %prun statement 通过cProfile执行statement,并打印分析器的输出结果 %time statement 报告statement的执行时间 %timeit statement 多次执行statement以计算系综合平均执行时间。对那些执行时间非常小的代码有用 %who、%who_ls、whos 显示interactive命名空间中定义的变量，信息级别/冗余度可变 %xdel variable 删除variable,并尝试清除其在IPython中的对象上的一切引用 后面在使用的时候可以在回过来进行查找 集成美丽的制图同样的需要安装制图执行命令:pip3 install matplotlib -i https://pypi.douban.com/simple/ 知识补充1.np.random.randn(50) 代表着返回一组标准正态分布的随机值,范围在-1.96～+1.96 2.numpy.cumsum()代表着累加求和 1 1+2 1+2+3 依次类推 3.plt.plot()代表着线性制图 %matplotlib inline 用于省掉plt.show()]]></content>
+      <categories>
+        <category>大数据分析</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数据分析</tag>
+        <tag>数据的禅意</tag>
+        <tag>日常操作</tag>
+        <tag>初次接触</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[数据分析前的准备工作]]></title>
     <url>%2F2020%2F02%2F14%2F2020-02-14-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[做好数据分析,先好好理解数据和工具 数据分析前的准备工作 数据与python python处理数据问题上面重要的库 环境安装以及常用的学习工具与开发工具 数据与python数据数据这个词是抽象的,我们如何认识数据,有2个点我们需要我们作为前提 数据有可能代表是世界,人等一切事物,及时杂乱无序,但是也在当中存在规律 从数据中找到合适的规律和特点,那么我们需要结构化数据。那么结构化的数据有哪些？比如:表格类型的数据,多维数组,通过关键列构建的表格类型数据等 注意:大部分数据集都能转换成结构化的数据,结构化只是一种形式,更多的还是人自主的思维能力.比如:一组新闻文章里面的内容可以提取出词频表,而这个表就可以对于以后的情感进行分析 为什么选择用python python作为胶水语言可以随时沾和随时撕掉 python语言在设计的过程中就是构建以数据为中心的应用型数据 python适用于构建分析应用和一些常见的通用系统(日常的管理系统) 注:python作为一种解释性语言没有编译性语言的运行时间效率要高.这也是python的不足之处 python重要的库 Numpy (数值处理) 可以构建快速高效的多维数组对象(ndarray) 可以用于对数组执行数学运算和计算.提供了大量的函数 可以用于读写硬盘中基于数组的数据集的工具 常见的线性代数等包含随机数的生成 pandas (面板数据) 能够处理大量结构化数据 常用的2个对象一个是DataFrame和Series,分别是面向列的二维表结构以及一个一维的标签化数组对象 提供复杂精细的索引功能,能够快速的完成重塑,切片,切块,聚合以及选取数据子集等操作 matplotlib 绘制图表以及其他二维数据可视化的工具 ipython与jupyter 2个都是良好的交互工具 ipython用于运行，调试，测试等操作 jupyter良好的学习笔记工具 Scipy与scikit-learn与statsmodels Scipy解决计算中各种标准问题域 scikit-learn机器学习的工具包,偏重于预测 statsmodels统计分析包,偏重于统计与推断 环境安装以及常用的学习工具python环境的安装python环境的安装不在进行说明,只是需要注意的是检查不同系统的变量设置,macos系统比较特殊,需要检查.bash_prifile中是否添加 ipython jupyter 1.更新pippython -m pip install -U pip setuptools 2.安装,使用国内源满速安装pip install jupyter -i https://pypi.tuna.tsinghua.edu.cn/simple 3.在命令中直接jupyter notebook]]></content>
       <categories>
-        <category>KafkaStreams</category>
+        <category>大数据分析</category>
       </categories>
       <tags>
         <tag>python</tag>
