@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据分析之python基础语法1]]></title>
+    <url>%2F2020%2F02%2F16%2F2020-02-15-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%951%2F</url>
+    <content type="text"><![CDATA[从语言思维来牢记基础,对于我们用语言来创造是必要的. python语言基础 语言的艺术 语言的标准 语言的艺术 语言的语义 python语言在编写的时候强调的是可读性,简洁,清晰. 语言使用缩进而不是括号 使用tab或者4个空格来组织自己的代码 增加可读性,简洁 ![IMAGE](resources/CABF027DF32BB72242382DCD94299087.jpg =1135x232) 万物皆对象 在python所构建的数据都是对象,而这个对象拥有一致性也就是目标和目的是一致的 每个数字,字符串,数据结构等都是对象,对象中都有自己的数据类型和内部数据 注释 注释注重解释 函数和对象上的方法调用 定义函数,调用函数,定义对象,对象方法调用 语言的标准变量和参数的传递 变量即是创建一个名字,而等号右边则是这个变量所代表的含义即是数据 a和b都是同一个引用,指向的是具体的对象 赋值=绑定,传递对象赋值称作为绑定,把一个名字绑定给一个对象,变量名可能被称为绑定变量 把对象传递给函数的时候,不会复制,而是直接引用 动态引用和强类型 注意知晓元组类型 属性和方法对象都拥有属性和方法 对象拥有属性和方法 鸭子类型如果不关心对象的类型,只关心是否有些方法和用途,这种称作为鸭子类型,比如你只想关心这个对象是否可以迭代.那么可以 关于模块的引入引入模块有三种形式 引入整个模块 引入模块中的某个部分 引入的模块构建一个别名 二元运算符和比较运算符 1234567891011121314151617181920212223242526272829a+b : a加ba-b : a减ba*b : a乘ba/b : a除以ba//b:a整除以b,表示的是返回a除以b的结果的整数部分，而不是证明了a能被b整除。要证明a能被b整除，可以是if a%b==0: 或者a/b＝int 等等a**b : a的b次方a&amp;b : a与b,对于整数则是按位ANDa|b : a或b,对于整数则是按位ORa^b : 对布尔值，a异或b,对于整数则是按位异或a==b : a和b相等则为Turea!=b: a和b不相等则为Turea&lt;=b,a&lt;b : 小于等于，小于a&gt;=b,a&gt;b : 大于等于，大于a is b: a和b是同一个python对象则为Turea is not b: a和b不是同一个python对象则为Ture 在python中is是判断对象,==才是判断对象里面的内容是否一样 可变和不可编对象在python的大多数对象中,如:列表,字典,Numpy数组和用户自定义类型都是可变的 但是对于字符串和元组是不可变的]]></content>
+      <categories>
+        <category>大数据分析</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数据分析</tag>
+        <tag>语言基础</tag>
+        <tag>面向对象</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数据分析之常用操作]]></title>
     <url>%2F2020%2F02%2F14%2F2020-02-14-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[熟知一些基本操作,能够加快你的学习效率。 python日常操作 python交互工具jupyter_notebook日常使用 notebook的使用命令窗口中输入jupyter notebook可以在切换到自己要写笔记的目录中 在notenook中第一次操作 注意:我们在使用的时候可以输入关键字的用Tab键进行补全操作 Tab补全说明1.Tab补全不是万能的,会尽可能的补全你的代码.按下Tab会搜索已输入的变量(对象,函数等等) 2.同样的tab也适应于模块 3.同样适用与函数 自省操作通过自省可以关注对象的类型 针对自定义函数 其余额外的命令 %run命令可以用来执行某一个位置上的py文件 %load命令可以将代码导入到某一个位置中 使用Ctrl+C可以随时终端执行中的程序 魔术命令魔术命令是指在指令面前加上%,可以是普通任务更快捷,更方便 注意:没下载numpy的话可以执行 pip3 install numpy 常用的魔术命令%quickref 显示IPython的快速参考 %magic 显示所有魔术命令的详细文档 %debug 从最新的异常跟踪的底部进入交互式调试器 %hist 打开命令的输入（可选输出）历史 %pdb 在异常发生后自动进入调试器 %paste 执行剪贴板中的Python代码 %cpaste 打开一个特殊的提示符以便于手工粘贴待执行的Python代码 %reset 删除interactive命名空间中的全部变量、名称 %page OBJECT 通过分页器打印出OBJECT %run script.py 执行Python脚本文件 %prun statement 通过cProfile执行statement,并打印分析器的输出结果 %time statement 报告statement的执行时间 %timeit statement 多次执行statement以计算系综合平均执行时间。对那些执行时间非常小的代码有用 %who、%who_ls、whos 显示interactive命名空间中定义的变量，信息级别/冗余度可变 %xdel variable 删除variable,并尝试清除其在IPython中的对象上的一切引用 后面在使用的时候可以在回过来进行查找 集成美丽的制图同样的需要安装制图执行命令:pip3 install matplotlib -i https://pypi.douban.com/simple/ 知识补充1.np.random.randn(50) 代表着返回一组标准正态分布的随机值,范围在-1.96～+1.96 2.numpy.cumsum()代表着累加求和 1 1+2 1+2+3 依次类推 3.plt.plot()代表着线性制图 %matplotlib inline 用于省掉plt.show()]]></content>
