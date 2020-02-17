@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>数据分析之python基础语法2</title>
+      <link href="/2020/02/17/2020-02-17-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%952/"/>
+      <url>/2020/02/17/2020-02-17-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%952/</url>
+      
+        <content type="html"><![CDATA[<p>继续前进,这是python基础知识的完结,后续我们将进阶到数据结构,函数和文件</p><h1 id="python数据类型和控制流"><a href="#python数据类型和控制流" class="headerlink" title="python数据类型和控制流"></a>python数据类型和控制流</h1><ol><li>标量类型是什么,如何使用</li><li>控制流式什么,如何使用</li></ol><h1 id="标量类型"><a href="#标量类型" class="headerlink" title="标量类型"></a>标量类型</h1><p><em>在python的标准库中,有一些内建的类型,用来处理数值数据,字符串,布尔值,日期类型.单值类型成为标量类型</em></p><ol><li>None         表明python里面的控制</li><li>str          字符串类型,有以UTF-8为基准</li><li>bytes        原生的ascii字节</li><li>float        双精度浮点数</li><li>bool         True或false值</li><li>int          任意精度整数</li></ol><h2 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h2><h3 id="int可以存储任意大的数"><a href="#int可以存储任意大的数" class="headerlink" title="int可以存储任意大的数"></a>int可以存储任意大的数</h3><p><img src="/images/resources/BCEB5560ADDBFD33CEFA045B1FE0F0CC.jpg" alt="IMAGE"></p><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p><em>字符串的表现,可以用单引号和双引号,有换行的可以用三引号</em></p><p><img src="/images/resources/302597F360B28DB47883A85B37C57F71.jpg" alt="IMAGE"></p><p><em>python的字符串是不可变的,不能修改字符串</em></p><p><img src="/images/resources/D58AE7B29D7594EC5F157E8E855256B5.jpg" alt="IMAGE"></p><p><em>许多python对象可以转换为字符串,字符串是一个有序列的unicode字符,可以像列表和元组一样处理(用于切片)</em></p><p><img src="/images/resources/B8B3839B489398E76BBC35787E77A93F.jpg" alt="IMAGE"></p><p><em>用r来表示字符本身,字符串合并,字符串格式化</em></p><p><img src="/images/resources/2DE7E3EAC6027725B02131A41F6BAC1F.jpg" alt="IMAGE"></p><p><em>字节和Unicode</em></p><p><img src="/images/resources/D7C95EC8DABD2198462AD9B0D31094A7.jpg" alt="IMAGE"></p><h3 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h3><p><img src="/images/resources/00762643AC8645079A66413E2FF4FFD2.jpg" alt="IMAGE"></p><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p><img src="/images/resources/24C0806F8555931DBFDFD0AC4791BB6C.jpg" alt="IMAGE"></p><h3 id="关于特殊的None"><a href="#关于特殊的None" class="headerlink" title="关于特殊的None"></a>关于特殊的None</h3><p><em>None是python的空值类型,一个函数没有明确的返回值,就默认返回为none</em></p><p><img src="/images/resources/9D1235D92D422E3FB6449AF2FBEB275C.jpg" alt="IMAGE"></p><h3 id="日期和时间"><a href="#日期和时间" class="headerlink" title="日期和时间"></a>日期和时间</h3><p><em>python内建的datetime模块提供了datetime,date,time类型,datetime结合date和time是常使用的</em></p><p><img src="/images/resources/A625D02AB8ECB7A603FAEDFC0DFE59C5.jpg" alt="IMAGE"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">%a星期的英文单词的缩写：如星期一， 则返回 Mon</span><br><span class="line">%A星期的英文单词的全拼：如星期一，返回 Monday</span><br><span class="line">%b月份的英文单词的缩写：如一月， 则返回 Jan</span><br><span class="line">%B月份的引文单词的缩写：如一月， 则返回 January</span><br><span class="line">%c返回datetime的字符串表示，如03/08/15 23:01:26</span><br><span class="line">%d返回的是当前时间是当前月的第几天</span><br><span class="line">%f微秒的表示： 范围: [0,999999]</span><br><span class="line">%H以24小时制表示当前小时</span><br><span class="line">%I以12小时制表示当前小时</span><br><span class="line">%j返回 当天是当年的第几天 范围[001,366]</span><br><span class="line">%m返回月份 范围[0,12]</span><br><span class="line">%M返回分钟数 范围 [0,59]</span><br><span class="line">%P返回是上午还是下午–AM or PM</span><br><span class="line">%S返回秒数 范围 [0,61]。。。手册说明的</span><br><span class="line">%U返回当周是当年的第几周 以周日为第一天</span><br><span class="line">%W返回当周是当年的第几周 以周一为第一天</span><br><span class="line">%w当天在当周的天数，范围为[0, 6]，6表示星期天</span><br><span class="line">%x日期的字符串表示 ：03/08/15</span><br><span class="line">%X时间的字符串表示 ：23:22:08</span><br><span class="line">%y两个数字表示的年份 15</span><br><span class="line">%Y四个数字表示的年份 2015</span><br><span class="line">%z与utc时间的间隔 （如果是本地时间，返回空字符串）</span><br><span class="line">%Z时区名称（如果是本地时间，返回空字符串）</span><br></pre></td></tr></table></figure><h4 id="时间替换和时间差"><a href="#时间替换和时间差" class="headerlink" title="时间替换和时间差"></a>时间替换和时间差</h4><p><img src="/images/resources/726822CE28F6DAE65F3A4D73632E21CC.jpg" alt="IMAGE"></p><h1 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h1><p><em>在python中有若干的关键字进行条件逻辑,循环,以及其他控制流操作</em></p><h2 id="if-elif-else"><a href="#if-elif-else" class="headerlink" title="if,elif,else"></a>if,elif,else</h2><p><img src="/images/resources/47EC1A063113F928740E64748596D507.jpg" alt="IMAGE"></p><p><img src="/images/resources/0D86D52E143AA8D621CE3BFFF2856E7C.jpg" alt="IMAGE"></p><h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><h3 id="contiune"><a href="#contiune" class="headerlink" title="contiune"></a>contiune</h3><p><em>contiune代表着当次循环跳过,继续进行下一次的循环</em></p><p><img src="/images/resources/B8D21E133AE0C982129F7B9098A78436.jpg" alt="IMAGE"></p><h3 id="break"><a href="#break" class="headerlink" title="break"></a>break</h3><p><em>break代表着跳出整个循环,并结束循环的过程</em></p><p><img src="/images/resources/6945B396B8E12DBF4E67B8BC838E4C73.jpg" alt="IMAGE"></p><h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p><img src="/images/resources/6A11357229210DA6A177A2B96B4A543D.jpg" alt="IMAGE"></p><h2 id="pass"><a href="#pass" class="headerlink" title="pass"></a>pass</h2><p><em>pass是python中的非操作语句,代码块不需要执行任何动作</em></p><p><img src="/images/resources/7953034C9AB1DA6CC980D6029A4F3D35.jpg" alt="IMAGE"></p><h2 id="range"><a href="#range" class="headerlink" title="range"></a>range</h2><p><em>rang函数返回一个迭代器,用来产生一个均匀分布的整数序列</em></p><p><img src="/images/resources/D551EBF7FB2492428B00937256A0BE99.jpg" alt="IMAGE"></p><p><img src="/images/resources/9AE7D1020C0B8A6FDC404A681543A2E9.jpg" alt="IMAGE"></p><p><strong>注意:虽然range可以产生任意大的序号.所耗用的时长和内容比较小</strong></p><p><img src="/images/resources/FC805DC118C375042C3DCEB08C855B1D.jpg" alt="IMAGE"></p><h2 id="三元表达式"><a href="#三元表达式" class="headerlink" title="三元表达式"></a>三元表达式</h2><p><img src="/images/resources/D784B98ADA87F900AF14C9E03FDBB05E.jpg" alt="IMAGE"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据分析 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 数据分析 </tag>
+            
+            <tag> 面向对象 </tag>
+            
+            <tag> 语言基础2 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据分析之python基础语法1</title>
       <link href="/2020/02/16/2020-02-15-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%951/"/>
       <url>/2020/02/16/2020-02-15-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%951/</url>
