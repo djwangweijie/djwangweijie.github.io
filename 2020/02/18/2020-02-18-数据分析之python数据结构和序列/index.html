@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "a5ab5263"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,数据分析,数据结构,序列,推导式,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Michael_Wang" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="每个数据结构都是语言设计者的精心设计,推导式也是有趣的部分 python的数据结构,函数和文件 数据结构和序列,函数,文件讲分为3个部分进行叙述  数据结构和序列python的数据结构有元组,列表,字典,集合 元组元组是一个固定长度,不可改变的python序列对象,创建元组最简单的方式就是用逗号进行分隔  如何元组中某个对象是可变的,可以在原位上进行修改  元组可以相接与复制  拆分元组拆分和数值">
+<meta name="keywords" content="python,数据分析,数据结构,序列,推导式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据分析之python数据结构和序列">
+<meta property="og:url" content="https://wangweijie.vip/2020/02/18/2020-02-18-数据分析之python数据结构和序列/index.html">
+<meta property="og:site_name" content="Michael_Wang">
+<meta property="og:description" content="每个数据结构都是语言设计者的精心设计,推导式也是有趣的部分 python的数据结构,函数和文件 数据结构和序列,函数,文件讲分为3个部分进行叙述  数据结构和序列python的数据结构有元组,列表,字典,集合 元组元组是一个固定长度,不可改变的python序列对象,创建元组最简单的方式就是用逗号进行分隔  如何元组中某个对象是可变的,可以在原位上进行修改  元组可以相接与复制  拆分元组拆分和数值">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/2ADB91417B20DC838C193A4ACDF1A6A1.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/4687ABDDABDE1152358DE012E5CBC3C7.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/755E5FA05748213CCA82761CBE40B6C5.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/92858794DECE6DAD07EE673BBD4FDCC7.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/22F732D23D4E4917BA09FC95F66DB0F3.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/F5BFB1E3646A723755FB1A2C2303A8D3.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/3FA6147CEEC6591A8FF02FEA84DD0682.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/C74934A48935FB96A9827AE4CF762EB1.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/5FE59F4596DF44F604E9EF46372515A7.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/3AAC6E0B610071462195D4AD879D36A2.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/BEFDED1B684DFB66AD6B773B661DCE7B.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/39F97B38573F4D1D30B11FCAB79E7D92.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/8AB835212447CFEFA8F40535D85F72E2.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/66ADF11715DBDE531B2283C4AE59EFE0.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/185AADC5CACCF64F386E5769BB564A2A.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/AA3852DD100C8F45ACF57882952A231D.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/5657F65F4C8FD5441E3C3916E3A54A6C.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/272D7629905D0F009F37B257463A591A.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/D5154AC437784C34B97FF8A39087B138.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/A5C76341228517851E00CDB816CA3A39.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/6599F1C98711F040F7CA77A780A1E9FF.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/E4C4DCF8FAC151BC5DE3BF0BF54A4E22.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/FD763C5F0162EAF6F5E9DB2AA875E2AC.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/5160274AFDB6C56B59E6D2265426568D.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/B428C73E1B1025035FC0E7C5D866631C.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/D87BD1A35015B4AF0A8C72053B521F42.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/411E63BDE36BE3DC7D014E840F5F96B5.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/19E78E4840C00686CC94012669B01D67.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images/resources/8AF0CADA6EAE4D2EAE8968C87A325DCB.jpg">
+<meta property="og:updated_time" content="2020-02-18T14:05:43.787Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据分析之python数据结构和序列">
+<meta name="twitter:description" content="每个数据结构都是语言设计者的精心设计,推导式也是有趣的部分 python的数据结构,函数和文件 数据结构和序列,函数,文件讲分为3个部分进行叙述  数据结构和序列python的数据结构有元组,列表,字典,集合 元组元组是一个固定长度,不可改变的python序列对象,创建元组最简单的方式就是用逗号进行分隔  如何元组中某个对象是可变的,可以在原位上进行修改  元组可以相接与复制  拆分元组拆分和数值">
+<meta name="twitter:image" content="https://wangweijie.vip/images/resources/2ADB91417B20DC838C193A4ACDF1A6A1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://wangweijie.vip/2020/02/18/2020-02-18-数据分析之python数据结构和序列/">
+
+
+
+
+
+  <title>数据分析之python数据结构和序列 | Michael_Wang</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4f6b1dad003fac023e47cd8b5305a4e1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/djwangweijie" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Michael_Wang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">JavaAndKafka_Streams</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangweijie.vip/2020/02/18/2020-02-18-数据分析之python数据结构和序列/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael_Wang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Michael_Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据分析之python数据结构和序列</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-18T22:00:09+08:00">
+                2020-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据分析/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/02/18/2020-02-18-数据分析之python数据结构和序列/" class="leancloud_visitors" data-flag-title="数据分析之python数据结构和序列">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>每个数据结构都是语言设计者的精心设计,推导式也是有趣的部分</p>
+<h1 id="python的数据结构-函数和文件"><a href="#python的数据结构-函数和文件" class="headerlink" title="python的数据结构,函数和文件"></a>python的数据结构,函数和文件</h1><ol>
+<li>数据结构和序列,函数,文件讲分为3个部分进行叙述</li>
+</ol>
+<h1 id="数据结构和序列"><a href="#数据结构和序列" class="headerlink" title="数据结构和序列"></a>数据结构和序列</h1><p><strong>python的数据结构有元组,列表,字典,集合</strong></p>
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p><em>元组是一个固定长度,不可改变的python序列对象,创建元组最简单的方式就是用逗号进行分隔</em></p>
+<p><img src="/images/resources/2ADB91417B20DC838C193A4ACDF1A6A1.jpg" alt="IMAGE"></p>
+<p><em>如何元组中某个对象是可变的,可以在原位上进行修改</em></p>
+<p><img src="/images/resources/4687ABDDABDE1152358DE012E5CBC3C7.jpg" alt="IMAGE"></p>
+<p><em>元组可以相接与复制</em></p>
+<p><img src="/images/resources/755E5FA05748213CCA82761CBE40B6C5.jpg" alt="IMAGE"></p>
+<h3 id="拆分元组"><a href="#拆分元组" class="headerlink" title="拆分元组"></a>拆分元组</h3><h4 id="拆分和数值交换"><a href="#拆分和数值交换" class="headerlink" title="拆分和数值交换"></a>拆分和数值交换</h4><p><img src="/images/resources/92858794DECE6DAD07EE673BBD4FDCC7.jpg" alt="IMAGE"></p>
+<h4 id="拆分迭代元组或者列表序列"><a href="#拆分迭代元组或者列表序列" class="headerlink" title="拆分迭代元组或者列表序列"></a>拆分迭代元组或者列表序列</h4><p><img src="/images/resources/22F732D23D4E4917BA09FC95F66DB0F3.jpg" alt="IMAGE"></p>
+<h4 id="tuple方法"><a href="#tuple方法" class="headerlink" title="tuple方法"></a>tuple方法</h4><p><em>元组有一个方法和列表保持一致是叫做count,可以统计某个值出现的频率</em></p>
+<p><img src="/images/resources/F5BFB1E3646A723755FB1A2C2303A8D3.jpg" alt="IMAGE"></p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p><em>与元组对比,列表的长度可变,内容可以被修改,可以用方括号定义,或者用list函数</em></p>
+<p><img src="/images/resources/3FA6147CEEC6591A8FF02FEA84DD0682.jpg" alt="IMAGE"></p>
+<h3 id="添加和删除元素"><a href="#添加和删除元素" class="headerlink" title="添加和删除元素"></a>添加和删除元素</h3><p><img src="/images/resources/C74934A48935FB96A9827AE4CF762EB1.jpg" alt="IMAGE"></p>
+<h3 id="通过in或者not-in可以检查列表是否包含该数据"><a href="#通过in或者not-in可以检查列表是否包含该数据" class="headerlink" title="通过in或者not in可以检查列表是否包含该数据"></a>通过in或者not in可以检查列表是否包含该数据</h3><p><img src="/images/resources/5FE59F4596DF44F604E9EF46372515A7.jpg" alt="IMAGE"></p>
+<h3 id="串联和组合列表"><a href="#串联和组合列表" class="headerlink" title="串联和组合列表"></a>串联和组合列表</h3><p><img src="/images/resources/3AAC6E0B610071462195D4AD879D36A2.jpg" alt="IMAGE"></p>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p><em>通过使用sort函数对一个列表原地排序</em></p>
+<p><img src="/images/resources/BEFDED1B684DFB66AD6B773B661DCE7B.jpg" alt="IMAGE"></p>
+<h3 id="二分搜索和维护已排序的列表"><a href="#二分搜索和维护已排序的列表" class="headerlink" title="二分搜索和维护已排序的列表"></a>二分搜索和维护已排序的列表</h3><p><em>在python中bisect模块支持二分查找和向已排序的列表插入值</em></p>
+<p><img src="/images/resources/39F97B38573F4D1D30B11FCAB79E7D92.jpg" alt="IMAGE"></p>
+<h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p><em>切片的目的主要选取大多数序列类型的一部分,切片的基本形式就是strat:stop</em></p>
+<p><em>切片的起始元素是包含的,但不包含结束元素,因此结果中包含的元素个数为stop-start</em></p>
+<p><img src="/images/resources/8AB835212447CFEFA8F40535D85F72E2.jpg" alt="IMAGE"></p>
+<h4 id="递进切片"><a href="#递进切片" class="headerlink" title="递进切片"></a>递进切片</h4><p><img src="/images/resources/66ADF11715DBDE531B2283C4AE59EFE0.jpg" alt="IMAGE"></p>
+<h2 id="切片的规律可以如下图所示"><a href="#切片的规律可以如下图所示" class="headerlink" title="切片的规律可以如下图所示"></a>切片的规律可以如下图所示</h2><p><img src="/images/resources/185AADC5CACCF64F386E5769BB564A2A.jpg" alt="IMAGE"></p>
+<h2 id="序列函数"><a href="#序列函数" class="headerlink" title="序列函数"></a>序列函数</h2><h3 id="enumerate函数"><a href="#enumerate函数" class="headerlink" title="enumerate函数"></a>enumerate函数</h3><p><em>迭代一个序列的时候,想知道当前项的序号</em></p>
+<p><img src="/images/resources/AA3852DD100C8F45ACF57882952A231D.jpg" alt="IMAGE"></p>
+<h3 id="sorted函数"><a href="#sorted函数" class="headerlink" title="sorted函数"></a>sorted函数</h3><p><em>sorted函数可以从任意序列的元素返回一个新的排好序的列表</em></p>
+<p><img src="/images/resources/5657F65F4C8FD5441E3C3916E3A54A6C.jpg" alt="IMAGE"></p>
+<h3 id="zip函数"><a href="#zip函数" class="headerlink" title="zip函数"></a>zip函数</h3><p><em>zip函数可以将多个列表，元组或其它序列组合成一个元组列表</em></p>
+<p><img src="/images/resources/272D7629905D0F009F37B257463A591A.jpg" alt="IMAGE"></p>
+<h3 id="reversed函数"><a href="#reversed函数" class="headerlink" title="reversed函数"></a>reversed函数</h3><p><em>reversed可以从后向前迭代一个序列</em></p>
+<p><img src="/images/resources/D5154AC437784C34B97FF8A39087B138.jpg" alt="IMAGE"></p>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><p><em>字典是python最为重要的数据结构,也可以叫做哈希映射或关联数组.以键值的方式构成,键值都可以是python对象</em></p>
+<p><em>创建字典的方法之一是使用尖括号,用冒号进行键和值的分隔</em></p>
+<p><img src="/images/resources/A5C76341228517851E00CDB816CA3A39.jpg" alt="IMAGE"></p>
+<h3 id="删除的2种方式"><a href="#删除的2种方式" class="headerlink" title="删除的2种方式"></a>删除的2种方式</h3><p><img src="/images/resources/6599F1C98711F040F7CA77A780A1E9FF.jpg" alt="IMAGE"></p>
+<h3 id="键值的迭代与字典融合"><a href="#键值的迭代与字典融合" class="headerlink" title="键值的迭代与字典融合"></a>键值的迭代与字典融合</h3><p><img src="/images/resources/E4C4DCF8FAC151BC5DE3BF0BF54A4E22.jpg" alt="IMAGE"></p>
+<h3 id="通过序列创建字典"><a href="#通过序列创建字典" class="headerlink" title="通过序列创建字典"></a>通过序列创建字典</h3><p><img src="/images/resources/FD763C5F0162EAF6F5E9DB2AA875E2AC.jpg" alt="IMAGE"></p>
+<h3 id="对单词进行分类"><a href="#对单词进行分类" class="headerlink" title="对单词进行分类"></a>对单词进行分类</h3><p><img src="/images/resources/5160274AFDB6C56B59E6D2265426568D.jpg" alt="IMAGE"></p>
+<h3 id="关于有效的键类型"><a href="#关于有效的键类型" class="headerlink" title="关于有效的键类型"></a>关于有效的键类型</h3><p><strong>键通常是不可变的标量类型,list是不被允许的</strong></p>
+<p><img src="/images/resources/B428C73E1B1025035FC0E7C5D866631C.jpg" alt="IMAGE"></p>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><p><em>集合是无序,不可重复的元素的集合,可以理解为字典,只有键没有值,创建集合有2种方式,通过set函数或者使用尖括号set语句</em></p>
+<p><img src="/images/resources/D87BD1A35015B4AF0A8C72053B521F42.jpg" alt="IMAGE"></p>
+<h3 id="集合支持合并-交集-等集合运算"><a href="#集合支持合并-交集-等集合运算" class="headerlink" title="集合支持合并,交集,等集合运算"></a>集合支持合并,交集,等集合运算</h3><p><img src="/images/resources/411E63BDE36BE3DC7D014E840F5F96B5.jpg" alt="IMAGE"></p>
+<h3 id="集合中常用的方法"><a href="#集合中常用的方法" class="headerlink" title="集合中常用的方法"></a>集合中常用的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">S.add(e) 在集合中添加一个新的元素e；如果元素已经存在，则不添加</span><br><span class="line">S.remove(e) 从集合中删除一个元素，如果元素不存在于集合中，则会产生一个KeyError错误</span><br><span class="line">S.discard(e) 从集合S中移除一个元素e;</span><br><span class="line">S.clear() 清空集合内的所有元素</span><br><span class="line">S.copy() 将集合进行一次浅拷贝</span><br><span class="line">S.pop() 从集合S中删除一个随机元素;如果此集合为空，则引发KeyError异常</span><br><span class="line">S.update(s2) 用 S与s2得到的全集更新变量S</span><br><span class="line">以下内容可以用运算符操作代替  </span><br><span class="line">S.difference(s2) 用S - s2 运算，返回存在于在S中，但不在s2中的所有元素的集合</span><br><span class="line">S.difference_update(s2) 等同于 S = S - s2</span><br><span class="line">S.intersection(s2) 等同于S &amp; s2</span><br><span class="line">S.intersection_update(s2) 等同于S = S &amp; s2</span><br><span class="line">S.isdisjoint(s2) 如果S与s2交集为空返回True,非空则返回False</span><br><span class="line">S.issubset(s2) 如果S与s2交集为非空返回True,空则返回False</span><br><span class="line">S.issuperset(...) 如果S为s2的子集返回True,否则返回False</span><br><span class="line">S.symmetric_difference(s2) 返回对称补集,等同于 S ^ s2</span><br><span class="line">S.symmetric_difference_update(s2) 用S 与 s2的对称补集更新 S</span><br><span class="line">S.union(s2) 生成 S 与 s2的全集</span><br></pre></td></tr></table></figure>
+
+<h2 id="列表-集合-字典推导式以及嵌套推导式"><a href="#列表-集合-字典推导式以及嵌套推导式" class="headerlink" title="列表,集合,字典推导式以及嵌套推导式"></a>列表,集合,字典推导式以及嵌套推导式</h2><p><em>语法格式如下:[expr for val in colletion if condition]</em></p>
+<p><img src="/images/resources/19E78E4840C00686CC94012669B01D67.jpg" alt="IMAGE"></p>
+<h3 id="嵌套推导式-稍难"><a href="#嵌套推导式-稍难" class="headerlink" title="嵌套推导式(稍难)"></a>嵌套推导式(稍难)</h3><p><img src="/images/resources/8AF0CADA6EAE4D2EAE8968C87A325DCB.jpg" alt="IMAGE"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/数据分析/" rel="tag"># 数据分析</a>
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+            <a href="/tags/序列/" rel="tag"># 序列</a>
+          
+            <a href="/tags/推导式/" rel="tag"># 推导式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/17/2020-02-17-数据分析之python基础语法2/" rel="next" title="数据分析之python基础语法2">
+                <i class="fa fa-chevron-left"></i> 数据分析之python基础语法2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NzAwMC8yMzUwMA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Michael_Wang">
+            
+              <p class="site-author-name" itemprop="name">Michael_Wang</p>
+              <p class="site-description motion-element" itemprop="description">技术源于生活</p>
+          </div>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="310" height="110" src="//music.163.com/outchain/player?type=0&id=619679589&auto=1&height=90"></iframe>
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/djwangweijie" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:22590570@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python的数据结构-函数和文件"><span class="nav-number">1.</span> <span class="nav-text">python的数据结构,函数和文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构和序列"><span class="nav-number">2.</span> <span class="nav-text">数据结构和序列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#元组"><span class="nav-number">2.1.</span> <span class="nav-text">元组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#拆分元组"><span class="nav-number">2.1.1.</span> <span class="nav-text">拆分元组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#拆分和数值交换"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">拆分和数值交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拆分迭代元组或者列表序列"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">拆分迭代元组或者列表序列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tuple方法"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">tuple方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">2.2.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加和删除元素"><span class="nav-number">2.2.1.</span> <span class="nav-text">添加和删除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过in或者not-in可以检查列表是否包含该数据"><span class="nav-number">2.2.2.</span> <span class="nav-text">通过in或者not in可以检查列表是否包含该数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#串联和组合列表"><span class="nav-number">2.2.3.</span> <span class="nav-text">串联和组合列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序"><span class="nav-number">2.2.4.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二分搜索和维护已排序的列表"><span class="nav-number">2.2.5.</span> <span class="nav-text">二分搜索和维护已排序的列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切片"><span class="nav-number">2.2.6.</span> <span class="nav-text">切片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#递进切片"><span class="nav-number">2.2.6.1.</span> <span class="nav-text">递进切片</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切片的规律可以如下图所示"><span class="nav-number">2.3.</span> <span class="nav-text">切片的规律可以如下图所示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序列函数"><span class="nav-number">2.4.</span> <span class="nav-text">序列函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#enumerate函数"><span class="nav-number">2.4.1.</span> <span class="nav-text">enumerate函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sorted函数"><span class="nav-number">2.4.2.</span> <span class="nav-text">sorted函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zip函数"><span class="nav-number">2.4.3.</span> <span class="nav-text">zip函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reversed函数"><span class="nav-number">2.4.4.</span> <span class="nav-text">reversed函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">2.5.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除的2种方式"><span class="nav-number">2.5.1.</span> <span class="nav-text">删除的2种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键值的迭代与字典融合"><span class="nav-number">2.5.2.</span> <span class="nav-text">键值的迭代与字典融合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过序列创建字典"><span class="nav-number">2.5.3.</span> <span class="nav-text">通过序列创建字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对单词进行分类"><span class="nav-number">2.5.4.</span> <span class="nav-text">对单词进行分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于有效的键类型"><span class="nav-number">2.5.5.</span> <span class="nav-text">关于有效的键类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合"><span class="nav-number">2.6.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#集合支持合并-交集-等集合运算"><span class="nav-number">2.6.1.</span> <span class="nav-text">集合支持合并,交集,等集合运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合中常用的方法"><span class="nav-number">2.6.2.</span> <span class="nav-text">集合中常用的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表-集合-字典推导式以及嵌套推导式"><span class="nav-number">2.7.</span> <span class="nav-text">列表,集合,字典推导式以及嵌套推导式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套推导式-稍难"><span class="nav-number">2.7.1.</span> <span class="nav-text">嵌套推导式(稍难)</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael_Wang</span>
+
+
+</div>
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共71.3k字</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("GsmDOg5Ui5ABCP3LHpLkvdKW-gzGzoHsz", "wsLkgtjeqMlw9Dhldh4JdXyA");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+</html>

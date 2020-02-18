@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>数据分析之python数据结构和序列</title>
+      <link href="/2020/02/18/2020-02-18-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E5%BA%8F%E5%88%97/"/>
+      <url>/2020/02/18/2020-02-18-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E5%BA%8F%E5%88%97/</url>
+      
+        <content type="html"><![CDATA[<p>每个数据结构都是语言设计者的精心设计,推导式也是有趣的部分</p><h1 id="python的数据结构-函数和文件"><a href="#python的数据结构-函数和文件" class="headerlink" title="python的数据结构,函数和文件"></a>python的数据结构,函数和文件</h1><ol><li>数据结构和序列,函数,文件讲分为3个部分进行叙述</li></ol><h1 id="数据结构和序列"><a href="#数据结构和序列" class="headerlink" title="数据结构和序列"></a>数据结构和序列</h1><p><strong>python的数据结构有元组,列表,字典,集合</strong></p><h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p><em>元组是一个固定长度,不可改变的python序列对象,创建元组最简单的方式就是用逗号进行分隔</em></p><p><img src="/images/resources/2ADB91417B20DC838C193A4ACDF1A6A1.jpg" alt="IMAGE"></p><p><em>如何元组中某个对象是可变的,可以在原位上进行修改</em></p><p><img src="/images/resources/4687ABDDABDE1152358DE012E5CBC3C7.jpg" alt="IMAGE"></p><p><em>元组可以相接与复制</em></p><p><img src="/images/resources/755E5FA05748213CCA82761CBE40B6C5.jpg" alt="IMAGE"></p><h3 id="拆分元组"><a href="#拆分元组" class="headerlink" title="拆分元组"></a>拆分元组</h3><h4 id="拆分和数值交换"><a href="#拆分和数值交换" class="headerlink" title="拆分和数值交换"></a>拆分和数值交换</h4><p><img src="/images/resources/92858794DECE6DAD07EE673BBD4FDCC7.jpg" alt="IMAGE"></p><h4 id="拆分迭代元组或者列表序列"><a href="#拆分迭代元组或者列表序列" class="headerlink" title="拆分迭代元组或者列表序列"></a>拆分迭代元组或者列表序列</h4><p><img src="/images/resources/22F732D23D4E4917BA09FC95F66DB0F3.jpg" alt="IMAGE"></p><h4 id="tuple方法"><a href="#tuple方法" class="headerlink" title="tuple方法"></a>tuple方法</h4><p><em>元组有一个方法和列表保持一致是叫做count,可以统计某个值出现的频率</em></p><p><img src="/images/resources/F5BFB1E3646A723755FB1A2C2303A8D3.jpg" alt="IMAGE"></p><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p><em>与元组对比,列表的长度可变,内容可以被修改,可以用方括号定义,或者用list函数</em></p><p><img src="/images/resources/3FA6147CEEC6591A8FF02FEA84DD0682.jpg" alt="IMAGE"></p><h3 id="添加和删除元素"><a href="#添加和删除元素" class="headerlink" title="添加和删除元素"></a>添加和删除元素</h3><p><img src="/images/resources/C74934A48935FB96A9827AE4CF762EB1.jpg" alt="IMAGE"></p><h3 id="通过in或者not-in可以检查列表是否包含该数据"><a href="#通过in或者not-in可以检查列表是否包含该数据" class="headerlink" title="通过in或者not in可以检查列表是否包含该数据"></a>通过in或者not in可以检查列表是否包含该数据</h3><p><img src="/images/resources/5FE59F4596DF44F604E9EF46372515A7.jpg" alt="IMAGE"></p><h3 id="串联和组合列表"><a href="#串联和组合列表" class="headerlink" title="串联和组合列表"></a>串联和组合列表</h3><p><img src="/images/resources/3AAC6E0B610071462195D4AD879D36A2.jpg" alt="IMAGE"></p><h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p><em>通过使用sort函数对一个列表原地排序</em></p><p><img src="/images/resources/BEFDED1B684DFB66AD6B773B661DCE7B.jpg" alt="IMAGE"></p><h3 id="二分搜索和维护已排序的列表"><a href="#二分搜索和维护已排序的列表" class="headerlink" title="二分搜索和维护已排序的列表"></a>二分搜索和维护已排序的列表</h3><p><em>在python中bisect模块支持二分查找和向已排序的列表插入值</em></p><p><img src="/images/resources/39F97B38573F4D1D30B11FCAB79E7D92.jpg" alt="IMAGE"></p><h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p><em>切片的目的主要选取大多数序列类型的一部分,切片的基本形式就是strat:stop</em></p><p><em>切片的起始元素是包含的,但不包含结束元素,因此结果中包含的元素个数为stop-start</em></p><p><img src="/images/resources/8AB835212447CFEFA8F40535D85F72E2.jpg" alt="IMAGE"></p><h4 id="递进切片"><a href="#递进切片" class="headerlink" title="递进切片"></a>递进切片</h4><p><img src="/images/resources/66ADF11715DBDE531B2283C4AE59EFE0.jpg" alt="IMAGE"></p><h2 id="切片的规律可以如下图所示"><a href="#切片的规律可以如下图所示" class="headerlink" title="切片的规律可以如下图所示"></a>切片的规律可以如下图所示</h2><p><img src="/images/resources/185AADC5CACCF64F386E5769BB564A2A.jpg" alt="IMAGE"></p><h2 id="序列函数"><a href="#序列函数" class="headerlink" title="序列函数"></a>序列函数</h2><h3 id="enumerate函数"><a href="#enumerate函数" class="headerlink" title="enumerate函数"></a>enumerate函数</h3><p><em>迭代一个序列的时候,想知道当前项的序号</em></p><p><img src="/images/resources/AA3852DD100C8F45ACF57882952A231D.jpg" alt="IMAGE"></p><h3 id="sorted函数"><a href="#sorted函数" class="headerlink" title="sorted函数"></a>sorted函数</h3><p><em>sorted函数可以从任意序列的元素返回一个新的排好序的列表</em></p><p><img src="/images/resources/5657F65F4C8FD5441E3C3916E3A54A6C.jpg" alt="IMAGE"></p><h3 id="zip函数"><a href="#zip函数" class="headerlink" title="zip函数"></a>zip函数</h3><p><em>zip函数可以将多个列表，元组或其它序列组合成一个元组列表</em></p><p><img src="/images/resources/272D7629905D0F009F37B257463A591A.jpg" alt="IMAGE"></p><h3 id="reversed函数"><a href="#reversed函数" class="headerlink" title="reversed函数"></a>reversed函数</h3><p><em>reversed可以从后向前迭代一个序列</em></p><p><img src="/images/resources/D5154AC437784C34B97FF8A39087B138.jpg" alt="IMAGE"></p><h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><p><em>字典是python最为重要的数据结构,也可以叫做哈希映射或关联数组.以键值的方式构成,键值都可以是python对象</em></p><p><em>创建字典的方法之一是使用尖括号,用冒号进行键和值的分隔</em></p><p><img src="/images/resources/A5C76341228517851E00CDB816CA3A39.jpg" alt="IMAGE"></p><h3 id="删除的2种方式"><a href="#删除的2种方式" class="headerlink" title="删除的2种方式"></a>删除的2种方式</h3><p><img src="/images/resources/6599F1C98711F040F7CA77A780A1E9FF.jpg" alt="IMAGE"></p><h3 id="键值的迭代与字典融合"><a href="#键值的迭代与字典融合" class="headerlink" title="键值的迭代与字典融合"></a>键值的迭代与字典融合</h3><p><img src="/images/resources/E4C4DCF8FAC151BC5DE3BF0BF54A4E22.jpg" alt="IMAGE"></p><h3 id="通过序列创建字典"><a href="#通过序列创建字典" class="headerlink" title="通过序列创建字典"></a>通过序列创建字典</h3><p><img src="/images/resources/FD763C5F0162EAF6F5E9DB2AA875E2AC.jpg" alt="IMAGE"></p><h3 id="对单词进行分类"><a href="#对单词进行分类" class="headerlink" title="对单词进行分类"></a>对单词进行分类</h3><p><img src="/images/resources/5160274AFDB6C56B59E6D2265426568D.jpg" alt="IMAGE"></p><h3 id="关于有效的键类型"><a href="#关于有效的键类型" class="headerlink" title="关于有效的键类型"></a>关于有效的键类型</h3><p><strong>键通常是不可变的标量类型,list是不被允许的</strong></p><p><img src="/images/resources/B428C73E1B1025035FC0E7C5D866631C.jpg" alt="IMAGE"></p><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><p><em>集合是无序,不可重复的元素的集合,可以理解为字典,只有键没有值,创建集合有2种方式,通过set函数或者使用尖括号set语句</em></p><p><img src="/images/resources/D87BD1A35015B4AF0A8C72053B521F42.jpg" alt="IMAGE"></p><h3 id="集合支持合并-交集-等集合运算"><a href="#集合支持合并-交集-等集合运算" class="headerlink" title="集合支持合并,交集,等集合运算"></a>集合支持合并,交集,等集合运算</h3><p><img src="/images/resources/411E63BDE36BE3DC7D014E840F5F96B5.jpg" alt="IMAGE"></p><h3 id="集合中常用的方法"><a href="#集合中常用的方法" class="headerlink" title="集合中常用的方法"></a>集合中常用的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">S.add(e) 在集合中添加一个新的元素e；如果元素已经存在，则不添加</span><br><span class="line">S.remove(e) 从集合中删除一个元素，如果元素不存在于集合中，则会产生一个KeyError错误</span><br><span class="line">S.discard(e) 从集合S中移除一个元素e;</span><br><span class="line">S.clear() 清空集合内的所有元素</span><br><span class="line">S.copy() 将集合进行一次浅拷贝</span><br><span class="line">S.pop() 从集合S中删除一个随机元素;如果此集合为空，则引发KeyError异常</span><br><span class="line">S.update(s2) 用 S与s2得到的全集更新变量S</span><br><span class="line">以下内容可以用运算符操作代替  </span><br><span class="line">S.difference(s2) 用S - s2 运算，返回存在于在S中，但不在s2中的所有元素的集合</span><br><span class="line">S.difference_update(s2) 等同于 S = S - s2</span><br><span class="line">S.intersection(s2) 等同于S &amp; s2</span><br><span class="line">S.intersection_update(s2) 等同于S = S &amp; s2</span><br><span class="line">S.isdisjoint(s2) 如果S与s2交集为空返回True,非空则返回False</span><br><span class="line">S.issubset(s2) 如果S与s2交集为非空返回True,空则返回False</span><br><span class="line">S.issuperset(...) 如果S为s2的子集返回True,否则返回False</span><br><span class="line">S.symmetric_difference(s2) 返回对称补集,等同于 S ^ s2</span><br><span class="line">S.symmetric_difference_update(s2) 用S 与 s2的对称补集更新 S</span><br><span class="line">S.union(s2) 生成 S 与 s2的全集</span><br></pre></td></tr></table></figure><h2 id="列表-集合-字典推导式以及嵌套推导式"><a href="#列表-集合-字典推导式以及嵌套推导式" class="headerlink" title="列表,集合,字典推导式以及嵌套推导式"></a>列表,集合,字典推导式以及嵌套推导式</h2><p><em>语法格式如下:[expr for val in colletion if condition]</em></p><p><img src="/images/resources/19E78E4840C00686CC94012669B01D67.jpg" alt="IMAGE"></p><h3 id="嵌套推导式-稍难"><a href="#嵌套推导式-稍难" class="headerlink" title="嵌套推导式(稍难)"></a>嵌套推导式(稍难)</h3><p><img src="/images/resources/8AF0CADA6EAE4D2EAE8968C87A325DCB.jpg" alt="IMAGE"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据分析 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 数据分析 </tag>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 序列 </tag>
+            
+            <tag> 推导式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据分析之python基础语法2</title>
       <link href="/2020/02/17/2020-02-17-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%952/"/>
       <url>/2020/02/17/2020-02-17-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%952/</url>
@@ -24,9 +57,9 @@
             
             <tag> 数据分析 </tag>
             
-            <tag> 面向对象 </tag>
-            
             <tag> 语言基础2 </tag>
+            
+            <tag> 面向对象 </tag>
             
         </tags>
       
@@ -55,9 +88,9 @@
             
             <tag> 数据分析 </tag>
             
-            <tag> 语言基础 </tag>
-            
             <tag> 面向对象 </tag>
+            
+            <tag> 语言基础 </tag>
             
         </tags>
       
