@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangweijie.vip/"/>
-  <updated>2020-02-20T12:30:07.949Z</updated>
+  <updated>2020-02-21T07:30:56.782Z</updated>
   <id>https://wangweijie.vip/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据分析之python文件和操作系统</title>
+    <link href="https://wangweijie.vip/2020/02/21/2020-02-21-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8BPython%E6%96%87%E4%BB%B6%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://wangweijie.vip/2020/02/21/2020-02-21-数据分析之Python文件和操作系统/</id>
+    <published>2020-02-21T07:28:54.288Z</published>
+    <updated>2020-02-21T07:30:56.782Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="文件和操作系统"><a href="#文件和操作系统" class="headerlink" title="文件和操作系统"></a>文件和操作系统</h1><ol><li>文件的读写操作</li><li>文件的字节与编码</li></ol><h1 id="文件的读写操作"><a href="#文件的读写操作" class="headerlink" title="文件的读写操作"></a>文件的读写操作</h1><p><em>打开一个文件以便读写,可以使用内置的open函数填充一个相对路径或者是绝对路径</em></p><p><img src="/images/resources/21CA280ADDD5BE786A7CD57CF732044D.jpg" alt="IMAGE"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">r:读取文件，若文件不存在则会报错</span><br><span class="line">w:写入文件，若文件不存在则会先创建再写入，会覆盖原文件</span><br><span class="line">a:写入文件，若文件不存在则会先创建再写入，但不会覆盖原文件，而是追加在文件末尾</span><br><span class="line">rb,wb:分别于r,w类似，但是用于读写二进制文件</span><br><span class="line">r+:可读、可写，文件不存在也会报错，写操作时会覆盖</span><br><span class="line">w+:可读，可写，文件不存在先创建，会覆盖</span><br><span class="line">a+:可读、可写，文件不存在先创建，不会覆盖，追加在末尾</span><br></pre></td></tr></table></figure><p><strong>注意：这里的覆盖是指每次重新打开文件进行操作时覆盖原来的，如果是在打开文件中则不会覆盖</strong></p><h1 id="文件的字节和编码"><a href="#文件的字节和编码" class="headerlink" title="文件的字节和编码"></a>文件的字节和编码</h1><p><img src="/images/resources/7D247662CDCFE9E85AD384245142E586.jpg" alt="IMAGE"></p><h1 id="前期回顾"><a href="#前期回顾" class="headerlink" title="前期回顾"></a>前期回顾</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;文件和操作系统&quot;&gt;&lt;a href=&quot;#文件和操作系统&quot; class=&quot;headerlink&quot; title=&quot;文件和操作系统&quot;&gt;&lt;/a&gt;文件和操作系统&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;文件的读写操作&lt;/li&gt;
+&lt;li&gt;文件的字节与编码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=
+      
+    
+    </summary>
+    
+    
+      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+    
+      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="文件操作" scheme="https://wangweijie.vip/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    
+      <category term="字符编码" scheme="https://wangweijie.vip/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/"/>
+    
+  </entry>
   
   <entry>
     <title>数据分析之python函数</title>
@@ -711,39 +747,6 @@
       <category term="链路追踪" scheme="https://wangweijie.vip/tags/%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA/"/>
     
       <category term="应用性能管理" scheme="https://wangweijie.vip/tags/%E5%BA%94%E7%94%A8%E6%80%A7%E8%83%BD%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringAli统一资源管理</title>
-    <link href="https://wangweijie.vip/2019/10/10/2019-10-10-SpringAli%E8%B5%84%E6%BA%90%E7%BB%9F%E4%B8%80%E9%85%8D%E7%BD%AE/"/>
-    <id>https://wangweijie.vip/2019/10/10/2019-10-10-SpringAli资源统一配置/</id>
-    <published>2019-10-10T08:13:11.891Z</published>
-    <updated>2019-10-10T08:20:02.597Z</updated>
-    
-    <content type="html"><![CDATA[<p>如何做到资源的统一高效管理,nacos-config是一个不错的选择</p><h1 id="springAli资源管理"><a href="#springAli资源管理" class="headerlink" title="springAli资源管理"></a>springAli资源管理</h1><ol><li>统一资源管理的应用场景</li><li>实际操作(代码示例)</li></ol><h2 id="统一资源管理的应用场景"><a href="#统一资源管理的应用场景" class="headerlink" title="统一资源管理的应用场景"></a>统一资源管理的应用场景</h2><blockquote><p>场景说明</p></blockquote><p><strong><em>在分布式系统中，由于服务数量巨多，为了方便服务配置文件统一管理，实时更新，所以需要分布式配置中心组件。</em></strong></p><p><strong>也就是配置文件众多,你不可能每次更改后然后在打包为jar包运行,是否有一种方式可以通过读取远端的配置文件,随时可以更改端口或者服务名等一系列的动作</strong></p><blockquote><p>解决方案</p></blockquote><p><strong>解决方案:使用nacos config:使用 Spring Cloud Alibaba Nacos Config，可以在 Nacos Server 集中管理你 Spring Cloud 应用的外部属性配置</strong></p><blockquote><p>作用原理</p></blockquote><p><strong>作用:在特殊的 bootstrap 阶段，配置被加载到Spring环境中。当应用程序通过部署管道从开发到测试再到生产时，您可以管理这些环境之间的配置，并确保应用程序具有迁移时需要运行的所有内容。</strong></p><h2 id="实际操作-代码示例"><a href="#实际操作-代码示例" class="headerlink" title="实际操作(代码示例)"></a>实际操作(代码示例)</h2><blockquote><p>1.启动nacos服务(添加配置文件,不限于消费者或者服务者的配置文件)</p></blockquote><p><img src="/images/resources/297CBE5567F5EABD2F10368D39EE8F68.jpg" alt="IMAGE"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: nacos-provider</span><br><span class="line">  cloud:</span><br><span class="line">    nacos:</span><br><span class="line">      discovery:</span><br><span class="line">        server-addr: 127.0.0.1:8848</span><br><span class="line">    sentinel:</span><br><span class="line">      transport:</span><br><span class="line">        dashboard: 127.0.0.1:8080</span><br><span class="line">        # 当前应用被sentinel监控的端口</span><br><span class="line">        port: 8720</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 8082</span><br><span class="line"></span><br><span class="line">management:</span><br><span class="line">  endpoints:</span><br><span class="line">    web:</span><br><span class="line">      exposure:</span><br><span class="line">        include: &quot;*&quot;</span><br><span class="line">#sentinel</span><br><span class="line">feign:</span><br><span class="line">  sentinel:</span><br><span class="line">    enabled: true</span><br><span class="line">#cus attr</span><br><span class="line">user:</span><br><span class="line">  uname: wwj</span><br><span class="line">  age: 32</span><br></pre></td></tr></table></figure><blockquote><p>2.替换yml文件,新建读取属性文件bootstrap.properties</p></blockquote><p><img src="/images/resources/1B9B4E7D810AA8390124933A02687D0B.jpg" alt="IMAGE"></p><p><strong><em>注意：Spring Boot 配置文件的加载顺序，依次为 bootstrap.properties -&gt; bootstrap.yml -&gt; application.properties -&gt; application.yml ，其中 bootstrap.properties 配置为最高优先级</em></strong></p><blockquote><p>3.新建一个controller用来作为数据可实时配置更新</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">public class Tcontroller &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 注入配置文件上下文</span><br><span class="line">     */</span><br><span class="line">    @Autowired</span><br><span class="line">    private ConfigurableApplicationContext applicationContext;</span><br><span class="line">    /**</span><br><span class="line">     * 从上下文中读取配置</span><br><span class="line">     */</span><br><span class="line">    @GetMapping(value = &quot;/hi&quot;)</span><br><span class="line">    public String getNameFromNacosConfig() &#123;</span><br><span class="line">        return &quot;Hello &quot; + applicationContext.getEnvironment().getProperty(&quot;user.uname&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>4.pom.xml中添加nacos-config的依赖</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-config&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><blockquote><p>5.启动服务</p></blockquote><p><img src="/images/resources/2508FD533F31AF266A9091D8F8F18ABC.jpg" alt="IMAGE"></p><p>更改配置文件再次访问</p><p><img src="/images/resources/91C38ED995B1844042B51A205E651532.jpg" alt="IMAGE"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;如何做到资源的统一高效管理,nacos-config是一个不错的选择&lt;/p&gt;
-&lt;h1 id=&quot;springAli资源管理&quot;&gt;&lt;a href=&quot;#springAli资源管理&quot; class=&quot;headerlink&quot; title=&quot;springAli资源管理&quot;&gt;&lt;/a&gt;sprin
-      
-    
-    </summary>
-    
-    
-      <category term="Spring微服务" scheme="https://wangweijie.vip/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-    
-      <category term="Spring全家桶" scheme="https://wangweijie.vip/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
-    
-      <category term="微服务" scheme="https://wangweijie.vip/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-      <category term="高效开发" scheme="https://wangweijie.vip/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
-    
-      <category term="统一注册配置" scheme="https://wangweijie.vip/tags/%E7%BB%9F%E4%B8%80%E6%B3%A8%E5%86%8C%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
