@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "a5ab5263"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,数据分析,Numpy使用,矩阵相乘,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Michael_Wang" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Numpy可以好好补补数学.捡起了儿时的快乐 数组和矢量计算 Numpy介绍 Numpy中ndarray:一种多维数组对象  备注:矢量（vector）是一种既有大小又有方向的量，又称为向量。一般来说，在物理学中称作矢量，例如速度、加速度、力等等就是这样的量。舍弃实际含义，就抽象为数学中的概念──向量。在计算机中，矢量图可以无限放大永不变形. Numpy的功能 ndarray,一个具有矢量算术运算">
+<meta name="keywords" content="python,数据分析,Numpy使用,矩阵相乘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据分析之python之Numpy基础一">
+<meta property="og:url" content="https://wangweijie.vip/2020/02/28/2020-02-28-数据分析之python Numpy基础一/index.html">
+<meta property="og:site_name" content="Michael_Wang">
+<meta property="og:description" content="Numpy可以好好补补数学.捡起了儿时的快乐 数组和矢量计算 Numpy介绍 Numpy中ndarray:一种多维数组对象  备注:矢量（vector）是一种既有大小又有方向的量，又称为向量。一般来说，在物理学中称作矢量，例如速度、加速度、力等等就是这样的量。舍弃实际含义，就抽象为数学中的概念──向量。在计算机中，矢量图可以无限放大永不变形. Numpy的功能 ndarray,一个具有矢量算术运算">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/814B5A8180B8A56781164924BAC0F297.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/C2EE448D7BFAA4DFFA9C5A0589E0B7E1.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/AE989534ADFEE5AAC55436657FD517D3.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/CA0831578007D96B95C5182AC5B58DE2.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/77015D7A890D3AA4D4D28693444D72A8.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/AA5CB582A14C4BBF37EF5446224B45AE.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/27DF3A546AA0E2017E9F709E2FA2EF3F.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/39EFB133FF0731C89CF63C09FA41B0CE.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/2AC5F7394B93D9FD9BF60F6EF1384DC7.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/EADE09AE9703ECFF57D37D730CE90AC0.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/690596B719569E350FF99926E39D6AC7.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/0AF3E10A049F8BD8F6C26106D00BDD19.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/71C6531079D6B2E9EA1FEB5260039AEE.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/35D0134E8BD96F98A32832FD84AEB436.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/7DBC68B452EEA322D859F67C5C49D5F6.jpg">
+<meta property="og:image" content="https://wangweijie.vip/images//images/resources/3D26592DADF3C21B0374A98B45075EF9.jpg">
+<meta property="og:updated_time" content="2020-02-28T11:11:36.795Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据分析之python之Numpy基础一">
+<meta name="twitter:description" content="Numpy可以好好补补数学.捡起了儿时的快乐 数组和矢量计算 Numpy介绍 Numpy中ndarray:一种多维数组对象  备注:矢量（vector）是一种既有大小又有方向的量，又称为向量。一般来说，在物理学中称作矢量，例如速度、加速度、力等等就是这样的量。舍弃实际含义，就抽象为数学中的概念──向量。在计算机中，矢量图可以无限放大永不变形. Numpy的功能 ndarray,一个具有矢量算术运算">
+<meta name="twitter:image" content="https://wangweijie.vip/images//images/resources/814B5A8180B8A56781164924BAC0F297.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://wangweijie.vip/2020/02/28/2020-02-28-数据分析之python Numpy基础一/">
+
+
+
+
+
+  <title>数据分析之python之Numpy基础一 | Michael_Wang</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4f6b1dad003fac023e47cd8b5305a4e1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/djwangweijie" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Michael_Wang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">JavaAndKafka_Streams</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wangweijie.vip/2020/02/28/2020-02-28-数据分析之python Numpy基础一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael_Wang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Michael_Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据分析之python之Numpy基础一</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-28T19:04:41+08:00">
+                2020-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大数据分析/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/02/28/2020-02-28-数据分析之python Numpy基础一/" class="leancloud_visitors" data-flag-title="数据分析之python之Numpy基础一">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Numpy可以好好补补数学.捡起了儿时的快乐</p>
+<h1 id="数组和矢量计算"><a href="#数组和矢量计算" class="headerlink" title="数组和矢量计算"></a>数组和矢量计算</h1><ol>
+<li>Numpy介绍</li>
+<li>Numpy中ndarray:一种多维数组对象</li>
+</ol>
+<p><strong>备注:矢量（vector）是一种既有大小又有方向的量，又称为向量。一般来说，在物理学中称作矢量，例如速度、加速度、力等等就是这样的量。舍弃实际含义，就抽象为数学中的概念──向量。在计算机中，矢量图可以无限放大永不变形.</strong></p>
+<h1 id="Numpy的功能"><a href="#Numpy的功能" class="headerlink" title="Numpy的功能"></a>Numpy的功能</h1><ol>
+<li>ndarray,一个具有矢量算术运算和复杂广播能力的快速且节省空间的多维数组</li>
+<li>用于对整组数据进行快速运算的标准数学函数(无需编写循环)</li>
+<li>用于读写磁盘数据的工具以及用于操作内容映射文件的工具</li>
+<li>线性代数,随机数生成以及傅里叶变换功能</li>
+</ol>
+<h2 id="主要的功能"><a href="#主要的功能" class="headerlink" title="主要的功能"></a>主要的功能</h2><ol>
+<li>用于数据整理和清算,子集构造和过滤,转换等快速的矢量化数据运算</li>
+<li>常用的数组算法,如排序,唯一化,集合运算等</li>
+<li>高效的描述统计和数据聚合/摘要运算</li>
+<li>用于异构数据集的合并/连接运算的数据对齐和关系型数据运算</li>
+<li>将条件逻辑表述为数组表达式</li>
+<li>数据的分组运算(聚合,转换,函数应用等)</li>
+</ol>
+<h2 id="Numpy的优势"><a href="#Numpy的优势" class="headerlink" title="Numpy的优势"></a>Numpy的优势</h2><ol>
+<li>Numpy是在一个连续的内存块中存储数据,独立于其他的python内置对象</li>
+<li>Numpy可以在整个数组上执行复杂的计算,而不需要python的for循环</li>
+</ol>
+<p><img src="/images//images/resources/814B5A8180B8A56781164924BAC0F297.jpg" alt="IMAGE"></p>
+<h1 id="Numpy中的ndarray"><a href="#Numpy中的ndarray" class="headerlink" title="Numpy中的ndarray"></a>Numpy中的ndarray</h1><p>一种多维数组对象,关于多维数组可以参考</p>
+<p><a href="https://baijiahao.baidu.com/s?id=1637508222888888267&wfr=spider&for=pc" target="_blank" rel="noopener">关于多维数组解释好的文章</a></p>
+<h2 id="操作1"><a href="#操作1" class="headerlink" title="操作1"></a>操作1</h2><p><img src="/images//images/resources/C2EE448D7BFAA4DFFA9C5A0589E0B7E1.jpg" alt="IMAGE"></p>
+<h2 id="操作2"><a href="#操作2" class="headerlink" title="操作2"></a>操作2</h2><p>ndarray是一个通用的同构数据多位容器,所有元素必须是相同类型的,每个数组都一个shape(一个表示各维度大小的元组)和一个dtype(用于描述数组数据类型的对象)</p>
+<p><img src="/images//images/resources/AE989534ADFEE5AAC55436657FD517D3.jpg" alt="IMAGE"></p>
+<h1 id="创建ndarray-从零开始"><a href="#创建ndarray-从零开始" class="headerlink" title="创建ndarray(从零开始)"></a>创建ndarray(从零开始)</h1><p><em>创建数组最简单的方法就是使用array函数</em></p>
+<p><img src="/images//images/resources/CA0831578007D96B95C5182AC5B58DE2.jpg" alt="IMAGE"></p>
+<p><img src="/images//images/resources/77015D7A890D3AA4D4D28693444D72A8.jpg" alt="IMAGE"></p>
+<h2 id="通过其他方式创建数组"><a href="#通过其他方式创建数组" class="headerlink" title="通过其他方式创建数组"></a>通过其他方式创建数组</h2><p><strong>在np.array可以通过zeros和ones创建指定长度和形状的全0或者全1数组</strong></p>
+<p><img src="/images//images/resources/AA5CB582A14C4BBF37EF5446224B45AE.jpg" alt="IMAGE"></p>
+<h1 id="ndarray的数据类型"><a href="#ndarray的数据类型" class="headerlink" title="ndarray的数据类型"></a>ndarray的数据类型</h1><p><em>dtype是一个特殊的对象,讲一块内容解释为特定数据类型所需的信息</em></p>
+<p><img src="/images//images/resources/27DF3A546AA0E2017E9F709E2FA2EF3F.jpg" alt="IMAGE"></p>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p><img src="/images//images/resources/39EFB133FF0731C89CF63C09FA41B0CE.jpg" alt="IMAGE"></p>
+<h1 id="Numpy数组的运算"><a href="#Numpy数组的运算" class="headerlink" title="Numpy数组的运算"></a>Numpy数组的运算</h1><p><em>数组很重要,不用编写循环即可对数据执行批量运算</em></p>
+<p><img src="/images//images/resources/2AC5F7394B93D9FD9BF60F6EF1384DC7.jpg" alt="IMAGE"><br><img src="/images//images/resources/EADE09AE9703ECFF57D37D730CE90AC0.jpg" alt="IMAGE"></p>
+<p>不同大小数组之间的运算叫做广播</p>
+<h2 id="基本的索引和切片"><a href="#基本的索引和切片" class="headerlink" title="基本的索引和切片"></a>基本的索引和切片</h2><p><strong>数组切片是原始数组的视图,视图上的任何修改都会直接反应到源数组上</strong></p>
+<p><img src="/images//images/resources/690596B719569E350FF99926E39D6AC7.jpg" alt="IMAGE"></p>
+<p><strong>在进行切片的时候该值会自动传播,以为着跟列表的区别在,数组切片是原始数据的修改。数据不会被复制</strong></p>
+<p><img src="/images//images/resources/0AF3E10A049F8BD8F6C26106D00BDD19.jpg" alt="IMAGE"></p>
+<p><em>如果明确要复制,使用arr[5:8].copy</em></p>
+<p><em>对于高维度数组,在一个二维数组中,各索引位置上的元素不再是标量而是一维数组</em></p>
+<p><img src="/images//images/resources/71C6531079D6B2E9EA1FEB5260039AEE.jpg" alt="IMAGE"></p>
+<p><strong>对于各个元素进行递归访问,可以传入一个以逗号隔开的索引列表选取单个元素</strong></p>
+<p><img src="/images//images/resources/35D0134E8BD96F98A32832FD84AEB436.jpg" alt="IMAGE"></p>
+<h2 id="二维数组索引方式"><a href="#二维数组索引方式" class="headerlink" title="二维数组索引方式"></a>二维数组索引方式</h2><p><img src="/images//images/resources/7DBC68B452EEA322D859F67C5C49D5F6.jpg" alt="IMAGE"></p>
+<h2 id="三维数组索引方式"><a href="#三维数组索引方式" class="headerlink" title="三维数组索引方式"></a>三维数组索引方式</h2><p><img src="/images//images/resources/3D26592DADF3C21B0374A98B45075EF9.jpg" alt="IMAGE"></p>
+<h3 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h3><p>![IMAGE](/images/resources/E16280A90E66D9290676E87CE4D23D84.jpg =1139x392)</p>
+<h2 id="切片索引"><a href="#切片索引" class="headerlink" title="切片索引"></a>切片索引</h2><p><em>ndarray的切片语法和列表的一维对象差不多,二维稍微有点区别</em></p>
+<p>![IMAGE](/images/resources/7F52A498D14A9558AD27D9C80226E2FA.jpg =1140x412)</p>
+<p>![IMAGE](/images/resources/3FB98072A91656B8C58AAB4FA40F5943.jpg =784x616)</p>
+<h2 id="布尔类型索引"><a href="#布尔类型索引" class="headerlink" title="布尔类型索引"></a>布尔类型索引</h2><p>![IMAGE](/images/resources/5A51BA2CEB9478B9C02FAC6A02F07EBD.jpg =1135x448)</p>
+<p><em>通知在匹配完后,同样可以进行切片的操作</em></p>
+<p>![IMAGE](/images/resources/9276F96AD69C62E01FF92C49CB59009E.jpg =1138x346)</p>
+<p><em>一些常见操作</em></p>
+<p>![IMAGE](/images/resources/D6297700F707A2E4CA3EEE8522DEDF23.jpg =1136x388)</p>
+<h2 id="花式索引"><a href="#花式索引" class="headerlink" title="花式索引"></a>花式索引</h2><p><strong>花式索引是一个Numpy术语,利用整数数组进行索引</strong></p>
+<p>![IMAGE](/images/resources/47CD0607F4BC614300A7A15A9C06F844.jpg =1137x454)</p>
+<p>![IMAGE](/images/resources/FF4F4FD99B39454CF5470521BA9AB7D3.jpg =1136x86)</p>
+<p><strong>花式索引和切片不一样,总是将数据复制到新数组中</strong></p>
+<h2 id="数组转置和轴对换"><a href="#数组转置和轴对换" class="headerlink" title="数组转置和轴对换"></a>数组转置和轴对换</h2><p><strong>转置是重塑的一种特殊形式,数组不仅有transpose方法,还有一个特殊的T属性</strong></p>
+<p>![IMAGE](/images/resources/48EFB15DA1DF601E1AE3114D009598C5.jpg =1139x420)</p>
+<p>![IMAGE](/images/resources/75C86806DA08A724C7E19559E32E4AE1.jpg =848x431)</p>
+<h3 id="三轴转换"><a href="#三轴转换" class="headerlink" title="三轴转换"></a>三轴转换</h3><p>![IMAGE](/images/resources/FB0262F8F1D97BD5CB277857C5E73FAA.jpg =1127x345)</p>
+<p><a href="https://blog.csdn.net/theITcat/article/details/100026068" target="_blank" rel="noopener">如何理解轴转换</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/数据分析/" rel="tag"># 数据分析</a>
+          
+            <a href="/tags/Numpy使用/" rel="tag"># Numpy使用</a>
+          
+            <a href="/tags/矩阵相乘/" rel="tag"># 矩阵相乘</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/21/2020-02-21-数据分析之Python文件和操作系统/" rel="next" title="数据分析之python文件和操作系统">
+                <i class="fa fa-chevron-left"></i> 数据分析之python文件和操作系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NzAwMC8yMzUwMA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Michael_Wang">
+            
+              <p class="site-author-name" itemprop="name">Michael_Wang</p>
+              <p class="site-description motion-element" itemprop="description">技术源于生活</p>
+          </div>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="310" height="110" src="//music.163.com/outchain/player?type=0&id=619679589&auto=1&height=90"></iframe>
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/djwangweijie" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:22590570@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数组和矢量计算"><span class="nav-number">1.</span> <span class="nav-text">数组和矢量计算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Numpy的功能"><span class="nav-number">2.</span> <span class="nav-text">Numpy的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主要的功能"><span class="nav-number">2.1.</span> <span class="nav-text">主要的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Numpy的优势"><span class="nav-number">2.2.</span> <span class="nav-text">Numpy的优势</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Numpy中的ndarray"><span class="nav-number">3.</span> <span class="nav-text">Numpy中的ndarray</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#操作1"><span class="nav-number">3.1.</span> <span class="nav-text">操作1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作2"><span class="nav-number">3.2.</span> <span class="nav-text">操作2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建ndarray-从零开始"><span class="nav-number">4.</span> <span class="nav-text">创建ndarray(从零开始)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过其他方式创建数组"><span class="nav-number">4.1.</span> <span class="nav-text">通过其他方式创建数组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ndarray的数据类型"><span class="nav-number">5.</span> <span class="nav-text">ndarray的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">5.1.</span> <span class="nav-text">类型转换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Numpy数组的运算"><span class="nav-number">6.</span> <span class="nav-text">Numpy数组的运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本的索引和切片"><span class="nav-number">6.1.</span> <span class="nav-text">基本的索引和切片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维数组索引方式"><span class="nav-number">6.2.</span> <span class="nav-text">二维数组索引方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三维数组索引方式"><span class="nav-number">6.3.</span> <span class="nav-text">三维数组索引方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试用例"><span class="nav-number">6.3.1.</span> <span class="nav-text">测试用例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切片索引"><span class="nav-number">6.4.</span> <span class="nav-text">切片索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#布尔类型索引"><span class="nav-number">6.5.</span> <span class="nav-text">布尔类型索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#花式索引"><span class="nav-number">6.6.</span> <span class="nav-text">花式索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组转置和轴对换"><span class="nav-number">6.7.</span> <span class="nav-text">数组转置和轴对换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三轴转换"><span class="nav-number">6.7.1.</span> <span class="nav-text">三轴转换</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael_Wang</span>
+
+
+</div>
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共73k字</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("GsmDOg5Ui5ABCP3LHpLkvdKW-gzGzoHsz", "wsLkgtjeqMlw9Dhldh4JdXyA");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+</html>

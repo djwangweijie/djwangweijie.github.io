@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangweijie.vip/"/>
-  <updated>2020-02-21T07:30:56.782Z</updated>
+  <updated>2020-02-28T11:11:36.795Z</updated>
   <id>https://wangweijie.vip/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据分析之python之Numpy基础一</title>
+    <link href="https://wangweijie.vip/2020/02/28/2020-02-28-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%20Numpy%E5%9F%BA%E7%A1%80%E4%B8%80/"/>
+    <id>https://wangweijie.vip/2020/02/28/2020-02-28-数据分析之python Numpy基础一/</id>
+    <published>2020-02-28T11:04:41.920Z</published>
+    <updated>2020-02-28T11:11:36.795Z</updated>
+    
+    <content type="html"><![CDATA[<p>Numpy可以好好补补数学.捡起了儿时的快乐</p><h1 id="数组和矢量计算"><a href="#数组和矢量计算" class="headerlink" title="数组和矢量计算"></a>数组和矢量计算</h1><ol><li>Numpy介绍</li><li>Numpy中ndarray:一种多维数组对象</li></ol><p><strong>备注:矢量（vector）是一种既有大小又有方向的量，又称为向量。一般来说，在物理学中称作矢量，例如速度、加速度、力等等就是这样的量。舍弃实际含义，就抽象为数学中的概念──向量。在计算机中，矢量图可以无限放大永不变形.</strong></p><h1 id="Numpy的功能"><a href="#Numpy的功能" class="headerlink" title="Numpy的功能"></a>Numpy的功能</h1><ol><li>ndarray,一个具有矢量算术运算和复杂广播能力的快速且节省空间的多维数组</li><li>用于对整组数据进行快速运算的标准数学函数(无需编写循环)</li><li>用于读写磁盘数据的工具以及用于操作内容映射文件的工具</li><li>线性代数,随机数生成以及傅里叶变换功能</li></ol><h2 id="主要的功能"><a href="#主要的功能" class="headerlink" title="主要的功能"></a>主要的功能</h2><ol><li>用于数据整理和清算,子集构造和过滤,转换等快速的矢量化数据运算</li><li>常用的数组算法,如排序,唯一化,集合运算等</li><li>高效的描述统计和数据聚合/摘要运算</li><li>用于异构数据集的合并/连接运算的数据对齐和关系型数据运算</li><li>将条件逻辑表述为数组表达式</li><li>数据的分组运算(聚合,转换,函数应用等)</li></ol><h2 id="Numpy的优势"><a href="#Numpy的优势" class="headerlink" title="Numpy的优势"></a>Numpy的优势</h2><ol><li>Numpy是在一个连续的内存块中存储数据,独立于其他的python内置对象</li><li>Numpy可以在整个数组上执行复杂的计算,而不需要python的for循环</li></ol><p><img src="/images//images/resources/814B5A8180B8A56781164924BAC0F297.jpg" alt="IMAGE"></p><h1 id="Numpy中的ndarray"><a href="#Numpy中的ndarray" class="headerlink" title="Numpy中的ndarray"></a>Numpy中的ndarray</h1><p>一种多维数组对象,关于多维数组可以参考</p><p><a href="https://baijiahao.baidu.com/s?id=1637508222888888267&wfr=spider&for=pc" target="_blank" rel="noopener">关于多维数组解释好的文章</a></p><h2 id="操作1"><a href="#操作1" class="headerlink" title="操作1"></a>操作1</h2><p><img src="/images//images/resources/C2EE448D7BFAA4DFFA9C5A0589E0B7E1.jpg" alt="IMAGE"></p><h2 id="操作2"><a href="#操作2" class="headerlink" title="操作2"></a>操作2</h2><p>ndarray是一个通用的同构数据多位容器,所有元素必须是相同类型的,每个数组都一个shape(一个表示各维度大小的元组)和一个dtype(用于描述数组数据类型的对象)</p><p><img src="/images//images/resources/AE989534ADFEE5AAC55436657FD517D3.jpg" alt="IMAGE"></p><h1 id="创建ndarray-从零开始"><a href="#创建ndarray-从零开始" class="headerlink" title="创建ndarray(从零开始)"></a>创建ndarray(从零开始)</h1><p><em>创建数组最简单的方法就是使用array函数</em></p><p><img src="/images//images/resources/CA0831578007D96B95C5182AC5B58DE2.jpg" alt="IMAGE"></p><p><img src="/images//images/resources/77015D7A890D3AA4D4D28693444D72A8.jpg" alt="IMAGE"></p><h2 id="通过其他方式创建数组"><a href="#通过其他方式创建数组" class="headerlink" title="通过其他方式创建数组"></a>通过其他方式创建数组</h2><p><strong>在np.array可以通过zeros和ones创建指定长度和形状的全0或者全1数组</strong></p><p><img src="/images//images/resources/AA5CB582A14C4BBF37EF5446224B45AE.jpg" alt="IMAGE"></p><h1 id="ndarray的数据类型"><a href="#ndarray的数据类型" class="headerlink" title="ndarray的数据类型"></a>ndarray的数据类型</h1><p><em>dtype是一个特殊的对象,讲一块内容解释为特定数据类型所需的信息</em></p><p><img src="/images//images/resources/27DF3A546AA0E2017E9F709E2FA2EF3F.jpg" alt="IMAGE"></p><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p><img src="/images//images/resources/39EFB133FF0731C89CF63C09FA41B0CE.jpg" alt="IMAGE"></p><h1 id="Numpy数组的运算"><a href="#Numpy数组的运算" class="headerlink" title="Numpy数组的运算"></a>Numpy数组的运算</h1><p><em>数组很重要,不用编写循环即可对数据执行批量运算</em></p><p><img src="/images//images/resources/2AC5F7394B93D9FD9BF60F6EF1384DC7.jpg" alt="IMAGE"><br><img src="/images//images/resources/EADE09AE9703ECFF57D37D730CE90AC0.jpg" alt="IMAGE"></p><p>不同大小数组之间的运算叫做广播</p><h2 id="基本的索引和切片"><a href="#基本的索引和切片" class="headerlink" title="基本的索引和切片"></a>基本的索引和切片</h2><p><strong>数组切片是原始数组的视图,视图上的任何修改都会直接反应到源数组上</strong></p><p><img src="/images//images/resources/690596B719569E350FF99926E39D6AC7.jpg" alt="IMAGE"></p><p><strong>在进行切片的时候该值会自动传播,以为着跟列表的区别在,数组切片是原始数据的修改。数据不会被复制</strong></p><p><img src="/images//images/resources/0AF3E10A049F8BD8F6C26106D00BDD19.jpg" alt="IMAGE"></p><p><em>如果明确要复制,使用arr[5:8].copy</em></p><p><em>对于高维度数组,在一个二维数组中,各索引位置上的元素不再是标量而是一维数组</em></p><p><img src="/images//images/resources/71C6531079D6B2E9EA1FEB5260039AEE.jpg" alt="IMAGE"></p><p><strong>对于各个元素进行递归访问,可以传入一个以逗号隔开的索引列表选取单个元素</strong></p><p><img src="/images//images/resources/35D0134E8BD96F98A32832FD84AEB436.jpg" alt="IMAGE"></p><h2 id="二维数组索引方式"><a href="#二维数组索引方式" class="headerlink" title="二维数组索引方式"></a>二维数组索引方式</h2><p><img src="/images//images/resources/7DBC68B452EEA322D859F67C5C49D5F6.jpg" alt="IMAGE"></p><h2 id="三维数组索引方式"><a href="#三维数组索引方式" class="headerlink" title="三维数组索引方式"></a>三维数组索引方式</h2><p><img src="/images//images/resources/3D26592DADF3C21B0374A98B45075EF9.jpg" alt="IMAGE"></p><h3 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h3><p>![IMAGE](/images/resources/E16280A90E66D9290676E87CE4D23D84.jpg =1139x392)</p><h2 id="切片索引"><a href="#切片索引" class="headerlink" title="切片索引"></a>切片索引</h2><p><em>ndarray的切片语法和列表的一维对象差不多,二维稍微有点区别</em></p><p>![IMAGE](/images/resources/7F52A498D14A9558AD27D9C80226E2FA.jpg =1140x412)</p><p>![IMAGE](/images/resources/3FB98072A91656B8C58AAB4FA40F5943.jpg =784x616)</p><h2 id="布尔类型索引"><a href="#布尔类型索引" class="headerlink" title="布尔类型索引"></a>布尔类型索引</h2><p>![IMAGE](/images/resources/5A51BA2CEB9478B9C02FAC6A02F07EBD.jpg =1135x448)</p><p><em>通知在匹配完后,同样可以进行切片的操作</em></p><p>![IMAGE](/images/resources/9276F96AD69C62E01FF92C49CB59009E.jpg =1138x346)</p><p><em>一些常见操作</em></p><p>![IMAGE](/images/resources/D6297700F707A2E4CA3EEE8522DEDF23.jpg =1136x388)</p><h2 id="花式索引"><a href="#花式索引" class="headerlink" title="花式索引"></a>花式索引</h2><p><strong>花式索引是一个Numpy术语,利用整数数组进行索引</strong></p><p>![IMAGE](/images/resources/47CD0607F4BC614300A7A15A9C06F844.jpg =1137x454)</p><p>![IMAGE](/images/resources/FF4F4FD99B39454CF5470521BA9AB7D3.jpg =1136x86)</p><p><strong>花式索引和切片不一样,总是将数据复制到新数组中</strong></p><h2 id="数组转置和轴对换"><a href="#数组转置和轴对换" class="headerlink" title="数组转置和轴对换"></a>数组转置和轴对换</h2><p><strong>转置是重塑的一种特殊形式,数组不仅有transpose方法,还有一个特殊的T属性</strong></p><p>![IMAGE](/images/resources/48EFB15DA1DF601E1AE3114D009598C5.jpg =1139x420)</p><p>![IMAGE](/images/resources/75C86806DA08A724C7E19559E32E4AE1.jpg =848x431)</p><h3 id="三轴转换"><a href="#三轴转换" class="headerlink" title="三轴转换"></a>三轴转换</h3><p>![IMAGE](/images/resources/FB0262F8F1D97BD5CB277857C5E73FAA.jpg =1127x345)</p><p><a href="https://blog.csdn.net/theITcat/article/details/100026068" target="_blank" rel="noopener">如何理解轴转换</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Numpy可以好好补补数学.捡起了儿时的快乐&lt;/p&gt;
+&lt;h1 id=&quot;数组和矢量计算&quot;&gt;&lt;a href=&quot;#数组和矢量计算&quot; class=&quot;headerlink&quot; title=&quot;数组和矢量计算&quot;&gt;&lt;/a&gt;数组和矢量计算&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;Numpy介绍&lt;/li&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+    
+      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="Numpy使用" scheme="https://wangweijie.vip/tags/Numpy%E4%BD%BF%E7%94%A8/"/>
+    
+      <category term="矩阵相乘" scheme="https://wangweijie.vip/tags/%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%B9%98/"/>
+    
+  </entry>
   
   <entry>
     <title>数据分析之python文件和操作系统</title>
@@ -712,41 +747,6 @@
       <category term="应用场景" scheme="https://wangweijie.vip/tags/%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
     
       <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringAli链路管理</title>
-    <link href="https://wangweijie.vip/2019/10/11/2019-10-11-SpringAli%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA/"/>
-    <id>https://wangweijie.vip/2019/10/11/2019-10-11-SpringAli链路追踪/</id>
-    <published>2019-10-11T11:41:42.291Z</published>
-    <updated>2019-10-11T11:48:40.638Z</updated>
-    
-    <content type="html"><![CDATA[<p>链路追踪虽然是运维做的事情,但是我们作为开发的应该走一走</p><h1 id="springAli链路追踪"><a href="#springAli链路追踪" class="headerlink" title="springAli链路追踪"></a>springAli链路追踪</h1><ol><li>什么是链路追踪</li><li>链路追踪解决方案</li><li>如何使用skywalking</li></ol><h2 id="什么是链路追踪"><a href="#什么是链路追踪" class="headerlink" title="什么是链路追踪"></a>什么是链路追踪</h2><p><strong>微服务架构是通过业务来划分服务的，使用REST调用。对外暴露的一个接口，可能需要很多个服务协同才能完成这个接口功能，如果链路上任何一个服务出现问题或者网络超时，都会形成导致接口调用失败。随着业务的不断扩张，服务之间互相调用会越来越复杂</strong></p><p>情况如下:</p><p><img src="/images/resources/41E79BF5E865358EFDAB61D562CF9A83.jpg" alt="IMAGE"></p><p><strong><em>当然服务肯定不止这几个,或许会有上百个,有没有可以帮助理解系统行为、用于分析性能问题的工具，以便发生故障的时候，能够快速定位和解决问题，这就是所谓的 APM（应用性能管理）。</em></strong></p><h2 id="链路追踪解决方案"><a href="#链路追踪解决方案" class="headerlink" title="链路追踪解决方案"></a>链路追踪解决方案</h2><blockquote><p>SkyWalking</p></blockquote><ol><li>多种监控手段，语言探针和服务网格(Service Mesh)</li><li>多语言自动探针，Java，.NET Core 和 Node.JS</li><li>轻量高效，不需要大数据</li><li>模块化，UI、存储、集群管理多种机制可选</li><li>支持告警</li><li>优秀的可视化方案</li></ol><h2 id="如何使用skywalking"><a href="#如何使用skywalking" class="headerlink" title="如何使用skywalking"></a>如何使用skywalking</h2><blockquote><p>1.安装docker,使用docker-compose执行编排文件</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">version: &apos;3.3&apos;</span><br><span class="line">services:</span><br><span class="line">  elasticsearch:</span><br><span class="line">    image: wutang/elasticsearch-shanghai-zone:6.3.2</span><br><span class="line">    container_name: elasticsearch</span><br><span class="line">    restart: always</span><br><span class="line">    ports:</span><br><span class="line">      - 9200:9200</span><br><span class="line">      - 9300:9300</span><br><span class="line">    environment:</span><br><span class="line">      cluster.name: elasticsearch</span><br></pre></td></tr></table></figure><p><strong>docker-compose up -d(启动并后台运行)</strong></p><p><strong>docker-compose stop(停止)</strong></p><p><strong>访问localhost:9200</strong></p><p><img src="/images/resources/7831D1922AF79282124159B6BDB5D34B.jpg" alt="IMAGE"></p><blockquote><p>2.下载skywalking,修改配置文件config下application.yml</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">storage:</span><br><span class="line">  elasticsearch:</span><br><span class="line">    nameSpace: $&#123;SW_NAMESPACE:&quot;&quot;&#125;</span><br><span class="line">    clusterNodes: $&#123;SW_STORAGE_ES_CLUSTER_NODES:localhost:9200&#125;</span><br><span class="line">    user: $&#123;SW_ES_USER:&quot;&quot;&#125;</span><br><span class="line">    password: $&#123;SW_ES_PASSWORD:&quot;&quot;&#125;</span><br><span class="line">    indexShardsNumber: $&#123;SW_STORAGE_ES_INDEX_SHARDS_NUMBER:2&#125;</span><br><span class="line">    indexReplicasNumber: $&#123;SW_STORAGE_ES_INDEX_REPLICAS_NUMBER:0&#125;</span><br><span class="line">    # Batch process setting, refer to https://www.elastic.co/guide/en/elasticsearch/client/java-api/5.5/java-docs-bulk-processor.html</span><br><span class="line">    bulkActions: $&#123;SW_STORAGE_ES_BULK_ACTIONS:2000&#125; # Execute the bulk every 2000 requests</span><br><span class="line">    bulkSize: $&#123;SW_STORAGE_ES_BULK_SIZE:20&#125; # flush the bulk every 20mb</span><br><span class="line">    flushInterval: $&#123;SW_STORAGE_ES_FLUSH_INTERVAL:10&#125; # flush the bulk every 10 seconds whatever the number of requests</span><br><span class="line">    concurrentRequests: $&#123;SW_STORAGE_ES_CONCURRENT_REQUESTS:2&#125; # the number of concurrent requests</span><br><span class="line">    metadataQueryMaxSize: $&#123;SW_STORAGE_ES_QUERY_MAX_SIZE:5000&#125;</span><br><span class="line">    segmentQueryMaxSize: $&#123;SW_STORAGE_ES_QUERY_SEGMENT_SIZE:200&#125;</span><br><span class="line"># h2:</span><br><span class="line">#    driver: $&#123;SW_STORAGE_H2_DRIVER:org.h2.jdbcx.JdbcDataSource&#125;</span><br><span class="line">#    url: $&#123;SW_STORAGE_H2_URL:jdbc:h2:mem:skywalking-oap-db&#125;</span><br><span class="line">#    user: $&#123;SW_STORAGE_H2_USER:sa&#125;</span><br><span class="line">#    metadataQueryMaxSize: $&#123;SW_STORAGE_H2_QUERY_MAX_SIZE:5000&#125;</span><br><span class="line">#  mysql:</span><br><span class="line">#    metadataQueryMaxSize: $&#123;SW_STORAGE_H2_QUERY_MAX_SIZE:5000&#125;</span><br></pre></td></tr></table></figure><blockquote><p>3.切换并启动</p></blockquote><p><code>cd  /Users/Yun/apache-skywalking-apm-bin/bin</code></p><p><strong>执行./startup.sh访问默认端口<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></strong></p><p><img src="/images/resources/4BE1B5B001F480B7DDB449B0D69395E1.jpg" alt="IMAGE"></p><blockquote><p>4.在idea中部署探针</p></blockquote><p><img src="/images/resources/CDDF1E3DC69265A087952CC9D6E1C26D.jpg" alt="IMAGE"></p><p><strong>增加vm参数</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-javaagent:/Users/Yun/mycloud/clouddependencies/spring-cloud-external-skywalking/agent/skywalking-agent.jar</span><br><span class="line">-Dskywalking.agent.service_name=provider</span><br><span class="line">-Dskywalking.collector.backend_service=localhost:11800</span><br></pre></td></tr></table></figure><p><img src="/images/resources/D801AE88ACBD960F7F1DF5DD0F7DD351.jpg" alt="IMAGE"></p><blockquote><p>5.启动项目</p></blockquote><p><img src="/images/resources/3261DF83D683C675E032BDD8AC657332.jpg" alt="IMAGE"></p><p><img src="/images/resources/7848EF174875CDF2089B18610220AFF2.jpg" alt="IMAGE"></p><p><img src="/images/resources/3D92D119B33233BA296FD08BF72A7092.jpg" alt="IMAGE"></p><p>其余服务同理设置</p><ol><li>Avg SLA： 服务可用性（主要是通过请求成功与失败次数来计算）</li><li>CPM： 每分钟调用次数</li><li>Avg Response Time： 平均响应时间</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;链路追踪虽然是运维做的事情,但是我们作为开发的应该走一走&lt;/p&gt;
-&lt;h1 id=&quot;springAli链路追踪&quot;&gt;&lt;a href=&quot;#springAli链路追踪&quot; class=&quot;headerlink&quot; title=&quot;springAli链路追踪&quot;&gt;&lt;/a&gt;springAli链路
-      
-    
-    </summary>
-    
-    
-      <category term="Spring微服务" scheme="https://wangweijie.vip/categories/Spring%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-    
-      <category term="Spring全家桶" scheme="https://wangweijie.vip/tags/Spring%E5%85%A8%E5%AE%B6%E6%A1%B6/"/>
-    
-      <category term="微服务" scheme="https://wangweijie.vip/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
-    
-      <category term="高效开发" scheme="https://wangweijie.vip/tags/%E9%AB%98%E6%95%88%E5%BC%80%E5%8F%91/"/>
-    
-      <category term="链路追踪" scheme="https://wangweijie.vip/tags/%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA/"/>
-    
-      <category term="应用性能管理" scheme="https://wangweijie.vip/tags/%E5%BA%94%E7%94%A8%E6%80%A7%E8%83%BD%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
