@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangweijie.vip/"/>
-  <updated>2020-02-28T11:18:27.626Z</updated>
+  <updated>2020-03-02T14:45:22.758Z</updated>
   <id>https://wangweijie.vip/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据分析之python之Numpy基础一</title>
+    <link href="https://wangweijie.vip/2020/03/02/2020-03-02-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%20Numpy%E5%9F%BA%E7%A1%80%E4%BA%8C/"/>
+    <id>https://wangweijie.vip/2020/03/02/2020-03-02-数据分析之python Numpy基础二/</id>
+    <published>2020-03-02T14:41:27.052Z</published>
+    <updated>2020-03-02T14:45:22.758Z</updated>
+    
+    <content type="html"><![CDATA[<p>打好基础,再接再厉</p><h1 id="Numpy基础二"><a href="#Numpy基础二" class="headerlink" title="Numpy基础二"></a>Numpy基础二</h1><ol><li>通用函数:快速的元素级数组函数</li><li>利用数组进行数据处理</li><li>用于数组的文件输入输出</li></ol><h1 id="通用函数"><a href="#通用函数" class="headerlink" title="通用函数"></a>通用函数</h1><p><em>通用函数是一种对ndarray中数据执行元素级运算的函数</em></p><p><strong>意味着这些函数都是简单的元素级的变体</strong></p><p><img src="/images/resources/B4C2E49F862549A0D05822F4B4154450.jpg" alt="IMAGE"></p><h2 id="返回浮点数数组的小数和整数部分"><a href="#返回浮点数数组的小数和整数部分" class="headerlink" title="返回浮点数数组的小数和整数部分"></a>返回浮点数数组的小数和整数部分</h2><p><img src="/images/resources/D12B9EED4A943291BD1F34DC02943C5C.jpg" alt="IMAGE"></p><h2 id="常用的一元函数和二元函数"><a href="#常用的一元函数和二元函数" class="headerlink" title="常用的一元函数和二元函数"></a>常用的一元函数和二元函数</h2><p><img src="/images/resources/AC90DE595FF8CCC057E1A4584C0341B2.jpg" alt="IMAGE"></p><p><img src="/images/resources/D3D9EE17516757B0B21171AD73BB5077.jpg" alt="IMAGE"></p><h1 id="利用数组进行数据处理"><a href="#利用数组进行数据处理" class="headerlink" title="利用数组进行数据处理"></a>利用数组进行数据处理</h1><p><em>Numpy数组可以将许多种数据处理任务表述为见解的数据表达式</em></p><p><em>用数组表达式代替循环的做法通常叫做矢量化</em></p><h2 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h2><p>二维坐标系中,X轴可以取三个值1,2,3, Y轴可以取三个值7,8, 请问可以获得多少个点的坐标?<br>显而易见是6个:(1,7)(2,7)(3,7)(1,8)(2,8)(3,8)</p><p><img src="/images/resources/84E2DDE622F52D2721B12CF82DE9C42A.jpg" alt="IMAGE"></p><blockquote><p>同理</p></blockquote><p><img src="/images/resources/72CD7C9AF8509AA0B9E0A147EEED3836.jpg" alt="IMAGE"></p><h2 id="将条件逻辑表述为数组运算"><a href="#将条件逻辑表述为数组运算" class="headerlink" title="将条件逻辑表述为数组运算"></a>将条件逻辑表述为数组运算</h2><p><strong>np.where函数是三元表达式矢量化版本</strong></p><blockquote><p>示例1</p></blockquote><p><img src="/images/resources/1DD93E080A4DBB84A77416995B838C9B.jpg" alt="IMAGE"></p><p><strong>np.where第二个和第三个参数不必是数组.where通常用于根据另一数组产生一个新的数组</strong></p><blockquote><p>示例2</p></blockquote><p><img src="/images/resources/97D6AD816E15EEDFEBC2D8EF91418D2D.jpg" alt="IMAGE"></p><p><img src="/images/resources/18EF14277B0F5735712190CD90FE852A.jpg" alt="IMAGE"></p><h2 id="数学和统计方法"><a href="#数学和统计方法" class="headerlink" title="数学和统计方法"></a>数学和统计方法</h2><p><strong>通过数组上的一组数学函数对整个数组或者某个轴向的数据进行统计计算</strong></p><p><img src="/images/resources/45DD2579270F072E6CFBA4C0FB2412D1.jpg" alt="IMAGE"></p><h3 id="累加函数"><a href="#累加函数" class="headerlink" title="累加函数"></a>累加函数</h3><p><img src="/images/resources/AC380099DCBAB4226AD87CA4755D79F8.jpg" alt="IMAGE"></p><h3 id="用于布尔类型数组的方法"><a href="#用于布尔类型数组的方法" class="headerlink" title="用于布尔类型数组的方法"></a>用于布尔类型数组的方法</h3><p><img src="/images/resources/E6720DC66940B94A9A11EB0AD5599BC1.jpg" alt="IMAGE"></p><h2 id="np数组的排序"><a href="#np数组的排序" class="headerlink" title="np数组的排序"></a>np数组的排序</h2><p><em>和python内置的列表类型一样,Numpy也可以通过sort方法进行排序</em></p><p><img src="/images/resources/1A281F79633FC71DD7AE70E52774823C.jpg" alt="IMAGE"></p><h3 id="多维数组以及定位"><a href="#多维数组以及定位" class="headerlink" title="多维数组以及定位"></a>多维数组以及定位</h3><p><img src="/images/resources/A5A27EF88BC7B537965014B0DF17F999.jpg" alt="IMAGE"></p><h2 id="唯一化以及其他集合逻辑"><a href="#唯一化以及其他集合逻辑" class="headerlink" title="唯一化以及其他集合逻辑"></a>唯一化以及其他集合逻辑</h2><p><em>通过unique用于找出数组中唯一值,并返回已排序的结果</em></p><p><img src="/images/resources/E2DE6434620F241B300CDE577C7DD4F6.jpg" alt="IMAGE"></p><h3 id="其他函数"><a href="#其他函数" class="headerlink" title="其他函数"></a>其他函数</h3><p><em>通过np.in1d用于测试一个数组中的值在另一数组中的成员资格,返回布尔类型数组</em></p><p><img src="/images/resources/4C5DD070851221955F8E20569F9EA4DA.jpg" alt="IMAGE"></p><h2 id="用于数组的文件输入输出"><a href="#用于数组的文件输入输出" class="headerlink" title="用于数组的文件输入输出"></a>用于数组的文件输入输出</h2><p><em>np.save和np.load是读写磁盘数组数据的2个主要函数,保存的扩展名为.npy</em></p><p><img src="/images/resources/73478F71A9C34879AD93B344FED9A451.jpg" alt="IMAGE"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;打好基础,再接再厉&lt;/p&gt;
+&lt;h1 id=&quot;Numpy基础二&quot;&gt;&lt;a href=&quot;#Numpy基础二&quot; class=&quot;headerlink&quot; title=&quot;Numpy基础二&quot;&gt;&lt;/a&gt;Numpy基础二&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;通用函数:快速的元素级数组函数&lt;/li&gt;
+&lt;l
+      
+    
+    </summary>
+    
+    
+    
+      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+    
+      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="Numpy使用" scheme="https://wangweijie.vip/tags/Numpy%E4%BD%BF%E7%94%A8/"/>
+    
+      <category term="文件的输入输出读写" scheme="https://wangweijie.vip/tags/%E6%96%87%E4%BB%B6%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AF%BB%E5%86%99/"/>
+    
+  </entry>
   
   <entry>
     <title>数据分析之python之Numpy基础一</title>
@@ -185,9 +218,9 @@
     
       <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="面向对象" scheme="https://wangweijie.vip/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    
       <category term="语言基础2" scheme="https://wangweijie.vip/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%802/"/>
+    
+      <category term="面向对象" scheme="https://wangweijie.vip/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
@@ -219,9 +252,9 @@
     
       <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="语言基础" scheme="https://wangweijie.vip/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/"/>
-    
       <category term="面向对象" scheme="https://wangweijie.vip/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+      <category term="语言基础" scheme="https://wangweijie.vip/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -714,39 +747,6 @@
       <category term="生产者和消费者" scheme="https://wangweijie.vip/tags/%E7%94%9F%E4%BA%A7%E8%80%85%E5%92%8C%E6%B6%88%E8%B4%B9%E8%80%85/"/>
     
       <category term="日志" scheme="https://wangweijie.vip/tags/%E6%97%A5%E5%BF%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>kafkaStreams初识</title>
-    <link href="https://wangweijie.vip/2019/11/04/2019-11-04-KafkaStreams%E5%88%9D%E8%AF%86/"/>
-    <id>https://wangweijie.vip/2019/11/04/2019-11-04-KafkaStreams初识/</id>
-    <published>2019-11-04T07:24:51.956Z</published>
-    <updated>2019-11-04T07:29:27.645Z</updated>
-    
-    <content type="html"><![CDATA[<p>如何使用好流式处理.流式处理从成本和人力该如何考虑,以及应用场景.</p><h1 id="数据以及kafkaStreams的理念"><a href="#数据以及kafkaStreams的理念" class="headerlink" title="数据以及kafkaStreams的理念"></a>数据以及kafkaStreams的理念</h1><ol><li>数据的发展如何改变程序设计的</li><li>流式处理工作以及应用场景</li><li>kafkaStreams的简介以及解决问题</li></ol><hr><h2 id="数据的发展如何改变程序设计的"><a href="#数据的发展如何改变程序设计的" class="headerlink" title="数据的发展如何改变程序设计的"></a>数据的发展如何改变程序设计的</h2><p><strong><em>在现在的世界中,每天的数据越来越多。如何有有效的利用这些数据,就是我们当下需要考虑的点</em></strong></p><p><strong><em>现在有2种方式处理数据,一种是我们进行批量处理数据(批处理)这些数据都是离线的,第二种就是数据在到达的时候就需要进行处理。</em></strong></p><p><strong><em>kafkaStream是一个对记录的每个时间进行处理的库,基于每个时间就意味着数据一旦到达,就能够被及时处理.不需要将数据分成小批量的</em></strong></p><h3 id="MapReduce范式-补充"><a href="#MapReduce范式-补充" class="headerlink" title="MapReduce范式(补充)"></a>MapReduce范式(补充)</h3><p><strong>map会对每个记录产生一个键值对.而reduce基于每个键合并,处理中间结果</strong></p><p><strong><em>对于TB级别以上的数据有几个概念让我们更好的处理数据</em></strong></p><ol><li>一个集群中分发的数据达到易于处理的规模</li><li>使用键值对讲分布式的数据分组</li><li>利用副本备份机制容忍故障的产生，而不是避免故障</li></ol><p><strong>也就是通过计算机集群中的分散负载,就可以将数据转化为可管理的数量</strong></p><p><strong>其次如何将分布在不同机器上的数据进行汇总也就是分区</strong></p><p><strong><em>分区意味着分组.使用相同的散列码的键进行分组。</em></strong></p><blockquote><p> 公式如下:  partition = key.hashCode()% numberOfPartitions</p></blockquote><p><strong><em>补充:通过使用复制来接受故障。通过复制不同服务器上的数据块,不必担心磁盘故障导致停产.数据复制能够对于分布式的应用提供容错能力至关重要</em></strong></p><h3 id="离线计算的瓶颈"><a href="#离线计算的瓶颈" class="headerlink" title="离线计算的瓶颈"></a>离线计算的瓶颈</h3><ol><li>离线计算首先需要收集大量的数据，批处理的离线计算适合根据根据用户大量的习惯来决定未来可能会发生的事情</li><li>如果用户的习惯是偶然性，那就无法判断资源价值的有效利用</li></ol><blockquote><p> 面对的问题</p></blockquote><ol><li>当前实时的趋势是什么？</li><li>最近一个周期时间段的特征是什么？</li><li>用户如何利用最新的发布的特性的？</li></ol><h2 id="流式处理工作以及应用场景"><a href="#流式处理工作以及应用场景" class="headerlink" title="流式处理工作以及应用场景"></a>流式处理工作以及应用场景</h2><ol><li>定义:流式处理是利用连续计算处理无线数据流的能力,数据是流动的,所以无需收集以及存储数据。</li></ol><blockquote><p> 流式数据的应用场景</p></blockquote><ol><li>信用卡诈骗:根据实时的消费记录,以及对比用户前期的消费习惯和地点,可能信用卡被盗刷.提醒信用卡的拥有者</li><li>入侵检测:实时监控异常行为.</li><li>大型自行车比赛:通过实时传输的数据,监测位置。以及比赛可能会遇到的问题。</li><li>金融业:根据实时买入卖出，提供决策能力</li></ol><p><strong><em>场景:数据到达时需要被立即报告处理,那么可以选择流式处理</em></strong></p><p><strong><em>如果需要对许菊进行深入分析.或者为了编制一个大的数据仓库以备后期分析,那么这个时候需要离线计算</em></strong></p><h2 id="kafkaStreams的简介以及解决问题"><a href="#kafkaStreams的简介以及解决问题" class="headerlink" title="kafkaStreams的简介以及解决问题"></a>kafkaStreams的简介以及解决问题</h2><p><strong><em>假定有一个实时销售系统,我们要根据实时的数据对每个客户甚至于公司的团队制定决策</em></strong></p><blockquote><p>需求分解：有向无环图</p></blockquote><p>购买记录 —-&gt; 屏蔽信息</p><p>屏蔽信息 —-&gt; 存储</p><pre><code>----&gt; 奖励----&gt; 模式</code></pre><blockquote><p>分析节点</p></blockquote><p>源节点 —&gt;  每条销售信息记录</p><p>信用卡屏蔽节点 —-&gt; 将源节点的信息中卡号进行屏蔽</p><p>模式节点  —-&gt; 检索相关的物品，日期，邮政编码组装为一个新的对象</p><p>奖励节点 —-&gt; 抽取客户的ID和实时的消费金额</p><p>存储节点 —-&gt; 存储到相信的关系或者非关系数据中进行分析</p><blockquote><p> 注意:至始至终,这种有向无环图,我们都以深度优先的方式进行遍历以及处理数据。深度优先和广度优先可以参考</p></blockquote><p><a href="https://www.jianshu.com/p/bff70b786bb6" target="_blank" rel="noopener">深度和广度优先</a></p><p><a href="https://blog.csdn.net/weixin_42289193/article/details/81741756" target="_blank" rel="noopener">Java实现深度优先遍历和广度优先遍历</a></p><p><strong><em>总结:数据交由了节点和处理器来进行共同的维护。节点即是需求规则，最终会将节点数据传输到对应的主题中,而处理器则存在在kafkaStream流上。处理器所处理的数据产生出来都是一个新的对象</em></strong></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;如何使用好流式处理.流式处理从成本和人力该如何考虑,以及应用场景.&lt;/p&gt;
-&lt;h1 id=&quot;数据以及kafkaStreams的理念&quot;&gt;&lt;a href=&quot;#数据以及kafkaStreams的理念&quot; class=&quot;headerlink&quot; title=&quot;数据以及kafkaStre
-      
-    
-    </summary>
-    
-    
-      <category term="KafkaStreams" scheme="https://wangweijie.vip/categories/KafkaStreams/"/>
-    
-    
-      <category term="kafkaStreams" scheme="https://wangweijie.vip/tags/kafkaStreams/"/>
-    
-      <category term="流式计算" scheme="https://wangweijie.vip/tags/%E6%B5%81%E5%BC%8F%E8%AE%A1%E7%AE%97/"/>
-    
-      <category term="应用场景" scheme="https://wangweijie.vip/tags/%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
-    
-      <category term="大数据分析" scheme="https://wangweijie.vip/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
