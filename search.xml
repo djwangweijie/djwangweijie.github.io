@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据分析之python之Numpy基础三]]></title>
+    <url>%2F2020%2F03%2F03%2F2020-03-03-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%20Numpy%E5%9F%BA%E7%A1%80%E4%B8%89%2F</url>
+    <content type="text"><![CDATA[Numpy数组的基础就结束了,让我们进入更高级的pandas(盼达)学习。 Numpy基础三 线性代数 伪随机数生成 随机漫步示例 线性代数Numpy提供了一个用于矩阵乘法的dot函数. 关于线性代数,现在熟知dot函数.后续分析中涉及到线性代数在回来补充 伪随机数生成numpy.random模块对python内置的random进行了补充,增加了一些用于高效生成多种概率分布的样本值的函数 随机数生成种子通过np.random.seed(1234)更改随机数生成种子 numpy.random的数据生成函数使用了全局的随机种子,要避免全局状态.可以使用numpy.random.RandomState 随机漫步随机漫步理论]]></content>
+      <categories>
+        <category>大数据分析</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数据分析</tag>
+        <tag>Numpy使用</tag>
+        <tag>Numpy简单结束</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数据分析之python之Numpy基础二]]></title>
     <url>%2F2020%2F03%2F02%2F2020-03-02-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%20Numpy%E5%9F%BA%E7%A1%80%E4%BA%8C%2F</url>
     <content type="text"><![CDATA[打好基础,再接再厉 Numpy基础二 通用函数:快速的元素级数组函数 利用数组进行数据处理 用于数组的文件输入输出 通用函数通用函数是一种对ndarray中数据执行元素级运算的函数 意味着这些函数都是简单的元素级的变体 返回浮点数数组的小数和整数部分 常用的一元函数和二元函数 利用数组进行数据处理Numpy数组可以将许多种数据处理任务表述为见解的数据表达式 用数组表达式代替循环的做法通常叫做矢量化 示例1二维坐标系中,X轴可以取三个值1,2,3, Y轴可以取三个值7,8, 请问可以获得多少个点的坐标?显而易见是6个:(1,7)(2,7)(3,7)(1,8)(2,8)(3,8) 同理 将条件逻辑表述为数组运算np.where函数是三元表达式矢量化版本 示例1 np.where第二个和第三个参数不必是数组.where通常用于根据另一数组产生一个新的数组 示例2 数学和统计方法通过数组上的一组数学函数对整个数组或者某个轴向的数据进行统计计算 累加函数 用于布尔类型数组的方法 np数组的排序和python内置的列表类型一样,Numpy也可以通过sort方法进行排序 多维数组以及定位 唯一化以及其他集合逻辑通过unique用于找出数组中唯一值,并返回已排序的结果 其他函数通过np.in1d用于测试一个数组中的值在另一数组中的成员资格,返回布尔类型数组 用于数组的文件输入输出np.save和np.load是读写磁盘数组数据的2个主要函数,保存的扩展名为.npy]]></content>
