@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据分析之Pandas基础二]]></title>
+    <url>%2F2020%2F03%2F06%2F2020-03-06-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8BPandas%E5%9F%BA%E7%A1%80%E4%BA%8C%2F</url>
+    <content type="text"><![CDATA[pandas基础二 基本功能 基本功能介绍Series和DataFrame的数据的基本操作 重新索引pandas对象的一个重要方法是reindex,其作用是创建一个新对象,它的数据符合新的索引 索引会根据reindex进行重排.如果某个索引值不存在,引入缺失值 对于时间序列的有序数据,重新索引需要一些插值处理.method选项可以操作,ffill是使用前面的值填充，bfill是使用后面的值填充。 如果使用dataFrame,reindex可以修改行索引和列.只传递一个序列时,会重新索引结果的行 同样的可以用column重新索引 丢弃指定轴上的项丢弃某条轴上面的一个或多个项很简单,只要有一个索引数组和列表即可 针对series 针对DataFrame 索引,选取和过滤Series索引的工作方式类似numpy的索引,不过Series索引不只是整数 切片运算有一些不同,其尾部是包含的 针对DataFrame进行索引就是获取一个或者多个列 通过布尔类型 用loc和iloc进行选取对于dataFrame的行的标签索引可以使用loc和iloc,从DataFrame选择行和列的子集 通过2个方法选择一行和多列 同样适用于一个标签或者多个标签的切片 一些方法 算术预算和数据对齐pandas重要的功能可以对不同索引的对象进行算术运算.对象相加时,存在不同的索引对.结果的索引就是该索引对的并集. 注意:Dataframe相加,没有共用的列或者行标签.结果都会是空 在算术方法中填充值 现在出现了na值,我填充一个特殊值怎么做 可用的方法 同理 DataFrame和Series之间的运算先看一个二维数组和一维数组相加 同理,2者相加也一样 如果某个索引值找不到,则形成并集 函数应用和映射Numpy的ufuncs也可以用于操作pandas对象 附上重新对二维数组的理解 排序和排名根据条件对数据集进行排序也是一种重要的内置计算,对行和列索引进行排序可以使用sortindex,返回一个已排序的新对象 升序或者降序 按值对series排列使用sortvalues 排序DataFrame时,可以根据一个或者多个列中的值,使用sorvalues中的by即可 rank方法rank是通过为各组分配一个平均排名的方式破坏平级关系 针对dataframe]]></content>
+      <categories>
+        <category>大数据分析</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数据分析</tag>
+        <tag>Pandas</tag>
+        <tag>Series和DateFrame基本功能</tag>
+        <tag>排序筛选和rank</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数据分析之Pandas基础一]]></title>
     <url>%2F2020%2F03%2F04%2F2020-03-04-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8BPandas%E5%9F%BA%E7%A1%80%E4%B8%80%2F</url>
     <content type="text"><![CDATA[数据分析之路漫漫,贵在坚持.梅花香自苦寒来 pandas基础一 pandas的数据结构说明 pandas的数据结构介绍 pandas的数据结构说明pandas含有使数据清洗和分析工作变得更快更简单的数据结构和操作工具 pandas是基于Numpy数组构建的,特别是基于数组的函数和不适用for循环的数据处理 特点 pandas是专门为处理表格和混杂数据设计的 而Numpy更适合处理统一的数值数组数据 用的最多的是使用Series 和 DataFrame 注意:别忘记安装pandas库 pandas数据结构介绍pandas主要有2个非常重要的数据结构,分别是Series和DataFrame,他们提供了一种可靠的易于使用的基础 SeriesSeries类似于一维数组的对象,由一组数据以及一组与之相关的数据标签组成 自定义索引 一些运算 类比定长的有序字典 通过字典创建Series 检测缺失值 重要功能Series最重要的一个功能是会根据运算的索引标签自动对齐数据 Series对象本身和索引都有一个name属性,这个属性和pandas的其它关键功能非常密切 DataFrameDataFrame是一个表格型的数据结构,含有一组有序的列,每列可以是不同的值类型。 DataFrame既有行索引也有列索引.其中的数据是以一个或多个二维快存放的 通过head方法取前5行数据 可以指定具体列进行排列 如果传入列数据找不到产生缺失值 通过字典表及或者属性方式可以获取一个series 行值和列值得获取 使用del删除列 处理另一种常见的数据(嵌套字典)嵌套字典转换为dataframe,外层字典的键作为列,内层键作为行索引 可以用T方法进行行和列的交换 索引对象pandas的索引对象负责管理元数据,无论构建哪种类型,用到的任何数组和序列都会转换成一个Index 注意:与集合不同,pandas的索引是可以包含重复的标签 索引一些方法和属性]]></content>
@@ -530,8 +545,8 @@
         <category>框架整合</category>
       </categories>
       <tags>
-        <tag>项目整合</tag>
         <tag>MVC模式</tag>
+        <tag>项目整合</tag>
         <tag>业务分层</tag>
       </tags>
   </entry>
@@ -567,8 +582,8 @@
         <category>SpringMVC</category>
       </categories>
       <tags>
-        <tag>MVC模式</tag>
         <tag>Spring产品</tag>
+        <tag>MVC模式</tag>
         <tag>替代servlet</tag>
       </tags>
   </entry>
@@ -580,8 +595,8 @@
         <category>SpringMVC</category>
       </categories>
       <tags>
-        <tag>MVC模式</tag>
         <tag>Spring产品</tag>
+        <tag>MVC模式</tag>
         <tag>替代servlet</tag>
       </tags>
   </entry>
