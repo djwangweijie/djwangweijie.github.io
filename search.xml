@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据分析之Excel与WebApis交互]]></title>
+    <url>%2F2020%2F03%2F16%2F2020-03-16-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E8%AF%BB%E5%8F%96Excel%E4%B8%8EWebApis%E4%BA%A4%E4%BA%92%2F</url>
+    <content type="text"><![CDATA[其实你会发现转来转去二维数组就在我们身边，json数组放对象，table就是活生生的二维空间。真的是答案就在我们的身边。继续前行，数据清洗和准备，我来了 数据分析之读取Excel与WebApis交互 读取Excel操作 WebApis交互 读取Excel操作pandas的ExcelFile和readExcel支持读取和存储Excel 数据写入Excel 与webapi交互无论是国内还是国外,都可以找一些公共的api,并且尽量的根据逻辑转换为df或者series 其实你会发现表格和json数据里面构建对象就是一个二维数组 数据库交互有些数据来自与数据库,无论非关系还是关系数据库 转化为DataFrame的2种方式 安装源 pip3 install sqlalchemy -i https://pypi.tuna.tsinghua.edu.cn/simple]]></content>
+      <categories>
+        <category>大数据分析</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>数据加载</tag>
+        <tag>数据处理</tag>
+        <tag>Excel读取</tag>
+        <tag>mysql数据库读取</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[数据分析之数据加载,存储与文件格式一]]></title>
     <url>%2F2020%2F03%2F12%2F2020-03-12-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD%2C%E5%AD%98%E5%82%A8%E4%B8%8E%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E4%B8%80%2F</url>
     <content type="text"><![CDATA[越来越有意思了,坚持坚持 数据加载,存储与文件格式 读写文本格式的数据 读写文本格式的数据利用pandas的数据输入和输出,输入和输出划分几个大类:读取文本文件,加载数据库中的数据,利用webapi操作网络资源 pandas提供了一些用于将表格型数据读取为DataFrame对象的函数,其中readcsv和readtable是比较常用的 读取逗号分隔 指定分隔符读取 针对无标题行的文件 多个列层次化索引 有些表格并未用特定的分隔符 跳过注释 缺失值处理一般来说缺失值要么为空,要么没有.pandas会用一组经常出现的标记值进行识别.比如NA或者Null 通过na_value替换值 逐块读取文本文件在处理很大的文件时,找出大文件中参数以便后续处理. 通过nrows指定读取几行 逐块读取 将数据学出到文本格式 弥补缺失值 Series中使用 处理分隔符格式 转化为符合要求的数据格式 JSON数据123456789obj = &quot;&quot;&quot;&#123;&quot;name&quot;: &quot;Wes&quot;, &quot;places_lived&quot;: [&quot;United States&quot;, &quot;Spain&quot;, &quot;Germany&quot;], &quot;pet&quot;: null, &quot;siblings&quot;: [&#123;&quot;name&quot;: &quot;Scott&quot;, &quot;age&quot;: 30, &quot;pets&quot;: [&quot;Zeus&quot;, &quot;Zuko&quot;]&#125;, &#123;&quot;name&quot;: &quot;Katie&quot;, &quot;age&quot;: 38, &quot;pets&quot;: [&quot;Sixes&quot;, &quot;Stache&quot;, &quot;Cisco&quot;]&#125;]&#125;&quot;&quot;&quot; json之间的转换 向一个DataFrame传入一个字典列表 特殊json假定json数组中每个对象是表格中的一行 web信息收集安装所需要的库 12pip3 install lxml -i http://pypi.douban.com/simple/pip3 install bs4 html5lib -i https://pypi.tuna.tsinghua.edu.cn/simple 小例子看出现频率最高的 解析html1pip3 install requests -i https://pypi.tuna.tsinghua.edu.cn/simple 有待改进 再次优化]]></content>
