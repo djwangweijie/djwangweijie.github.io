@@ -235,8 +235,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>数据状态</tag>
         <tag>聚合</tag>
         <tag>归约</tag>
@@ -252,8 +252,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>数据状态</tag>
         <tag>数据表</tag>
         <tag>遇见未来聚合和开窗</tag>
@@ -269,8 +269,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>数据状态</tag>
         <tag>连接形态</tag>
         <tag>洞察力</tag>
@@ -286,8 +286,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>数据状态</tag>
         <tag>主观意识形态</tag>
         <tag>数据形态</tag>
@@ -303,8 +303,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>webscoket推送</tag>
         <tag>群发消息</tag>
         <tag>图形实时展示</tag>
@@ -320,8 +320,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>webscoket推送</tag>
         <tag>群发消息</tag>
       </tags>
@@ -336,8 +336,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>自定义数据序列化传输</tag>
       </tags>
   </entry>
@@ -351,8 +351,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>springboot分模块整合</tag>
       </tags>
   </entry>
@@ -366,8 +366,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>自定义序列器</tag>
         <tag>必要的算子</tag>
       </tags>
@@ -382,8 +382,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>大数据分析</tag>
         <tag>解决方案</tag>
+        <tag>大数据分析</tag>
         <tag>自定义序列器</tag>
         <tag>构建生产和消费对象</tag>
       </tags>
@@ -398,8 +398,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>应用场景</tag>
         <tag>大数据分析</tag>
+        <tag>应用场景</tag>
         <tag>消息队列</tag>
         <tag>生产者和消费者</tag>
         <tag>日志</tag>
@@ -415,8 +415,8 @@
       <tags>
         <tag>kafkaStreams</tag>
         <tag>流式计算</tag>
-        <tag>应用场景</tag>
         <tag>大数据分析</tag>
+        <tag>应用场景</tag>
       </tags>
   </entry>
   <entry>
@@ -640,8 +640,8 @@
         <category>SpringMVC</category>
       </categories>
       <tags>
-        <tag>Spring产品</tag>
         <tag>MVC模式</tag>
+        <tag>Spring产品</tag>
         <tag>替代servlet</tag>
       </tags>
   </entry>
@@ -653,8 +653,8 @@
         <category>SpringMVC</category>
       </categories>
       <tags>
-        <tag>Spring产品</tag>
         <tag>MVC模式</tag>
+        <tag>Spring产品</tag>
         <tag>替代servlet</tag>
       </tags>
   </entry>
