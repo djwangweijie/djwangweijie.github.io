@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>数据规整之连接,联合与重塑</title>
+      <link href="/2020/07/24/2020-07-23-%E6%95%B0%E6%8D%AE%E8%A7%84%E6%95%B4%E4%B9%8B%E8%BF%9E%E6%8E%A5%E8%81%94%E5%90%88%E9%87%8D%E5%A1%91/"/>
+      <url>/2020/07/24/2020-07-23-%E6%95%B0%E6%8D%AE%E8%A7%84%E6%95%B4%E4%B9%8B%E8%BF%9E%E6%8E%A5%E8%81%94%E5%90%88%E9%87%8D%E5%A1%91/</url>
+      
+        <content type="html"><![CDATA[<p>这章可以在以后的数据分析案例中,慢慢的体会。但最终的目的就是为了组装自己想要的数据</p><h1 id="数据规整之连接-联合与重塑"><a href="#数据规整之连接-联合与重塑" class="headerlink" title="数据规整之连接,联合与重塑"></a>数据规整之连接,联合与重塑</h1><p><strong>首先数据可能分布在多个文件或者数据库中,或以某种不易于分析的格式进行排列。而现在我们要做的就是如何连接,联合与重塑</strong></p><h2 id="分层索引"><a href="#分层索引" class="headerlink" title="分层索引"></a>分层索引</h2><p><em>分层索引是pandas的重要特性,允许在一个轴向上拥有多个索引层级。分层索引提供了一种在更低维度的形式中处理更高维度数据的方式</em><br><img src="/images/resources/20200723/image-20200723215507558.png" alt="image-20200723215507558"></p><h3 id="筛选数据子集"><a href="#筛选数据子集" class="headerlink" title="筛选数据子集"></a>筛选数据子集</h3><p><img src="/images/resources/20200723/image-20200723220913394.png" alt="image-20200723220913394"></p><h4 id="DataFrame中分层索引"><a href="#DataFrame中分层索引" class="headerlink" title="DataFrame中分层索引"></a>DataFrame中分层索引</h4><p><img src="/images/resources/20200723/image-20200723221921025.png" alt="image-20200723221921025"></p><h3 id="重排序和层级排序"><a href="#重排序和层级排序" class="headerlink" title="重排序和层级排序"></a>重排序和层级排序</h3><p><strong>有时需要重新排列轴上的层级顺序，或者按照特定的层级对数据进行排序。使用swaplevel接收两个层级序号或者层级名称。返回一个层级变更的新对象，但是数据是不变的</strong><br><img src="/images/resources/20200723/image-20200723222834966.png" alt="image-20200723222834966"></p><h4 id="按层级进行汇总统计"><a href="#按层级进行汇总统计" class="headerlink" title="按层级进行汇总统计"></a>按层级进行汇总统计</h4><p><strong>DataFrame和Series有一个level选项。可以在某个特定的轴上面进行聚合</strong></p><p><img src="/images/resources/20200723/image-20200723223607440.png" alt="image-20200723223607440"></p><h3 id="使用DataFrame的列进行索引"><a href="#使用DataFrame的列进行索引" class="headerlink" title="使用DataFrame的列进行索引"></a>使用DataFrame的列进行索引</h3><p><img src="/images/resources/20200723/image-20200723224502583.png" alt="image-20200723224502583"></p><h2 id="联合与合并数据集"><a href="#联合与合并数据集" class="headerlink" title="联合与合并数据集"></a>联合与合并数据集</h2><ol><li>pandas.merge可以根据一个或者多个键进行连接。</li><li>pandas.concat是对象在轴向上进行黏合或堆叠</li><li>combine_first允许将重叠的数据拼接在一起。以使用一个对象中的值填充另一个对象中的缺失值</li></ol><h3 id="数据风格的连接"><a href="#数据风格的连接" class="headerlink" title="数据风格的连接"></a>数据风格的连接</h3><p><img src="/images/resources/20200723/image-20200723230135407.png" alt="image-20200723230135407"></p><h4 id="左右连接以及outer并集"><a href="#左右连接以及outer并集" class="headerlink" title="左右连接以及outer并集"></a>左右连接以及outer并集</h4><p><img src="/images/resources/20200723/image-20200723230934131.png" alt="image-20200723230934131"></p><blockquote><p>注意事项</p></blockquote><p><strong>多对多连接是行的笛卡尔积，使用多个键进行合并时传入一个列名的列表即可，在处理重叠的列名的时候可以使用suffixes进行重新命名</strong></p><h4 id="根据索引合并"><a href="#根据索引合并" class="headerlink" title="根据索引合并"></a>根据索引合并</h4><p><img src="/images/resources/20200723/image-20200723232316630.png" alt="image-20200723232316630"></p><h3 id="沿轴向连接"><a href="#沿轴向连接" class="headerlink" title="沿轴向连接"></a>沿轴向连接</h3><p>一个是通过Numpy的concatenate函数，也可以使用pandas的concat函数</p><p><img src="/images/resources/20200723/image-20200723234200939.png" alt="image-20200723234200939"></p><h3 id="联合重叠数据"><a href="#联合重叠数据" class="headerlink" title="联合重叠数据"></a>联合重叠数据</h3><p><strong>可以理解为填补Series或者DataFrame的缺失值,使用Combine_first</strong></p><p><img src="/images/resources/20200723/image-20200723234742072.png" alt="image-20200723234742072"></p><h2 id="重塑和透视"><a href="#重塑和透视" class="headerlink" title="重塑和透视"></a>重塑和透视</h2><p><strong>多层索引在DataFrame中提供一种一致性的方式用于重排列数据。</strong></p><ul><li>statck简单的说就是转为低维度多层级的Series(堆叠)  也可以叫做列中的数据透视到行</li><li>unstack简单的说就转为层级感强烈的DataFrame(拆堆) 也可以叫做行中的数据透视到列</li></ul><h3 id="长变宽"><a href="#长变宽" class="headerlink" title="长变宽"></a>长变宽</h3><p><img src="/images/resources/20200723/image-20200724225834544.png" alt="image-20200724225834544"></p><p><img src="/images/resources/20200723/image-20200724225904151.png" alt="image-20200724225904151"></p><p><img src="/images/resources/20200723/image-20200724230400324.png" alt="image-20200724230400324"></p><h3 id="宽变长"><a href="#宽变长" class="headerlink" title="宽变长"></a>宽变长</h3><p><strong>pivot方法的反操作是pandas.melt,需要注意的是，需要配置key哪些列是分组指标</strong><br><img src="/images/resources/20200723/image-20200724232356680.png" alt="image-20200724232356680"></p><p><img src="/images/resources/20200723/image-20200724232422708.png" alt="image-20200724232422708"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大数据分析 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 数据处理 </tag>
+            
+            <tag> 数据重塑 </tag>
+            
+            <tag> 层级拆分 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据分析之清洗与准备2</title>
       <link href="/2020/07/23/2020-07-22-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E6%B8%85%E6%B4%97%E4%B8%8E%E5%87%86%E5%A4%872/"/>
       <url>/2020/07/23/2020-07-22-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E6%B8%85%E6%B4%97%E4%B8%8E%E5%87%86%E5%A4%872/</url>
