@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wangweijie.vip/"/>
-  <updated>2020-09-11T11:07:29.508Z</updated>
+  <updated>2020-10-09T05:29:22.000Z</updated>
   <id>https://wangweijie.vip/</id>
   
   <author>
@@ -15,6 +15,146 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据分析完结</title>
+    <link href="https://wangweijie.vip/2020/09/29/2020-09-29-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%8C%E7%BB%93%E7%AB%A0/"/>
+    <id>https://wangweijie.vip/2020/09/29/2020-09-29-数据分析完结章/</id>
+    <published>2020-09-29T07:49:36.114Z</published>
+    <updated>2020-10-09T05:29:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数据分析完结章"><a href="#数据分析完结章" class="headerlink" title="数据分析完结章"></a>数据分析完结章</h1><h2 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h2><p><img src="/images/resources/20200929/image-20200929095444399.png" alt="image-20200929095444399"></p><h2 id="纯python时区计数"><a href="#纯python时区计数" class="headerlink" title="纯python时区计数"></a>纯python时区计数</h2><p><img src="/images/resources/20200929/image-20200929101915101.png" alt="image-20200929101915101"></p><h2 id="使用pandas进行时区计数"><a href="#使用pandas进行时区计数" class="headerlink" title="使用pandas进行时区计数"></a>使用pandas进行时区计数</h2><p><img src="/images/resources/20200929/image-20200929102222199.png" alt="image-20200929102222199"></p><p><img src="/images/resources/20200929/image-20200929102234993.png" alt="image-20200929102234993"></p><blockquote><p>处理缺失值</p></blockquote><p><img src="/images/resources/20200929/image-20200929102730104.png" alt="image-20200929102730104"></p><blockquote><p>可视化操作</p></blockquote><p><img src="/images/resources/20200929/image-20200929102908833.png" alt="image-20200929102908833"></p><h3 id="处理复杂字符串"><a href="#处理复杂字符串" class="headerlink" title="处理复杂字符串"></a>处理复杂字符串</h3><p><img src="/images/resources/20200929/image-20200929103516946.png" alt="image-20200929103516946"></p><p><img src="/images/resources/20200929/image-20200929104806177.png" alt="image-20200929104806177"></p><p><img src="/images/resources/20200929/image-20200929105539064.png" alt="image-20200929105539064"></p><p><img src="/images/resources/20200929/image-20200929105916586.png" alt="image-20200929105916586"></p><blockquote><p>可视化操作</p></blockquote><p><img src="/images/resources/20200929/image-20200929110709018.png" alt="image-20200929110709018"></p><p><img src="/images/resources/20200929/image-20200929111432477.png" alt="image-20200929111432477"></p><h2 id="分析电影"><a href="#分析电影" class="headerlink" title="分析电影"></a>分析电影</h2><p><img src="/images/resources/20200929/image-20200929120052889.png" alt="image-20200929120052889"></p><p><img src="/images/resources/20200929/image-20200929121024924.png" alt="image-20200929121024924"></p><p><img src="/images/resources/20200929/image-20200929121120775.png" alt="image-20200929121120775"></p><p><img src="/images/resources/20200929/image-20200929121302878.png" alt="image-20200929121302878"></p><h3 id="测量评价分歧"><a href="#测量评价分歧" class="headerlink" title="测量评价分歧"></a>测量评价分歧</h3><p><em>假设想找到男性和女性观众最具分歧的电影</em><br><img src="/images/resources/20200929/image-20200929121753333.png" alt="image-20200929121753333"></p><p><em>假设通过评分的方差或者标准差来衡量</em></p><p><img src="/images/resources/20200929/image-20200929122144330.png" alt="image-20200929122144330"></p><p><img src="/images/resources/20200929/image-20200929123844632.png" alt="image-20200929123844632"></p><h2 id="分析婴儿名字"><a href="#分析婴儿名字" class="headerlink" title="分析婴儿名字"></a>分析婴儿名字</h2><blockquote><p>目标</p></blockquote><ol><li>根据给定的名字,对婴儿名字随时间比例进行可视化</li><li>确定一个名字的相对排位</li><li>每年最受欢迎的名字或者流行度最好或者最低的名字</li><li>分析名字的趋势</li><li>分析名字的来源</li></ol><p><img src="/images/resources/20200929/image-20200929124834423.png" alt="image-20200929124834423"></p><h3 id="整理数据集"><a href="#整理数据集" class="headerlink" title="整理数据集"></a>整理数据集</h3><p><img src="/images/resources/20200929/image-20200929125528800.png" alt="image-20200929125528800"></p><p><img src="/images/resources/20200929/image-20200929130624338.png" alt="image-20200929130624338"></p><p><img src="/images/resources/20200929/image-20200929131045948.png" alt="image-20200929131045948"></p><p><img src="/images/resources/20200929/image-20200929131615520.png" alt="image-20200929131615520"></p><h3 id="分析名字趋势"><a href="#分析名字趋势" class="headerlink" title="分析名字趋势"></a>分析名字趋势</h3><p><img src="/images/resources/20200929/image-20200929132644570.png" alt="image-20200929132644570"></p><h3 id="计算命名的多样性"><a href="#计算命名的多样性" class="headerlink" title="计算命名的多样性"></a>计算命名的多样性</h3><p><img src="/images/resources/20200929/image-20200929133735933.png" alt="image-20200929133735933"></p><p><img src="/images/resources/20200929/image-20200929134529776.png" alt="image-20200929134529776"></p><h3 id="最后一个字母"><a href="#最后一个字母" class="headerlink" title="最后一个字母"></a>最后一个字母</h3><p><img src="/images/resources/20200929/image-20200929135508417.png" alt="image-20200929135508417"></p><p><img src="/images/resources/20200929/image-20200929135520001.png" alt="image-20200929135520001"></p><p><img src="/images/resources/20200929/image-20200929135936555.png" alt="image-20200929135936555"></p><p><img src="/images/resources/20200929/image-20200929140202763.png" alt="image-20200929140202763"></p><h3 id="男孩名字变成女孩名字"><a href="#男孩名字变成女孩名字" class="headerlink" title="男孩名字变成女孩名字"></a>男孩名字变成女孩名字</h3><p><img src="/images/resources/20200929/image-20200929140915728.png" alt="image-20200929140915728"></p><h2 id="农业数据分析"><a href="#农业数据分析" class="headerlink" title="农业数据分析"></a>农业数据分析</h2><p><img src="/images/resources/20200929/image-20200929141802330.png" alt="image-20200929141802330"></p><p><img src="/images/resources/20200929/image-20200929141812142.png" alt="image-20200929141812142"></p><p><img src="/images/resources/20200929/image-20200929144432227.png" alt="image-20200929144432227"></p><p><img src="/images/resources/20200929/image-20200929145237933.png" alt="image-20200929145237933"></p><p><img src="/images/resources/20200929/image-20200929150302933.png" alt="image-20200929150302933"></p><h2 id="选举分析"><a href="#选举分析" class="headerlink" title="选举分析"></a>选举分析</h2><p><img src="/images/resources/20200929/image-20200929151557059.png" alt="image-20200929151557059"></p><p><img src="/images/resources/20200929/image-20200929152112283.png" alt="image-20200929152112283"></p><h3 id="按雇主和职业进行统计"><a href="#按雇主和职业进行统计" class="headerlink" title="按雇主和职业进行统计"></a>按雇主和职业进行统计</h3><p><img src="/images/resources/20200929/image-20200929153055725.png" alt="image-20200929153055725"></p><p><img src="/images/resources/20200929/image-20200929153747022.png" alt="image-20200929153747022"></p><h3 id="捐赠金额分桶"><a href="#捐赠金额分桶" class="headerlink" title="捐赠金额分桶"></a>捐赠金额分桶</h3><p><img src="/images/resources/20200929/image-20200929154255437.png" alt="image-20200929154255437"></p><h3 id="按州进行计算"><a href="#按州进行计算" class="headerlink" title="按州进行计算"></a>按州进行计算</h3><p><img src="/images/resources/20200929/image-20200929154622418.png" alt="image-20200929154622418"></p><p><img src="/images/resources/20200929/image-20200929154640914.png" alt="image-20200929154640914"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;数据分析完结章&quot;&gt;&lt;a href=&quot;#数据分析完结章&quot; class=&quot;headerlink&quot; title=&quot;数据分析完结章&quot;&gt;&lt;/a&gt;数据分析完结章&lt;/h1&gt;&lt;h2 id=&quot;数据准备&quot;&gt;&lt;a href=&quot;#数据准备&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+    
+      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+    
+      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+      <category term="数据重组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
+    
+      <category term="数据聚合" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88/"/>
+    
+      <category term="数据分组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据建模</title>
+    <link href="https://wangweijie.vip/2020/09/28/2020-09-28-python%E5%BB%BA%E6%A8%A1/"/>
+    <id>https://wangweijie.vip/2020/09/28/2020-09-28-python建模/</id>
+    <published>2020-09-28T06:44:56.290Z</published>
+    <updated>2020-10-09T05:28:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="python建模"><a href="#python建模" class="headerlink" title="python建模"></a>python建模</h1><p><strong><em>在机器学习的学习库中,有2个比较流行的建模数据包statsmodel和大名鼎鼎的scikit-learn.statsmodels更关注统计推断，提供不确定估计和参数p-value。相反的，scikit-learn注重预测。</em></strong></p><h2 id="pandas与建模代码结合"><a href="#pandas与建模代码结合" class="headerlink" title="pandas与建模代码结合"></a>pandas与建模代码结合</h2><p><img src="/images/resources/20200928/image-20200928124523739.png" alt="image-20200928124523739"></p><p><img src="/images/resources/20200928/image-20200928125150294.png" alt="image-20200928125150294"></p><p><img src="/images/resources/20200928/image-20200928125410631.png" alt="image-20200928125410631"></p><h2 id="评估线性模型"><a href="#评估线性模型" class="headerlink" title="评估线性模型"></a>评估线性模型</h2><h3 id="泰坦尼克代码示例"><a href="#泰坦尼克代码示例" class="headerlink" title="泰坦尼克代码示例"></a>泰坦尼克代码示例</h3><p><img src="/images/resources/20200928/image-20200928130852833.png" alt="image-20200928130852833"></p><p><img src="/images/resources/20200928/image-20200928131043151.png" alt="image-20200928131043151"></p><blockquote><p>简单示例</p></blockquote><p><img src="/images/resources/20200928/image-20200928134320807.png" alt="image-20200928134320807"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;python建模&quot;&gt;&lt;a href=&quot;#python建模&quot; class=&quot;headerlink&quot; title=&quot;python建模&quot;&gt;&lt;/a&gt;python建模&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;在机器学习的学习库中,有2个比较流行的建模数据包statsmodel
+      
+    
+    </summary>
+    
+    
+      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+    
+      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+      <category term="数据重组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
+    
+      <category term="数据聚合" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88/"/>
+    
+      <category term="数据分组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据分析之高阶pandas</title>
+    <link href="https://wangweijie.vip/2020/09/27/2020-09-27-%E9%AB%98%E7%BA%A7pandas/"/>
+    <id>https://wangweijie.vip/2020/09/27/2020-09-27-高级pandas/</id>
+    <published>2020-09-27T06:53:25.055Z</published>
+    <updated>2020-10-09T05:37:00.834Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="高阶pandas"><a href="#高阶pandas" class="headerlink" title="高阶pandas"></a>高阶pandas</h1><h2 id="背景和目标"><a href="#背景和目标" class="headerlink" title="背景和目标"></a>背景和目标</h2><p><strong><em>一个列经常会包含重复值,汇聚成了一个小型的不同值的集合。通过unique和values_counts,允许从一个数组中提取不同的值,并计算这些不同值的频率</em></strong></p><p><img src="/images/resources/20200927/image-20200927110638900.png" alt="image-20200927110638900"></p><p><strong>在数据库的操作中,使用维度表示一种最佳实践，维度包含了不同的值,并将主要观测值存储为引用维度表的整数键</strong></p><p><img src="/images/resources/20200927/image-20200927110935427.png" alt="image-20200927110935427"></p><p><strong><em>这种按照整数展现的方式成为分类或者字典编码的实现</em></strong></p><h2 id="pandas中的Categorical类型-可分类类型"><a href="#pandas中的Categorical类型-可分类类型" class="headerlink" title="pandas中的Categorical类型(可分类类型)"></a>pandas中的Categorical类型(可分类类型)</h2><p><img src="/images/resources/20200927/image-20200927111800297.png" alt="image-20200927111800297"></p><h3 id="通过函数转为categorical对象"><a href="#通过函数转为categorical对象" class="headerlink" title="通过函数转为categorical对象"></a>通过函数转为categorical对象</h3><p><img src="/images/resources/20200927/image-20200927130954583.png" alt="image-20200927130954583"></p><blockquote><p>其他方式</p></blockquote><p><img src="/images/resources/20200927/image-20200927131403599.png" alt="image-20200927131403599"></p><h3 id="使用categorical对象进行计算"><a href="#使用categorical对象进行计算" class="headerlink" title="使用categorical对象进行计算"></a>使用categorical对象进行计算</h3><p><img src="/images/resources/20200927/image-20200927132408678.png" alt="image-20200927132408678"></p><h3 id="使用分类获得更高性能"><a href="#使用分类获得更高性能" class="headerlink" title="使用分类获得更高性能"></a>使用分类获得更高性能</h3><p><img src="/images/resources/20200927/image-20200927133450474.png" alt="image-20200927133450474"></p><h3 id="分类方法"><a href="#分类方法" class="headerlink" title="分类方法"></a>分类方法</h3><p><img src="/images/resources/20200927/image-20200927134537131.png" alt="image-20200927134537131"></p><p><img src="/images/resources/20200927/image-20200927134554599.png" alt="image-20200927134554599"></p><h3 id="创建虚拟替换变量"><a href="#创建虚拟替换变量" class="headerlink" title="创建虚拟替换变量"></a>创建虚拟替换变量</h3><p><img src="/images/resources/20200927/image-20200927134717366.png" alt="image-20200927134717366"></p><h2 id="高阶的groupby应用"><a href="#高阶的groupby应用" class="headerlink" title="高阶的groupby应用"></a>高阶的groupby应用</h2><p>在分组操作中有一个内建方法叫做transform,可以达到:</p><ol><li>产生一个标量值,广播到个分组的尺寸数据中</li><li>产生一个与输入分组尺寸相同的对象</li><li>不可改变它的输入</li></ol><p><img src="/images/resources/20200927/image-20200927135545587.png" alt="image-20200927135545587"></p><p><img src="/images/resources/20200927/image-20200927135852507.png" alt="image-20200927135852507"></p><h3 id="分组的时间重新采样"><a href="#分组的时间重新采样" class="headerlink" title="分组的时间重新采样"></a>分组的时间重新采样</h3><p><img src="/images/resources/20200927/image-20200927140302739.png" alt="image-20200927140302739"></p><blockquote><p>其他方式</p></blockquote><p><img src="/images/resources/20200927/image-20200927141652657.png" alt="image-20200927141652657"></p><p><em>注:还有一个pipe管道的方法暂时没有用.后续代码有涉及到在进行查阅</em></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;高阶pandas&quot;&gt;&lt;a href=&quot;#高阶pandas&quot; class=&quot;headerlink&quot; title=&quot;高阶pandas&quot;&gt;&lt;/a&gt;高阶pandas&lt;/h1&gt;&lt;h2 id=&quot;背景和目标&quot;&gt;&lt;a href=&quot;#背景和目标&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+    
+      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+    
+      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+      <category term="数据重组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
+    
+      <category term="数据聚合" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88/"/>
+    
+      <category term="数据分组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据的时间序列</title>
+    <link href="https://wangweijie.vip/2020/09/25/2020-09-24-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/"/>
+    <id>https://wangweijie.vip/2020/09/25/2020-09-24-时间序列/</id>
+    <published>2020-09-25T06:10:42.118Z</published>
+    <updated>2020-10-09T05:25:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="时间序列"><a href="#时间序列" class="headerlink" title="时间序列"></a>时间序列</h1><blockquote><p>说明</p></blockquote><ol><li>时间序列的数据是比较重要的结构化数据形式,在多个时间观测或者测量的数据形成了时间序列</li><li>许多的时间序列是固定频率的,也就表明数据是根据相同规则出现的.同样的时间序列可以是不规则的,没有固定的时间单位和偏移量</li><li>标记时间的方式可能有时间戳;固定的时间区间;时间间隔;实验时间或消耗时间</li></ol><h1 id="日期和时间数据的类型以及工具"><a href="#日期和时间数据的类型以及工具" class="headerlink" title="日期和时间数据的类型以及工具"></a>日期和时间数据的类型以及工具</h1><p>在python的标准库中包含了日期和时间数据的类型.有datetime,time,calendar等</p><p><img src="/images/resources/20200924/image-20200924111529527.png" alt="image-20200924111529527"></p><h2 id="字符串和datetime互相转换"><a href="#字符串和datetime互相转换" class="headerlink" title="字符串和datetime互相转换"></a>字符串和datetime互相转换</h2><p><img src="/images/resources/20200924/image-20200924122533490.png" alt="image-20200924122533490"></p><h3 id="使用pd中的to-datetime进行格式转换"><a href="#使用pd中的to-datetime进行格式转换" class="headerlink" title="使用pd中的to_datetime进行格式转换"></a>使用pd中的to_datetime进行格式转换</h3><p><img src="/images/resources/20200924/image-20200924122835232.png" alt="image-20200924122835232"></p><h2 id="时间序列基础"><a href="#时间序列基础" class="headerlink" title="时间序列基础"></a>时间序列基础</h2><p><strong><em>pandas的基础时间序列是由时间戳索引的Series,通常表示为字符串或者是datetime对象</em></strong></p><p><img src="/images/resources/20200924/image-20200925100223177.png" alt="image-20200925100223177"></p><h3 id="索引-子集-选择"><a href="#索引-子集-选择" class="headerlink" title="索引,子集,选择"></a>索引,子集,选择</h3><p><img src="/images/resources/20200924/image-20200925100611997.png" alt="image-20200925100611997"></p><p><img src="/images/resources/20200924/image-20200925101106079.png" alt="image-20200925101106079"></p><p><img src="/images/resources/20200924/image-20200925101651782.png" alt="image-20200925101651782"></p><p><img src="/images/resources/20200924/image-20200925102625533.png" alt="image-20200925102625533"></p><h3 id="含有重复索引的时间序列"><a href="#含有重复索引的时间序列" class="headerlink" title="含有重复索引的时间序列"></a>含有重复索引的时间序列</h3><p>在某些情况下,可能会有多个数据观察值落在特定的时间戳上.</p><p><img src="/images/resources/20200924/image-20200925103954285.png" alt="image-20200925103954285"></p><h2 id="日期范围-频率和移位"><a href="#日期范围-频率和移位" class="headerlink" title="日期范围,频率和移位"></a>日期范围,频率和移位</h2><p>时间序列的频率不是固定的,但是经常有需要处理固定频率的场景,例如每日,每月.这意味着在必要的时候向时间序列引入缺失值。比如通过resample方法将样本时间序列转换为固定的每日频率数据</p><p><img src="/images/resources/20200924/image-20200925104955378.png" alt="image-20200925104955378"></p><p><img src="/images/resources/20200924/image-20200925105846336.png" alt="image-20200925105846336"></p><h3 id="频率和日期偏置"><a href="#频率和日期偏置" class="headerlink" title="频率和日期偏置"></a>频率和日期偏置</h3><p><strong><em>pandas中频率是由基础频率和倍数组成的.基础频率通常会有字符串别名.</em></strong></p><p><img src="/images/resources/20200924/image-20200925112737059.png" alt="image-20200925112737059"></p><h3 id="移位日期"><a href="#移位日期" class="headerlink" title="移位日期"></a>移位日期</h3><p>在Serise和DataFrame中都有一个shift方法进行简单日期前后位移</p><p><img src="/images/resources/20200924/image-20200925113638466.png" alt="image-20200925113638466"></p><h3 id="使用偏移进行移位日期"><a href="#使用偏移进行移位日期" class="headerlink" title="使用偏移进行移位日期"></a>使用偏移进行移位日期</h3><p><img src="/images/resources/20200924/image-20200925114716564.png" alt="image-20200925114716564"></p><h2 id="时区处理"><a href="#时区处理" class="headerlink" title="时区处理"></a>时区处理</h2><p><img src="/images/resources/20200924/image-20200925115647627.png" alt="image-20200925115647627"></p><h2 id="时间区间和区间算术"><a href="#时间区间和区间算术" class="headerlink" title="时间区间和区间算术"></a>时间区间和区间算术</h2><p>时间区间表示的是时间范围,Period类表示的正式这种数据类型<br><img src="/images/resources/20200924/image-20200925123909605.png" alt="image-20200925123909605"></p><blockquote><p>示例</p></blockquote><p><img src="/images/resources/20200924/image-20200925124505804.png" alt="image-20200925124505804"></p><h2 id="重新采样和频率转换"><a href="#重新采样和频率转换" class="headerlink" title="重新采样和频率转换"></a>重新采样和频率转换</h2><p>重新采样指的是将时间序列从一个频率转换到另一个频率的过程,将高频率聚合到低频率为向下采样,反之为向上采样</p><p><img src="/images/resources/20200924/image-20200925124953715.png" alt="image-20200925124953715"></p><h3 id="向下采样"><a href="#向下采样" class="headerlink" title="向下采样"></a>向下采样</h3><p><img src="/images/resources/20200924/image-20200925130523640.png" alt="image-20200925130523640"></p><blockquote><p>开端-峰值-谷值-结束</p></blockquote><p><img src="/images/resources/20200924/image-20200925130719301.png" alt="image-20200925130719301"></p><h3 id="向上采样"><a href="#向上采样" class="headerlink" title="向上采样"></a>向上采样</h3><p><img src="/images/resources/20200924/image-20200925131305982.png" alt="image-20200925131305982"></p><h3 id="使用区间进行重新采样"><a href="#使用区间进行重新采样" class="headerlink" title="使用区间进行重新采样"></a>使用区间进行重新采样</h3><p><img src="/images/resources/20200924/image-20200925132008194.png" alt="image-20200925132008194"></p><h2 id="移动窗口函数"><a href="#移动窗口函数" class="headerlink" title="移动窗口函数"></a>移动窗口函数</h2><p>统计和其他通过移动窗口或指数衰减而运行的函数是用于时间序列操作的数组变换的一个重要类别。这些函数称作为移动窗口函数。函数会自动排除缺失数据<br><img src="/images/resources/20200924/image-20200925134253670.png" alt="image-20200925134253670"></p><p><img src="/images/resources/20200924/image-20200925134309212.png" alt="image-20200925134309212"></p><p><img src="/images/resources/20200924/image-20200925134324416.png" alt="image-20200925134324416"></p><p><img src="/images/resources/20200924/image-20200925134517202.png" alt="image-20200925134517202"></p><h3 id="指数加权函数"><a href="#指数加权函数" class="headerlink" title="指数加权函数"></a>指数加权函数</h3><p>指定一个常数衰减因子以向更多近期观测值提供更多权重值,可以替代使用具有相等加权观察值的静态窗口尺寸的方法</p><p><img src="/images/resources/20200924/image-20200925135940944.png" alt="image-20200925135940944"></p><h3 id="二元移动窗口函数"><a href="#二元移动窗口函数" class="headerlink" title="二元移动窗口函数"></a>二元移动窗口函数</h3><p><img src="/images/resources/20200924/image-20200925140716378.png" alt="image-20200925140716378"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;时间序列&quot;&gt;&lt;a href=&quot;#时间序列&quot; class=&quot;headerlink&quot; title=&quot;时间序列&quot;&gt;&lt;/a&gt;时间序列&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;说明&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;时间序列的数据是比较重要的结构化数据形
+      
+    
+    </summary>
+    
+    
+      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+    
+      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+      <category term="数据重组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
+    
+      <category term="数据序列" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97/"/>
+    
+      <category term="数据时间" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E6%97%B6%E9%97%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>数据分组和聚合操作</title>
@@ -565,141 +705,6 @@
       <category term="序列" scheme="https://wangweijie.vip/tags/%E5%BA%8F%E5%88%97/"/>
     
       <category term="推导式" scheme="https://wangweijie.vip/tags/%E6%8E%A8%E5%AF%BC%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据分析之python基础语法2</title>
-    <link href="https://wangweijie.vip/2020/02/17/2020-02-17-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%952/"/>
-    <id>https://wangweijie.vip/2020/02/17/2020-02-17-数据分析之python基础语法2/</id>
-    <published>2020-02-17T08:03:14.622Z</published>
-    <updated>2020-02-17T08:19:36.569Z</updated>
-    
-    <content type="html"><![CDATA[<p>继续前进,这是python基础知识的完结,后续我们将进阶到数据结构,函数和文件</p><h1 id="python数据类型和控制流"><a href="#python数据类型和控制流" class="headerlink" title="python数据类型和控制流"></a>python数据类型和控制流</h1><ol><li>标量类型是什么,如何使用</li><li>控制流式什么,如何使用</li></ol><h1 id="标量类型"><a href="#标量类型" class="headerlink" title="标量类型"></a>标量类型</h1><p><em>在python的标准库中,有一些内建的类型,用来处理数值数据,字符串,布尔值,日期类型.单值类型成为标量类型</em></p><ol><li>None         表明python里面的控制</li><li>str          字符串类型,有以UTF-8为基准</li><li>bytes        原生的ascii字节</li><li>float        双精度浮点数</li><li>bool         True或false值</li><li>int          任意精度整数</li></ol><h2 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h2><h3 id="int可以存储任意大的数"><a href="#int可以存储任意大的数" class="headerlink" title="int可以存储任意大的数"></a>int可以存储任意大的数</h3><p><img src="/images/resources/BCEB5560ADDBFD33CEFA045B1FE0F0CC.jpg" alt="IMAGE"></p><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p><em>字符串的表现,可以用单引号和双引号,有换行的可以用三引号</em></p><p><img src="/images/resources/302597F360B28DB47883A85B37C57F71.jpg" alt="IMAGE"></p><p><em>python的字符串是不可变的,不能修改字符串</em></p><p><img src="/images/resources/D58AE7B29D7594EC5F157E8E855256B5.jpg" alt="IMAGE"></p><p><em>许多python对象可以转换为字符串,字符串是一个有序列的unicode字符,可以像列表和元组一样处理(用于切片)</em></p><p><img src="/images/resources/B8B3839B489398E76BBC35787E77A93F.jpg" alt="IMAGE"></p><p><em>用r来表示字符本身,字符串合并,字符串格式化</em></p><p><img src="/images/resources/2DE7E3EAC6027725B02131A41F6BAC1F.jpg" alt="IMAGE"></p><p><em>字节和Unicode</em></p><p><img src="/images/resources/D7C95EC8DABD2198462AD9B0D31094A7.jpg" alt="IMAGE"></p><h3 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h3><p><img src="/images/resources/00762643AC8645079A66413E2FF4FFD2.jpg" alt="IMAGE"></p><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p><img src="/images/resources/24C0806F8555931DBFDFD0AC4791BB6C.jpg" alt="IMAGE"></p><h3 id="关于特殊的None"><a href="#关于特殊的None" class="headerlink" title="关于特殊的None"></a>关于特殊的None</h3><p><em>None是python的空值类型,一个函数没有明确的返回值,就默认返回为none</em></p><p><img src="/images/resources/9D1235D92D422E3FB6449AF2FBEB275C.jpg" alt="IMAGE"></p><h3 id="日期和时间"><a href="#日期和时间" class="headerlink" title="日期和时间"></a>日期和时间</h3><p><em>python内建的datetime模块提供了datetime,date,time类型,datetime结合date和time是常使用的</em></p><p><img src="/images/resources/A625D02AB8ECB7A603FAEDFC0DFE59C5.jpg" alt="IMAGE"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">%a星期的英文单词的缩写：如星期一， 则返回 Mon</span><br><span class="line">%A星期的英文单词的全拼：如星期一，返回 Monday</span><br><span class="line">%b月份的英文单词的缩写：如一月， 则返回 Jan</span><br><span class="line">%B月份的引文单词的缩写：如一月， 则返回 January</span><br><span class="line">%c返回datetime的字符串表示，如03/08/15 23:01:26</span><br><span class="line">%d返回的是当前时间是当前月的第几天</span><br><span class="line">%f微秒的表示： 范围: [0,999999]</span><br><span class="line">%H以24小时制表示当前小时</span><br><span class="line">%I以12小时制表示当前小时</span><br><span class="line">%j返回 当天是当年的第几天 范围[001,366]</span><br><span class="line">%m返回月份 范围[0,12]</span><br><span class="line">%M返回分钟数 范围 [0,59]</span><br><span class="line">%P返回是上午还是下午–AM or PM</span><br><span class="line">%S返回秒数 范围 [0,61]。。。手册说明的</span><br><span class="line">%U返回当周是当年的第几周 以周日为第一天</span><br><span class="line">%W返回当周是当年的第几周 以周一为第一天</span><br><span class="line">%w当天在当周的天数，范围为[0, 6]，6表示星期天</span><br><span class="line">%x日期的字符串表示 ：03/08/15</span><br><span class="line">%X时间的字符串表示 ：23:22:08</span><br><span class="line">%y两个数字表示的年份 15</span><br><span class="line">%Y四个数字表示的年份 2015</span><br><span class="line">%z与utc时间的间隔 （如果是本地时间，返回空字符串）</span><br><span class="line">%Z时区名称（如果是本地时间，返回空字符串）</span><br></pre></td></tr></table></figure><h4 id="时间替换和时间差"><a href="#时间替换和时间差" class="headerlink" title="时间替换和时间差"></a>时间替换和时间差</h4><p><img src="/images/resources/726822CE28F6DAE65F3A4D73632E21CC.jpg" alt="IMAGE"></p><h1 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h1><p><em>在python中有若干的关键字进行条件逻辑,循环,以及其他控制流操作</em></p><h2 id="if-elif-else"><a href="#if-elif-else" class="headerlink" title="if,elif,else"></a>if,elif,else</h2><p><img src="/images/resources/47EC1A063113F928740E64748596D507.jpg" alt="IMAGE"></p><p><img src="/images/resources/0D86D52E143AA8D621CE3BFFF2856E7C.jpg" alt="IMAGE"></p><h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><h3 id="contiune"><a href="#contiune" class="headerlink" title="contiune"></a>contiune</h3><p><em>contiune代表着当次循环跳过,继续进行下一次的循环</em></p><p><img src="/images/resources/B8D21E133AE0C982129F7B9098A78436.jpg" alt="IMAGE"></p><h3 id="break"><a href="#break" class="headerlink" title="break"></a>break</h3><p><em>break代表着跳出整个循环,并结束循环的过程</em></p><p><img src="/images/resources/6945B396B8E12DBF4E67B8BC838E4C73.jpg" alt="IMAGE"></p><h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p><img src="/images/resources/6A11357229210DA6A177A2B96B4A543D.jpg" alt="IMAGE"></p><h2 id="pass"><a href="#pass" class="headerlink" title="pass"></a>pass</h2><p><em>pass是python中的非操作语句,代码块不需要执行任何动作</em></p><p><img src="/images/resources/7953034C9AB1DA6CC980D6029A4F3D35.jpg" alt="IMAGE"></p><h2 id="range"><a href="#range" class="headerlink" title="range"></a>range</h2><p><em>rang函数返回一个迭代器,用来产生一个均匀分布的整数序列</em></p><p><img src="/images/resources/D551EBF7FB2492428B00937256A0BE99.jpg" alt="IMAGE"></p><p><img src="/images/resources/9AE7D1020C0B8A6FDC404A681543A2E9.jpg" alt="IMAGE"></p><p><strong>注意:虽然range可以产生任意大的序号.所耗用的时长和内容比较小</strong></p><p><img src="/images/resources/FC805DC118C375042C3DCEB08C855B1D.jpg" alt="IMAGE"></p><h2 id="三元表达式"><a href="#三元表达式" class="headerlink" title="三元表达式"></a>三元表达式</h2><p><img src="/images/resources/D784B98ADA87F900AF14C9E03FDBB05E.jpg" alt="IMAGE"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;继续前进,这是python基础知识的完结,后续我们将进阶到数据结构,函数和文件&lt;/p&gt;
-&lt;h1 id=&quot;python数据类型和控制流&quot;&gt;&lt;a href=&quot;#python数据类型和控制流&quot; class=&quot;headerlink&quot; title=&quot;python数据类型和控制流&quot;&gt;&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
-    
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-      <category term="面向对象" scheme="https://wangweijie.vip/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    
-      <category term="语言基础2" scheme="https://wangweijie.vip/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%802/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据分析之python基础语法1</title>
-    <link href="https://wangweijie.vip/2020/02/16/2020-02-15-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%951/"/>
-    <id>https://wangweijie.vip/2020/02/16/2020-02-15-数据分析之python基础语法1/</id>
-    <published>2020-02-16T09:03:27.058Z</published>
-    <updated>2020-02-16T09:27:28.389Z</updated>
-    
-    <content type="html"><![CDATA[<p>从语言思维来牢记基础,对于我们用语言来创造是必要的.</p><h1 id="python语言基础"><a href="#python语言基础" class="headerlink" title="python语言基础"></a>python语言基础</h1><ol><li>语言的艺术</li><li>语言的标准</li></ol><h1 id="语言的艺术"><a href="#语言的艺术" class="headerlink" title="语言的艺术"></a>语言的艺术</h1><blockquote><p>语言的语义</p></blockquote><p><strong>python语言在编写的时候强调的是可读性,简洁,清晰.</strong></p><blockquote><p>语言使用缩进而不是括号</p></blockquote><ol><li>使用tab或者4个空格来组织自己的代码</li><li>增加可读性,简洁</li></ol><p><img src="/images/resources/CABF027DF32BB72242382DCD94299087.jpg" alt="IMAGE"></p><blockquote><p>万物皆对象</p></blockquote><p><strong>在python所构建的数据都是对象,而这个对象拥有一致性也就是目标和目的是一致的</strong></p><p><em>每个数字,字符串,数据结构等都是对象,对象中都有自己的数据类型和内部数据</em></p><blockquote><p>注释</p></blockquote><ol><li>注释注重解释</li></ol><p><img src="/images/resources/249CBE5EA473D4C1AB847514449F4C41.jpg" alt="IMAGE"></p><blockquote><p>函数和对象上的方法调用</p></blockquote><ol><li>定义函数,调用函数,定义对象,对象方法调用</li></ol><p><img src="/images/resources/E78BDD7B30D1C7AE2ADFE5F043151BE3.jpg" alt="IMAGE"></p><h1 id="语言的标准"><a href="#语言的标准" class="headerlink" title="语言的标准"></a>语言的标准</h1><h2 id="变量和参数的传递"><a href="#变量和参数的传递" class="headerlink" title="变量和参数的传递"></a>变量和参数的传递</h2><ol><li>变量即是创建一个名字,而等号右边则是这个变量所代表的含义即是数据</li></ol><p><img src="/images/resources/4CABE6DC8BA41177D66FF4EB6B59E005.jpg" alt="IMAGE"></p><p><em>a和b都是同一个引用,指向的是具体的对象</em></p><h3 id="赋值-绑定-传递对象"><a href="#赋值-绑定-传递对象" class="headerlink" title="赋值=绑定,传递对象"></a>赋值=绑定,传递对象</h3><p><em>赋值称作为绑定,把一个名字绑定给一个对象,变量名可能被称为绑定变量</em></p><p><em>把对象传递给函数的时候,不会复制,而是直接引用</em></p><p><img src="/images/resources/09640B27C22D97CABE93AF55534FCB04.jpg" alt="IMAGE"></p><h3 id="动态引用和强类型"><a href="#动态引用和强类型" class="headerlink" title="动态引用和强类型"></a>动态引用和强类型</h3><p><img src="/images/resources/3E769A6E9B8C16189DBEC3D12804ACF9.jpg" alt="IMAGE"></p><p><em>注意知晓元组类型</em></p><h3 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h3><p><em>对象都拥有属性和方法</em></p><p><strong>对象拥有属性和方法</strong></p><p><img src="/images/resources/CF718DF421AB02EDB230CB55BA654466.jpg" alt="IMAGE"></p><h3 id="鸭子类型"><a href="#鸭子类型" class="headerlink" title="鸭子类型"></a>鸭子类型</h3><p><em>如果不关心对象的类型,只关心是否有些方法和用途,这种称作为鸭子类型,比如你只想关心这个对象是否可以迭代.那么可以</em></p><p><img src="/images/resources/DEF5DA99ABBEBB8E238A50B26AD26348.jpg" alt="IMAGE"></p><h3 id="关于模块的引入"><a href="#关于模块的引入" class="headerlink" title="关于模块的引入"></a>关于模块的引入</h3><p><strong>引入模块有三种形式</strong></p><ol><li>引入整个模块</li><li>引入模块中的某个部分</li><li>引入的模块构建一个别名</li></ol><p><img src="/images/resources/F9DF1ABBA17F2D2FE6522B8482904CB0.jpg" alt="IMAGE"></p><h3 id="二元运算符和比较运算符"><a href="#二元运算符和比较运算符" class="headerlink" title="二元运算符和比较运算符"></a>二元运算符和比较运算符</h3><p><img src="/images/resources/4975BC58F07B92BE658ECB9EBF8CDC02.jpg" alt="IMAGE"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">a+b : a加b</span><br><span class="line"></span><br><span class="line">a-b :  a减b</span><br><span class="line"></span><br><span class="line">a*b :  a乘b</span><br><span class="line"></span><br><span class="line">a/b : a除以b</span><br><span class="line"></span><br><span class="line">a//b:a整除以b,表示的是返回a除以b的结果的整数部分，而不是证明了a能被b整除。要证明a能被b整除，可以是if a%b==0: 或者a/b＝int 等等</span><br><span class="line"></span><br><span class="line">a**b : a的b次方</span><br><span class="line"></span><br><span class="line">a&amp;b : a与b,对于整数则是按位AND</span><br><span class="line"></span><br><span class="line">a|b :  a或b,对于整数则是按位OR</span><br><span class="line"></span><br><span class="line">a^b :  对布尔值，a异或b,对于整数则是按位异或</span><br><span class="line"></span><br><span class="line">a==b : a和b相等则为Ture</span><br><span class="line"></span><br><span class="line">a!=b: a和b不相等则为Ture</span><br><span class="line"></span><br><span class="line">a&lt;=b,a&lt;b : 小于等于，小于</span><br><span class="line"></span><br><span class="line">a&gt;=b,a&gt;b : 大于等于，大于</span><br><span class="line"></span><br><span class="line">a is b: a和b是同一个python对象则为Ture</span><br><span class="line"></span><br><span class="line">a is not b: a和b不是同一个python对象则为Ture</span><br></pre></td></tr></table></figure><p><strong>在python中is是判断对象,==才是判断对象里面的内容是否一样</strong></p><h3 id="可变和不可编对象"><a href="#可变和不可编对象" class="headerlink" title="可变和不可编对象"></a>可变和不可编对象</h3><p><em>在python的大多数对象中,如:列表,字典,Numpy数组和用户自定义类型都是可变的</em></p><p><img src="/images/resources/7BFA7F926936CAC7642A7A70526A81DE.jpg" alt="IMAGE"></p><p><em>但是对于字符串和元组是不可变的</em></p><p><img src="/images/resources/3CA0B3E0025D142C615B4B917C590694.jpg" alt="IMAGE"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;从语言思维来牢记基础,对于我们用语言来创造是必要的.&lt;/p&gt;
-&lt;h1 id=&quot;python语言基础&quot;&gt;&lt;a href=&quot;#python语言基础&quot; class=&quot;headerlink&quot; title=&quot;python语言基础&quot;&gt;&lt;/a&gt;python语言基础&lt;/h1&gt;&lt;ol&gt;
-&lt;l
-      
-    
-    </summary>
-    
-    
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
-    
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-      <category term="语言基础" scheme="https://wangweijie.vip/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/"/>
-    
-      <category term="面向对象" scheme="https://wangweijie.vip/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据分析之常用操作</title>
-    <link href="https://wangweijie.vip/2020/02/14/2020-02-14-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/"/>
-    <id>https://wangweijie.vip/2020/02/14/2020-02-14-数据分析之常用操作/</id>
-    <published>2020-02-14T14:24:13.202Z</published>
-    <updated>2020-02-14T14:43:48.642Z</updated>
-    
-    <content type="html"><![CDATA[<p>熟知一些基本操作,能够加快你的学习效率。</p><h1 id="python日常操作"><a href="#python日常操作" class="headerlink" title="python日常操作"></a>python日常操作</h1><ol><li>python交互工具jupyter_notebook日常使用</li></ol><h1 id="notebook的使用"><a href="#notebook的使用" class="headerlink" title="notebook的使用"></a>notebook的使用</h1><h2 id="命令窗口中输入jupyter-notebook"><a href="#命令窗口中输入jupyter-notebook" class="headerlink" title="命令窗口中输入jupyter notebook"></a>命令窗口中输入jupyter notebook</h2><p><strong>可以在切换到自己要写笔记的目录中</strong></p><p><img src="/images/resources/B53284DA6C7F0A216CDE866AB9B635A6.jpg" alt="IMAGE"></p><h2 id="在notenook中第一次操作"><a href="#在notenook中第一次操作" class="headerlink" title="在notenook中第一次操作"></a>在notenook中第一次操作</h2><p><img src="/images/resources/53861EE5B0A4F68971F8688B99F8D47C.jpg" alt="IMAGE"></p><p><em>注意:我们在使用的时候可以输入关键字的用Tab键进行补全操作</em></p><h3 id="Tab补全说明"><a href="#Tab补全说明" class="headerlink" title="Tab补全说明"></a>Tab补全说明</h3><p>1.Tab补全不是万能的,会尽可能的补全你的代码.按下Tab会搜索已输入的变量(对象,函数等等)</p><p><img src="/images/resources/92C3982A52F89E66DE166DBA8974181E.jpg" alt="IMAGE"></p><p><img src="/images/resources/42AD3F735B677C78D1EE45BC13000A74.jpg" alt="IMAGE"></p><p>2.同样的tab也适应于模块</p><p><img src="/images/resources/C2CCD872AD89C00E60B2F26A4BE7E001.jpg" alt="IMAGE"></p><p>3.同样适用与函数</p><p><img src="/images/resources/B9DE29D92317E46F3F2CEB3F20AA4D99.jpg" alt="IMAGE"></p><h2 id="自省操作"><a href="#自省操作" class="headerlink" title="自省操作"></a>自省操作</h2><p><strong>通过自省可以关注对象的类型</strong></p><p><img src="/images/resources/63C327928CBF5FA6B1D5B905C127226D.jpg" alt="IMAGE"></p><p><strong>针对自定义函数</strong></p><p><img src="/images/resources/5616539F0C89B3FED84CE97BFB5580E1.jpg" alt="IMAGE"></p><p><img src="/images/resources/B8036F487C114A4937BCD63D830106F9.jpg" alt="IMAGE"></p><h2 id="其余额外的命令"><a href="#其余额外的命令" class="headerlink" title="其余额外的命令"></a>其余额外的命令</h2><ol><li>%run命令可以用来执行某一个位置上的py文件</li><li>%load命令可以将代码导入到某一个位置中</li><li>使用Ctrl+C可以随时终端执行中的程序</li></ol><h2 id="魔术命令"><a href="#魔术命令" class="headerlink" title="魔术命令"></a>魔术命令</h2><p><em>魔术命令是指在指令面前加上%,可以是普通任务更快捷,更方便</em></p><p><strong>注意:没下载numpy的话可以执行 pip3 install numpy</strong></p><p><img src="/images/resources/1572ECAE3810677FBED5CAFB70B50E64.jpg" alt="IMAGE"></p><p><img src="/images/resources/B760556E4AF6D26DF497A3189EFDEBB1.jpg" alt="IMAGE"></p><h3 id="常用的魔术命令"><a href="#常用的魔术命令" class="headerlink" title="常用的魔术命令"></a>常用的魔术命令</h3><p>%quickref       显示IPython的快速参考</p><p>%magic          显示所有魔术命令的详细文档</p><p>%debug          从最新的异常跟踪的底部进入交互式调试器</p><p>%hist           打开命令的输入（可选输出）历史</p><p>%pdb            在异常发生后自动进入调试器</p><p>%paste          执行剪贴板中的Python代码</p><p>%cpaste         打开一个特殊的提示符以便于手工粘贴待执行的Python代码</p><p>%reset          删除interactive命名空间中的全部变量、名称</p><p>%page OBJECT    通过分页器打印出OBJECT</p><p>%run script.py  执行Python脚本文件</p><p>%prun statement 通过cProfile执行statement,并打印分析器的输出结果</p><p>%time statement 报告statement的执行时间</p><p>%timeit statement 多次执行statement以计算系综合平均执行时间。对那些执行时间非常小的代码有用</p><p>%who、%who_ls、whos 显示interactive命名空间中定义的变量，信息级别/冗余度可变</p><p>%xdel variable 删除variable,并尝试清除其在IPython中的对象上的一切引用</p><p><strong>后面在使用的时候可以在回过来进行查找</strong></p><h2 id="集成美丽的制图"><a href="#集成美丽的制图" class="headerlink" title="集成美丽的制图"></a>集成美丽的制图</h2><p><em>同样的需要安装制图执行命令:pip3 install matplotlib -i <a href="https://pypi.douban.com/simple/" target="_blank" rel="noopener">https://pypi.douban.com/simple/</a></em></p><p><img src="/images/resources/9163D86D2540DF9C66DF020EB18231C8.jpg" alt="IMAGE"></p><h3 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h3><p>1.np.random.randn(50) 代表着返回一组标准正态分布的随机值,范围在-1.96～+1.96</p><p><img src="/images/resources/1E7AF91A912DEA021CBF628480AE1DE8.jpg" alt="IMAGE"></p><p>2.numpy.cumsum()代表着累加求和 1 1+2 1+2+3 依次类推</p><p><img src="/images/resources/E16A45C8AC4BB3BF79964275A0CA50DA.jpg" alt="IMAGE"></p><p>3.plt.plot()代表着线性制图</p><p><img src="/images/resources/3FD580DCF3524851AEF1217B9566B66D.jpg" alt="IMAGE"></p><ol start="4"><li>%matplotlib inline 用于省掉plt.show()</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;熟知一些基本操作,能够加快你的学习效率。&lt;/p&gt;
-&lt;h1 id=&quot;python日常操作&quot;&gt;&lt;a href=&quot;#python日常操作&quot; class=&quot;headerlink&quot; title=&quot;python日常操作&quot;&gt;&lt;/a&gt;python日常操作&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;pyth
-      
-    
-    </summary>
-    
-    
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
-    
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-      <category term="数据的禅意" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E7%A6%85%E6%84%8F/"/>
-    
-      <category term="日常操作" scheme="https://wangweijie.vip/tags/%E6%97%A5%E5%B8%B8%E6%93%8D%E4%BD%9C/"/>
-    
-      <category term="初次接触" scheme="https://wangweijie.vip/tags/%E5%88%9D%E6%AC%A1%E6%8E%A5%E8%A7%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据分析前的准备工作</title>
-    <link href="https://wangweijie.vip/2020/02/14/2020-02-14-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/"/>
-    <id>https://wangweijie.vip/2020/02/14/2020-02-14-数据分析前的准备工作/</id>
-    <published>2020-02-14T08:37:39.234Z</published>
-    <updated>2020-02-14T14:24:49.339Z</updated>
-    
-    <content type="html"><![CDATA[<p>做好数据分析,先好好理解数据和工具</p><h1 id="数据分析前的准备工作"><a href="#数据分析前的准备工作" class="headerlink" title="数据分析前的准备工作"></a>数据分析前的准备工作</h1><ol><li>数据与python</li><li>python处理数据问题上面重要的库</li><li>环境安装以及常用的学习工具与开发工具</li></ol><h1 id="数据与python"><a href="#数据与python" class="headerlink" title="数据与python"></a>数据与python</h1><h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><p><strong>数据这个词是抽象的,我们如何认识数据,有2个点我们需要我们作为前提</strong></p><ol><li>数据有可能代表是世界,人等一切事物,及时杂乱无序,但是也在当中存在规律</li><li>从数据中找到合适的规律和特点,那么我们需要结构化数据。那么结构化的数据有哪些？比如:表格类型的数据,多维数组,通过关键列构建的表格类型数据等</li></ol><p><strong><em>注意:大部分数据集都能转换成结构化的数据,结构化只是一种形式,更多的还是人自主的思维能力.比如:一组新闻文章里面的内容可以提取出词频表,而这个表就可以对于以后的情感进行分析</em></strong></p><h2 id="为什么选择用python"><a href="#为什么选择用python" class="headerlink" title="为什么选择用python"></a>为什么选择用python</h2><ol><li>python作为胶水语言可以随时沾和随时撕掉</li><li>python语言在设计的过程中就是构建以数据为中心的应用型数据</li><li>python适用于构建分析应用和一些常见的通用系统(日常的管理系统)</li></ol><p><strong>注:python作为一种解释性语言没有编译性语言的运行时间效率要高.这也是python的不足之处</strong></p><h1 id="python重要的库"><a href="#python重要的库" class="headerlink" title="python重要的库"></a>python重要的库</h1><blockquote><p>Numpy (数值处理)</p></blockquote><ol><li>可以构建快速高效的多维数组对象(ndarray)</li><li>可以用于对数组执行数学运算和计算.提供了大量的函数</li><li>可以用于读写硬盘中基于数组的数据集的工具</li><li>常见的线性代数等包含随机数的生成</li></ol><blockquote><p>pandas (面板数据)</p></blockquote><ol><li>能够处理大量结构化数据</li><li>常用的2个对象一个是DataFrame和Series,分别是面向列的二维表结构以及一个一维的标签化数组对象</li><li>提供复杂精细的索引功能,能够快速的完成重塑,切片,切块,聚合以及选取数据子集等操作</li></ol><blockquote><p>matplotlib</p></blockquote><ol><li>绘制图表以及其他二维数据可视化的工具</li></ol><blockquote><p>ipython与jupyter</p></blockquote><ol><li>2个都是良好的交互工具</li><li>ipython用于运行，调试，测试等操作</li><li>jupyter良好的学习笔记工具</li></ol><blockquote><p>Scipy与scikit-learn与statsmodels</p></blockquote><ol><li>Scipy解决计算中各种标准问题域</li><li>scikit-learn机器学习的工具包,偏重于预测</li><li>statsmodels统计分析包,偏重于统计与推断</li></ol><h1 id="环境安装以及常用的学习工具"><a href="#环境安装以及常用的学习工具" class="headerlink" title="环境安装以及常用的学习工具"></a>环境安装以及常用的学习工具</h1><h2 id="python环境的安装"><a href="#python环境的安装" class="headerlink" title="python环境的安装"></a>python环境的安装</h2><p><strong><em>python环境的安装不在进行说明,只是需要注意的是检查不同系统的变量设置,macos系统比较特殊,需要检查.bash_prifile中是否添加</em></strong></p><blockquote><p>ipython</p></blockquote><p><img src="/images/resources/0F0228205486739552A6EC6780BA2B68.jpg" alt="IMAGE"></p><blockquote><p>jupyter</p></blockquote><p>1.更新pip<br>python -m pip install -U pip setuptools</p><p>2.安装,使用国内源满速安装<br>pip install jupyter -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a></p><p>3.在命令中直接jupyter notebook</p><p><img src="/images/resources/2A5E8FE12AE7421DA99315DFC30983A7.jpg" alt="IMAGE"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;做好数据分析,先好好理解数据和工具&lt;/p&gt;
-&lt;h1 id=&quot;数据分析前的准备工作&quot;&gt;&lt;a href=&quot;#数据分析前的准备工作&quot; class=&quot;headerlink&quot; title=&quot;数据分析前的准备工作&quot;&gt;&lt;/a&gt;数据分析前的准备工作&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;数据与pyth
-      
-    
-    </summary>
-    
-    
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
-    
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-      <category term="数据的禅意" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E7%A6%85%E6%84%8F/"/>
     
   </entry>
   
