@@ -5,9 +5,9 @@
   <subtitle>JavaAndKafka_Streams</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://wangweijie.vip/"/>
-  <updated>2020-10-09T05:29:22.000Z</updated>
-  <id>https://wangweijie.vip/</id>
+  <link href="https://djwangweijie.github.io/"/>
+  <updated>2021-01-17T14:10:54.037Z</updated>
+  <id>https://djwangweijie.github.io/</id>
   
   <author>
     <name>Michael_Wang</name>
@@ -17,9 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>django开发第一次</title>
+    <link href="https://djwangweijie.github.io/2021/01/17/2021-01-17-django%E5%BC%80%E5%8F%91%E5%88%9D%E8%AF%86/"/>
+    <id>https://djwangweijie.github.io/2021/01/17/2021-01-17-django开发初识/</id>
+    <published>2021-01-17T14:02:32.463Z</published>
+    <updated>2021-01-17T14:10:54.037Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="django开发"><a href="#django开发" class="headerlink" title="django开发"></a>django开发</h1><h2 id="需求的描述"><a href="#需求的描述" class="headerlink" title="需求的描述"></a>需求的描述</h2><h3 id="用户端"><a href="#用户端" class="headerlink" title="用户端"></a>用户端</h3><ol><li>可以通过搜索到博客内容</li><li>能够根据关键词进行搜索。然后展示出文章列表</li><li>能够根据某个分类查看所有关于这一分类的文章</li><li>首页看到新到旧的文章列表</li><li>能够订阅，能够评论，能够配置友链</li></ol><h3 id="作者端"><a href="#作者端" class="headerlink" title="作者端"></a>作者端</h3><ol><li>后台需登录进入</li><li>创建分类和标签</li><li>能够用markdown进行编写</li><li>上传文章配图</li><li>配置导航</li><li>及时更新,收到对应的订阅</li></ol><h2 id="ER关系说明"><a href="#ER关系说明" class="headerlink" title="ER关系说明"></a>ER关系说明</h2><p><img src="/images/resources/01/image-20210116204419728.png" alt="image-20210116204419728"></p><blockquote><p>sql语句如下:</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `user` (</span><br><span class="line">  `id` INTEGER PRIMARY KEY AUTO_INCREMENT</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">CREATE TABLE `category` (</span><br><span class="line">  `id` INTEGER PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">  `name` VARCHAR(255) NOT NULL,</span><br><span class="line">  `created_time` DATETIME,</span><br><span class="line">  `is_nav` INTEGER,</span><br><span class="line">  `owner` INTEGER</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">CREATE INDEX `idx_category__owner` ON `category` (`owner`);</span><br><span class="line"></span><br><span class="line">ALTER TABLE `category` ADD CONSTRAINT `fk_category__owner` FOREIGN KEY (`owner`) REFERENCES `user` (`id`) ON DELETE SET NULL;</span><br><span class="line"></span><br><span class="line">CREATE TABLE `link` (</span><br><span class="line">  `id` INTEGER PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">  `title` VARCHAR(255) NOT NULL,</span><br><span class="line">  `href` VARCHAR(255) NOT NULL,</span><br><span class="line">  `status` VARCHAR(255) NOT NULL,</span><br><span class="line">  `created_time` DATETIME,</span><br><span class="line">  `weight` INTEGER,</span><br><span class="line">  `owner` INTEGER</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">CREATE INDEX `idx_link__owner` ON `link` (`owner`);</span><br><span class="line"></span><br><span class="line">ALTER TABLE `link` ADD CONSTRAINT `fk_link__owner` FOREIGN KEY (`owner`) REFERENCES `user` (`id`) ON DELETE SET NULL;</span><br><span class="line"></span><br><span class="line">CREATE TABLE `post` (</span><br><span class="line">  `id` INTEGER PRIMARY KEY,</span><br><span class="line">  `title` VARCHAR(255) NOT NULL,</span><br><span class="line">  `description` VARCHAR(255) NOT NULL,</span><br><span class="line">  `content` VARCHAR(255) NOT NULL,</span><br><span class="line">  `status` VARCHAR(255) NOT NULL,</span><br><span class="line">  `create_time` DATETIME,</span><br><span class="line">  `updated_time` DATETIME,</span><br><span class="line">  `category` INTEGER,</span><br><span class="line">  `user` INTEGER</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">CREATE INDEX `idx_post__category` ON `post` (`category`);</span><br><span class="line"></span><br><span class="line">CREATE INDEX `idx_post__user` ON `post` (`user`);</span><br><span class="line"></span><br><span class="line">ALTER TABLE `post` ADD CONSTRAINT `fk_post__category` FOREIGN KEY (`category`) REFERENCES `category` (`id`) ON DELETE SET NULL;</span><br><span class="line"></span><br><span class="line">ALTER TABLE `post` ADD CONSTRAINT `fk_post__user` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE SET NULL;</span><br><span class="line"></span><br><span class="line">CREATE TABLE `comment` (</span><br><span class="line">  `id` INTEGER PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">  `nickname` VARCHAR(255) NOT NULL,</span><br><span class="line">  `email` VARCHAR(255) NOT NULL,</span><br><span class="line">  `website` VARCHAR(255) NOT NULL,</span><br><span class="line">  `content` VARCHAR(255) NOT NULL,</span><br><span class="line">  `created_time` DATETIME,</span><br><span class="line">  `post` INTEGER</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">CREATE INDEX `idx_comment__post` ON `comment` (`post`);</span><br><span class="line"></span><br><span class="line">ALTER TABLE `comment` ADD CONSTRAINT `fk_comment__post` FOREIGN KEY (`post`) REFERENCES `post` (`id`) ON DELETE SET NULL;</span><br><span class="line"></span><br><span class="line">CREATE TABLE `sidebar` (</span><br><span class="line">  `id` INTEGER PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">  `type` VARCHAR(255) NOT NULL,</span><br><span class="line">  `title` VARCHAR(255) NOT NULL,</span><br><span class="line">  `status` INTEGER,</span><br><span class="line">  `content` VARCHAR(255) NOT NULL,</span><br><span class="line">  `created_time` DATETIME,</span><br><span class="line">  `owner` INTEGER</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">CREATE INDEX `idx_sidebar__owner` ON `sidebar` (`owner`);</span><br><span class="line"></span><br><span class="line">ALTER TABLE `sidebar` ADD CONSTRAINT `fk_sidebar__owner` FOREIGN KEY (`owner`) REFERENCES `user` (`id`) ON DELETE SET NULL;</span><br><span class="line"></span><br><span class="line">CREATE TABLE `tag` (</span><br><span class="line">  `id` INTEGER PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">  `name` VARCHAR(255) NOT NULL,</span><br><span class="line">  `status` VARCHAR(255) NOT NULL,</span><br><span class="line">  `created_tinme` DATETIME,</span><br><span class="line">  `owner` INTEGER</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">CREATE INDEX `idx_tag__owner` ON `tag` (`owner`);</span><br><span class="line"></span><br><span class="line">ALTER TABLE `tag` ADD CONSTRAINT `fk_tag__owner` FOREIGN KEY (`owner`) REFERENCES `user` (`id`) ON DELETE SET NULL;</span><br><span class="line"></span><br><span class="line">CREATE TABLE `post_tag` (</span><br><span class="line">  `post` INTEGER NOT NULL,</span><br><span class="line">  `tag` INTEGER NOT NULL,</span><br><span class="line">  PRIMARY KEY (`post`, `tag`)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">CREATE INDEX `idx_post_tag` ON `post_tag` (`tag`);</span><br><span class="line"></span><br><span class="line">ALTER TABLE `post_tag` ADD CONSTRAINT `fk_post_tag__post` FOREIGN KEY (`post`) REFERENCES `post` (`id`);</span><br><span class="line"></span><br><span class="line">ALTER TABLE `post_tag` ADD CONSTRAINT `fk_post_tag__tag` FOREIGN KEY (`tag`) REFERENCES `tag` (`id`)</span><br></pre></td></tr></table></figure><h2 id="框架基础"><a href="#框架基础" class="headerlink" title="框架基础"></a>框架基础</h2><h3 id="关于django的几个模块"><a href="#关于django的几个模块" class="headerlink" title="关于django的几个模块"></a>关于django的几个模块</h3><p>参考官方的文档<a href="https://docs.djangoproject.com/en/3.1/" target="_blank" rel="noopener">https://docs.djangoproject.com/en/3.1/</a></p><ol><li><p>Model部分包含</p><p>1.1 models 模型的定义相关使用说明</p><p>1.2 querysets 在model的基础上查看数据以及定义过滤</p><p>1.3 model instances  单个记录，如果CRUD操作</p><p>1.4 Migrations 表结构的调整，迁移等操作</p><p>1.5 Advanced 使用原生sql，聚合，事务，搜索等相关操作</p><p>1.6 其他:数据库优化等操作</p></li><li><p>View部分包含</p><p>2.1 The basics：url配置，增加缓存以及增加限制等</p><p>2.2 reference 静态文件和404页面处理。请求和回复对象</p><p>2.3 File uploads 文件上传下载存储等</p><p>2.4 class-based views 构建和复用view</p><p>2.5 advanced 导出csv和pdf格式</p><p>2.6 中间件涉及安全和session，缓存等</p></li><li><p>模版</p><p>3.1 the basics 基本配置模版和语法</p><p>3.2 逻辑操作</p><p>3.3 高效的配置渲染模版</p></li><li><p>form表单</p><p>4.1 基础语法使用</p><p>4.2 进阶 与model一起操作</p></li></ol><h2 id="编写一个简单的学员管理系统"><a href="#编写一个简单的学员管理系统" class="headerlink" title="编写一个简单的学员管理系统"></a>编写一个简单的学员管理系统</h2><p>先安装虚拟环境 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenvwrapper</span><br><span class="line">pip install virtualenvwrapper-win</span><br></pre></td></tr></table></figure><p>创建一个文件夹student-env为虚拟环境目录,并执行初始化虚拟环境  （默认构建在用户下面的ENV环境下。可以做更改,需要新增系统变量）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv student-env</span><br></pre></td></tr></table></figure><p>激活虚拟环境</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">workon student-env</span><br></pre></td></tr></table></figure><p>停止或者删除环境</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br><span class="line">rmvirtualenv student-env</span><br></pre></td></tr></table></figure><p>安装django1.11</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django==1.11</span><br></pre></td></tr></table></figure><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>切换到自己喜欢的目录，构建django项目（注意在虚拟环境进行操作）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir student_house</span><br><span class="line">django-admin startproject student_sys</span><br></pre></td></tr></table></figure><p>创建App（创建模块）(出现错误可参考<a href="https://blog.csdn.net/qq_28194001/article/details/86709006" target="_blank" rel="noopener">https://blog.csdn.net/qq_28194001/article/details/86709006</a>)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd student_sys</span><br><span class="line">python manage.py startapp student</span><br></pre></td></tr></table></figure><p><img src="/images/resources/01/image-20210117120725798.png" alt="image-20210117120725798"></p><h3 id="编写模块代码"><a href="#编写模块代码" class="headerlink" title="编写模块代码"></a>编写模块代码</h3><p>VS配置环境参照<a href="https://blog.csdn.net/cierlongbu/article/details/103753452" target="_blank" rel="noopener">https://blog.csdn.net/cierlongbu/article/details/103753452</a></p><p>在model.py中编写</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    SEX_ITEMS = [</span><br><span class="line">        (<span class="number">1</span>,<span class="string">'男'</span>),</span><br><span class="line">        (<span class="number">2</span>,<span class="string">'女'</span>),</span><br><span class="line">        (<span class="number">0</span>,<span class="string">'未知'</span>)</span><br><span class="line">    ]</span><br><span class="line">    STATUS_ITEMS = [</span><br><span class="line">        (<span class="number">0</span>,<span class="string">'申请'</span>),</span><br><span class="line">        (<span class="number">1</span>,<span class="string">'通过'</span>),</span><br><span class="line">        (<span class="number">2</span>,<span class="string">'拒绝'</span>)</span><br><span class="line">    ]</span><br><span class="line">    name = models.CharField(max_length=<span class="number">128</span>, verbose_name=<span class="string">'姓名'</span>)</span><br><span class="line">    sex = models.IntegerField(choices=SEX_ITEMS, verbose_name=<span class="string">'性别'</span>)</span><br><span class="line">    profession = models.CharField(max_length=<span class="number">128</span>, verbose_name=<span class="string">'职业'</span>)</span><br><span class="line">    email =models.EmailField(verbose_name= <span class="string">'Email'</span>)</span><br><span class="line">    qq = models.CharField(max_length=<span class="number">128</span>, verbose_name=<span class="string">'QQ'</span>)</span><br><span class="line">    phone = models.CharField(max_length=<span class="number">128</span>, verbose_name=<span class="string">'电话'</span>)</span><br><span class="line">    status = models.IntegerField(choices=STATUS_ITEMS,default=<span class="number">0</span>,verbose_name=<span class="string">'审核状态'</span>)</span><br><span class="line">    created_time = models.DateField(auto_now_add=<span class="literal">True</span>,editable=<span class="literal">False</span>,verbose_name=<span class="string">'创建时间'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&lt;Student: &#123;&#125;&gt;'</span>.format(self.name)</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        verbose_name = verbose_name_plural = <span class="string">'学员信息'</span></span><br></pre></td></tr></table></figure><p>在admin.py中编写</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentAdmin</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line">    list_display = (<span class="string">'id'</span>,<span class="string">'name'</span>,<span class="string">'sex'</span>,<span class="string">'profession'</span>,<span class="string">'email'</span>,<span class="string">'qq'</span>,<span class="string">'phone'</span>,<span class="string">'status'</span>,<span class="string">'created_time'</span>)</span><br><span class="line">    list_filter = (<span class="string">'sex'</span>,<span class="string">'status'</span>,<span class="string">'created_time'</span>)</span><br><span class="line">    search_fields = (<span class="string">'name'</span>,<span class="string">'profession'</span>)</span><br><span class="line">    fieldsets = (</span><br><span class="line">        (<span class="literal">None</span>,&#123;</span><br><span class="line">            <span class="string">'fields'</span>:(</span><br><span class="line">                <span class="string">'name'</span>,</span><br><span class="line">                (<span class="string">'sex'</span>,<span class="string">'prefession'</span>),</span><br><span class="line">                (<span class="string">'email'</span>,<span class="string">'qq'</span>,<span class="string">'phone'</span>),</span><br><span class="line">                <span class="string">'status'</span>,</span><br><span class="line">            )</span><br><span class="line">        &#125;),</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">admin.site.register(Student, StudentAdmin)</span><br></pre></td></tr></table></figure><p>注册到setting文件中</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'student'</span>,</span><br><span class="line">    <span class="string">'django.contrib.admin'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages'</span>,</span><br><span class="line">    <span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LANGUAGE_CODE = &apos;zh-Hans&apos;</span><br><span class="line"></span><br><span class="line">TIME_ZONE = &apos;Asia/Shanghai&apos;</span><br><span class="line"></span><br><span class="line">USE_I18N = True</span><br><span class="line"></span><br><span class="line">USE_L10N = True</span><br><span class="line"></span><br><span class="line">USE_TZ = True</span><br></pre></td></tr></table></figure><p>在项目的根目录下执行:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python manage.py makemigreations <span class="comment"># 创建数据库迁移文件</span></span><br><span class="line">python manage.py migrate <span class="comment"># 创建表</span></span><br><span class="line">python manage.py createsuperuser <span class="comment">#创建超级用户</span></span><br><span class="line">python manage.py runserver <span class="comment">#启动服务</span></span><br></pre></td></tr></table></figure><p>效果如下：</p><p><img src="/images/resources/01/image-20210117152057036.png" alt="image-20210117152057036"></p><h3 id="关于前台页面的开发"><a href="#关于前台页面的开发" class="headerlink" title="关于前台页面的开发"></a>关于前台页面的开发</h3><p>在student.py 中</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义了一个index方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    words = <span class="string">'World!'</span></span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'index.html'</span>,context=&#123;<span class="string">'words'</span>:words&#125;)  <span class="comment"># 在student的templates中寻找index.html,并且上下文内容包含words</span></span><br></pre></td></tr></table></figure><p>注意：在工作空间的json中加入可以解决在django中编写html的问题</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">"files.associations": &#123;</span><br><span class="line">     "**/*.html": "html",</span><br><span class="line">     "**/templates/**/*.html": "django-html",</span><br><span class="line">     "**/templates/**/*": "django-txt",</span><br><span class="line">     "**/requirements&#123;/**,*&#125;.&#123;txt,in&#125;": "pip-requirements"</span><br><span class="line"> &#125;,</span><br><span class="line"> "emmet.includeLanguages": &#123;"django-html": "html"&#125;</span><br></pre></td></tr></table></figure><p>在创建的templates的index.html中编写</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>学员管理系统<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    Hello &#123;&#123; words &#125;&#125;!</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p>在urls.py中配置映射目录</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> student.views <span class="keyword">import</span> index</span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">r'^admin/'</span>, admin.site.urls),</span><br><span class="line">    url(<span class="string">r'^$'</span>,index,name=<span class="string">'index'</span>)  <span class="comment"># 匹配所有映射给index函数处理 r代表使用原生字符</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure><h3 id="重新调整"><a href="#重新调整" class="headerlink" title="重新调整"></a>重新调整</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义了一个index方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># words = 'World!'</span></span><br><span class="line">    <span class="comment"># return render(request,'index.html',context=&#123;'words':words&#125;)  # 在student的templates中寻找index.html,并且上下文内容包含words</span></span><br><span class="line">    students = Student.objects.all() <span class="comment"># 获取所有学员信息</span></span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'index.html'</span>,context=&#123;<span class="string">'students'</span>:students&#125;)</span><br></pre></td></tr></table></figure><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    &#123;% for student in students %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;student.name&#125;&#125; - &#123;&#123;student.get_status_display&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">   <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure><p><em>get_status_display自动调用带有choices</em></p><p>效果如下：</p><p><img src="/images/resources/01/image-20210117162744822.png" alt="image-20210117162744822"></p><h2 id="提交数据-使用form"><a href="#提交数据-使用form" class="headerlink" title="提交数据(使用form)"></a>提交数据(使用form)</h2><p>创建一个forms.py文件</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Student</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentForm</span><span class="params">(forms.ModelForm)</span>:</span></span><br><span class="line"><span class="comment"># 定义元数据,模型参照student，并且设置显示的字段</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = Student</span><br><span class="line">        fields = (</span><br><span class="line">            <span class="string">'name'</span>,<span class="string">'sex'</span>,<span class="string">'profession'</span>,</span><br><span class="line">            <span class="string">'email'</span>,<span class="string">'qq'</span>,<span class="string">'phone'</span></span><br><span class="line">        )</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 检验QQ必须为数据(示例)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clean_qq</span><span class="params">(self)</span>:</span></span><br><span class="line">        cleaned_data = self.cleaned_data[<span class="string">'qq'</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cleaned_data.isdigit():</span><br><span class="line">            <span class="keyword">raise</span> forms.ValidationError(<span class="string">'必须为数字'</span>)</span><br><span class="line">        <span class="keyword">return</span> int(cleaned_data)</span><br></pre></td></tr></table></figure><p>修改view.py</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 定义了一个index方法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># words = 'World!'</span></span><br><span class="line">    <span class="comment"># return render(request,'index.html',context=&#123;'words':words&#125;)  # 在student的templates中寻找index.html,并且上下文内容包含words</span></span><br><span class="line">    students = Student.objects.all() <span class="comment"># 获取所有学员信息</span></span><br><span class="line">    <span class="comment"># 以下为新增代码</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        form = StudentForm(request.POST)</span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            <span class="comment"># 对于手动创建student 可以利用form直接进行保存</span></span><br><span class="line">            <span class="comment"># cleaned_data = form.cleaned_data</span></span><br><span class="line">            <span class="comment"># student = Student()</span></span><br><span class="line">            <span class="comment"># student.name = cleaned_data['name']</span></span><br><span class="line">            <span class="comment"># student.sex = cleaned_data['sex']</span></span><br><span class="line">            <span class="comment"># student.email = cleaned_data['email']</span></span><br><span class="line">            <span class="comment"># student.profession = cleaned_data['profession']</span></span><br><span class="line">            <span class="comment"># student.qq = cleaned_data['qq']</span></span><br><span class="line">            <span class="comment"># student.phone = cleaned_data['phone']</span></span><br><span class="line">            <span class="comment"># student.save()</span></span><br><span class="line">            form.save()</span><br><span class="line">            <span class="keyword">return</span> HttpResponseRedirect(reverse(<span class="string">'index'</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        form = StudentForm()</span><br><span class="line">    </span><br><span class="line">    context =&#123;</span><br><span class="line">        <span class="string">'students'</span>:students,</span><br><span class="line">        <span class="string">'form'</span>:form</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> render(request,<span class="string">'index.html'</span>,context=context)</span><br></pre></td></tr></table></figure><p>页面调整如下：</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">   &lt;ul&gt;</span><br><span class="line">    &#123;% <span class="keyword">for</span> student <span class="keyword">in</span> students %&#125;</span><br><span class="line">        &lt;li&gt;&#123;&#123;student.name&#125;&#125; - &#123;&#123;student.get_status_display&#125;&#125;&lt;/li&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">   &lt;/ul&gt;</span><br><span class="line">   &lt;hr&gt;</span><br><span class="line">    &lt;form action=<span class="string">"/"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">    &#123;% csrf_token %&#125;</span><br><span class="line">    &#123;&#123; form &#125;&#125;</span><br><span class="line">    &lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure><p><strong>注意:csrf_token是对安全性进行检验</strong></p><p>最终效果如下：</p><p><img src="/images/resources/01/image-20210117170653853.png" alt="image-20210117170653853"></p><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>一般将数据操作逻辑封装到model层中</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_all</span><span class="params">(cls)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> cls.objects.all()</span><br></pre></td></tr></table></figure><h3 id="使用class-based-view复用"><a href="#使用class-based-view复用" class="headerlink" title="使用class-based view复用"></a>使用class-based view复用</h3><p>在views.py中构建以下代码:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.views <span class="keyword">import</span> View</span><br><span class="line"></span><br><span class="line"><span class="comment">## 使用class-based view 复用</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexView</span><span class="params">(View)</span>:</span></span><br><span class="line">    template_name = <span class="string">'index.html'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_context</span><span class="params">(self)</span>:</span></span><br><span class="line">        students = Student.get_all()</span><br><span class="line">        context =&#123;</span><br><span class="line">            <span class="string">'students'</span>:students</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> context</span><br><span class="line">    </span><br><span class="line">    <span class="comment">## 匹配get请求</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self,request)</span>:</span></span><br><span class="line">        context = self.get_context()</span><br><span class="line">        form = StudentForm()</span><br><span class="line">        context.update(</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">'form'</span>:form</span><br><span class="line">            &#125;</span><br><span class="line">        )</span><br><span class="line">        <span class="keyword">return</span> render(request,self.template_name,context=context)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">## 匹配post请求</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(self,request)</span>:</span></span><br><span class="line">        form = StudentForm(request.POST)</span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            form.save()</span><br><span class="line">            <span class="keyword">return</span> HttpResponseRedirect(reverse(<span class="string">'index'</span>))</span><br><span class="line">        context =self.get_context()</span><br><span class="line">        context.update(&#123;</span><br><span class="line">            <span class="string">'form'</span>:form</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="keyword">return</span> render(request,self.template_name,context=context)</span><br></pre></td></tr></table></figure><p>urls.py中引入：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> student.views <span class="keyword">import</span> index</span><br><span class="line"><span class="keyword">from</span> student.views <span class="keyword">import</span> IndexView</span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">r'^admin/'</span>, admin.site.urls),</span><br><span class="line">    <span class="comment">## url(r'^$',index,name='index')</span></span><br><span class="line">    url(<span class="string">r'^$'</span>,IndexView.as_view(),name=<span class="string">'index'</span>)</span><br><span class="line">]</span><br></pre></td></tr></table></figure><p>注意：as_view 就是对get和post方法的包装</p><h3 id="使用中间件"><a href="#使用中间件" class="headerlink" title="使用中间件"></a>使用中间件</h3><p>构建一个middlewares.py文件，代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimeItMiddleware</span><span class="params">(MiddlewareMixin)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_request</span><span class="params">(self,request)</span>:</span></span><br><span class="line">        strs = <span class="string">"1. 处理requset请求，第一个被调用，"</span></span><br><span class="line">        <span class="string">"处理request中认证头之类"</span></span><br><span class="line">        print(strs)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_view</span><span class="params">(self,request,func,*args,**kwargs)</span>:</span></span><br><span class="line">        strs = <span class="string">"2. 用于view处理,其中func即是调用的view"</span></span><br><span class="line">        print(strs)</span><br><span class="line">        <span class="keyword">if</span> request.path != reverse(<span class="string">'index'</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        start = time.time()</span><br><span class="line">        <span class="comment">#这里调用了view做处理</span></span><br><span class="line">        response  = func(request)</span><br><span class="line">        costed = time.time() - start</span><br><span class="line">        print(<span class="string">"process view used  %d seconds"</span> % (costed,))</span><br><span class="line">        <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_exception</span><span class="params">(self,request,Exception)</span>:</span></span><br><span class="line">        strs = <span class="string">"0. 用来处理全部流程中的异常"</span></span><br><span class="line">        print(strs)</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_template_response</span><span class="params">(self,request,response)</span>:</span></span><br><span class="line">        strs = <span class="string">"3. 如果处理渲染模板使用了render,就会调用到这里"</span></span><br><span class="line">        print(strs)</span><br><span class="line">        <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_response</span><span class="params">(self,request,response)</span>:</span></span><br><span class="line">        strs = <span class="string">"4. 所有的流程执行完后会返回response给浏览器,在返回之前会调用到这里"</span></span><br><span class="line">        print(strs)</span><br><span class="line">        <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure><p>加入到setting配置中的中间件中:</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MIDDLEWARE = [</span><br><span class="line">    'student.middlewares.TimeItMiddleware', </span><br><span class="line">    'django.middleware.security.SecurityMiddleware',</span><br><span class="line">    'django.contrib.sessions.middleware.SessionMiddleware',</span><br><span class="line">    'django.middleware.common.CommonMiddleware',</span><br><span class="line">    'django.middleware.csrf.CsrfViewMiddleware',</span><br><span class="line">    'django.contrib.auth.middleware.AuthenticationMiddleware',</span><br><span class="line">    'django.contrib.messages.middleware.MessageMiddleware',</span><br><span class="line">    'django.middleware.clickjacking.XFrameOptionsMiddleware',</span><br><span class="line">]</span><br></pre></td></tr></table></figure><h3 id="关于单元测试"><a href="#关于单元测试" class="headerlink" title="关于单元测试"></a>关于单元测试</h3><p>参考的文章很多,可以参考<a href="https://www.cnblogs.com/fiona-zhong/p/10554197.html" target="_blank" rel="noopener">https://www.cnblogs.com/fiona-zhong/p/10554197.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;django开发&quot;&gt;&lt;a href=&quot;#django开发&quot; class=&quot;headerlink&quot; title=&quot;django开发&quot;&gt;&lt;/a&gt;django开发&lt;/h1&gt;&lt;h2 id=&quot;需求的描述&quot;&gt;&lt;a href=&quot;#需求的描述&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+    
+      <category term="django开发" scheme="https://djwangweijie.github.io/categories/django%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
+    
+      <category term="web开发" scheme="https://djwangweijie.github.io/tags/web%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="快速构建" scheme="https://djwangweijie.github.io/tags/%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA/"/>
+    
+      <category term="ORM" scheme="https://djwangweijie.github.io/tags/ORM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据分析完结</title>
-    <link href="https://wangweijie.vip/2020/09/29/2020-09-29-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%8C%E7%BB%93%E7%AB%A0/"/>
-    <id>https://wangweijie.vip/2020/09/29/2020-09-29-数据分析完结章/</id>
+    <link href="https://djwangweijie.github.io/2020/09/29/2020-09-29-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%AE%8C%E7%BB%93%E7%AB%A0/"/>
+    <id>https://djwangweijie.github.io/2020/09/29/2020-09-29-数据分析完结章/</id>
     <published>2020-09-29T07:49:36.114Z</published>
     <updated>2020-10-09T05:29:22.000Z</updated>
     
@@ -35,25 +67,25 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+      <category term="数据处理" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
     
-      <category term="数据重组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
+      <category term="数据重组" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
     
-      <category term="数据聚合" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88/"/>
+      <category term="数据聚合" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88/"/>
     
-      <category term="数据分组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84/"/>
+      <category term="数据分组" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>数据建模</title>
-    <link href="https://wangweijie.vip/2020/09/28/2020-09-28-python%E5%BB%BA%E6%A8%A1/"/>
-    <id>https://wangweijie.vip/2020/09/28/2020-09-28-python建模/</id>
+    <link href="https://djwangweijie.github.io/2020/09/28/2020-09-28-python%E5%BB%BA%E6%A8%A1/"/>
+    <id>https://djwangweijie.github.io/2020/09/28/2020-09-28-python建模/</id>
     <published>2020-09-28T06:44:56.290Z</published>
     <updated>2020-10-09T05:28:17.000Z</updated>
     
@@ -69,25 +101,25 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+      <category term="数据处理" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
     
-      <category term="数据重组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
+      <category term="数据重组" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
     
-      <category term="数据聚合" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88/"/>
+      <category term="数据聚合" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88/"/>
     
-      <category term="数据分组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84/"/>
+      <category term="数据分组" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>数据分析之高阶pandas</title>
-    <link href="https://wangweijie.vip/2020/09/27/2020-09-27-%E9%AB%98%E7%BA%A7pandas/"/>
-    <id>https://wangweijie.vip/2020/09/27/2020-09-27-高级pandas/</id>
+    <link href="https://djwangweijie.github.io/2020/09/27/2020-09-27-%E9%AB%98%E7%BA%A7pandas/"/>
+    <id>https://djwangweijie.github.io/2020/09/27/2020-09-27-高级pandas/</id>
     <published>2020-09-27T06:53:25.055Z</published>
     <updated>2020-10-09T05:37:00.834Z</updated>
     
@@ -103,25 +135,25 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+      <category term="数据处理" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
     
-      <category term="数据重组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
+      <category term="数据重组" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
     
-      <category term="数据聚合" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88/"/>
+      <category term="数据聚合" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88/"/>
     
-      <category term="数据分组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84/"/>
+      <category term="数据分组" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>数据的时间序列</title>
-    <link href="https://wangweijie.vip/2020/09/25/2020-09-24-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/"/>
-    <id>https://wangweijie.vip/2020/09/25/2020-09-24-时间序列/</id>
+    <link href="https://djwangweijie.github.io/2020/09/25/2020-09-24-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/"/>
+    <id>https://djwangweijie.github.io/2020/09/25/2020-09-24-时间序列/</id>
     <published>2020-09-25T06:10:42.118Z</published>
     <updated>2020-10-09T05:25:48.000Z</updated>
     
@@ -141,25 +173,25 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+      <category term="数据处理" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
     
-      <category term="数据重组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
+      <category term="数据重组" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
     
-      <category term="数据序列" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97/"/>
+      <category term="数据序列" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97/"/>
     
-      <category term="数据时间" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E6%97%B6%E9%97%B4/"/>
+      <category term="数据时间" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E6%97%B6%E9%97%B4/"/>
     
   </entry>
   
   <entry>
     <title>数据分组和聚合操作</title>
-    <link href="https://wangweijie.vip/2020/09/11/2020-09-11-%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84%E5%92%8C%E8%81%9A%E5%90%88/"/>
-    <id>https://wangweijie.vip/2020/09/11/2020-09-11-数据分组和聚合/</id>
+    <link href="https://djwangweijie.github.io/2020/09/11/2020-09-11-%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84%E5%92%8C%E8%81%9A%E5%90%88/"/>
+    <id>https://djwangweijie.github.io/2020/09/11/2020-09-11-数据分组和聚合/</id>
     <published>2020-09-11T09:51:34.633Z</published>
     <updated>2020-09-11T11:07:29.508Z</updated>
     
@@ -176,25 +208,25 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+      <category term="数据处理" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
     
-      <category term="数据重组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
+      <category term="数据重组" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E7%BB%84/"/>
     
-      <category term="数据聚合" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88/"/>
+      <category term="数据聚合" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E8%81%9A%E5%90%88/"/>
     
-      <category term="数据分组" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84/"/>
+      <category term="数据分组" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>数据制图</title>
-    <link href="https://wangweijie.vip/2020/08/26/2020-08-26-%E6%95%B0%E6%8D%AE%E5%88%B6%E5%9B%BE/"/>
-    <id>https://wangweijie.vip/2020/08/26/2020-08-26-数据制图/</id>
+    <link href="https://djwangweijie.github.io/2020/08/26/2020-08-26-%E6%95%B0%E6%8D%AE%E5%88%B6%E5%9B%BE/"/>
+    <id>https://djwangweijie.github.io/2020/08/26/2020-08-26-数据制图/</id>
     <published>2020-08-26T07:00:25.252Z</published>
     <updated>2020-08-26T07:12:06.406Z</updated>
     
@@ -212,25 +244,25 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+      <category term="数据处理" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
     
-      <category term="数据重塑" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E5%A1%91/"/>
+      <category term="数据重塑" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E5%A1%91/"/>
     
-      <category term="数据展现" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%B1%95%E7%8E%B0/"/>
+      <category term="数据展现" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%B1%95%E7%8E%B0/"/>
     
-      <category term="可视化操作" scheme="https://wangweijie.vip/tags/%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/"/>
+      <category term="可视化操作" scheme="https://djwangweijie.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96%E6%93%8D%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title>数据规整之连接,联合与重塑</title>
-    <link href="https://wangweijie.vip/2020/07/24/2020-07-23-%E6%95%B0%E6%8D%AE%E8%A7%84%E6%95%B4%E4%B9%8B%E8%BF%9E%E6%8E%A5%E8%81%94%E5%90%88%E9%87%8D%E5%A1%91/"/>
-    <id>https://wangweijie.vip/2020/07/24/2020-07-23-数据规整之连接联合重塑/</id>
+    <link href="https://djwangweijie.github.io/2020/07/24/2020-07-23-%E6%95%B0%E6%8D%AE%E8%A7%84%E6%95%B4%E4%B9%8B%E8%BF%9E%E6%8E%A5%E8%81%94%E5%90%88%E9%87%8D%E5%A1%91/"/>
+    <id>https://djwangweijie.github.io/2020/07/24/2020-07-23-数据规整之连接联合重塑/</id>
     <published>2020-07-24T15:26:36.000Z</published>
     <updated>2020-07-24T15:31:56.260Z</updated>
     
@@ -247,23 +279,23 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+      <category term="数据处理" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
     
-      <category term="数据重塑" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E5%A1%91/"/>
+      <category term="数据重塑" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E5%A1%91/"/>
     
-      <category term="层级拆分" scheme="https://wangweijie.vip/tags/%E5%B1%82%E7%BA%A7%E6%8B%86%E5%88%86/"/>
+      <category term="层级拆分" scheme="https://djwangweijie.github.io/tags/%E5%B1%82%E7%BA%A7%E6%8B%86%E5%88%86/"/>
     
   </entry>
   
   <entry>
     <title>数据分析之清洗与准备2</title>
-    <link href="https://wangweijie.vip/2020/07/23/2020-07-22-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E6%B8%85%E6%B4%97%E4%B8%8E%E5%87%86%E5%A4%872/"/>
-    <id>https://wangweijie.vip/2020/07/23/2020-07-22-数据分析之清洗与准备2/</id>
+    <link href="https://djwangweijie.github.io/2020/07/23/2020-07-22-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E6%B8%85%E6%B4%97%E4%B8%8E%E5%87%86%E5%A4%872/"/>
+    <id>https://djwangweijie.github.io/2020/07/23/2020-07-22-数据分析之清洗与准备2/</id>
     <published>2020-07-22T16:07:00.000Z</published>
     <updated>2020-07-22T16:11:37.808Z</updated>
     
@@ -280,21 +312,21 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+      <category term="数据处理" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
     
-      <category term="数据清洗" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97/"/>
+      <category term="数据清洗" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97/"/>
     
   </entry>
   
   <entry>
     <title>数据分析之清洗与准备1</title>
-    <link href="https://wangweijie.vip/2020/07/02/2020-07-02-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E6%B8%85%E6%B4%97%E4%B8%8E%E5%87%86%E5%A4%871/"/>
-    <id>https://wangweijie.vip/2020/07/02/2020-07-02-数据分析之清洗与准备1/</id>
+    <link href="https://djwangweijie.github.io/2020/07/02/2020-07-02-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E6%B8%85%E6%B4%97%E4%B8%8E%E5%87%86%E5%A4%871/"/>
+    <id>https://djwangweijie.github.io/2020/07/02/2020-07-02-数据分析之清洗与准备1/</id>
     <published>2020-07-02T03:32:38.000Z</published>
     <updated>2020-07-02T03:24:46.000Z</updated>
     
@@ -312,21 +344,21 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+      <category term="数据处理" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
     
-      <category term="数据清洗" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97/"/>
+      <category term="数据清洗" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97/"/>
     
   </entry>
   
   <entry>
     <title>数据分析之Excel与WebApis交互</title>
-    <link href="https://wangweijie.vip/2020/03/16/2020-03-16-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E8%AF%BB%E5%8F%96Excel%E4%B8%8EWebApis%E4%BA%A4%E4%BA%92/"/>
-    <id>https://wangweijie.vip/2020/03/16/2020-03-16-数据分析之读取Excel与WebApis交互/</id>
+    <link href="https://djwangweijie.github.io/2020/03/16/2020-03-16-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E8%AF%BB%E5%8F%96Excel%E4%B8%8EWebApis%E4%BA%A4%E4%BA%92/"/>
+    <id>https://djwangweijie.github.io/2020/03/16/2020-03-16-数据分析之读取Excel与WebApis交互/</id>
     <published>2020-03-16T14:02:52.494Z</published>
     <updated>2020-03-16T14:19:29.048Z</updated>
     
@@ -343,25 +375,25 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据加载" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/"/>
+      <category term="数据加载" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/"/>
     
-      <category term="数据处理" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+      <category term="数据处理" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
     
-      <category term="Excel读取" scheme="https://wangweijie.vip/tags/Excel%E8%AF%BB%E5%8F%96/"/>
+      <category term="Excel读取" scheme="https://djwangweijie.github.io/tags/Excel%E8%AF%BB%E5%8F%96/"/>
     
-      <category term="mysql数据库读取" scheme="https://wangweijie.vip/tags/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BB%E5%8F%96/"/>
+      <category term="mysql数据库读取" scheme="https://djwangweijie.github.io/tags/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BB%E5%8F%96/"/>
     
   </entry>
   
   <entry>
     <title>数据分析之数据加载,存储与文件格式一</title>
-    <link href="https://wangweijie.vip/2020/03/12/2020-03-12-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD,%E5%AD%98%E5%82%A8%E4%B8%8E%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E4%B8%80/"/>
-    <id>https://wangweijie.vip/2020/03/12/2020-03-12-数据分析之数据加载,存储与文件格式一/</id>
+    <link href="https://djwangweijie.github.io/2020/03/12/2020-03-12-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD,%E5%AD%98%E5%82%A8%E4%B8%8E%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E4%B8%80/"/>
+    <id>https://djwangweijie.github.io/2020/03/12/2020-03-12-数据分析之数据加载,存储与文件格式一/</id>
     <published>2020-03-12T09:51:23.602Z</published>
     <updated>2020-03-12T09:55:54.257Z</updated>
     
@@ -379,25 +411,25 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="数据分析" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="数据加载" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/"/>
+      <category term="数据加载" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/"/>
     
-      <category term="爬取数据" scheme="https://wangweijie.vip/tags/%E7%88%AC%E5%8F%96%E6%95%B0%E6%8D%AE/"/>
+      <category term="爬取数据" scheme="https://djwangweijie.github.io/tags/%E7%88%AC%E5%8F%96%E6%95%B0%E6%8D%AE/"/>
     
-      <category term="推导式转换" scheme="https://wangweijie.vip/tags/%E6%8E%A8%E5%AF%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/"/>
+      <category term="推导式转换" scheme="https://djwangweijie.github.io/tags/%E6%8E%A8%E5%AF%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/"/>
     
   </entry>
   
   <entry>
     <title>数据分析之Pandas基础三</title>
-    <link href="https://wangweijie.vip/2020/03/11/2020-03-11-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8BPandas%E5%9F%BA%E7%A1%80%E4%B8%89/"/>
-    <id>https://wangweijie.vip/2020/03/11/2020-03-11-数据分析之Pandas基础三/</id>
+    <link href="https://djwangweijie.github.io/2020/03/11/2020-03-11-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8BPandas%E5%9F%BA%E7%A1%80%E4%B8%89/"/>
+    <id>https://djwangweijie.github.io/2020/03/11/2020-03-11-数据分析之Pandas基础三/</id>
     <published>2020-03-11T10:29:02.482Z</published>
     <updated>2020-03-11T10:32:26.509Z</updated>
     
@@ -414,25 +446,25 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="数据分析" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="Pandas" scheme="https://wangweijie.vip/tags/Pandas/"/>
+      <category term="Pandas" scheme="https://djwangweijie.github.io/tags/Pandas/"/>
     
-      <category term="汇总统计" scheme="https://wangweijie.vip/tags/%E6%B1%87%E6%80%BB%E7%BB%9F%E8%AE%A1/"/>
+      <category term="汇总统计" scheme="https://djwangweijie.github.io/tags/%E6%B1%87%E6%80%BB%E7%BB%9F%E8%AE%A1/"/>
     
-      <category term="协方差和相关系数" scheme="https://wangweijie.vip/tags/%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8C%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0/"/>
+      <category term="协方差和相关系数" scheme="https://djwangweijie.github.io/tags/%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8C%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0/"/>
     
   </entry>
   
   <entry>
     <title>数据分析之Pandas基础二</title>
-    <link href="https://wangweijie.vip/2020/03/06/2020-03-06-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8BPandas%E5%9F%BA%E7%A1%80%E4%BA%8C/"/>
-    <id>https://wangweijie.vip/2020/03/06/2020-03-06-数据分析之Pandas基础二/</id>
+    <link href="https://djwangweijie.github.io/2020/03/06/2020-03-06-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8BPandas%E5%9F%BA%E7%A1%80%E4%BA%8C/"/>
+    <id>https://djwangweijie.github.io/2020/03/06/2020-03-06-数据分析之Pandas基础二/</id>
     <published>2020-03-06T10:11:33.343Z</published>
     <updated>2020-03-06T10:16:11.160Z</updated>
     
@@ -451,25 +483,25 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="数据分析" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="Pandas" scheme="https://wangweijie.vip/tags/Pandas/"/>
+      <category term="Pandas" scheme="https://djwangweijie.github.io/tags/Pandas/"/>
     
-      <category term="Series和DateFrame基本功能" scheme="https://wangweijie.vip/tags/Series%E5%92%8CDateFrame%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/"/>
+      <category term="Series和DateFrame基本功能" scheme="https://djwangweijie.github.io/tags/Series%E5%92%8CDateFrame%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/"/>
     
-      <category term="排序筛选和rank" scheme="https://wangweijie.vip/tags/%E6%8E%92%E5%BA%8F%E7%AD%9B%E9%80%89%E5%92%8Crank/"/>
+      <category term="排序筛选和rank" scheme="https://djwangweijie.github.io/tags/%E6%8E%92%E5%BA%8F%E7%AD%9B%E9%80%89%E5%92%8Crank/"/>
     
   </entry>
   
   <entry>
     <title>数据分析之Pandas基础一</title>
-    <link href="https://wangweijie.vip/2020/03/04/2020-03-04-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8BPandas%E5%9F%BA%E7%A1%80%E4%B8%80/"/>
-    <id>https://wangweijie.vip/2020/03/04/2020-03-04-数据分析之Pandas基础一/</id>
+    <link href="https://djwangweijie.github.io/2020/03/04/2020-03-04-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8BPandas%E5%9F%BA%E7%A1%80%E4%B8%80/"/>
+    <id>https://djwangweijie.github.io/2020/03/04/2020-03-04-数据分析之Pandas基础一/</id>
     <published>2020-03-04T08:07:47.340Z</published>
     <updated>2020-03-04T08:11:39.475Z</updated>
     
@@ -487,23 +519,23 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="数据分析" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="Pandas初始" scheme="https://wangweijie.vip/tags/Pandas%E5%88%9D%E5%A7%8B/"/>
+      <category term="Pandas初始" scheme="https://djwangweijie.github.io/tags/Pandas%E5%88%9D%E5%A7%8B/"/>
     
-      <category term="Series和DateFrame" scheme="https://wangweijie.vip/tags/Series%E5%92%8CDateFrame/"/>
+      <category term="Series和DateFrame" scheme="https://djwangweijie.github.io/tags/Series%E5%92%8CDateFrame/"/>
     
   </entry>
   
   <entry>
     <title>数据分析之python之Numpy基础三</title>
-    <link href="https://wangweijie.vip/2020/03/03/2020-03-03-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%20Numpy%E5%9F%BA%E7%A1%80%E4%B8%89/"/>
-    <id>https://wangweijie.vip/2020/03/03/2020-03-03-数据分析之python Numpy基础三/</id>
+    <link href="https://djwangweijie.github.io/2020/03/03/2020-03-03-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%20Numpy%E5%9F%BA%E7%A1%80%E4%B8%89/"/>
+    <id>https://djwangweijie.github.io/2020/03/03/2020-03-03-数据分析之python Numpy基础三/</id>
     <published>2020-03-03T13:23:33.855Z</published>
     <updated>2020-03-03T13:29:51.741Z</updated>
     
@@ -520,23 +552,23 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="数据分析" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="Numpy使用" scheme="https://wangweijie.vip/tags/Numpy%E4%BD%BF%E7%94%A8/"/>
+      <category term="Numpy使用" scheme="https://djwangweijie.github.io/tags/Numpy%E4%BD%BF%E7%94%A8/"/>
     
-      <category term="Numpy简单结束" scheme="https://wangweijie.vip/tags/Numpy%E7%AE%80%E5%8D%95%E7%BB%93%E6%9D%9F/"/>
+      <category term="Numpy简单结束" scheme="https://djwangweijie.github.io/tags/Numpy%E7%AE%80%E5%8D%95%E7%BB%93%E6%9D%9F/"/>
     
   </entry>
   
   <entry>
     <title>数据分析之python之Numpy基础二</title>
-    <link href="https://wangweijie.vip/2020/03/02/2020-03-02-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%20Numpy%E5%9F%BA%E7%A1%80%E4%BA%8C/"/>
-    <id>https://wangweijie.vip/2020/03/02/2020-03-02-数据分析之python Numpy基础二/</id>
+    <link href="https://djwangweijie.github.io/2020/03/02/2020-03-02-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%20Numpy%E5%9F%BA%E7%A1%80%E4%BA%8C/"/>
+    <id>https://djwangweijie.github.io/2020/03/02/2020-03-02-数据分析之python Numpy基础二/</id>
     <published>2020-03-02T14:41:27.052Z</published>
     <updated>2020-03-03T13:25:59.819Z</updated>
     
@@ -556,20 +588,20 @@
     
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="数据分析" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="Numpy使用" scheme="https://wangweijie.vip/tags/Numpy%E4%BD%BF%E7%94%A8/"/>
+      <category term="Numpy使用" scheme="https://djwangweijie.github.io/tags/Numpy%E4%BD%BF%E7%94%A8/"/>
     
-      <category term="文件的输入输出读写" scheme="https://wangweijie.vip/tags/%E6%96%87%E4%BB%B6%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AF%BB%E5%86%99/"/>
+      <category term="文件的输入输出读写" scheme="https://djwangweijie.github.io/tags/%E6%96%87%E4%BB%B6%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AF%BB%E5%86%99/"/>
     
   </entry>
   
   <entry>
     <title>数据分析之python之Numpy基础一</title>
-    <link href="https://wangweijie.vip/2020/02/28/2020-02-28-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%20Numpy%E5%9F%BA%E7%A1%80%E4%B8%80/"/>
-    <id>https://wangweijie.vip/2020/02/28/2020-02-28-数据分析之python Numpy基础一/</id>
+    <link href="https://djwangweijie.github.io/2020/02/28/2020-02-28-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%20Numpy%E5%9F%BA%E7%A1%80%E4%B8%80/"/>
+    <id>https://djwangweijie.github.io/2020/02/28/2020-02-28-数据分析之python Numpy基础一/</id>
     <published>2020-02-28T11:04:41.920Z</published>
     <updated>2020-02-28T11:18:27.626Z</updated>
     
@@ -588,23 +620,23 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="数据分析" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="Numpy使用" scheme="https://wangweijie.vip/tags/Numpy%E4%BD%BF%E7%94%A8/"/>
+      <category term="Numpy使用" scheme="https://djwangweijie.github.io/tags/Numpy%E4%BD%BF%E7%94%A8/"/>
     
-      <category term="矩阵相乘" scheme="https://wangweijie.vip/tags/%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%B9%98/"/>
+      <category term="矩阵相乘" scheme="https://djwangweijie.github.io/tags/%E7%9F%A9%E9%98%B5%E7%9B%B8%E4%B9%98/"/>
     
   </entry>
   
   <entry>
     <title>数据分析之python文件和操作系统</title>
-    <link href="https://wangweijie.vip/2020/02/21/2020-02-21-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8BPython%E6%96%87%E4%BB%B6%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://wangweijie.vip/2020/02/21/2020-02-21-数据分析之Python文件和操作系统/</id>
+    <link href="https://djwangweijie.github.io/2020/02/21/2020-02-21-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8BPython%E6%96%87%E4%BB%B6%E5%92%8C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://djwangweijie.github.io/2020/02/21/2020-02-21-数据分析之Python文件和操作系统/</id>
     <published>2020-02-21T07:28:54.288Z</published>
     <updated>2020-02-21T07:30:56.782Z</updated>
     
@@ -624,23 +656,23 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="数据分析" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="文件操作" scheme="https://wangweijie.vip/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+      <category term="文件操作" scheme="https://djwangweijie.github.io/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
     
-      <category term="字符编码" scheme="https://wangweijie.vip/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/"/>
+      <category term="字符编码" scheme="https://djwangweijie.github.io/tags/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/"/>
     
   </entry>
   
   <entry>
     <title>数据分析之python函数</title>
-    <link href="https://wangweijie.vip/2020/02/20/2020-02-20-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E5%87%BD%E6%95%B0/"/>
-    <id>https://wangweijie.vip/2020/02/20/2020-02-20-数据分析之python函数/</id>
+    <link href="https://djwangweijie.github.io/2020/02/20/2020-02-20-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E5%87%BD%E6%95%B0/"/>
+    <id>https://djwangweijie.github.io/2020/02/20/2020-02-20-数据分析之python函数/</id>
     <published>2020-02-20T12:25:07.558Z</published>
     <updated>2020-02-20T12:30:07.949Z</updated>
     
@@ -660,51 +692,16 @@
     </summary>
     
     
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="数据分析" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
-      <category term="函数和方法" scheme="https://wangweijie.vip/tags/%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95/"/>
+      <category term="函数和方法" scheme="https://djwangweijie.github.io/tags/%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95/"/>
     
-      <category term="异常机制" scheme="https://wangweijie.vip/tags/%E5%BC%82%E5%B8%B8%E6%9C%BA%E5%88%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据分析之python数据结构和序列</title>
-    <link href="https://wangweijie.vip/2020/02/18/2020-02-18-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E5%BA%8F%E5%88%97/"/>
-    <id>https://wangweijie.vip/2020/02/18/2020-02-18-数据分析之python数据结构和序列/</id>
-    <published>2020-02-18T14:00:09.011Z</published>
-    <updated>2020-02-18T14:05:43.787Z</updated>
-    
-    <content type="html"><![CDATA[<p>每个数据结构都是语言设计者的精心设计,推导式也是有趣的部分</p><h1 id="python的数据结构-函数和文件"><a href="#python的数据结构-函数和文件" class="headerlink" title="python的数据结构,函数和文件"></a>python的数据结构,函数和文件</h1><ol><li>数据结构和序列,函数,文件讲分为3个部分进行叙述</li></ol><h1 id="数据结构和序列"><a href="#数据结构和序列" class="headerlink" title="数据结构和序列"></a>数据结构和序列</h1><p><strong>python的数据结构有元组,列表,字典,集合</strong></p><h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p><em>元组是一个固定长度,不可改变的python序列对象,创建元组最简单的方式就是用逗号进行分隔</em></p><p><img src="/images/resources/2ADB91417B20DC838C193A4ACDF1A6A1.jpg" alt="IMAGE"></p><p><em>如何元组中某个对象是可变的,可以在原位上进行修改</em></p><p><img src="/images/resources/4687ABDDABDE1152358DE012E5CBC3C7.jpg" alt="IMAGE"></p><p><em>元组可以相接与复制</em></p><p><img src="/images/resources/755E5FA05748213CCA82761CBE40B6C5.jpg" alt="IMAGE"></p><h3 id="拆分元组"><a href="#拆分元组" class="headerlink" title="拆分元组"></a>拆分元组</h3><h4 id="拆分和数值交换"><a href="#拆分和数值交换" class="headerlink" title="拆分和数值交换"></a>拆分和数值交换</h4><p><img src="/images/resources/92858794DECE6DAD07EE673BBD4FDCC7.jpg" alt="IMAGE"></p><h4 id="拆分迭代元组或者列表序列"><a href="#拆分迭代元组或者列表序列" class="headerlink" title="拆分迭代元组或者列表序列"></a>拆分迭代元组或者列表序列</h4><p><img src="/images/resources/22F732D23D4E4917BA09FC95F66DB0F3.jpg" alt="IMAGE"></p><h4 id="tuple方法"><a href="#tuple方法" class="headerlink" title="tuple方法"></a>tuple方法</h4><p><em>元组有一个方法和列表保持一致是叫做count,可以统计某个值出现的频率</em></p><p><img src="/images/resources/F5BFB1E3646A723755FB1A2C2303A8D3.jpg" alt="IMAGE"></p><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p><em>与元组对比,列表的长度可变,内容可以被修改,可以用方括号定义,或者用list函数</em></p><p><img src="/images/resources/3FA6147CEEC6591A8FF02FEA84DD0682.jpg" alt="IMAGE"></p><h3 id="添加和删除元素"><a href="#添加和删除元素" class="headerlink" title="添加和删除元素"></a>添加和删除元素</h3><p><img src="/images/resources/C74934A48935FB96A9827AE4CF762EB1.jpg" alt="IMAGE"></p><h3 id="通过in或者not-in可以检查列表是否包含该数据"><a href="#通过in或者not-in可以检查列表是否包含该数据" class="headerlink" title="通过in或者not in可以检查列表是否包含该数据"></a>通过in或者not in可以检查列表是否包含该数据</h3><p><img src="/images/resources/5FE59F4596DF44F604E9EF46372515A7.jpg" alt="IMAGE"></p><h3 id="串联和组合列表"><a href="#串联和组合列表" class="headerlink" title="串联和组合列表"></a>串联和组合列表</h3><p><img src="/images/resources/3AAC6E0B610071462195D4AD879D36A2.jpg" alt="IMAGE"></p><h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p><em>通过使用sort函数对一个列表原地排序</em></p><p><img src="/images/resources/BEFDED1B684DFB66AD6B773B661DCE7B.jpg" alt="IMAGE"></p><h3 id="二分搜索和维护已排序的列表"><a href="#二分搜索和维护已排序的列表" class="headerlink" title="二分搜索和维护已排序的列表"></a>二分搜索和维护已排序的列表</h3><p><em>在python中bisect模块支持二分查找和向已排序的列表插入值</em></p><p><img src="/images/resources/39F97B38573F4D1D30B11FCAB79E7D92.jpg" alt="IMAGE"></p><h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p><em>切片的目的主要选取大多数序列类型的一部分,切片的基本形式就是strat:stop</em></p><p><em>切片的起始元素是包含的,但不包含结束元素,因此结果中包含的元素个数为stop-start</em></p><p><img src="/images/resources/8AB835212447CFEFA8F40535D85F72E2.jpg" alt="IMAGE"></p><h4 id="递进切片"><a href="#递进切片" class="headerlink" title="递进切片"></a>递进切片</h4><p><img src="/images/resources/66ADF11715DBDE531B2283C4AE59EFE0.jpg" alt="IMAGE"></p><h2 id="切片的规律可以如下图所示"><a href="#切片的规律可以如下图所示" class="headerlink" title="切片的规律可以如下图所示"></a>切片的规律可以如下图所示</h2><p><img src="/images/resources/185AADC5CACCF64F386E5769BB564A2A.jpg" alt="IMAGE"></p><h2 id="序列函数"><a href="#序列函数" class="headerlink" title="序列函数"></a>序列函数</h2><h3 id="enumerate函数"><a href="#enumerate函数" class="headerlink" title="enumerate函数"></a>enumerate函数</h3><p><em>迭代一个序列的时候,想知道当前项的序号</em></p><p><img src="/images/resources/AA3852DD100C8F45ACF57882952A231D.jpg" alt="IMAGE"></p><h3 id="sorted函数"><a href="#sorted函数" class="headerlink" title="sorted函数"></a>sorted函数</h3><p><em>sorted函数可以从任意序列的元素返回一个新的排好序的列表</em></p><p><img src="/images/resources/5657F65F4C8FD5441E3C3916E3A54A6C.jpg" alt="IMAGE"></p><h3 id="zip函数"><a href="#zip函数" class="headerlink" title="zip函数"></a>zip函数</h3><p><em>zip函数可以将多个列表，元组或其它序列组合成一个元组列表</em></p><p><img src="/images/resources/272D7629905D0F009F37B257463A591A.jpg" alt="IMAGE"></p><h3 id="reversed函数"><a href="#reversed函数" class="headerlink" title="reversed函数"></a>reversed函数</h3><p><em>reversed可以从后向前迭代一个序列</em></p><p><img src="/images/resources/D5154AC437784C34B97FF8A39087B138.jpg" alt="IMAGE"></p><h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><p><em>字典是python最为重要的数据结构,也可以叫做哈希映射或关联数组.以键值的方式构成,键值都可以是python对象</em></p><p><em>创建字典的方法之一是使用尖括号,用冒号进行键和值的分隔</em></p><p><img src="/images/resources/A5C76341228517851E00CDB816CA3A39.jpg" alt="IMAGE"></p><h3 id="删除的2种方式"><a href="#删除的2种方式" class="headerlink" title="删除的2种方式"></a>删除的2种方式</h3><p><img src="/images/resources/6599F1C98711F040F7CA77A780A1E9FF.jpg" alt="IMAGE"></p><h3 id="键值的迭代与字典融合"><a href="#键值的迭代与字典融合" class="headerlink" title="键值的迭代与字典融合"></a>键值的迭代与字典融合</h3><p><img src="/images/resources/E4C4DCF8FAC151BC5DE3BF0BF54A4E22.jpg" alt="IMAGE"></p><h3 id="通过序列创建字典"><a href="#通过序列创建字典" class="headerlink" title="通过序列创建字典"></a>通过序列创建字典</h3><p><img src="/images/resources/FD763C5F0162EAF6F5E9DB2AA875E2AC.jpg" alt="IMAGE"></p><h3 id="对单词进行分类"><a href="#对单词进行分类" class="headerlink" title="对单词进行分类"></a>对单词进行分类</h3><p><img src="/images/resources/5160274AFDB6C56B59E6D2265426568D.jpg" alt="IMAGE"></p><h3 id="关于有效的键类型"><a href="#关于有效的键类型" class="headerlink" title="关于有效的键类型"></a>关于有效的键类型</h3><p><strong>键通常是不可变的标量类型,list是不被允许的</strong></p><p><img src="/images/resources/B428C73E1B1025035FC0E7C5D866631C.jpg" alt="IMAGE"></p><h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><p><em>集合是无序,不可重复的元素的集合,可以理解为字典,只有键没有值,创建集合有2种方式,通过set函数或者使用尖括号set语句</em></p><p><img src="/images/resources/D87BD1A35015B4AF0A8C72053B521F42.jpg" alt="IMAGE"></p><h3 id="集合支持合并-交集-等集合运算"><a href="#集合支持合并-交集-等集合运算" class="headerlink" title="集合支持合并,交集,等集合运算"></a>集合支持合并,交集,等集合运算</h3><p><img src="/images/resources/411E63BDE36BE3DC7D014E840F5F96B5.jpg" alt="IMAGE"></p><h3 id="集合中常用的方法"><a href="#集合中常用的方法" class="headerlink" title="集合中常用的方法"></a>集合中常用的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">S.add(e) 在集合中添加一个新的元素e；如果元素已经存在，则不添加</span><br><span class="line">S.remove(e) 从集合中删除一个元素，如果元素不存在于集合中，则会产生一个KeyError错误</span><br><span class="line">S.discard(e) 从集合S中移除一个元素e;</span><br><span class="line">S.clear() 清空集合内的所有元素</span><br><span class="line">S.copy() 将集合进行一次浅拷贝</span><br><span class="line">S.pop() 从集合S中删除一个随机元素;如果此集合为空，则引发KeyError异常</span><br><span class="line">S.update(s2) 用 S与s2得到的全集更新变量S</span><br><span class="line">以下内容可以用运算符操作代替  </span><br><span class="line">S.difference(s2) 用S - s2 运算，返回存在于在S中，但不在s2中的所有元素的集合</span><br><span class="line">S.difference_update(s2) 等同于 S = S - s2</span><br><span class="line">S.intersection(s2) 等同于S &amp; s2</span><br><span class="line">S.intersection_update(s2) 等同于S = S &amp; s2</span><br><span class="line">S.isdisjoint(s2) 如果S与s2交集为空返回True,非空则返回False</span><br><span class="line">S.issubset(s2) 如果S与s2交集为非空返回True,空则返回False</span><br><span class="line">S.issuperset(...) 如果S为s2的子集返回True,否则返回False</span><br><span class="line">S.symmetric_difference(s2) 返回对称补集,等同于 S ^ s2</span><br><span class="line">S.symmetric_difference_update(s2) 用S 与 s2的对称补集更新 S</span><br><span class="line">S.union(s2) 生成 S 与 s2的全集</span><br></pre></td></tr></table></figure><h2 id="列表-集合-字典推导式以及嵌套推导式"><a href="#列表-集合-字典推导式以及嵌套推导式" class="headerlink" title="列表,集合,字典推导式以及嵌套推导式"></a>列表,集合,字典推导式以及嵌套推导式</h2><p><em>语法格式如下:[expr for val in colletion if condition]</em></p><p><img src="/images/resources/19E78E4840C00686CC94012669B01D67.jpg" alt="IMAGE"></p><h3 id="嵌套推导式-稍难"><a href="#嵌套推导式-稍难" class="headerlink" title="嵌套推导式(稍难)"></a>嵌套推导式(稍难)</h3><p><img src="/images/resources/8AF0CADA6EAE4D2EAE8968C87A325DCB.jpg" alt="IMAGE"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;每个数据结构都是语言设计者的精心设计,推导式也是有趣的部分&lt;/p&gt;
-&lt;h1 id=&quot;python的数据结构-函数和文件&quot;&gt;&lt;a href=&quot;#python的数据结构-函数和文件&quot; class=&quot;headerlink&quot; title=&quot;python的数据结构,函数和文件&quot;&gt;&lt;/
-      
-    
-    </summary>
-    
-    
-      <category term="大数据分析" scheme="https://wangweijie.vip/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="python" scheme="https://wangweijie.vip/tags/python/"/>
-    
-      <category term="数据分析" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-      <category term="数据结构" scheme="https://wangweijie.vip/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="序列" scheme="https://wangweijie.vip/tags/%E5%BA%8F%E5%88%97/"/>
-    
-      <category term="推导式" scheme="https://wangweijie.vip/tags/%E6%8E%A8%E5%AF%BC%E5%BC%8F/"/>
+      <category term="异常机制" scheme="https://djwangweijie.github.io/tags/%E5%BC%82%E5%B8%B8%E6%9C%BA%E5%88%B6/"/>
     
   </entry>
   

@@ -101,18 +101,18 @@
 <meta name="keywords" content="kafkaStreams,流式计算,大数据分析,解决方案,数据状态,聚合,归约">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开发Kafka_Streams晋阶之路(归约和聚合)">
-<meta property="og:url" content="https://wangweijie.vip/2020/01/08/2020-01-08-kafkaStream晋阶之路(归约和聚合)/index.html">
+<meta property="og:url" content="https://djwangweijie.github.io/2020/01/08/2020-01-08-kafkaStream晋阶之路(归约和聚合)/index.html">
 <meta property="og:site_name" content="Michael_Wang">
 <meta property="og:description" content="归约比聚合相对容易,但是聚合可以做更多的事情 知识点 归约和聚合概念 解决实际需求 如何归约 如何聚合  归约和聚合概念1.归约即是reduce,代表着累加求和，无论是在现在的python已经jdk新特性中都有体现 2.聚合即是aggregate,代表着聚集合并在一起的操作,一般来说归约和聚合在一起是一种完美的搭配 相对参考的文章 解决实际需求 比如股票在不断的交易。累计计算从开始成交的总和 总和">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/BBBEE3B9D53E02E604FC5D581655A5B4.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/DAF74D20FE4A8CD93F0C4069681F42CC.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/3CC9639E141CD067CFB8B5615588F0E5.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/BBBEE3B9D53E02E604FC5D581655A5B4.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/DAF74D20FE4A8CD93F0C4069681F42CC.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/3CC9639E141CD067CFB8B5615588F0E5.jpg">
 <meta property="og:updated_time" content="2020-01-08T03:02:12.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发Kafka_Streams晋阶之路(归约和聚合)">
 <meta name="twitter:description" content="归约比聚合相对容易,但是聚合可以做更多的事情 知识点 归约和聚合概念 解决实际需求 如何归约 如何聚合  归约和聚合概念1.归约即是reduce,代表着累加求和，无论是在现在的python已经jdk新特性中都有体现 2.聚合即是aggregate,代表着聚集合并在一起的操作,一般来说归约和聚合在一起是一种完美的搭配 相对参考的文章 解决实际需求 比如股票在不断的交易。累计计算从开始成交的总和 总和">
-<meta name="twitter:image" content="https://wangweijie.vip/images/resources/BBBEE3B9D53E02E604FC5D581655A5B4.jpg">
+<meta name="twitter:image" content="https://djwangweijie.github.io/images/resources/BBBEE3B9D53E02E604FC5D581655A5B4.jpg">
 
 
 
@@ -142,7 +142,7 @@
 
 
 
-  <link rel="canonical" href="https://wangweijie.vip/2020/01/08/2020-01-08-kafkaStream晋阶之路(归约和聚合)/">
+  <link rel="canonical" href="https://djwangweijie.github.io/2020/01/08/2020-01-08-kafkaStream晋阶之路(归约和聚合)/">
 
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangweijie.vip/2020/01/08/2020-01-08-kafkaStream晋阶之路(归约和聚合)/">
+    <link itemprop="mainEntityOfPage" href="https://djwangweijie.github.io/2020/01/08/2020-01-08-kafkaStream晋阶之路(归约和聚合)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Michael_Wang">
@@ -676,7 +676,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -687,7 +687,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -698,7 +698,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">98</span>
+                  <span class="site-state-item-count">101</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -775,7 +775,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -791,7 +791,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共81.2k字</span>
+  <span class="post-count">博客全站共83.6k字</span>
 </div>
 
         

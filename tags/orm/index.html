@@ -100,7 +100,7 @@
 <meta name="description" content="技术源于生活">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Michael_Wang">
-<meta property="og:url" content="https://wangweijie.vip/tags/orm/index.html">
+<meta property="og:url" content="https://djwangweijie.github.io/tags/ORM/index.html">
 <meta property="og:site_name" content="Michael_Wang">
 <meta property="og:description" content="技术源于生活">
 <meta property="og:locale" content="zh-Hans">
@@ -136,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://wangweijie.vip/tags/orm/">
+  <link rel="canonical" href="https://djwangweijie.github.io/tags/ORM/">
 
 
 
 
 
-  <title>标签: orm | Michael_Wang</title>
+  <title>标签: ORM | Michael_Wang</title>
   
 
 
@@ -305,7 +305,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>orm<small>标签</small>
+        <h1>ORM<small>标签</small>
         </h1>
       </div>
 
@@ -317,69 +317,17 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/09/10/2019-09-10-Mybatis(缘)/" itemprop="url">
+            <a class="post-title-link" href="/2021/01/17/2021-01-17-django开发初识/" itemprop="url">
               
-                <span itemprop="name">Mybatis1</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-10T13:04:20+08:00" content="2019-09-10">
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/18/2019-09-10-Hibernate(缘分)/" itemprop="url">
-              
-                <span itemprop="name">Hibernate使用</span>
+                <span itemprop="name">django开发第一次</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-18T14:33:54+08:00" content="2019-07-18">
-          07-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/18/2019-09-10-Mybatis(份)/" itemprop="url">
-              
-                <span itemprop="name">Mybatis2</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-18T14:33:54+08:00" content="2019-07-18">
-          07-18
+        <time class="post-time" itemprop="dateCreated" datetime="2021-01-17T22:02:32+08:00" content="2021-01-17">
+          01-17
         </time>
       </div>
 
@@ -441,7 +389,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -452,7 +400,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -463,7 +411,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">98</span>
+                  <span class="site-state-item-count">101</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -524,7 +472,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -540,7 +488,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共81.2k字</span>
+  <span class="post-count">博客全站共83.6k字</span>
 </div>
 
         
@@ -1104,6 +1052,52 @@
             newcounter.set("url", url);
             newcounter.set("time", 1);
             newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+</html>
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));

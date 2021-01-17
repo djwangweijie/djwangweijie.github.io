@@ -101,49 +101,49 @@
 <meta name="keywords" content="python,数据分析,Pandas,Series和DateFrame基本功能,排序筛选和rank">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据分析之Pandas基础二">
-<meta property="og:url" content="https://wangweijie.vip/2020/03/06/2020-03-06-数据分析之Pandas基础二/index.html">
+<meta property="og:url" content="https://djwangweijie.github.io/2020/03/06/2020-03-06-数据分析之Pandas基础二/index.html">
 <meta property="og:site_name" content="Michael_Wang">
 <meta property="og:description" content="pandas基础二 基本功能  基本功能介绍Series和DataFrame的数据的基本操作 重新索引pandas对象的一个重要方法是reindex,其作用是创建一个新对象,它的数据符合新的索引 索引会根据reindex进行重排.如果某个索引值不存在,引入缺失值  对于时间序列的有序数据,重新索引需要一些插值处理.method选项可以操作,ffill是使用前面的值填充，bfill是使用后面的值填充">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/9BDC0097F09DEA77D4E6CF2D0FA1B710.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/C9E0944093E2CBE2E491AFFE621AE20E.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/93FFF2D082F2D3890B63D0F7010B3D24.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/0F000BE435E2EA1306B7D32A6C62808D.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/7353F34AF4358F5AC59CB1FB9F369DD9.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/7A8C2C4FD804A1C7410452D34E7507A6.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/7351085614E730AFB16DE45308814F25.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/7A0331DEDD87362F3AEC3201C3EE9C01.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/7319D3EF1A4A8DE696F09B53389A590F.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/22F4A8FE59FBCDEDF8B32AF6DF724996.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/894761833E06C016E74B82062734631E.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/6871D92ED768889804D363F2FEC2BF6B.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/B5ECFDA35DD96A84887265201CB4BB2B.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/768E050A7B25854EDF9B8845A27267C4.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/2E2FD992E1E33DFD0E3161410BE581E4.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/CC2D1E9C2547EE128E311C6AF9367F17.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/7D41E072E3FD6C92DC6331849927178C.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/48895A322DD3FB5F1045308877149C5A.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/C95328773A6D7823317007F7E36EDCE5.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/CF1037DF0C3A3A52A59EC87974E624DC.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/826D251964FBC4E8373EEBE0CF520901.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/52B8A7FE27D199B9AE096E2FD8C84715.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/5E495F1869604983BEDD4DF846A5A8D8.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/DAD1B6459E2C11DB815B4F94E966E6E4.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/C952B31738FE3A6228A48D0935B1B5AF.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/A1CD6A6ECCD28CE0D359490DB5036DE6.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/B3CD803CC76040FDFF17377BA92FF5C5.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/688E7830127A870F6F3CB52C85ACB0A5.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/3D1EBC84FE57EAE5C7BE86682DC2A961.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/10B0A26170E3C5E1756C1202A4E84A6F.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/985131ED1CD51544359627ACB66474B1.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/E2ADE065F80F8E164F7F3A7B38F0B21D.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/47F006D8E2560638A7017A96F8E4EBFB.jpg">
-<meta property="og:image" content="https://wangweijie.vip/images/resources/A62806819F26AADFC24D702AA9143EA9.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/9BDC0097F09DEA77D4E6CF2D0FA1B710.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/C9E0944093E2CBE2E491AFFE621AE20E.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/93FFF2D082F2D3890B63D0F7010B3D24.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/0F000BE435E2EA1306B7D32A6C62808D.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/7353F34AF4358F5AC59CB1FB9F369DD9.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/7A8C2C4FD804A1C7410452D34E7507A6.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/7351085614E730AFB16DE45308814F25.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/7A0331DEDD87362F3AEC3201C3EE9C01.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/7319D3EF1A4A8DE696F09B53389A590F.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/22F4A8FE59FBCDEDF8B32AF6DF724996.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/894761833E06C016E74B82062734631E.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/6871D92ED768889804D363F2FEC2BF6B.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/B5ECFDA35DD96A84887265201CB4BB2B.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/768E050A7B25854EDF9B8845A27267C4.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/2E2FD992E1E33DFD0E3161410BE581E4.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/CC2D1E9C2547EE128E311C6AF9367F17.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/7D41E072E3FD6C92DC6331849927178C.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/48895A322DD3FB5F1045308877149C5A.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/C95328773A6D7823317007F7E36EDCE5.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/CF1037DF0C3A3A52A59EC87974E624DC.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/826D251964FBC4E8373EEBE0CF520901.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/52B8A7FE27D199B9AE096E2FD8C84715.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/5E495F1869604983BEDD4DF846A5A8D8.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/DAD1B6459E2C11DB815B4F94E966E6E4.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/C952B31738FE3A6228A48D0935B1B5AF.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/A1CD6A6ECCD28CE0D359490DB5036DE6.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/B3CD803CC76040FDFF17377BA92FF5C5.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/688E7830127A870F6F3CB52C85ACB0A5.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/3D1EBC84FE57EAE5C7BE86682DC2A961.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/10B0A26170E3C5E1756C1202A4E84A6F.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/985131ED1CD51544359627ACB66474B1.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/E2ADE065F80F8E164F7F3A7B38F0B21D.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/47F006D8E2560638A7017A96F8E4EBFB.jpg">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/A62806819F26AADFC24D702AA9143EA9.jpg">
 <meta property="og:updated_time" content="2020-03-06T10:16:11.160Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据分析之Pandas基础二">
 <meta name="twitter:description" content="pandas基础二 基本功能  基本功能介绍Series和DataFrame的数据的基本操作 重新索引pandas对象的一个重要方法是reindex,其作用是创建一个新对象,它的数据符合新的索引 索引会根据reindex进行重排.如果某个索引值不存在,引入缺失值  对于时间序列的有序数据,重新索引需要一些插值处理.method选项可以操作,ffill是使用前面的值填充，bfill是使用后面的值填充">
-<meta name="twitter:image" content="https://wangweijie.vip/images/resources/9BDC0097F09DEA77D4E6CF2D0FA1B710.jpg">
+<meta name="twitter:image" content="https://djwangweijie.github.io/images/resources/9BDC0097F09DEA77D4E6CF2D0FA1B710.jpg">
 
 
 
@@ -173,7 +173,7 @@
 
 
 
-  <link rel="canonical" href="https://wangweijie.vip/2020/03/06/2020-03-06-数据分析之Pandas基础二/">
+  <link rel="canonical" href="https://djwangweijie.github.io/2020/03/06/2020-03-06-数据分析之Pandas基础二/">
 
 
 
@@ -349,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangweijie.vip/2020/03/06/2020-03-06-数据分析之Pandas基础二/">
+    <link itemprop="mainEntityOfPage" href="https://djwangweijie.github.io/2020/03/06/2020-03-06-数据分析之Pandas基础二/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Michael_Wang">
@@ -698,7 +698,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -709,7 +709,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -720,7 +720,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">98</span>
+                  <span class="site-state-item-count">101</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -797,7 +797,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -813,7 +813,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共81.2k字</span>
+  <span class="post-count">博客全站共83.6k字</span>
 </div>
 
         
