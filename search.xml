@@ -764,8 +764,8 @@
         <category>框架整合</category>
       </categories>
       <tags>
-        <tag>MVC模式</tag>
         <tag>项目整合</tag>
+        <tag>MVC模式</tag>
         <tag>业务分层</tag>
       </tags>
   </entry>
@@ -801,8 +801,8 @@
         <category>SpringMVC</category>
       </categories>
       <tags>
-        <tag>Spring产品</tag>
         <tag>MVC模式</tag>
+        <tag>Spring产品</tag>
         <tag>替代servlet</tag>
       </tags>
   </entry>
@@ -814,8 +814,8 @@
         <category>SpringMVC</category>
       </categories>
       <tags>
-        <tag>Spring产品</tag>
         <tag>MVC模式</tag>
+        <tag>Spring产品</tag>
         <tag>替代servlet</tag>
       </tags>
   </entry>
