@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://djwangweijie.github.io/"/>
-  <updated>2021-03-11T01:59:09.237Z</updated>
+  <updated>2021-03-19T16:25:19.547Z</updated>
   <id>https://djwangweijie.github.io/</id>
   
   <author>
@@ -15,6 +15,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习平凡之路一</title>
+    <link href="https://djwangweijie.github.io/2021/03/20/2021-03-20-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF%E4%B8%80/"/>
+    <id>https://djwangweijie.github.io/2021/03/20/2021-03-20-机器学习平凡之路一/</id>
+    <published>2021-03-19T16:19:43.825Z</published>
+    <updated>2021-03-19T16:25:19.547Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="机器学习平凡之路一"><a href="#机器学习平凡之路一" class="headerlink" title="机器学习平凡之路一"></a>机器学习平凡之路一</h1><ol><li>一些概念</li><li>一些操作</li><li>基本的机器学习术语</li><li>机器学习项目结构</li></ol><h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><p><strong>机器学习是AI技术的分支,深度学习是机器学习的技术之一</strong></p><p><strong>机器学习的关键内涵在于利用计算机的运算能力从大量的数据中发现一个函数或者模型，通过她来模拟现实世界事物之间的关系，从而预测或者判断的功能</strong></p><p><strong>自变量在机器学习中叫做特征，也可以叫做标签。或者叫做标记也可以</strong></p><p><em>比如:爸爸的身高(自变量X1),妈妈的身高(自变量X2),可能会影响孩子的身高(因变量y)</em></p><p><strong>机器学习是在已知数据集的基础上，反复计算通过比较贴切的函数，找到之间的关系</strong></p><p><strong>机器学习中监督学习需要标签数据,无监督学习不需要标签数据,半监督学习介于2者之间</strong></p><p><strong>深度学习:就是层数较多,结构比较复杂的神经网络的机器学习，这个过程中会产生数据由非结构化到结构化的转变</strong></p><p><em>注意:简单的说就是一张32px X 32px的图片通过深度学习转换为机器能够看明白的编码</em></p><p><strong>强化学习：研究智能体如何基于环境做出行动反应,以取得最大化的累积奖励</strong></p><h3 id="机器学习两大场景"><a href="#机器学习两大场景" class="headerlink" title="机器学习两大场景"></a>机器学习两大场景</h3><h4 id="回归"><a href="#回归" class="headerlink" title="回归"></a>回归</h4><p><strong>回归问题通常用来预测一个值,标签的值是连续的</strong></p><h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><p><strong>分类问题是将事物标记一个类别的标签，结果为离散值，也就是类别中的一个选项</strong></p><h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4><p><strong>聚类就是在没有便签的情况下，将数据按照特征的性质分成不同的簇</strong></p><p><strong>关联规则就是找到特征之间的影响关系</strong></p><p><strong>时间序列指内部结构随时间呈现规律性变化的数据集，类似金融市场，太阳活动等</strong></p><p><strong>机器学习不是万能的，只能作用于和已知数据集类似的数据，优势在于计算量，速度和准确性。暂时没有形成人类的智力思维模式</strong></p><h2 id="一些操作"><a href="#一些操作" class="headerlink" title="一些操作"></a>一些操作</h2><p><img src="/images/resources/20210320/image-20210319144446801.png" alt="image-20210319144446801"></p><h3 id="图形展示"><a href="#图形展示" class="headerlink" title="图形展示"></a>图形展示</h3><p><img src="/images/resources/20210320/image-20210319145019614.png" alt="image-20210319145019614"></p><p><strong>预测结果可以看到随着家庭的收入增高，房价也是随之水涨船高。</strong></p><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><table><thead><tr><th>术语</th><th>定义</th><th align="center">数学描述</th><th align="center">示例</th></tr></thead><tbody><tr><td>数据集</td><td>数据的集合</td><td align="center">{(x1,y1),…,(xn,yn)}</td><td align="center">比如1000个房屋的面积，楼层，以及房价</td></tr><tr><td>样本</td><td>数据集中的一条具体记录</td><td align="center">(x1,y1)</td><td align="center">一个房屋的数据记录</td></tr><tr><td>标签</td><td>预测的结果也称作为目标</td><td align="center">y</td><td align="center">房价</td></tr><tr><td>有样本标签</td><td>特征，标签，用于训练</td><td align="center">(x,y)</td><td align="center">800个房屋信息</td></tr><tr><td>无标签样本</td><td>有特征,无标签</td><td align="center">(x,?)</td><td align="center">200个房屋信息不带房价</td></tr><tr><td>模型</td><td>样本的特征映射到预测标签</td><td align="center">f(x)</td><td align="center">通过特征信息确定房价的函数</td></tr><tr><td>模型中的参数</td><td>参数确定了机器学习的模型</td><td align="center">f(x)</td><td align="center">f(x) = 3x+2中的3和2</td></tr><tr><td>模型的映射结果</td><td>通过模型获取到的无标签样本的标签</td><td align="center">y’</td><td align="center">200个预测出来的房价</td></tr></tbody></table><p><strong>特征的维度指的是特征的数目,不同的数据维度有多有少，比如房屋面积就是特征，图片100px X 100px,每一个像素是一个特征，颜色通道有3个，那就是就3万个特征</strong></p><p><strong>标签就是机器学习要输出的结果</strong></p><p><strong>模型就是函数，就是执行预测的工具</strong></p><h2 id="机器学习项目结构"><a href="#机器学习项目结构" class="headerlink" title="机器学习项目结构"></a>机器学习项目结构</h2><ol><li>函数模型</li><li>评估函数的优劣</li><li>确定最优的函数</li></ol><table><thead><tr><th>步骤一</th><th>步骤二</th><th>步骤三</th><th>步骤四</th><th>步骤五</th></tr></thead><tbody><tr><td>问题的定义</td><td>数据的收集和预处理</td><td>模型的选择</td><td>选择机器学习模型</td><td>超参数调试和性能优化</td></tr></tbody></table><h3 id="问题的定义"><a href="#问题的定义" class="headerlink" title="问题的定义"></a>问题的定义</h3><p><strong>可以按照痛点,现状,目标来进行思考</strong></p><h3 id="数据的收集和预处理"><a href="#数据的收集和预处理" class="headerlink" title="数据的收集和预处理"></a>数据的收集和预处理</h3><ol><li>可视化:通过分析工具或者Excel对数据有一个基本的了解</li><li>数据向量化:把原始数据格式化,让机器变得可以读取。将文字转为one-hot编码，类别变为0,1</li><li>处理坏数据和缺失值</li><li>特征缩放自行百度</li><li>特征工程和特征提取也就是选择最有价值的特性</li></ol><h3 id="图像识别"><a href="#图像识别" class="headerlink" title="图像识别"></a>图像识别</h3><p><img src="/images/resources/20210320/image-20210319164116130.png" alt="image-20210319164116130"></p><p>注意：<strong>改变格式，是因为keras要求图像数据集导入卷积网络模型为4阶张量,最后一阶代表颜色深度，灰度图像只有一个颜色通道，设置值为1，one-hot编码请自行百度</strong></p><h3 id="选择模型"><a href="#选择模型" class="headerlink" title="选择模型"></a>选择模型</h3><p>使用前先读<a href="https://blog.csdn.net/monk1992/article/details/89947267" target="_blank" rel="noopener">https://blog.csdn.net/monk1992/article/details/89947267</a></p><p>2.0以下的版本</p><p><img src="/images/resources/20210320/image-20210319165914801.png" alt="image-20210319165914801"></p><p><strong>注意:以上代码包含2个2维卷积层,2个最大池化层,2个遗忘层,防止过度拟合.最后通过全连接层，通过分类器输出预测标签</strong></p><p>最新版本的代码参考</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras <span class="keyword">import</span> layers</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.models <span class="keyword">import</span> Sequential, load_model</span><br><span class="line">model = tf.keras.Sequential()</span><br><span class="line">model.add(layers.Conv2D(<span class="number">32</span>, (<span class="number">3</span>, <span class="number">3</span>), activation=<span class="string">'relu'</span>, <span class="comment"># 添加Conv2D层</span></span><br><span class="line">                 input_shape=(<span class="number">28</span>,<span class="number">28</span>,<span class="number">1</span>))) <span class="comment"># 指定输入数据样本张量的类型</span></span><br><span class="line">model.add(layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>))) <span class="comment"># 添加MaxPooling2D层</span></span><br><span class="line">model.add(layers.Conv2D(<span class="number">64</span>, (<span class="number">3</span>, <span class="number">3</span>), activation=<span class="string">'relu'</span>)) <span class="comment"># 添加Conv2D层</span></span><br><span class="line">model.add(layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>))) <span class="comment"># 添加MaxPooling2D层</span></span><br><span class="line">model.add(layers.Dropout(<span class="number">0.25</span>)) <span class="comment"># 添加Dropout层</span></span><br><span class="line">model.add(layers.Flatten()) <span class="comment"># 展平</span></span><br><span class="line">model.add(layers.Dense(<span class="number">128</span>, activation=<span class="string">'relu'</span>)) <span class="comment"># 添加全连接层</span></span><br><span class="line">model.add(layers.Dropout(<span class="number">0.5</span>)) <span class="comment"># 添加Dropout层</span></span><br><span class="line">model.add(layers.Dense(<span class="number">10</span>, activation=<span class="string">'softmax'</span>)) <span class="comment"># Softmax分类激活，输出10维分类码</span></span><br><span class="line"><span class="comment"># 编译模型</span></span><br><span class="line">model.compile(optimizer=<span class="string">'rmsprop'</span>, <span class="comment"># 指定优化器</span></span><br><span class="line">              loss=<span class="string">'categorical_crossentropy'</span>, <span class="comment"># 指定损失函数</span></span><br><span class="line">              metrics=[<span class="string">'accuracy'</span>]) <span class="comment"># 指定验证过程中的评估指标</span></span><br></pre></td></tr></table></figure><p><img src="/images/resources/20210320/image-20210319172807378.png" alt="image-20210319172807378"></p><h3 id="训练机器-确定参数"><a href="#训练机器-确定参数" class="headerlink" title="训练机器,确定参数"></a>训练机器,确定参数</h3><p><img src="/images/resources/20210320/image-20210319234159152.png" alt="image-20210319234159152"></p><p><strong>通过训练可以看出accuracy代表训练集上的预测准确率,val_accuracy代表验证集上的预测准确率</strong></p><h3 id="关于超参数调试和性能优化"><a href="#关于超参数调试和性能优化" class="headerlink" title="关于超参数调试和性能优化"></a>关于超参数调试和性能优化</h3><ol><li>机器学习重在评估</li><li>机器训练的过程，对于模型内部参数的评估是通过损失函数进行的</li><li>机器训练结束后，还要进行验证。现在是指明使用accuracy，使用分类的准确率做为验证指标</li><li>k折验证将数据划分为大小相通的k个分区。每个分区打出的分数取平均分数。</li></ol><p><img src="/images/resources/20210320/image-20210320001517281.png" alt="image-20210320001517281"></p><p><img src="/images/resources/20210320/image-20210320001720860.png" alt="image-20210320001720860"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;机器学习平凡之路一&quot;&gt;&lt;a href=&quot;#机器学习平凡之路一&quot; class=&quot;headerlink&quot; title=&quot;机器学习平凡之路一&quot;&gt;&lt;/a&gt;机器学习平凡之路一&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;一些概念&lt;/li&gt;
+&lt;li&gt;一些操作&lt;/li&gt;
+&lt;li&gt;基本的机器学习术
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://djwangweijie.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
+    
+      <category term="机器学习" scheme="https://djwangweijie.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="快速进阶" scheme="https://djwangweijie.github.io/tags/%E5%BF%AB%E9%80%9F%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="算法" scheme="https://djwangweijie.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="模型" scheme="https://djwangweijie.github.io/tags/%E6%A8%A1%E5%9E%8B/"/>
+    
+      <category term="概念" scheme="https://djwangweijie.github.io/tags/%E6%A6%82%E5%BF%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>面向用户开发界面(完结)</title>
@@ -527,9 +566,9 @@
     
       <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
     
-      <category term="数据加载" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/"/>
-    
       <category term="数据处理" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+      <category term="数据加载" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/"/>
     
       <category term="Excel读取" scheme="https://djwangweijie.github.io/tags/Excel%E8%AF%BB%E5%8F%96/"/>
     
@@ -676,39 +715,6 @@
       <category term="Pandas初始" scheme="https://djwangweijie.github.io/tags/Pandas%E5%88%9D%E5%A7%8B/"/>
     
       <category term="Series和DateFrame" scheme="https://djwangweijie.github.io/tags/Series%E5%92%8CDateFrame/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据分析之python之Numpy基础三</title>
-    <link href="https://djwangweijie.github.io/2020/03/03/2020-03-03-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpython%20Numpy%E5%9F%BA%E7%A1%80%E4%B8%89/"/>
-    <id>https://djwangweijie.github.io/2020/03/03/2020-03-03-数据分析之python Numpy基础三/</id>
-    <published>2020-03-03T13:23:33.855Z</published>
-    <updated>2020-03-03T13:29:51.741Z</updated>
-    
-    <content type="html"><![CDATA[<p>Numpy数组的基础就结束了,让我们进入更高级的pandas(盼达)学习。</p><h1 id="Numpy基础三"><a href="#Numpy基础三" class="headerlink" title="Numpy基础三"></a>Numpy基础三</h1><ol><li>线性代数</li><li>伪随机数生成</li><li>随机漫步示例</li></ol><h1 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h1><p><em>Numpy提供了一个用于矩阵乘法的dot函数.</em></p><p><img src="/images/resources/362A8F715792CAFBF2B9F7A3B7E7E7E8.jpg" alt="IMAGE"></p><p><em>关于线性代数,现在熟知dot函数.后续分析中涉及到线性代数在回来补充</em></p><h1 id="伪随机数生成"><a href="#伪随机数生成" class="headerlink" title="伪随机数生成"></a>伪随机数生成</h1><p><strong>numpy.random模块对python内置的random进行了补充,增加了一些用于高效生成多种概率分布的样本值的函数</strong></p><p><img src="/images/resources/8EC7A1805DAF15F41E4036B717D10648.jpg" alt="IMAGE"></p><h2 id="随机数生成种子"><a href="#随机数生成种子" class="headerlink" title="随机数生成种子"></a>随机数生成种子</h2><p><em>通过np.random.seed(1234)更改随机数生成种子</em></p><p><img src="/images/resources/C54E2D7CAACE815DD007F54DCA1856D8.jpg" alt="IMAGE"></p><p><em>numpy.random的数据生成函数使用了全局的随机种子,要避免全局状态.可以使用numpy.random.RandomState</em></p><p><img src="/images/resources/D16BB939E186B4872430CE085155327B.jpg" alt="IMAGE"></p><p><img src="/images/resources/7A94C00607D582EEB9E6358C63557EBF.jpg" alt="IMAGE"></p><h1 id="随机漫步"><a href="#随机漫步" class="headerlink" title="随机漫步"></a>随机漫步</h1><p><a href="http://www.360doc.com/content/18/0103/13/48634131_718673400.shtml" target="_blank" rel="noopener">随机漫步理论</a></p><p><img src="/images/resources/34B14C90E36B18C003D482B8172E021F.jpg" alt="IMAGE"></p><p><img src="/images/resources/2D3973E5E0D27F6BAA0D59B25339CE61.jpg" alt="IMAGE"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Numpy数组的基础就结束了,让我们进入更高级的pandas(盼达)学习。&lt;/p&gt;
-&lt;h1 id=&quot;Numpy基础三&quot;&gt;&lt;a href=&quot;#Numpy基础三&quot; class=&quot;headerlink&quot; title=&quot;Numpy基础三&quot;&gt;&lt;/a&gt;Numpy基础三&lt;/h1&gt;&lt;ol&gt;
-      
-    
-    </summary>
-    
-    
-      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
-    
-      <category term="数据分析" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-      <category term="Numpy使用" scheme="https://djwangweijie.github.io/tags/Numpy%E4%BD%BF%E7%94%A8/"/>
-    
-      <category term="Numpy简单结束" scheme="https://djwangweijie.github.io/tags/Numpy%E7%AE%80%E5%8D%95%E7%BB%93%E6%9D%9F/"/>
     
   </entry>
   
