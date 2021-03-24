@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://djwangweijie.github.io/"/>
-  <updated>2021-03-19T16:25:19.547Z</updated>
+  <updated>2021-03-24T01:27:38.651Z</updated>
   <id>https://djwangweijie.github.io/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习平凡之路二</title>
+    <link href="https://djwangweijie.github.io/2021/03/24/2021-03-24-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF%E4%BA%8C/"/>
+    <id>https://djwangweijie.github.io/2021/03/24/2021-03-24-机器学习平凡之路二/</id>
+    <published>2021-03-24T01:23:44.711Z</published>
+    <updated>2021-03-24T01:27:38.651Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="机器学习平凡之路二"><a href="#机器学习平凡之路二" class="headerlink" title="机器学习平凡之路二"></a>机器学习平凡之路二</h1><ol><li>数学知识</li><li>python部分基础</li></ol><h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><blockquote><p>函数</p></blockquote><p><strong>函数视为一种模型，这种模型是对客观世界复杂事物之间的关系简单模拟</strong></p><p><em>在函数中,一个事物输出随着另一个事物的输入的变化而变化</em></p><p><strong>函数的输入和输出,很多情况下都是数字.函数也可以反映非数学之间的关系</strong></p><p><em>函数需要注意的是输入集中的每一个元素X都要被照顾到。函数的输出值是独一无二的</em></p><blockquote><p>机器学习中的函数</p></blockquote><p><strong>机器学习基本上等价于寻找函数的过程,机器学习到的函数,实现了从特征到结果的一个特定推断。机器学习不是注重特征到标签之间的因果逻辑，更多的是注重期间的相关关系</strong></p><p><em>四方上下曰宇，往故来今曰宙。仰光宇宙之大，俯察品类之盛</em></p><p><strong>如果决定是一个好函数，训练集和验证集上的预测准确并且能够泛化到测试集中，就是好函数</strong></p><p><em>机器学习算法得到的函数，往往能看到数据背后隐藏着的，肉眼不能发现的秘密</em></p><p><strong><em>机器学习算法，可以得到不同的函数。深度学习的函数相当于一大堆线性函数的跨层堆叠。不管什么样的学习，都是对样本集中特征到标签的关系总结。</em></strong></p><h3 id="函数分类"><a href="#函数分类" class="headerlink" title="函数分类"></a>函数分类</h3><blockquote><p>线性函数</p></blockquote><p><strong>线性函数只拥有一个变量一阶多项式函数，函数就和直线一样，比如y=-x+5或者y=0.5x+2,线性函数适合模拟简单的关系。比如房屋面积和期售价之间可能会呈线性关系</strong></p><blockquote><p>二次函数和多次函数</p></blockquote><p><strong>函数中自变量X中最大的指数被称为函数的次数。比如y=x的二次方，二次函数是凸函数，随着函数的次数升高，将不再是只有一个最低点的凸函数，此事将出现局部最低点</strong></p><blockquote><p>激活函数</p></blockquote><p><strong>激活函数在机器学习算法中实现的是非线性，阶跃性质的变换</strong></p><p><em>比如y=1(x&gt;0),y=0(x&lt;0)</em></p><p>比如Sigmoid函数，<img src="/images/resources/20210324/image-20210322094310829.png" alt="image-20210322094310829">，e是一个自然常数，约等于2.72</p><p>比如ReLU函数，y=max(x,0)</p><p>比如Leaky ReLU函数，y=max(&amp;x,x) . &amp;代表斜率</p><blockquote><p>对数函数</p></blockquote><p>对数函数是指数函数的逆运算，原来的指数就是对数的底。</p><p><img src="/images/resources/20210324/image-20210322100042683.png" alt="image-20210322100042683"></p><h3 id="函数变化趋势"><a href="#函数变化趋势" class="headerlink" title="函数变化趋势"></a>函数变化趋势</h3><p><strong>机器学习就是研究y如何随着X而变，通过求导和微分来实现的</strong></p><p><strong>导数是定义在连续函数的基础之上的，导数是引导，导航,它与函数上连续两个点之间变化趋势，也就是变化的方向相关</strong></p><p>函数变化趋势至少由两个点体现,A趋近于B的时候,求其变换的极限。这就是导数。导数的值和它附近的一小段连续函数有关。如果没有那么一段连续的函数，就无法计算其切线的斜率。函数在该点也就是不可导的。</p><p><strong>通过求导，实现了以直代曲。也发现了y值随X值变化的方向。也就是在机器学习中可以得到标签y随特征X而变化的方向。导数是针对一个变量而言的函数变化趋向，对于多元的函数，关于一个变量的导数为偏导数。</strong></p><blockquote><p>凸函数</p></blockquote><p>凸函数可以沿着导数给出的方向滚到最低点。在机器学习中无法达到全局最低点是很不理想的情况</p><blockquote><p>梯度</p></blockquote><p><em>对多元函数的各参数求偏导数，然后把所求的各个参数的偏导数以向量的形式写出来，就是梯度</em></p><p>比如:下山,已知远处的位置比此处低很多。如何下山，每走一个位置求解当前的位置的梯度。然后沿着梯度的负方向，也就是往最陡峭的地方向下一步走。</p><p>梯度下降的作用:</p><ol><li>机器学习的本质是找到最优的函数</li><li>如何衡量函数是否最优，方法是尽量减小预测值和真值间的误差</li><li>可以建立误差和模型参数之间的函数</li><li>梯度下降能够引导我们走到凸函数的全局最低端，也就是找到误差最小时的参数。</li></ol><h2 id="机器学习的数据结构"><a href="#机器学习的数据结构" class="headerlink" title="机器学习的数据结构"></a>机器学习的数据结构</h2><p>在机器学忠，用于存储数据的结构叫作张量。张量是机器学习程序中的数字容器。本质上就是各种不同维度的数组。</p><p>张量的维度称为轴axis。轴的个数称为阶(rank)。张量的形状(shple)就是张量的阶加上每个阶的维度</p><h3 id="标量"><a href="#标量" class="headerlink" title="标量"></a>标量</h3><p>scalar。包含一个数字的的张量，标量的功能主要用于流程控制，设置参数等。</p><p><img src="/images/resources/20210324/image-20210322103343239.png" alt="image-20210322103343239"></p><h3 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h3><p>有一组数字组成的数组叫做向量(vector),也就是一阶张量。</p><p><img src="/images/resources/20210324/image-20210322103840926.png" alt="image-20210322103840926"></p><p>比如<img src="/images/resources/20210324/image-20210322104521694.png" alt="image-20210322104521694"></p><p>X_train是一个2D的矩阵，是404个样本数据的集合。y_train是一个向量，是一个404维的标签向量</p><p><em>向量的维度:表示沿着某个轴上的元素个数</em></p><p>而X_train[0]，相当于是一个13维向量(也就是1D张量)，简单的说就是包含13个特征</p><h4 id="向量的点积"><a href="#向量的点积" class="headerlink" title="向量的点积"></a>向量的点积</h4><p>两个向量之间可以进行乘法运算，向量的点积结果是一个值，也就是一个标量，比如</p><p><img src="/images/resources/20210324/image-20210322105307512.png" alt="image-20210322105307512"></p><h3 id="矩阵-2D张量"><a href="#矩阵-2D张量" class="headerlink" title="矩阵(2D张量)"></a>矩阵(2D张量)</h3><p>矩阵是2D张量一般形状为 (样本轴,特征轴)，比如城市交通数据集，包含城市的街道名，等28个交通数据特征。共800个街道。张量形状为(800,28)</p><h4 id="矩阵的点积"><a href="#矩阵的点积" class="headerlink" title="矩阵的点积"></a>矩阵的点积</h4><p>矩阵相乘，第一个矩阵的列数必须等于第二个矩阵的行数。(m,n)乘以(n,m)得到一个矩阵(m,m),公式自行百度</p><h3 id="序列数据"><a href="#序列数据" class="headerlink" title="序列数据"></a>序列数据</h3><p><img src="/images/resources/20210324/image-20210322131214261.png" alt="image-20210322131214261"></p><p>比如</p><p>第一轴: 样本轴,一年记录下来的数据共365个。也就是365维向量</p><p>第二轴:时间步轴,每天一共24小时，每小时4个15分钟，共96维</p><p>第三轴：特征轴,一共是温度，湿度，风力3个维度</p><p>也就是对于时间数据集的形状为3D张量(样本,时间,标签)</p><h3 id="图像数据"><a href="#图像数据" class="headerlink" title="图像数据"></a>图像数据</h3><p>图像数据本身包含高度，宽度，在加上颜色深度的通道。对于图像数据集来说形状为(样本,图像高度,图像宽度,颜色通道)</p><p>在机器学习中，数据是一批一批的进行处理</p><h3 id="视频数据"><a href="#视频数据" class="headerlink" title="视频数据"></a>视频数据</h3><p>视频数据需要5D张量也就是(样本,帧，高度，宽度，颜色深度)</p><h2 id="python中张量的创建和运算"><a href="#python中张量的创建和运算" class="headerlink" title="python中张量的创建和运算"></a>python中张量的创建和运算</h2><p><strong>机器学习中张量大多是通过Numpy数组来实现的</strong></p><p><img src="/images/resources/20210324/image-20210323141707108.png" alt="image-20210323141707108"></p><h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><p><img src="/images/resources/20210324/image-20210323141928869.png" alt="image-20210323141928869"></p><p><em>机器学习一般先从文本文件中把所有样本读取到Dataframe格式的数据，然后用array方法转为Numpy数组，也就是变为张量。然后进行后续的操作</em></p><h3 id="通过索引和切片访问张量中的数据"><a href="#通过索引和切片访问张量中的数据" class="headerlink" title="通过索引和切片访问张量中的数据"></a>通过索引和切片访问张量中的数据</h3><p>索引既是访问张量某个具体的数据</p><p>切片就是访问一个范围内的数据</p><p><img src="/images/resources/20210324/image-20210323142446813.png" alt="image-20210323142446813"></p><h3 id="张量的操作"><a href="#张量的操作" class="headerlink" title="张量的操作"></a>张量的操作</h3><p><img src="/images/resources/20210324/image-20210323143241936.png" alt="image-20210323143241936"></p><h2 id="python中的广播"><a href="#python中的广播" class="headerlink" title="python中的广播"></a>python中的广播</h2><p>Python的广播功能就是自动自发地把一个变成一排的向量，把一个低维的数组变为高维的数组<br>张量的的形状和第一位加数保持一致</p><p><img src="/images/resources/20210324/image-20210323144002199.png" alt="image-20210323144002199"></p><blockquote><p>向量和矩阵的点积运算</p></blockquote><p>向量a = [a1,a2,…,an]</p><p>向量b = [b1,b2,…,bn]</p><p>aXb = a1xb1+a2xb2 +…+anxbn</p><p>矩阵形状（a,b）和 （b,c）结果为（a,c）</p><h3 id="概率"><a href="#概率" class="headerlink" title="概率"></a>概率</h3><p>某公司男生和女生各占50%，烟民占总人数的10%，女烟民占1%，遇到一个烟民的概率可能性多大</p><p>事件B —-烟民</p><p>事件A —-女生</p><p>P（B） —-10% 随便遇到一个烟民的概率</p><p>P（A）—-50% 随便遇到一个女生的概率</p><p>p(B|A) 1% 已知100个人里面才有一个烟民  <em>已知A ，B的概率</em></p><p>p(A|B) = 1% X 50% /10% = 5%  <em>已知B，A的概率</em></p><p>条件概率就是已知事件发生的时候，前者的概率</p><p>这个就是贝叶斯定理</p><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>正态分布 自行百度</p><p>标准差(sigma)是根据方差进行计算出来的。方差是一组资料中实际数值与算术平均数的差值做平方结果相加之后，除以总数，标准差是方差算术平方根</p><p>方差和标准差都是数据相对期望值的离散程度</p><p>一般数据标准化，就是样本特征值减去期均值，然后除以期标准差进行缩放</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;机器学习平凡之路二&quot;&gt;&lt;a href=&quot;#机器学习平凡之路二&quot; class=&quot;headerlink&quot; title=&quot;机器学习平凡之路二&quot;&gt;&lt;/a&gt;机器学习平凡之路二&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;数学知识&lt;/li&gt;
+&lt;li&gt;python部分基础&lt;/li&gt;
+&lt;/ol&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://djwangweijie.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
+    
+      <category term="机器学习" scheme="https://djwangweijie.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="快速进阶" scheme="https://djwangweijie.github.io/tags/%E5%BF%AB%E9%80%9F%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="算法" scheme="https://djwangweijie.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="概念" scheme="https://djwangweijie.github.io/tags/%E6%A6%82%E5%BF%B5/"/>
+    
+      <category term="数学" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习平凡之路一</title>
@@ -681,40 +721,6 @@
       <category term="Series和DateFrame基本功能" scheme="https://djwangweijie.github.io/tags/Series%E5%92%8CDateFrame%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/"/>
     
       <category term="排序筛选和rank" scheme="https://djwangweijie.github.io/tags/%E6%8E%92%E5%BA%8F%E7%AD%9B%E9%80%89%E5%92%8Crank/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据分析之Pandas基础一</title>
-    <link href="https://djwangweijie.github.io/2020/03/04/2020-03-04-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8BPandas%E5%9F%BA%E7%A1%80%E4%B8%80/"/>
-    <id>https://djwangweijie.github.io/2020/03/04/2020-03-04-数据分析之Pandas基础一/</id>
-    <published>2020-03-04T08:07:47.340Z</published>
-    <updated>2020-03-04T08:11:39.475Z</updated>
-    
-    <content type="html"><![CDATA[<p>数据分析之路漫漫,贵在坚持.梅花香自苦寒来</p><h1 id="pandas基础一"><a href="#pandas基础一" class="headerlink" title="pandas基础一"></a>pandas基础一</h1><ol><li>pandas的数据结构说明</li><li>pandas的数据结构介绍</li></ol><h1 id="pandas的数据结构说明"><a href="#pandas的数据结构说明" class="headerlink" title="pandas的数据结构说明"></a>pandas的数据结构说明</h1><p><strong>pandas含有使数据清洗和分析工作变得更快更简单的数据结构和操作工具</strong></p><p><em>pandas是基于Numpy数组构建的,特别是基于数组的函数和不适用for循环的数据处理</em></p><blockquote><p>特点</p></blockquote><ol><li>pandas是专门为处理表格和混杂数据设计的</li><li>而Numpy更适合处理统一的数值数组数据</li><li>用的最多的是使用Series 和 DataFrame</li></ol><p><em>注意:别忘记安装pandas库</em></p><p><img src="/images/resources/88CD09B313660A19B2FF379849FA20B2.jpg" alt="IMAGE"></p><h1 id="pandas数据结构介绍"><a href="#pandas数据结构介绍" class="headerlink" title="pandas数据结构介绍"></a>pandas数据结构介绍</h1><p><em>pandas主要有2个非常重要的数据结构,分别是Series和DataFrame,他们提供了一种可靠的易于使用的基础</em></p><h1 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h1><p><strong>Series类似于一维数组的对象,由一组数据以及一组与之相关的数据标签组成</strong></p><p><img src="/images/resources/A4142743805F1077B093A14B458BB029.jpg" alt="IMAGE"></p><h2 id="自定义索引"><a href="#自定义索引" class="headerlink" title="自定义索引"></a>自定义索引</h2><p><img src="/images/resources/6F6405959DB48E08CC1642CCC752CD57.jpg" alt="IMAGE"></p><h2 id="一些运算"><a href="#一些运算" class="headerlink" title="一些运算"></a>一些运算</h2><p><img src="/images/resources/7BE46C9893AB0FD3908A941678D102C2.jpg" alt="IMAGE"></p><h2 id="类比定长的有序字典"><a href="#类比定长的有序字典" class="headerlink" title="类比定长的有序字典"></a>类比定长的有序字典</h2><p><img src="/images/resources/3547579C9D9BA67EA5CF325065259CB7.jpg" alt="IMAGE"></p><h2 id="通过字典创建Series"><a href="#通过字典创建Series" class="headerlink" title="通过字典创建Series"></a>通过字典创建Series</h2><p><img src="/images/resources/7F502060F619168FD4C5F1427CEF9640.jpg" alt="IMAGE"></p><h2 id="检测缺失值"><a href="#检测缺失值" class="headerlink" title="检测缺失值"></a>检测缺失值</h2><p><img src="/images/resources/F697479E51D87F2756F7270FA876CA7B.jpg" alt="IMAGE"></p><h2 id="重要功能"><a href="#重要功能" class="headerlink" title="重要功能"></a>重要功能</h2><p><em>Series最重要的一个功能是会根据运算的索引标签自动对齐数据</em></p><p><img src="/images/resources/DB8A9349293AD3B3B65A44B7B558C9DE.jpg" alt="IMAGE"></p><p><em>Series对象本身和索引都有一个name属性,这个属性和pandas的其它关键功能非常密切</em></p><p><img src="/images/resources/A91A7465D6DD9BE1FA05F1CBA8C0070B.jpg" alt="IMAGE"></p><p><img src="/images/resources/FD5C2D5BBF43BB0341A628CBE34D8434.jpg" alt="IMAGE"></p><h1 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h1><p><strong>DataFrame是一个表格型的数据结构,含有一组有序的列,每列可以是不同的值类型。</strong></p><p><strong>DataFrame既有行索引也有列索引.其中的数据是以一个或多个二维快存放的</strong></p><p><img src="/images/resources/FC8BE5DCDE41BD7B1F66E0523A4C009C.jpg" alt="IMAGE"></p><h2 id="通过head方法取前5行数据"><a href="#通过head方法取前5行数据" class="headerlink" title="通过head方法取前5行数据"></a>通过head方法取前5行数据</h2><p><img src="/images/resources/4FB1C62EBE27D09EA14245E2E3F9460F.jpg" alt="IMAGE"></p><h2 id="可以指定具体列进行排列"><a href="#可以指定具体列进行排列" class="headerlink" title="可以指定具体列进行排列"></a>可以指定具体列进行排列</h2><p><img src="/images/resources/7FA2BF24A53B211DE9BFDC215EDD2C8D.jpg" alt="IMAGE"></p><h2 id="如果传入列数据找不到产生缺失值"><a href="#如果传入列数据找不到产生缺失值" class="headerlink" title="如果传入列数据找不到产生缺失值"></a>如果传入列数据找不到产生缺失值</h2><p><img src="/images/resources/882E4D78E86BD8221CA1BB45D8936978.jpg" alt="IMAGE"></p><h2 id="通过字典表及或者属性方式可以获取一个series"><a href="#通过字典表及或者属性方式可以获取一个series" class="headerlink" title="通过字典表及或者属性方式可以获取一个series"></a>通过字典表及或者属性方式可以获取一个series</h2><p><img src="/images/resources/0B80E7821F7DA17AE427147A2A643072.jpg" alt="IMAGE"></p><h2 id="行值和列值得获取"><a href="#行值和列值得获取" class="headerlink" title="行值和列值得获取"></a>行值和列值得获取</h2><p><img src="/images/resources/2BD3FC96B668E81FEC2DF0BD6D91CF9B.jpg" alt="IMAGE"></p><p><img src="/images/resources/CCD83E6B1FF65BC80FE17989438CFF2F.jpg" alt="IMAGE"></p><p><img src="/images/resources/568D31C4F3DD6A95D43C1163ADDC30D1.jpg" alt="IMAGE"></p><h2 id="使用del删除列"><a href="#使用del删除列" class="headerlink" title="使用del删除列"></a>使用del删除列</h2><p><img src="/images/resources/19F16C6E44BC29A0C9F48CC33337C646.jpg" alt="IMAGE"></p><h2 id="处理另一种常见的数据-嵌套字典"><a href="#处理另一种常见的数据-嵌套字典" class="headerlink" title="处理另一种常见的数据(嵌套字典)"></a>处理另一种常见的数据(嵌套字典)</h2><p><em>嵌套字典转换为dataframe,外层字典的键作为列,内层键作为行索引</em></p><p><img src="/images/resources/0B783659837B4B45550DCD0A2D069CF4.jpg" alt="IMAGE"></p><blockquote><p>可以用T方法进行行和列的交换</p></blockquote><p><img src="/images/resources/165731CAF591EECFFA8792E7FB45B87C.jpg" alt="IMAGE"></p><p><img src="/images/resources/C520465EF26DA48624910E6EF27C9015.jpg" alt="IMAGE"></p><h2 id="索引对象"><a href="#索引对象" class="headerlink" title="索引对象"></a>索引对象</h2><p><strong>pandas的索引对象负责管理元数据,无论构建哪种类型,用到的任何数组和序列都会转换成一个Index</strong></p><p><em>注意:与集合不同,pandas的索引是可以包含重复的标签</em></p><h3 id="索引一些方法和属性"><a href="#索引一些方法和属性" class="headerlink" title="索引一些方法和属性"></a>索引一些方法和属性</h3><p><img src="/images/resources/0B23645E7219188A633CD06D6395594D.jpg" alt="IMAGE"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;数据分析之路漫漫,贵在坚持.梅花香自苦寒来&lt;/p&gt;
-&lt;h1 id=&quot;pandas基础一&quot;&gt;&lt;a href=&quot;#pandas基础一&quot; class=&quot;headerlink&quot; title=&quot;pandas基础一&quot;&gt;&lt;/a&gt;pandas基础一&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;pandas的
-      
-    
-    </summary>
-    
-    
-      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
-    
-      <category term="数据分析" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-      <category term="Pandas初始" scheme="https://djwangweijie.github.io/tags/Pandas%E5%88%9D%E5%A7%8B/"/>
-    
-      <category term="Series和DateFrame" scheme="https://djwangweijie.github.io/tags/Series%E5%92%8CDateFrame/"/>
     
   </entry>
   
