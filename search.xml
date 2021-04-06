@@ -58,10 +58,10 @@
       <tags>
         <tag>python</tag>
         <tag>机器学习</tag>
-        <tag>逻辑回归算法</tag>
-        <tag>二元分类</tag>
         <tag>底层实现</tag>
         <tag>进阶</tag>
+        <tag>逻辑回归算法</tag>
+        <tag>二元分类</tag>
       </tags>
   </entry>
   <entry>
@@ -90,10 +90,10 @@
       <tags>
         <tag>python</tag>
         <tag>机器学习</tag>
-        <tag>底层实现</tag>
-        <tag>进阶</tag>
         <tag>线性回归算法</tag>
         <tag>多元线性</tag>
+        <tag>底层实现</tag>
+        <tag>进阶</tag>
       </tags>
   </entry>
   <entry>
