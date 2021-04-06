@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://djwangweijie.github.io/"/>
-  <updated>2021-04-02T00:43:35.684Z</updated>
+  <updated>2021-04-06T00:37:38.936Z</updated>
   <id>https://djwangweijie.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习平凡之路八</title>
+    <link href="https://djwangweijie.github.io/2021/04/02/2021-04-06-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF%E5%85%AB/"/>
+    <id>https://djwangweijie.github.io/2021/04/02/2021-04-06-机器学习平凡之路八/</id>
+    <published>2021-04-02T00:52:18.686Z</published>
+    <updated>2021-04-06T00:37:38.936Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="机器学习之平凡之路八"><a href="#机器学习之平凡之路八" class="headerlink" title="机器学习之平凡之路八"></a>机器学习之平凡之路八</h1><ol><li>经典算法</li><li>如何寻找最佳算法,优化参数</li></ol><h2 id="经典算法"><a href="#经典算法" class="headerlink" title="经典算法"></a>经典算法</h2><ol><li>KNN-邻居是哪一类我就是哪一类</li><li>SVM-以前比神经网络还火</li><li>朴素贝叶斯-简单概率分类算法</li><li>决策树-无数个if与else的集合</li><li>随机森林-很多棵决策树的集成</li></ol><h3 id="K最近邻"><a href="#K最近邻" class="headerlink" title="K最近邻"></a>K最近邻</h3><p><strong>K最近邻意思是K个最近的邻居,对于需要贴标签的数据样本，总会找几个和自己离得最近的样本。也就是邻居，看看邻居的标签是什么。如果邻居中大多数样本都是某一类样本。它就认为自己也是这一类样本。参数K通常是不超过20的数据</strong></p><p><u>向量的距离:欧式距离和曼哈顿距离</u></p><p><em>欧式距离是欧几里得空间中两点间的普通距离</em></p><p><em>曼哈顿距离是方格线距离或城市区块距离，是两个点在标准坐标系上的绝对轴距的总和</em></p><p>两种向量距离就是L1范数(曼哈顿)和L2范数(欧氏)的定义</p><h4 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df_heart = pd.read_csv(<span class="string">'heart.csv'</span>)</span><br><span class="line">df_heart.head() <span class="comment"># 引入上次的心脏</span></span><br></pre></td></tr></table></figure><p><img src="/images/resources/20210406/image-20210402092245159.png" alt="image-20210402092245159"></p><blockquote><p>KNN</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line">K = <span class="number">5</span></span><br><span class="line">KNN = KNeighborsClassifier(n_neighbors = K)</span><br><span class="line">X = df_heart.drop([<span class="string">'target'</span>], axis = <span class="number">1</span>) <span class="comment"># 构建特征集</span></span><br><span class="line">y = df_heart.target.values <span class="comment"># 构建标签集</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train,X_test,y_train,y_test = train_test_split(X,y,test_size = <span class="number">0.2</span>)</span><br><span class="line">KNN.fit(X_train, y_train)</span><br><span class="line">y_pred = KNN.predict(X_test)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> (f1_score, confusion_matrix) <span class="comment"># 导入评估指标</span></span><br><span class="line">print(<span class="string">'&#123;&#125;NN预测准确率:&#123;:.2f&#125;%'</span>.format(K,KNN.score(X_test, y_test)*<span class="number">100</span>))</span><br><span class="line">print(<span class="string">'&#123;&#125;NN预测F1分数:&#123;:.2f&#125;%'</span>.format(K,f1_score(y_test, y_pred)*<span class="number">100</span>))</span><br><span class="line">print(<span class="string">'KNN混淆矩阵:\n'</span>,confusion_matrix(y_pred, y_test))</span><br></pre></td></tr></table></figure><p><img src="/images/resources/20210406/image-20210402093317915.png" alt="image-20210402093317915"></p><blockquote><p>如何判定最佳K值</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 寻找最佳K值</span></span><br><span class="line">f1_score_list = []</span><br><span class="line">acc_score_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">15</span>):</span><br><span class="line">    KNN = KNeighborsClassifier(n_neighbors = i)</span><br><span class="line">    KNN.fit(X_train,y_train)</span><br><span class="line">    acc_score_list.append(KNN.score(X_test, y_test))</span><br><span class="line">    y_pred = KNN.predict(X_test)</span><br><span class="line">    f1_score_list.append(f1_score(y_test, y_pred))</span><br><span class="line">index = np.arange(<span class="number">1</span>,<span class="number">15</span>,<span class="number">1</span>)</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.plot(index,acc_score_list, c=<span class="string">'blue'</span>, linestyle=<span class="string">'solid'</span>)</span><br><span class="line">plt.plot(index,f1_score_list, c=<span class="string">'red'</span>, linestyle=<span class="string">'dashed'</span>)</span><br><span class="line">plt.legend([<span class="string">'Accuracy'</span>,<span class="string">'F1 Score'</span>])</span><br><span class="line">plt.xlabel(<span class="string">'k value'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Score'</span>)</span><br><span class="line">plt.grid(<span class="string">'false'</span>)</span><br><span class="line">plt.show()</span><br><span class="line">KNN_acc = max(f1_score_list)*<span class="number">100</span></span><br><span class="line">print(KNN_acc)</span><br></pre></td></tr></table></figure><p><img src="/images/resources/20210406/image-20210402094259599.png" alt="image-20210402094259599"></p><h3 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h3><blockquote><p>SVM支持向量机原理</p></blockquote><p><img src="/images/resources/20210406/image-20210402100358766.png" alt="image-20210402100358766"></p><p>超平面用于特征空间根据数据的类别切分出来的分界平面.支持向量,离当前超平面最近的数据点。在上图一个数据集的特征空间中，存在很多种可能的类分割超平面。SVM就是要在支持向量的帮助下找到最优的分类超平面.目标就是支持向量到超平面之间的垂直距离最宽。</p><blockquote><p>对于线性可分</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVC</span><br><span class="line">svm = SVC(random_state = <span class="number">1</span>)</span><br><span class="line">svm.fit(X_train,y_train)</span><br><span class="line">y_pred =svm.predict(X_test)</span><br><span class="line">print(svm.score(X_test, y_test)*<span class="number">100</span>)</span><br><span class="line">print(f1_score(y_test, y_pred)*<span class="number">100</span>)</span><br><span class="line">print(confusion_matrix(y_pred,y_test))</span><br></pre></td></tr></table></figure><p><img src="/images/resources/20210406/image-20210402101358389.png" alt="image-20210402101358389"></p><blockquote><p>对于非线性分类</p></blockquote><p>SVM通过核方法。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svm.SVC(kernel=&apos;poly&apos;, degree=3)</span><br><span class="line">svm.SVC(kernel=&apos;rbf&apos;, C=600)  # 相关内核说明，百度</span><br></pre></td></tr></table></figure><h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><p><strong>本质其实就是一个人想一个东西或者一个人。其他随便提问，本人只能回答是和不是.其实就是决策树，可以应用回归或者分类的问题</strong></p><blockquote><p>关于熵和特征节点的选择</p></blockquote><p>熵度量信息的不确定性，信息的不确定性越大，熵就越大</p><ol><li>信息熵代表随机变量的复杂度，也就是不确定性</li><li>条件熵代表某一个条件下，随机变量的复杂度</li><li>信息增益等于信息熵减去条件熵，代表了某个条件下。信息的复杂度减少的程度</li></ol><p>如果一个特征从不确定到确定，过程对结果的影响比较大的话，可以认为这个特征分类能力比较强。熵减少得越多，信息增益就最大</p><p><strong>决策树因为可以细分得很细，所以很容易出现过度拟合的状态。解决方式可以考虑为决策树进行剪枝。先剪枝：分支的过程中，熵减少量小于某一个阈值时，停止分支的创建。后剪枝:先创建完成的决策树，然后尝试消除多余的节点</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line">dtc = DecisionTreeClassifier()</span><br><span class="line">dtc.fit(X_train, y_train)</span><br><span class="line">y_pred = dtc.predict(X_test)</span><br><span class="line">print(dtc.score(X_test,y_test)*<span class="number">100</span>)</span><br><span class="line">print(f1_score(y_test,y_pred)*<span class="number">100</span>)</span><br><span class="line">print(confusion_matrix(y_pred,y_test))</span><br></pre></td></tr></table></figure><p><img src="/images/resources/20210406/image-20210402104627463.png" alt="image-20210402104627463"></p><h2 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h2><p>n_estimators:要生成的树的数量</p><p>criterion:信息增益指标,可以选择gini或者entropy</p><p>bootstrap:可选择是否使用bootstrap方法取样，选择False，所有树基于原始数据集生成</p><p>max_features:通常由算法默认确定，对于分类问题，默认值是总特征数的平方根</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line">rf = RandomForestClassifier(n_estimators = <span class="number">1000</span> , random_state =<span class="number">1</span>)</span><br><span class="line">rf.fit(X_train, y_train)</span><br><span class="line">y_pred = rf.predict(X_test)</span><br><span class="line">print(rf.score(X_test,y_test)*<span class="number">100</span>)</span><br><span class="line">print(f1_score(y_test,y_pred)*<span class="number">100</span>)</span><br><span class="line">print(confusion_matrix(y_pred,y_test))</span><br></pre></td></tr></table></figure><p><img src="/images/resources/20210406/image-20210402105639914.png" alt="image-20210402105639914"></p><h3 id="如何选择最佳机器学习算法"><a href="#如何选择最佳机器学习算法" class="headerlink" title="如何选择最佳机器学习算法"></a>如何选择最佳机器学习算法</h3><p><img src="/images/resources/20210406/image-20210402110802065.png" alt="image-20210402110802065"></p><p><img src="/images/resources/20210406/image-20210402110821225.png" alt="image-20210402110821225"></p><h2 id="用网格搜索超参数调优"><a href="#用网格搜索超参数调优" class="headerlink" title="用网格搜索超参数调优"></a>用网格搜索超参数调优</h2><p>通过利用Sklearn的网格搜索。为特定的机器学习算法找到一个超参数的范围找到最佳值</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> StratifiedKFold <span class="comment"># 导入k折验证工具</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line">kfold = StratifiedKFold(n_splits=<span class="number">5</span>) <span class="comment"># 10折验证</span></span><br><span class="line">rf = RandomForestClassifier() <span class="comment"># 随机森林模型</span></span><br><span class="line">rf_param_grid = &#123;</span><br><span class="line">    <span class="string">'max_depth'</span>:[<span class="literal">None</span>],</span><br><span class="line">    <span class="string">'min_samples_split'</span>:[<span class="number">2</span>,<span class="number">5</span>,<span class="number">10</span>],</span><br><span class="line">    <span class="string">'min_samples_leaf'</span>:[<span class="number">3</span>,<span class="number">5</span>,<span class="number">10</span>],</span><br><span class="line">    <span class="string">'bootstrap'</span>:[<span class="literal">False</span>],</span><br><span class="line">    <span class="string">'n_estimators'</span>:[<span class="number">100</span>,<span class="number">500</span>],</span><br><span class="line">    <span class="string">'criterion'</span>:[<span class="string">'gini'</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">rf_gs = GridSearchCV(rf,param_grid=rf_param_grid,cv=kfold,</span><br><span class="line">                    scoring=<span class="string">'accuracy'</span>,n_jobs=<span class="number">5</span>,verbose=<span class="number">1</span>)</span><br><span class="line">rf_gs.fit(X_train,y_train)</span><br></pre></td></tr></table></figure><p><img src="/images/resources/20210406/image-20210402112757052.png" alt="image-20210402112757052"></p><p><img src="/images/resources/20210406/image-20210402113358588.png" alt="image-20210402113358588"></p><p><img src="/images/resources/20210406/image-20210402113435505.png" alt="image-20210402113435505"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;机器学习之平凡之路八&quot;&gt;&lt;a href=&quot;#机器学习之平凡之路八&quot; class=&quot;headerlink&quot; title=&quot;机器学习之平凡之路八&quot;&gt;&lt;/a&gt;机器学习之平凡之路八&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;经典算法&lt;/li&gt;
+&lt;li&gt;如何寻找最佳算法,优化参数&lt;/li&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://djwangweijie.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
+    
+      <category term="机器学习" scheme="https://djwangweijie.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="高阶" scheme="https://djwangweijie.github.io/tags/%E9%AB%98%E9%98%B6/"/>
+    
+      <category term="经典算法" scheme="https://djwangweijie.github.io/tags/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="SVM" scheme="https://djwangweijie.github.io/tags/SVM/"/>
+    
+      <category term="决策树" scheme="https://djwangweijie.github.io/tags/%E5%86%B3%E7%AD%96%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习平凡之路七</title>
@@ -86,13 +124,13 @@
     
       <category term="机器学习" scheme="https://djwangweijie.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="卷积层神经网络" scheme="https://djwangweijie.github.io/tags/%E5%8D%B7%E7%A7%AF%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
       <category term="多元分类" scheme="https://djwangweijie.github.io/tags/%E5%A4%9A%E5%85%83%E5%88%86%E7%B1%BB/"/>
     
       <category term="神经元" scheme="https://djwangweijie.github.io/tags/%E7%A5%9E%E7%BB%8F%E5%85%83/"/>
     
       <category term="高阶" scheme="https://djwangweijie.github.io/tags/%E9%AB%98%E9%98%B6/"/>
+    
+      <category term="卷积层神经网络" scheme="https://djwangweijie.github.io/tags/%E5%8D%B7%E7%A7%AF%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -165,13 +203,13 @@
     
       <category term="机器学习" scheme="https://djwangweijie.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
+      <category term="深度学习" scheme="https://djwangweijie.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
       <category term="多元分类" scheme="https://djwangweijie.github.io/tags/%E5%A4%9A%E5%85%83%E5%88%86%E7%B1%BB/"/>
     
       <category term="神经元" scheme="https://djwangweijie.github.io/tags/%E7%A5%9E%E7%BB%8F%E5%85%83/"/>
     
       <category term="高阶" scheme="https://djwangweijie.github.io/tags/%E9%AB%98%E9%98%B6/"/>
-    
-      <category term="深度学习" scheme="https://djwangweijie.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -714,37 +752,6 @@
       <category term="数据重塑" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E9%87%8D%E5%A1%91/"/>
     
       <category term="层级拆分" scheme="https://djwangweijie.github.io/tags/%E5%B1%82%E7%BA%A7%E6%8B%86%E5%88%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据分析之清洗与准备2</title>
-    <link href="https://djwangweijie.github.io/2020/07/23/2020-07-22-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8B%E6%B8%85%E6%B4%97%E4%B8%8E%E5%87%86%E5%A4%872/"/>
-    <id>https://djwangweijie.github.io/2020/07/23/2020-07-22-数据分析之清洗与准备2/</id>
-    <published>2020-07-22T16:07:00.000Z</published>
-    <updated>2020-07-22T16:11:37.808Z</updated>
-    
-    <content type="html"><![CDATA[<p>继续刚.</p><h1 id="数据清洗与准备2"><a href="#数据清洗与准备2" class="headerlink" title="数据清洗与准备2"></a>数据清洗与准备2</h1><p><strong>python在字符串和文本操作上具有很大的便利性,字符串对象是大部分的文本操作简单化,对于复杂的模式匹配和文本操作。正则表达式是可能需要的。pandas允许将字符串和正则表达式应用到整个数据数组上。同时也能处理数据缺失带来的问题</strong></p><h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><h3 id="字符串对象方法"><a href="#字符串对象方法" class="headerlink" title="字符串对象方法"></a>字符串对象方法</h3><p><img src="/images/resources/20200722/image-20200722224044234.png" alt="image-20200722224044234"></p><h3 id="查找和定位字符串"><a href="#查找和定位字符串" class="headerlink" title="查找和定位字符串"></a>查找和定位字符串</h3><p><img src="/images/resources/20200722/image-20200722224326066.png" alt="image-20200722224326066"></p><p><em>index和find方法的区别在于,使用index方法没有找到时会抛出一个异常</em></p><h3 id="计数和替换字符串"><a href="#计数和替换字符串" class="headerlink" title="计数和替换字符串"></a>计数和替换字符串</h3><p><img src="/images/resources/20200722/image-20200722224612390.png" alt="image-20200722224612390"></p><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p><strong>python中提供了re模块进行正则表达式的使用，一般单个表达式称作为regex</strong><br><em>re模块主要有三个主题:匹配，替代，拆分</em><br><img src="/images/resources/20200722/image-20200722225807394.png" alt="image-20200722225807394"></p><h3 id="match和search和findall"><a href="#match和search和findall" class="headerlink" title="match和search和findall"></a>match和search和findall</h3><p><img src="/images/resources/20200722/image-20200722231848760.png" alt="image-20200722231848760"></p><h3 id="groups"><a href="#groups" class="headerlink" title="groups"></a>groups</h3><p>​    假设将每个地址分为三个部分.可以使用括号模式包起来<br><img src="/images/resources/20200722/image-20200722233042459.png" alt="image-20200722233042459"></p><h2 id="pandas中向量化字符串函数"><a href="#pandas中向量化字符串函数" class="headerlink" title="pandas中向量化字符串函数"></a>pandas中向量化字符串函数</h2><p><img src="/images/resources/20200722/image-20200722234500724.png" alt="image-20200722234500724"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;继续刚.&lt;/p&gt;
-&lt;h1 id=&quot;数据清洗与准备2&quot;&gt;&lt;a href=&quot;#数据清洗与准备2&quot; class=&quot;headerlink&quot; title=&quot;数据清洗与准备2&quot;&gt;&lt;/a&gt;数据清洗与准备2&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;python在字符串和文本操作上具有很大的便利性,字
-      
-    
-    </summary>
-    
-    
-      <category term="大数据分析" scheme="https://djwangweijie.github.io/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="python" scheme="https://djwangweijie.github.io/tags/python/"/>
-    
-      <category term="数据处理" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
-    
-      <category term="数据清洗" scheme="https://djwangweijie.github.io/tags/%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97/"/>
     
   </entry>
   
