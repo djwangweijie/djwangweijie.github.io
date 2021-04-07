@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "a5ab5263"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,机器学习,高阶,决策树,聚类,降维,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Michael_Wang" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="机器学习平凡之路十 无监督学习聚类与降维 半监督和自监督以及生成学习概念  聚类聚类就是让机器把数据集中的样本按照特征的性质进行分组  K均值算法   先确定K的数值 从一大堆数据中随机挑选K个数据点，作为质心 不断遍历每一个数据点，计算它们与每一个质心的距离 重复以上步骤，找到新的质心，直至收敛   K值的选取  手肘法基于对聚类效果的一个度量指标来实现的。K值很小的时候，整体损失很大，随着K值">
+<meta name="keywords" content="python,机器学习,高阶,决策树,聚类,降维">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习平凡之路十">
+<meta property="og:url" content="https://djwangweijie.github.io/2021/04/06/2021-04-08-机器学习平凡之路十/index.html">
+<meta property="og:site_name" content="Michael_Wang">
+<meta property="og:description" content="机器学习平凡之路十 无监督学习聚类与降维 半监督和自监督以及生成学习概念  聚类聚类就是让机器把数据集中的样本按照特征的性质进行分组  K均值算法   先确定K的数值 从一大堆数据中随机挑选K个数据点，作为质心 不断遍历每一个数据点，计算它们与每一个质心的距离 重复以上步骤，找到新的质心，直至收敛   K值的选取  手肘法基于对聚类效果的一个度量指标来实现的。K值很小的时候，整体损失很大，随着K值">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/20210408/image-20210406135457108.png">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/20210408/image-20210406135948797.png">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/20210408/image-20210406140652175.png">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/20210408/image-20210406142246394.png">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/20210408/image-20210406152646756.png">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/20210408/image-20210406152749759.png">
+<meta property="og:image" content="https://djwangweijie.github.io/images/resources/20210408/image-20210406173413336.png">
+<meta property="og:updated_time" content="2021-04-07T01:51:03.872Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习平凡之路十">
+<meta name="twitter:description" content="机器学习平凡之路十 无监督学习聚类与降维 半监督和自监督以及生成学习概念  聚类聚类就是让机器把数据集中的样本按照特征的性质进行分组  K均值算法   先确定K的数值 从一大堆数据中随机挑选K个数据点，作为质心 不断遍历每一个数据点，计算它们与每一个质心的距离 重复以上步骤，找到新的质心，直至收敛   K值的选取  手肘法基于对聚类效果的一个度量指标来实现的。K值很小的时候，整体损失很大，随着K值">
+<meta name="twitter:image" content="https://djwangweijie.github.io/images/resources/20210408/image-20210406135457108.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://djwangweijie.github.io/2021/04/06/2021-04-08-机器学习平凡之路十/">
+
+
+
+
+
+  <title>机器学习平凡之路十 | Michael_Wang</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4f6b1dad003fac023e47cd8b5305a4e1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/djwangweijie" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Michael_Wang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">JavaAndKafka_Streams</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://djwangweijie.github.io/2021/04/06/2021-04-08-机器学习平凡之路十/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael_Wang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Michael_Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习平凡之路十</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-06T12:36:20+08:00">
+                2021-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2021/04/06/2021-04-08-机器学习平凡之路十/" class="leancloud_visitors" data-flag-title="机器学习平凡之路十">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="机器学习平凡之路十"><a href="#机器学习平凡之路十" class="headerlink" title="机器学习平凡之路十"></a>机器学习平凡之路十</h1><ol>
+<li>无监督学习聚类与降维</li>
+<li>半监督和自监督以及生成学习概念</li>
+</ol>
+<h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><p>聚类就是让机器把数据集中的样本按照特征的性质进行分组</p>
+<blockquote>
+<p>K均值算法</p>
+</blockquote>
+<ol>
+<li>先确定K的数值</li>
+<li>从一大堆数据中随机挑选K个数据点，作为质心</li>
+<li>不断遍历每一个数据点，计算它们与每一个质心的距离</li>
+<li>重复以上步骤，找到新的质心，直至收敛</li>
+</ol>
+<blockquote>
+<p>K值的选取</p>
+</blockquote>
+<p>手肘法基于对聚类效果的一个度量指标来实现的。K值很小的时候，整体损失很大，随着K值的增大，损失函数会逐渐出现一个拐点。此时K值就是比较好的值</p>
+<blockquote>
+<p>聚类:为客户分组</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span>  np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">dataset = pd.read_csv(<span class="string">'Customers Cluster.csv'</span>)</span><br><span class="line">dataset.head()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/resources/20210408/image-20210406135457108.png" alt="image-20210406135457108"></p>
+<p><code>X = dataset.iloc[:,[3,4]].values # 针对两个特性进行聚类</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.cluster <span class="keyword">import</span> KMeans</span><br><span class="line">cost = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">11</span>):</span><br><span class="line">    kmeans = KMeans(n_clusters=i,init=<span class="string">'k-means++'</span>,random_state=<span class="number">0</span>)</span><br><span class="line">    kmeans.fit(X)</span><br><span class="line">    cost.append(kmeans.inertia_)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">plt.plot(range(<span class="number">1</span>,<span class="number">11</span>),cost)</span><br><span class="line">plt.title(<span class="string">'hand'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'No of clusters'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'cost'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/resources/20210408/image-20210406135948797.png" alt="image-20210406135948797"></p>
+<p>可以看出在3和4，聚类的个数是最优的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 把聚类可视化</span></span><br><span class="line">plt.scatter(X[y_kmeans == <span class="number">0</span>, <span class="number">0</span>], X[y_kmeans == <span class="number">0</span>, <span class="number">1</span>], </span><br><span class="line">            s = <span class="number">100</span>, c = <span class="string">'cyan'</span>, label = <span class="string">'Cluster 1'</span>)</span><br><span class="line">plt.scatter(X[y_kmeans == <span class="number">1</span>, <span class="number">0</span>], X[y_kmeans == <span class="number">1</span>, <span class="number">1</span>], </span><br><span class="line">            s = <span class="number">100</span>, c = <span class="string">'blue'</span>, label = <span class="string">'Cluster 2'</span>)</span><br><span class="line">plt.scatter(X[y_kmeans == <span class="number">2</span>, <span class="number">0</span>], X[y_kmeans == <span class="number">2</span>, <span class="number">1</span>], </span><br><span class="line">            s = <span class="number">100</span>, c = <span class="string">'green'</span>, label = <span class="string">'Cluster 3'</span>)</span><br><span class="line">plt.scatter(X[y_kmeans == <span class="number">3</span>, <span class="number">0</span>], X[y_kmeans == <span class="number">3</span>, <span class="number">1</span>], </span><br><span class="line">            s = <span class="number">100</span>, c = <span class="string">'red'</span>, label = <span class="string">'Cluster 4'</span>)</span><br><span class="line">plt.scatter(kmeans.cluster_centers_[:, <span class="number">0</span>], kmeans.cluster_centers_[:, <span class="number">1</span>], </span><br><span class="line">            s = <span class="number">200</span>, c = <span class="string">'yellow'</span>, label = <span class="string">'Centroids'</span>)</span><br><span class="line">plt.title(<span class="string">'Clusters of customers'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Income'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Spending Score'</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/resources/20210408/image-20210406140652175.png" alt="image-20210406140652175"></p>
+<blockquote>
+<p>PCA算法</p>
+</blockquote>
+<p>最常见的降维算法是主成分分析、通过正交变换将可能相关的原始变量转换为一组各维度线性无关的变量值。用于提取数据的主要特征分量，以达到压缩数据或提高数据可视化程度的目的</p>
+<p>对手写数字集进行降维</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from keras.datasets import mnist</span><br><span class="line">(X_train_image,y_train_lable),(X_test_image,y_test_lable) = mnist.load_data()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for each in range(10):</span><br><span class="line">    plt.subplot(2,5,each+1)</span><br><span class="line">    plt.imshow(X_train_image[each].reshape(28,28))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/resources/20210408/image-20210406142246394.png" alt="image-20210406142246394"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA</span><br><span class="line">X = X_train_image.reshape(len(X_train_image),<span class="number">-1</span>)</span><br><span class="line">n_components =<span class="number">5</span></span><br><span class="line">(n_samples,n_fratures ) = X.shape</span><br><span class="line">pca = PCA(</span><br><span class="line">        n_components = n_components,</span><br><span class="line">        svd_solver = <span class="string">'randomized'</span>, whiten=<span class="literal">True</span></span><br><span class="line">)</span><br><span class="line">X_pca = pca.fit_transform(X)</span><br><span class="line">components_ = pca.components_ <span class="comment"># 保留简化后的模型</span></span><br><span class="line">images = components_[:n_components]</span><br><span class="line">plt.figure(figsize=(<span class="number">6</span>, <span class="number">5</span>))</span><br><span class="line"><span class="keyword">for</span> i, comp <span class="keyword">in</span> enumerate(images):</span><br><span class="line">    vmax = max(comp.max(), -comp.min())</span><br><span class="line">    plt.imshow(comp.reshape((<span class="number">28</span>, <span class="number">28</span>)),</span><br><span class="line">               interpolation=<span class="string">'nearest'</span>,vmin=-vmax, vmax=vmax)</span><br><span class="line">    plt.xticks(())</span><br><span class="line">    plt.yticks(())</span><br><span class="line">plt.savefig(<span class="string">'graph.png'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/resources/20210408/image-20210406152646756.png" alt="image-20210406152646756"></p>
+<p>可以看出来识别数字主要在中间的这几块</p>
+<p><img src="/images/resources/20210408/image-20210406152749759.png" alt="image-20210406152749759"></p>
+<p>特征从784个转变到5个特征</p>
+<h2 id="GAN的实现"><a href="#GAN的实现" class="headerlink" title="GAN的实现"></a>GAN的实现</h2><p><a href="https://blog.csdn.net/weixin_44791964/article/details/103758751" target="_blank" rel="noopener">可以参考的文章</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function, division</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span>  tensorflow.keras.datasets <span class="keyword">import</span> mnist</span><br><span class="line"><span class="keyword">from</span>  tensorflow.keras.layers <span class="keyword">import</span> Input, Dense, Reshape, Flatten, Dropout,Conv2D</span><br><span class="line"><span class="keyword">from</span>  tensorflow.keras.layers <span class="keyword">import</span> BatchNormalization, Activation, ZeroPadding2D, LeakyReLU</span><br><span class="line"><span class="comment">#from  tensorflow.keras.layers.advanced_activations import LeakyReLU</span></span><br><span class="line"><span class="comment">#from  tensorflow.keras.layers.convolutional import UpSampling2D, Conv2D</span></span><br><span class="line"><span class="keyword">from</span>  tensorflow.keras.models <span class="keyword">import</span> Sequential, Model</span><br><span class="line"><span class="keyword">from</span>  tensorflow.keras.optimizers <span class="keyword">import</span> Adam</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GAN</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># --------------------------------- #</span></span><br><span class="line">        <span class="comment">#   行28，列28，也就是mnist的shape</span></span><br><span class="line">        <span class="comment"># --------------------------------- #</span></span><br><span class="line">        self.img_rows = <span class="number">28</span></span><br><span class="line">        self.img_cols = <span class="number">28</span></span><br><span class="line">        self.channels = <span class="number">1</span></span><br><span class="line">        <span class="comment"># 28,28,1</span></span><br><span class="line">        self.img_shape = (self.img_rows, self.img_cols, self.channels)</span><br><span class="line">        self.latent_dim = <span class="number">100</span>  <span class="comment">#噪声的维度</span></span><br><span class="line">        <span class="comment"># adam优化器</span></span><br><span class="line">        optimizer = Adam(<span class="number">0.0002</span>, <span class="number">0.5</span>)</span><br><span class="line">        <span class="comment">#--------------------------训练鉴别器--------------------------</span></span><br><span class="line">        self.discriminator = self.build_discriminator()</span><br><span class="line">        self.discriminator.compile(loss=<span class="string">'binary_crossentropy'</span>,</span><br><span class="line">            optimizer=optimizer,</span><br><span class="line">            metrics=[<span class="string">'accuracy'</span>])</span><br><span class="line">        <span class="comment">#----------------------------训练生成器-------------------------------</span></span><br><span class="line">        self.generator = self.build_generator()</span><br><span class="line">        gan_input = Input(shape=(self.latent_dim,))</span><br><span class="line">        img = self.generator(gan_input)   <span class="comment">#Model(noise, img)</span></span><br><span class="line">        <span class="comment"># 在训练generate的时候不训练discriminator</span></span><br><span class="line">        self.discriminator.trainable = <span class="literal">False</span></span><br><span class="line">        <span class="comment"># 对生成的假图片进行预测</span></span><br><span class="line">        validity = self.discriminator(img) <span class="comment">#Model(img, validity)</span></span><br><span class="line">        self.combined = Model(gan_input, validity)  <span class="comment">#把生成器和鉴别器连起来</span></span><br><span class="line">        self.combined.compile(loss=<span class="string">'binary_crossentropy'</span>, optimizer=optimizer)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">build_generator</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># --------------------------------- #</span></span><br><span class="line">        <span class="comment">#   生成器，输入一串随机数字，输出一副图像</span></span><br><span class="line">        <span class="comment"># --------------------------------- #</span></span><br><span class="line">        model = Sequential()</span><br><span class="line"> </span><br><span class="line">        model.add(Dense(<span class="number">256</span>, input_dim=self.latent_dim))</span><br><span class="line">        model.add(LeakyReLU(alpha=<span class="number">0.2</span>))</span><br><span class="line">        model.add(BatchNormalization(momentum=<span class="number">0.8</span>))</span><br><span class="line"> </span><br><span class="line">        model.add(Dense(<span class="number">512</span>))</span><br><span class="line">        model.add(LeakyReLU(alpha=<span class="number">0.2</span>))</span><br><span class="line">        model.add(BatchNormalization(momentum=<span class="number">0.8</span>))</span><br><span class="line"> </span><br><span class="line">        model.add(Dense(<span class="number">1024</span>))</span><br><span class="line">        model.add(LeakyReLU(alpha=<span class="number">0.2</span>))</span><br><span class="line">        model.add(BatchNormalization(momentum=<span class="number">0.8</span>))</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#生成图像大小的序列 28*28 *1</span></span><br><span class="line">        model.add(Dense(np.prod(self.img_shape), activation=<span class="string">'tanh'</span>))</span><br><span class="line">        <span class="comment">#然后reshape成（28,28,1）大小</span></span><br><span class="line">        model.add(Reshape(self.img_shape))</span><br><span class="line"> </span><br><span class="line">        noise = Input(shape=(self.latent_dim,))</span><br><span class="line">        img = model(noise)</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> Model(noise, img)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">build_discriminator</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># ----------------------------------- #</span></span><br><span class="line">        <span class="comment">#   评价器，对输入进来的图片进行鉴别真假</span></span><br><span class="line">        <span class="comment"># ----------------------------------- #</span></span><br><span class="line">        model = Sequential()</span><br><span class="line">        <span class="comment"># 输入一张图片</span></span><br><span class="line">        model.add(Flatten(input_shape=self.img_shape))</span><br><span class="line">        model.add(Dense(<span class="number">512</span>))</span><br><span class="line">        model.add(LeakyReLU(alpha=<span class="number">0.2</span>))</span><br><span class="line">        model.add(Dense(<span class="number">256</span>))</span><br><span class="line">        model.add(LeakyReLU(alpha=<span class="number">0.2</span>))</span><br><span class="line">        <span class="comment"># 判断真伪，输出概率，1为真，0为假</span></span><br><span class="line">        model.add(Dense(<span class="number">1</span>, activation=<span class="string">'sigmoid'</span>))   </span><br><span class="line"> </span><br><span class="line">        img = Input(shape=self.img_shape)</span><br><span class="line">        validity = model(img)</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> Model(img, validity)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">#训练步骤</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">(self, epochs, batch_size=<span class="number">128</span>, sample_interval=<span class="number">50</span>)</span>:</span></span><br><span class="line">        <span class="comment"># 获得数据</span></span><br><span class="line">        (X_train, _), (_, _) = mnist.load_data()</span><br><span class="line"> </span><br><span class="line">        <span class="comment"># 进行标准化(-1,1)之间</span></span><br><span class="line">        X_train = X_train / <span class="number">127.5</span> - <span class="number">1.</span></span><br><span class="line">        X_train = np.expand_dims(X_train, axis=<span class="number">3</span>)<span class="comment"># (28,28)---&gt;(28,28,1)</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment"># 创建标签</span></span><br><span class="line">        valid = np.ones((batch_size, <span class="number">1</span>))   </span><br><span class="line">        fake = np.zeros((batch_size, <span class="number">1</span>))</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">for</span> epoch <span class="keyword">in</span> range(epochs):</span><br><span class="line"> </span><br><span class="line">            <span class="comment"># --------------------------- #</span></span><br><span class="line">            <span class="comment">#   随机选取batch_size个图片</span></span><br><span class="line">            <span class="comment">#   对discriminator进行训练</span></span><br><span class="line">            <span class="comment"># --------------------------- #</span></span><br><span class="line">            idx = np.random.randint(<span class="number">0</span>, X_train.shape[<span class="number">0</span>], batch_size)  <span class="comment">#在0到总图像数量中随机产生一个batch_size的序列</span></span><br><span class="line">            imgs = X_train[idx]     <span class="comment">#随机选取图像</span></span><br><span class="line"> </span><br><span class="line">            noise = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, (batch_size, self.latent_dim)) <span class="comment">#在（0,1）中随机产生batch_size个latent_dim维的噪声</span></span><br><span class="line"> </span><br><span class="line">            gen_imgs = self.generator.predict(noise)  <span class="comment">#由噪声生成图片</span></span><br><span class="line">            <span class="comment">#计算鉴别器loss = 0.5 *（鉴别真图像的loss +  鉴别假图像的loss）</span></span><br><span class="line">            d_loss_real = self.discriminator.train_on_batch(imgs, valid)</span><br><span class="line">            d_loss_fake = self.discriminator.train_on_batch(gen_imgs, fake)</span><br><span class="line">            d_loss = <span class="number">0.5</span> * np.add(d_loss_real, d_loss_fake)  </span><br><span class="line"> </span><br><span class="line">            <span class="comment"># --------------------------- #</span></span><br><span class="line">            <span class="comment">#  训练generator</span></span><br><span class="line">            <span class="comment"># --------------------------- #</span></span><br><span class="line">            noise = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, (batch_size, self.latent_dim))   <span class="comment">#为了增加generator的随机性，这里的噪声是重新生成的，只是用了训练好的参数</span></span><br><span class="line">            g_loss = self.combined.train_on_batch(noise, valid)</span><br><span class="line">            <span class="keyword">print</span> (<span class="string">"%d [D loss: %f, acc.: %.2f%%] [G loss: %f]"</span> % (epoch, d_loss[<span class="number">0</span>], <span class="number">100</span>*d_loss[<span class="number">1</span>], g_loss))</span><br><span class="line"> </span><br><span class="line">            <span class="keyword">if</span> epoch % sample_interval == <span class="number">0</span>:</span><br><span class="line">                self.sample_images(epoch)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sample_images</span><span class="params">(self, epoch)</span>:</span></span><br><span class="line">        <span class="comment">#采样25个图像</span></span><br><span class="line">        r, c = <span class="number">5</span>, <span class="number">5</span></span><br><span class="line">        noise = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, (r * c, self.latent_dim))</span><br><span class="line">        gen_imgs = self.generator.predict(noise) <span class="comment">#为了增加generator的随机性，这里的噪声是重新生成的，只是用了训练好的参数</span></span><br><span class="line"> </span><br><span class="line">        gen_imgs = <span class="number">0.5</span> * gen_imgs + <span class="number">0.5</span>   <span class="comment">#生成的图像在（-1,1）之间，转化到（0,1）之间</span></span><br><span class="line"> </span><br><span class="line">        fig, axs = plt.subplots(r, c)</span><br><span class="line">        cnt = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(r):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(c):</span><br><span class="line">                axs[i,j].imshow(gen_imgs[cnt, :,:,<span class="number">0</span>], cmap=<span class="string">'gray'</span>)</span><br><span class="line">                axs[i,j].axis(<span class="string">'off'</span>)</span><br><span class="line">                cnt += <span class="number">1</span></span><br><span class="line">        fig.savefig(<span class="string">"images/%d.png"</span> % epoch)</span><br><span class="line">        plt.close()</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">"./images"</span>):</span><br><span class="line">        os.makedirs(<span class="string">"./images"</span>)</span><br><span class="line">    gan = GAN()</span><br><span class="line">    gan.train(epochs=<span class="number">30000</span>, batch_size=<span class="number">256</span>, sample_interval=<span class="number">200</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/resources/20210408/image-20210406173413336.png" alt="image-20210406173413336"></p>
+<p>这个是训练了5400次所生成的图片。距离以假乱真还有一些距离</p>
+<blockquote>
+<p>思路</p>
+</blockquote>
+<p>1、随机选取batch_size个真实的图片。<br>2、随机生成batch_size个N维向量，传入到Generator中生成batch_size个虚假图片。<br>3、真实图片的label为1，虚假图片的label为0，将真实图片和虚假图片当作训练集传入到Discriminator中进行训练，训练的loss使用均方差。<br>4、将虚假图片的Discriminator预测结果与1的对比作为loss对Generator进行训练（与1对比的意思是，如果Discriminator将虚假图片判断为1，说明这个生成的图片很“真实”），这个loss同样使用均方差</p>
+<h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+            <a href="/tags/高阶/" rel="tag"># 高阶</a>
+          
+            <a href="/tags/决策树/" rel="tag"># 决策树</a>
+          
+            <a href="/tags/聚类/" rel="tag"># 聚类</a>
+          
+            <a href="/tags/降维/" rel="tag"># 降维</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/04/06/2021-04-07-机器学习平凡之路九/" rel="next" title="机器学习平凡之路九">
+                <i class="fa fa-chevron-left"></i> 机器学习平凡之路九
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NzAwMC8yMzUwMA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Michael_Wang">
+            
+              <p class="site-author-name" itemprop="name">Michael_Wang</p>
+              <p class="site-description motion-element" itemprop="description">技术源于生活</p>
+          </div>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&id=4899336347&auto=1&height=430"></iframe>
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">133</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/djwangweijie" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:22590570@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习平凡之路十"><span class="nav-number">1.</span> <span class="nav-text">机器学习平凡之路十</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#聚类"><span class="nav-number">1.1.</span> <span class="nav-text">聚类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GAN的实现"><span class="nav-number">1.2.</span> <span class="nav-text">GAN的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强化学习"><span class="nav-number">1.3.</span> <span class="nav-text">强化学习</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael_Wang</span>
+
+
+</div>
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共113.3k字</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("GsmDOg5Ui5ABCP3LHpLkvdKW-gzGzoHsz", "wsLkgtjeqMlw9Dhldh4JdXyA");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+</html>
