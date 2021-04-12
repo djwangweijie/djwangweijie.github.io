@@ -84,11 +84,11 @@
     
       <category term="高阶" scheme="https://djwangweijie.github.io/tags/%E9%AB%98%E9%98%B6/"/>
     
-      <category term="决策树" scheme="https://djwangweijie.github.io/tags/%E5%86%B3%E7%AD%96%E6%A0%91/"/>
-    
       <category term="集成学习" scheme="https://djwangweijie.github.io/tags/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="XGBoost算法" scheme="https://djwangweijie.github.io/tags/XGBoost%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="决策树" scheme="https://djwangweijie.github.io/tags/%E5%86%B3%E7%AD%96%E6%A0%91/"/>
     
   </entry>
   
@@ -122,11 +122,11 @@
     
       <category term="高阶" scheme="https://djwangweijie.github.io/tags/%E9%AB%98%E9%98%B6/"/>
     
+      <category term="决策树" scheme="https://djwangweijie.github.io/tags/%E5%86%B3%E7%AD%96%E6%A0%91/"/>
+    
       <category term="经典算法" scheme="https://djwangweijie.github.io/tags/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/"/>
     
       <category term="SVM" scheme="https://djwangweijie.github.io/tags/SVM/"/>
-    
-      <category term="决策树" scheme="https://djwangweijie.github.io/tags/%E5%86%B3%E7%AD%96%E6%A0%91/"/>
     
   </entry>
   
@@ -200,13 +200,13 @@
     
       <category term="机器学习" scheme="https://djwangweijie.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="卷积层神经网络" scheme="https://djwangweijie.github.io/tags/%E5%8D%B7%E7%A7%AF%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
       <category term="多元分类" scheme="https://djwangweijie.github.io/tags/%E5%A4%9A%E5%85%83%E5%88%86%E7%B1%BB/"/>
     
       <category term="神经元" scheme="https://djwangweijie.github.io/tags/%E7%A5%9E%E7%BB%8F%E5%85%83/"/>
     
       <category term="高阶" scheme="https://djwangweijie.github.io/tags/%E9%AB%98%E9%98%B6/"/>
+    
+      <category term="卷积层神经网络" scheme="https://djwangweijie.github.io/tags/%E5%8D%B7%E7%A7%AF%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -279,13 +279,13 @@
     
       <category term="机器学习" scheme="https://djwangweijie.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
+      <category term="深度学习" scheme="https://djwangweijie.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
       <category term="多元分类" scheme="https://djwangweijie.github.io/tags/%E5%A4%9A%E5%85%83%E5%88%86%E7%B1%BB/"/>
     
       <category term="神经元" scheme="https://djwangweijie.github.io/tags/%E7%A5%9E%E7%BB%8F%E5%85%83/"/>
     
       <category term="高阶" scheme="https://djwangweijie.github.io/tags/%E9%AB%98%E9%98%B6/"/>
-    
-      <category term="深度学习" scheme="https://djwangweijie.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
